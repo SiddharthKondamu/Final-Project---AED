@@ -5,8 +5,8 @@
 package BusinessModel.Roles;
 
 import BusinessModel.Ecosystem;
-import BusinessModel.User.User;
 import javax.swing.JPanel;
+import BusinessModel.UserAccount.User;
 
 /**
  *
@@ -15,8 +15,8 @@ import javax.swing.JPanel;
 public class RoleOfBloodBank extends Role {
 
     @Override
-    public JPanel createWorkArea(JPanel userProcessContainer, UserAccount account, Ecosystem business) {
-        return new BloodBankWorkAreaJPanel(userProcessContainer, account, business);
+    public JPanel createWorkArea(JPanel userProcessContainer, User user, Ecosystem business) {
+        return new BloodBankWorkAreaJPanel(userProcessContainer, user, business);
     }
     
     

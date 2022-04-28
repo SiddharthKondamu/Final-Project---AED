@@ -5,6 +5,7 @@
 package BusinessModel.Roles;
 
 import BusinessModel.Ecosystem;
+import BusinessModel.UserAccount.User;
 import javax.swing.JPanel;
 
 /**
@@ -14,7 +15,7 @@ import javax.swing.JPanel;
 public class PoliceRole {
     
     @Override
-    public JPanel createWorkArea(JPanel userProcessContainer, UserAccount account, Ecosystem business) {
-        return new PoliceWorkAreaJPanel(userProcessContainer, account, business);
+    public JPanel createWorkArea(JPanel userProcessContainer, User user, Ecosystem business) {
+        return new PoliceWorkAreaJPanel(userProcessContainer, user, business);
     }
 }
