@@ -2,7 +2,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package BusinessModel.User;
+package BusinessModel.UserAccount;
 
 import BusinessModel.Employee.Employee;
 import BusinessModel.Roles.Role;
@@ -10,22 +10,22 @@ import java.util.ArrayList;
 
 /**
  *
- * @author siddh
+ * @author Your Name <Puja>
  */
-public class userDirectory {
+public class UserDirectory {
     
-    private final ArrayList<User> usersList;
-    
-    public userDirectory() {
-        usersList = new ArrayList();
+     private final ArrayList<User> userList;
+
+    public UserDirectory() {
+        userList = new ArrayList();
     }
 
     public ArrayList<User> getUserAccountList() {
-        return usersList;
+        return userList;
     }
 
     public User authenticateUser(String username, String password) {
-        for (User ua : usersList) {
+        for (User ua : userList) {
             if (ua.getUsername().equals(username) && ua.getPassword().equals(password)) {
                 return ua;
             }
@@ -33,31 +33,32 @@ public class userDirectory {
         return null;
     }
 
-    public User createUserAccount(String username, String password, Employee employee, Role role) {
-        User userAccount = new User();
-        userAccount.setUsername(username);
-        userAccount.setPassword(password);
-        userAccount.setEmployee(employee);
-        userAccount.setRole(role);
-        usersList.add(userAccount);
-        return userAccount;
+    public User createUser(String username, String password, Employee employee, Role role) {
+        User user = new User();
+        user.setUsername(username);
+        user.setPassword(password);
+        user.setEmployee(employee);
+        user.setRole(role);
+        userList.add(user);
+        return user;
     }
-    public void deleteUserAccount(String username){
+    public void deleteUser(String username){
        
-    for (User ua : usersList) {
+    for (User ua : userList) {
             if (ua.getUsername().equals(username)) {
-                usersList.remove(ua);
+                userList.remove(ua);
                 break;
             }
         }
         
     }
-    public boolean checkIfUsernameIsUnique(String username) {
-        for (User ua : usersList) {
+    public boolean findIfUsernameIsUnique(String username) {
+        for (User ua : userList) {
             if (ua.getUsername().equals(username)) {
                 return false;
             }
         }
         return true;
     }
+    
 }

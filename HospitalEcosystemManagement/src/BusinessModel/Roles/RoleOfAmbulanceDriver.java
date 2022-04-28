@@ -5,18 +5,18 @@
 package BusinessModel.Roles;
 
 import BusinessModel.Ecosystem;
-import javax.swing.JPanel;
 import BusinessModel.UserAccount.User;
+import javax.swing.JPanel;
 
 /**
  *
  * @author Your Name <Puja>
  */
-public class RoleOfDoctor extends Role {
+public class RoleOfAmbulanceDriver extends Role {
 
     @Override
     public JPanel createWorkArea(JPanel userProcessContainer, User user, Ecosystem business) {
-        return new DoctorWorkAreaJPanel(userProcessContainer, user, business);
+        return new DisplayAmbulancePatientJPanel(userProcessContainer, user, business);
     }
     
 }

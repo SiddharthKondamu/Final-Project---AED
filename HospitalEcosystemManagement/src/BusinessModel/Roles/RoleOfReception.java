@@ -5,16 +5,19 @@
 package BusinessModel.Roles;
 
 import BusinessModel.Ecosystem;
+import BusinessModel.UserAccount.User;
 import javax.swing.JPanel;
 
 /**
  *
  * @author Your Name <Puja>
  */
-public class RoleOfReception {
+public class RoleOfReception extends Role {
     @Override
-    public JPanel createWorkArea(JPanel userProcessContainer, UserAccount account, Ecosystem business) {
-        return new ReceptionWorkAreaJPanel(userProcessContainer, account, business);
+    public JPanel createWorkArea(JPanel userProcessContainer, User user, Ecosystem business) {
+        return new ReceptionWorkAreaJPanel(userProcessContainer, user, business);
 }
+
+   
     
 }

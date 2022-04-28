@@ -5,7 +5,7 @@
 package BusinessModel.Roles;
 
 import BusinessModel.Ecosystem;
-import BusinessModel.User.User;
+import BusinessModel.UserAccount.User;
 import javax.swing.JPanel;
 
 /**
@@ -16,7 +16,7 @@ public class RoleOfPatient extends Role{
     
 
     @Override
-     public JPanel createWorkArea(JPanel userProcessContainer, UserAccount account, Ecosystem business) {
-        return new PatientWorkAreaJPanel(userProcessContainer, account, business);
+     public JPanel createWorkArea(JPanel userProcessContainer, User user, Ecosystem business) {
+        return new PatientWorkAreaJPanel(userProcessContainer, user, business);
     }      
 }
