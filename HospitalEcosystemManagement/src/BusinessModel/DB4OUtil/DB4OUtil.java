@@ -9,8 +9,8 @@ package BusinessModel.DB4OUtil;
  * @author siddh
  */
 
-import Business.SystemConfiguration;
-import Business.Ecosystem;
+import BusinessModel.SystemConfiguration;
+import BusinessModel.Ecosystem;
 import BusinessModel.Ecosystem;
 import BusinessModel.SystemConfiguration;
 import com.db4o.Db4oEmbedded;

@@ -24,8 +24,7 @@ public class SystemConfiguration {
         //create user account
         Employee employee = system.getEmployeeDirectory().createEmployee("RRH");
 
-        User ua = system.getUserAccountDirectory().createUserAccount("sysadmin", "sysadmin", employee, new SystemAdminRole());
-        //UserAccount ph = system.getUserAccountDirectory().createUserAccount("pharmacy", "pharmacy", null, new P());
+        //User ua = system.getUserAccountDirectory().createUserAccount("sysadmin", "sysadmin", employee, new SystemAdmin());
 
         return system;
     }
