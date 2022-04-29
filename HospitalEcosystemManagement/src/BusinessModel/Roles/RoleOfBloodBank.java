@@ -5,20 +5,21 @@
 package BusinessModel.Roles;
 
 import BusinessModel.Ecosystem;
-import BusinessModel.UserAccount.User;
-import BusinessModel.UserAccount.User;
 import javax.swing.JPanel;
+import BusinessModel.UserAccount.User;
 
 /**
  *
- * @author siddh
+ * @author Your Name <Puja>
  */
-public class SystemAdmin extends Role{
+public class RoleOfBloodBank extends Role {
 
+    @Override
+    public JPanel createWorkArea(JPanel userProcessContainer, User user, Ecosystem business) {
+        return new BloodBankWorkAreaJPanel(userProcessContainer, user, business);
+    }
     
     
-    /*public JPanel createWorkArea(JPanel userProcessContainer, User user, Ecosystem system) {
-        return new SystemAdminWorkAreaJPanel(userProcessContainer, system);
-    }*/
-
+    
 }
+

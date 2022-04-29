@@ -6,7 +6,7 @@ package BusinessModel;
 
 import BusinessModel.Employee.EmployeeDirectory;
 import BusinessModel.Roles.Role;
-import BusinessModel.User.userDirectory;
+import BusinessModel.UserAccount.UserDirectory;
 import java.util.ArrayList;
 
 /**
@@ -17,7 +17,7 @@ public abstract class Organisation {
     
     private String OrganisationName;
     private EmployeeDirectory empDirectory;
-    private userDirectory UserDirectory;
+    private UserDirectory userDirectory;
     private int organisationID;
     private static int counter = 0;
 
@@ -42,7 +42,7 @@ public abstract class Organisation {
         
         this.OrganisationName = name;
         this.empDirectory = new EmployeeDirectory();
-        this.UserDirectory = new userDirectory();
+        this.userDirectory = new UserDirectory();
         this.organisationID = counter;
         ++counter;
     }
@@ -53,8 +53,8 @@ public abstract class Organisation {
 
     public abstract ArrayList<Role> getSupportedRole();
 
-    public userDirectory getUserAccountDirectory() {
-        return this.UserDirectory;
+    public UserDirectory getUserAccountDirectory() {
+        return this.userDirectory;
     }
 
     public int getOrganizationID() {

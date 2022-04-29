@@ -5,7 +5,7 @@
 package BusinessModel.Roles;
 
 import BusinessModel.Ecosystem;
-import BusinessModel.User.User;
+import BusinessModel.UserAccount.User;
 import javax.swing.JPanel;
 
 /**

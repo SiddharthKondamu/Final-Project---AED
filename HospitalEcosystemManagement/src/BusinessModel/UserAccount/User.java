@@ -2,14 +2,14 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package BusinessModel.User;
+package BusinessModel.UserAccount;
 
 import BusinessModel.Employee.Employee;
 import BusinessModel.Roles.Role;
 
 /**
  *
- * @author siddh
+ * @author Your Name <Puja>
  */
 public class User {
     
@@ -19,13 +19,6 @@ public class User {
     private Role role;
 
     public User() {
-    }
-
-    public User(String username, String password, Employee employee, Role role) {
-        this.username = username;
-        this.password = password;
-        this.employee = employee;
-        this.role = role;
     }
 
     public String getUsername() {
@@ -44,22 +37,26 @@ public class User {
         this.password = password;
     }
 
-    public Employee getEmployee() {
-        return employee;
+    public Role getRole() {
+        return role;
     }
 
     public void setEmployee(Employee employee) {
         this.employee = employee;
     }
 
-    public Role getRole() {
-        return role;
-    }
-
     public void setRole(Role role) {
         this.role = role;
     }
-    
-    
+
+    public Employee getEmployee() {
+        return employee;
+    }
+
+    @Override
+    public String toString() {
+        return username;
+    }
+
     
 }
