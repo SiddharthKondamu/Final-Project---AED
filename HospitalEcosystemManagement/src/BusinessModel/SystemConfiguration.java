@@ -5,7 +5,7 @@
 package BusinessModel;
 
 import BusinessModel.Employee.Employee;
-import BusinessModel.User.User;
+import BusinessModel.UserAccount.User;
 
 /**
  *

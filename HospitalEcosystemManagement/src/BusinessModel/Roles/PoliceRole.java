@@ -6,19 +6,16 @@ package BusinessModel.Roles;
 
 import BusinessModel.Ecosystem;
 import BusinessModel.UserAccount.User;
-import BusinessModel.UserAccount.User;
 import javax.swing.JPanel;
 
 /**
  *
- * @author siddh
+ * @author Your Name <Puja>
  */
-public class SystemAdmin extends Role{
-
+public class PoliceRole {
     
-    
-    /*public JPanel createWorkArea(JPanel userProcessContainer, User user, Ecosystem system) {
-        return new SystemAdminWorkAreaJPanel(userProcessContainer, system);
-    }*/
-
+    @Override
+    public JPanel createWorkArea(JPanel userProcessContainer, User user, Ecosystem business) {
+        return new PoliceWorkAreaJPanel(userProcessContainer, user, business);
+    }
 }
