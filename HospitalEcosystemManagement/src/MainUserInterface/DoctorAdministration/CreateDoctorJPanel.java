@@ -3,12 +3,12 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package userinterface.DoctorAdministratorRole;
+package MainUserInterface.DoctorAdministration;
 
-import Business.EcoSystem;
-import Business.Doctor.Doctor;
-import Business.Role.DoctorRole;
-import Business.UserAccount.UserAccount;
+import BusinessModel.Ecosystem;
+import BusinessModel.Doctor.Doctor;
+import BusinessModel.Roles.Doctor_role;
+import BusinessModel.UserAccount.User;
 import java.awt.CardLayout;
 import java.awt.Image;
 import java.io.File;
