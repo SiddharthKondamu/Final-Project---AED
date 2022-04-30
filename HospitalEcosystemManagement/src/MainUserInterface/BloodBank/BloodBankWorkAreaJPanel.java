@@ -6,7 +6,7 @@ package MainUserInterface.BloodBank;
 
 import BusinessModel.BloodBank.BloodBank;
 import BusinessModel.Ecosystem;
-import BusinessModel.Patient.Bills;
+import BusinessModel.Patient.PatientBills;
 import BusinessModel.Patient.Patient;
 import BusinessModel.UserAccount.User;
 import java.awt.CardLayout;
@@ -46,7 +46,7 @@ public class BloodBankWorkAreaJPanel extends javax.swing.JPanel {
 
         model.setRowCount(0);
 
-        for (Bills b : billPatient.getBillsList()) {
+        for (PatientBills b : billPatient.getBillsList()) {
             
                 Object[] row = new Object[3];
                 row[0] = b.getItemName();

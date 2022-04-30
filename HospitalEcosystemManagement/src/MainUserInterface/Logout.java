@@ -6,7 +6,7 @@ package MainUserInterface;
 
 import userinterface.PoliceDepartmentRole.*;
 import BusinessModel.Ecosystem;
-import BusinessModel.Patient.Bills;
+import BusinessModel.Patient.PatientBills;
 import BusinessModel.Patient.Patient;
 import BusinessModel.UserAccount.User;
 import java.awt.CardLayout;

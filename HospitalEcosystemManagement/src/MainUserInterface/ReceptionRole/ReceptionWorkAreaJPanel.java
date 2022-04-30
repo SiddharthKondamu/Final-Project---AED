@@ -5,14 +5,18 @@
 package MainUserInterface.ReceptionRole;
 
 import BusinessModel.Ecosystem;
-import Business.Patient.Patient;
-import Business.UserAccount.UserAccount;
+
+import BusinessModel.Patient.Patient;
+import BusinessModel.UserAccount.User;
+
 import java.awt.CardLayout;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.table.DefaultTableModel;
 import userinterface.AmbulanceRole.AmbulanceWorkAreaJPanel;
-import userinterface.PatientRole.PatientBillJPanel;
+
+import MainUserInterface.Patient.PatientBillJPanel;
+
 
 /**
  *
@@ -24,10 +28,12 @@ public class ReceptionWorkAreaJPanel extends javax.swing.JPanel {
      * Creates new form LabWorkAreaJPanel
      */
     private final JPanel userProcessContainer;
-    private final EcoSystem ecoSystem;
-    UserAccount userAccount;
 
-    public ReceptionWorkAreaJPanel(JPanel userProcessContainer, UserAccount account, EcoSystem system) {
+    private final Ecosystem ecoSystem;
+    User userAccount;
+
+    public ReceptionWorkAreaJPanel(JPanel userProcessContainer, User account, Ecosystem system) {
+
         initComponents();
         this.userProcessContainer = userProcessContainer;
         this.ecoSystem = system;
@@ -43,14 +49,14 @@ public class ReceptionWorkAreaJPanel extends javax.swing.JPanel {
 
             Object[] row = new Object[11];
             row[0] = patient;
-            row[1] = patient.getPatientLastName();
-            row[2] = patient.getHealthInsuranceID();
-            row[3] = patient.getAge();
-            
-            row[4] = patient.getEmailAddress();
-            row[5] = patient.getPatientStatus();
 
-            if(!patient.getPatientStatus().equals("Discharged")){
+            row[1] = patient.getpLastName();
+            row[2] = patient.getpHealthInsuranceID();
+            row[3] = patient.getpAge(); 
+            row[4] = patient.getpEmailAddress();
+            row[5] = patient.getpStatus();
+            if(!patient.getpStatus().equals("Discharged")){
+
             model.addRow(row);}
 
         }
@@ -79,8 +85,10 @@ public class ReceptionWorkAreaJPanel extends javax.swing.JPanel {
         jPanel1 = new javax.swing.JPanel();
         jLabel2 = new javax.swing.JLabel();
 
+
         setBackground(new java.awt.Color(0, 153, 204));
         setToolTipText("");
+
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         createPatBtn.setBackground(new java.awt.Color(102, 102, 0));
@@ -95,8 +103,10 @@ public class ReceptionWorkAreaJPanel extends javax.swing.JPanel {
         add(createPatBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(980, 80, 260, 42));
 
         jLabel1.setBackground(new java.awt.Color(255, 255, 255));
+
         jLabel1.setFont(new java.awt.Font("Microsoft Sans Serif", 1, 36)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));
+
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel1.setText("Hospital ");
         add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 10, 860, 80));
@@ -200,6 +210,7 @@ public class ReceptionWorkAreaJPanel extends javax.swing.JPanel {
         });
         add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(980, 710, 250, 42));
 
+
         jLabel3.setFont(new java.awt.Font("Microsoft Sans Serif", 1, 24)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(255, 255, 255));
         jLabel3.setText("Current Patient List");
@@ -211,6 +222,7 @@ public class ReceptionWorkAreaJPanel extends javax.swing.JPanel {
         jLabel2.setBackground(new java.awt.Color(255, 255, 255));
         jLabel2.setFont(new java.awt.Font("Malayalam Sangam MN", 1, 14)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(255, 255, 255));
+
         jLabel2.setText("Perform an action");
         jPanel1.add(jLabel2);
 

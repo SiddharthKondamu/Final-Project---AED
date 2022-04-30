@@ -5,10 +5,11 @@
  */
 package MainUserInterface.ReceptionRole;
 
-import Business.EcoSystem;
-import Business.Patient.Patient;
-import Business.Role.PatientRole;
-import Business.UserAccount.UserAccount;
+
+import BusinessModel.Ecosystem;
+import BusinessModel.Patient.Patient;
+import BusinessModel.Roles.Patient_role;
+import BusinessModel.UserAccount.User;
 import java.awt.CardLayout;
 import java.awt.Image;
 import java.io.File;
@@ -33,12 +34,14 @@ public class CreatePatientJPanel extends javax.swing.JPanel {
      * Creates new form CreatePatientPanel
      */
     private final JPanel userProcessContainer;
-    private final EcoSystem ecoSystem;
-    UserAccount userAccount;
+
+    private final Ecosystem ecoSystem;
+    User userAccount;
     String globalSelectedImagePath;
     Boolean IsconcentFormSigned;
 
-    public CreatePatientJPanel(JPanel userProcessContainer, EcoSystem system, UserAccount user) {
+    public CreatePatientJPanel(JPanel userProcessContainer, Ecosystem system, User user) {
+
         initComponents();
         this.userAccount = user;
         this.userProcessContainer = userProcessContainer;
@@ -100,7 +103,9 @@ public class CreatePatientJPanel extends javax.swing.JPanel {
         jRadioInsurance = new javax.swing.JRadioButton();
         btnBrowse = new javax.swing.JButton();
         lblPhotoImage = new javax.swing.JLabel();
+
         txtDOB = new com.toedter.calendar.JDateChooser();
+
         lblPaymentMethod = new javax.swing.JLabel();
         GenderComboBox = new javax.swing.JComboBox<>();
         BloodGroupComboBox = new javax.swing.JComboBox<>();
@@ -126,12 +131,15 @@ public class CreatePatientJPanel extends javax.swing.JPanel {
         btnSubmit1 = new javax.swing.JButton();
         lblPaymentMethod1 = new javax.swing.JLabel();
 
+
         setBackground(new java.awt.Color(0, 153, 204));
+
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         lblPatientFirstName.setBackground(new java.awt.Color(255, 255, 255));
         lblPatientFirstName.setFont(new java.awt.Font("Trebuchet MS", 1, 18)); // NOI18N
         lblPatientFirstName.setText("First Name");
+
         add(lblPatientFirstName, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 170, -1, -1));
 
         lblRestaurantInfo.setBackground(new java.awt.Color(255, 255, 255));
@@ -141,16 +149,20 @@ public class CreatePatientJPanel extends javax.swing.JPanel {
         lblRestaurantInfo.setText("Create Patient");
         add(lblRestaurantInfo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1394, 82));
 
+
         txtFirstName.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyReleased(java.awt.event.KeyEvent evt) {
                 txtFirstNameKeyReleased(evt);
             }
         });
+
         add(txtFirstName, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 220, 120, 40));
+
 
         lblPatientLastName.setBackground(new java.awt.Color(255, 255, 255));
         lblPatientLastName.setFont(new java.awt.Font("Trebuchet MS", 1, 18)); // NOI18N
         lblPatientLastName.setText("Last Name");
+
         add(lblPatientLastName, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 170, -1, -1));
 
         txtLastName.addActionListener(new java.awt.event.ActionListener() {
@@ -163,17 +175,23 @@ public class CreatePatientJPanel extends javax.swing.JPanel {
                 txtLastNameKeyReleased(evt);
             }
         });
+
         add(txtLastName, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 220, 110, 40));
+
 
         lblPatientGender.setBackground(new java.awt.Color(255, 255, 255));
         lblPatientGender.setFont(new java.awt.Font("Trebuchet MS", 1, 18)); // NOI18N
         lblPatientGender.setText("Sex");
+
         add(lblPatientGender, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 300, -1, -1));
+
 
         lblPatientHealthInsuranceID.setBackground(new java.awt.Color(255, 255, 255));
         lblPatientHealthInsuranceID.setFont(new java.awt.Font("Trebuchet MS", 1, 18)); // NOI18N
         lblPatientHealthInsuranceID.setText("Insurance Id");
+
         add(lblPatientHealthInsuranceID, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 440, -1, -1));
+
 
         txtHealthInsuranceID.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -185,12 +203,16 @@ public class CreatePatientJPanel extends javax.swing.JPanel {
                 txtHealthInsuranceIDKeyReleased(evt);
             }
         });
+
         add(txtHealthInsuranceID, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 490, 110, 40));
+
 
         lblPatientAddress.setBackground(new java.awt.Color(255, 255, 255));
         lblPatientAddress.setFont(new java.awt.Font("Trebuchet MS", 1, 18)); // NOI18N
         lblPatientAddress.setText("Patient address");
+
         add(lblPatientAddress, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 440, 140, 20));
+
 
         txtAddress.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -202,12 +224,16 @@ public class CreatePatientJPanel extends javax.swing.JPanel {
                 txtAddressKeyReleased(evt);
             }
         });
+
         add(txtAddress, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 490, 130, 40));
+
 
         lblPatientPhone.setBackground(new java.awt.Color(255, 255, 255));
         lblPatientPhone.setFont(new java.awt.Font("Trebuchet MS", 1, 18)); // NOI18N
         lblPatientPhone.setText("Mobile Number");
+
         add(lblPatientPhone, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 300, -1, -1));
+
 
         txtPhoneNumber.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -219,18 +245,24 @@ public class CreatePatientJPanel extends javax.swing.JPanel {
                 txtPhoneNumberKeyReleased(evt);
             }
         });
+
         add(txtPhoneNumber, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 350, 130, 40));
+
 
         lblDOB.setBackground(new java.awt.Color(255, 255, 255));
         lblDOB.setFont(new java.awt.Font("Trebuchet MS", 1, 18)); // NOI18N
         lblDOB.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lblDOB.setText("Date of Birth");
+
         add(lblDOB, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 430, -1, 40));
+
 
         lblEmail.setBackground(new java.awt.Color(255, 255, 255));
         lblEmail.setFont(new java.awt.Font("Trebuchet MS", 1, 18)); // NOI18N
         lblEmail.setText("Email address");
+
         add(lblEmail, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 170, -1, -1));
+
 
         txtEmail.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -242,13 +274,17 @@ public class CreatePatientJPanel extends javax.swing.JPanel {
                 txtEmailKeyReleased(evt);
             }
         });
+
         add(txtEmail, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 220, 130, 40));
+
 
         lblAddress4.setBackground(new java.awt.Color(255, 255, 255));
         lblAddress4.setFont(new java.awt.Font("Trebuchet MS", 1, 18)); // NOI18N
         lblAddress4.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lblAddress4.setText("Blood Type");
+
         add(lblAddress4, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 300, 116, -1));
+
 
         txtInjuryType.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -260,26 +296,34 @@ public class CreatePatientJPanel extends javax.swing.JPanel {
                 txtInjuryTypeKeyReleased(evt);
             }
         });
+
         add(txtInjuryType, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 350, 150, 40));
+
 
         lblPhoneNumber4.setBackground(new java.awt.Color(255, 255, 255));
         lblPhoneNumber4.setFont(new java.awt.Font("Trebuchet MS", 1, 18)); // NOI18N
         lblPhoneNumber4.setText("Injury Type");
+
         add(lblPhoneNumber4, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 300, -1, -1));
+
 
         lblRestaurantName4.setBackground(new java.awt.Color(255, 255, 255));
         lblRestaurantName4.setFont(new java.awt.Font("Trebuchet MS", 1, 18)); // NOI18N
         lblRestaurantName4.setText("UserName");
+
         add(lblRestaurantName4, new org.netbeans.lib.awtextra.AbsoluteConstraints(1040, 170, -1, -1));
+
 
         txtUserName.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyReleased(java.awt.event.KeyEvent evt) {
                 txtUserNameKeyReleased(evt);
             }
         });
+
         add(txtUserName, new org.netbeans.lib.awtextra.AbsoluteConstraints(1010, 216, 150, 40));
 
         btnSubmit.setBackground(new java.awt.Color(0, 0, 0));
+
         btnSubmit.setFont(new java.awt.Font("Trebuchet MS", 1, 14)); // NOI18N
         btnSubmit.setForeground(new java.awt.Color(255, 255, 255));
         btnSubmit.setText("Submit");
@@ -293,14 +337,18 @@ public class CreatePatientJPanel extends javax.swing.JPanel {
         lblRestaurantName5.setBackground(new java.awt.Color(255, 255, 255));
         lblRestaurantName5.setFont(new java.awt.Font("Trebuchet MS", 1, 18)); // NOI18N
         lblRestaurantName5.setText("Password");
+
         add(lblRestaurantName5, new org.netbeans.lib.awtextra.AbsoluteConstraints(1040, 300, -1, -1));
+
 
         txtPassword.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyReleased(java.awt.event.KeyEvent evt) {
                 txtPasswordKeyReleased(evt);
             }
         });
+
         add(txtPassword, new org.netbeans.lib.awtextra.AbsoluteConstraints(1010, 350, 150, 40));
+
 
         jRadioCash.setBackground(new java.awt.Color(255, 255, 255));
         jRadioCash.setFont(new java.awt.Font("Trebuchet MS", 1, 18)); // NOI18N
@@ -310,7 +358,9 @@ public class CreatePatientJPanel extends javax.swing.JPanel {
                 jRadioCashActionPerformed(evt);
             }
         });
+
         add(jRadioCash, new org.netbeans.lib.awtextra.AbsoluteConstraints(810, 230, -1, -1));
+
 
         jRadioInsurance.setBackground(new java.awt.Color(255, 255, 255));
         jRadioInsurance.setFont(new java.awt.Font("Trebuchet MS", 1, 18)); // NOI18N
@@ -320,15 +370,18 @@ public class CreatePatientJPanel extends javax.swing.JPanel {
                 jRadioInsuranceActionPerformed(evt);
             }
         });
+
         add(jRadioInsurance, new org.netbeans.lib.awtextra.AbsoluteConstraints(810, 170, -1, -1));
 
         btnBrowse.setFont(new java.awt.Font("Microsoft Sans Serif", 1, 18)); // NOI18N
+
         btnBrowse.setText("Browse");
         btnBrowse.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnBrowseActionPerformed(evt);
             }
         });
+
         add(btnBrowse, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 550, 100, 40));
         add(lblPhotoImage, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 610, 160, 140));
 
@@ -344,39 +397,50 @@ public class CreatePatientJPanel extends javax.swing.JPanel {
         add(lblPaymentMethod, new org.netbeans.lib.awtextra.AbsoluteConstraints(990, 100, -1, -1));
 
         GenderComboBox.setFont(new java.awt.Font("Trebuchet MS", 1, 14)); // NOI18N
+
         GenderComboBox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
         GenderComboBox.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 GenderComboBoxActionPerformed(evt);
             }
         });
+
         add(GenderComboBox, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 350, 92, 30));
 
         BloodGroupComboBox.setFont(new java.awt.Font("Trebuchet MS", 1, 14)); // NOI18N
+
         BloodGroupComboBox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
         BloodGroupComboBox.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 BloodGroupComboBoxActionPerformed(evt);
             }
         });
+
         add(BloodGroupComboBox, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 350, 120, -1));
+
 
         lblAccidentLocation.setBackground(new java.awt.Color(255, 255, 255));
         lblAccidentLocation.setFont(new java.awt.Font("Trebuchet MS", 1, 18)); // NOI18N
         lblAccidentLocation.setText("Accident Location");
+
         add(lblAccidentLocation, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 170, -1, 25));
+
 
         txtAccidentLocation.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyReleased(java.awt.event.KeyEvent evt) {
                 txtAccidentLocationKeyReleased(evt);
             }
         });
+
         add(txtAccidentLocation, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 220, 150, 40));
+
 
         lblPhoto.setBackground(new java.awt.Color(255, 255, 255));
         lblPhoto.setFont(new java.awt.Font("Trebuchet MS", 1, 18)); // NOI18N
         lblPhoto.setText("Photo");
+
         add(lblPhoto, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 560, -1, -1));
+
 
         lblErrorFname.setFont(new java.awt.Font("Lucida Grande", 3, 14)); // NOI18N
         lblErrorFname.setForeground(new java.awt.Color(255, 51, 51));
@@ -404,7 +468,9 @@ public class CreatePatientJPanel extends javax.swing.JPanel {
 
         lblErrorInjury.setFont(new java.awt.Font("Lucida Grande", 3, 14)); // NOI18N
         lblErrorInjury.setForeground(new java.awt.Color(255, 51, 51));
+
         add(lblErrorInjury, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 430, 87, 22));
+
 
         lblErrorUserName.setFont(new java.awt.Font("Lucida Grande", 3, 14)); // NOI18N
         lblErrorUserName.setForeground(new java.awt.Color(255, 51, 51));
@@ -419,17 +485,23 @@ public class CreatePatientJPanel extends javax.swing.JPanel {
         add(lblErrorAccidentLocation, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 380, 116, 22));
 
         jLabel1.setFont(new java.awt.Font("Trebuchet MS", 1, 24)); // NOI18N
+
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));
+
         jLabel1.setText("Accident Details");
         add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 100, 210, 34));
 
         jLabel2.setFont(new java.awt.Font("Trebuchet MS", 1, 24)); // NOI18N
+
         jLabel2.setForeground(new java.awt.Color(255, 255, 255));
+
         jLabel2.setText("Personal Details");
         add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 100, 230, 31));
 
         jLabel3.setFont(new java.awt.Font("Trebuchet MS", 1, 24)); // NOI18N
+
         jLabel3.setForeground(new java.awt.Color(255, 255, 255));
+
         jLabel3.setText("Contact Details");
         add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 100, 190, 31));
 
@@ -450,11 +522,13 @@ public class CreatePatientJPanel extends javax.swing.JPanel {
                 btnSubmit1ActionPerformed(evt);
             }
         });
+
         add(btnSubmit1, new org.netbeans.lib.awtextra.AbsoluteConstraints(1470, 20, 159, 46));
 
         lblPaymentMethod1.setBackground(new java.awt.Color(255, 255, 255));
         lblPaymentMethod1.setFont(new java.awt.Font("Trebuchet MS", 1, 24)); // NOI18N
         lblPaymentMethod1.setForeground(new java.awt.Color(255, 255, 255));
+
         lblPaymentMethod1.setText("Payment Method");
         add(lblPaymentMethod1, new org.netbeans.lib.awtextra.AbsoluteConstraints(780, 100, -1, -1));
     }// </editor-fold>//GEN-END:initComponents
@@ -492,36 +566,38 @@ public class CreatePatientJPanel extends javax.swing.JPanel {
                 && (lblErrorPhone.getText() == null || lblErrorPhone.getText().equals(""))
                 && (lblErrorUserName.getText() == null || lblErrorUserName.getText().equals(""))) {
             Patient patient = new Patient(txtUserName.getText());
-            patient.setPatientFirstName(txtFirstName.getText());
-            patient.setPatientLastName(txtLastName.getText());
+
+            patient.setpFirstName(txtFirstName.getText());
+            patient.setpLastName(txtLastName.getText());
             patient.setAge(CalculateAge(txtDOB.getDate(), java.util.Calendar.getInstance().getTime()));
-            patient.setGender((String) GenderComboBox.getSelectedItem());
-            patient.setHealthInsuranceID(txtHealthInsuranceID.getText());
-            patient.setPatientaddress(txtAddress.getText());
-            patient.setPatientPhoneNumber(txtPhoneNumber.getText());
-            patient.setEmailAddress(txtEmail.getText());
+            patient.setpGender((String) GenderComboBox.getSelectedItem());
+            patient.setpHealthInsuranceID(txtHealthInsuranceID.getText());
+            patient.setpAddress(txtAddress.getText());
+            patient.setpPhoneNo(txtPhoneNumber.getText());
+            patient.setpEmailAddress(txtEmail.getText());
             patient.setDateofBirth(txtDOB.getDate());
-            patient.setInjuryType(txtInjuryType.getText());
-            patient.setAccidentLocation(txtAccidentLocation.getText());
-            patient.setBloodType((String) BloodGroupComboBox.getSelectedItem());
-            patient.setBloodBankStatus("New Patient");
-            patient.setPharmaStatus("New Patient");
-            patient.setLabStatus("New Patient");
-            patient.setPatientStatus("New Patient");
-            patient.setUserName(txtUserName.getText());
-            patient.setPhoto_path(globalSelectedImagePath);
-            patient.setIsConcentFormSigned(IsconcentFormSigned);
-            patient.setDateOfAdmit(java.util.Calendar.getInstance().getTime());
+            patient.setpInjuryType(txtInjuryType.getText());
+            patient.setpAccidentLocation(txtAccidentLocation.getText());
+            patient.setpBloodType((String) BloodGroupComboBox.getSelectedItem());
+            patient.setpBloodBankStatus("New Patient");
+            patient.setpPharmaStatus("New Patient");
+            patient.setpLabStatus("New Patient");
+            patient.setpStatus("New Patient");
+            patient.setpUserName(txtUserName.getText());
+            patient.setpImageUrl(globalSelectedImagePath);
+            patient.setpIsConcentFormSigned(IsconcentFormSigned);
+            patient.setpDateOfAdmit(java.util.Calendar.getInstance().getTime());
             if (jRadioInsurance.isSelected()) {
-                patient.setInsuranceStatus("Insurance");
+                patient.setpInsuranceStatus("Insurance");
             } else {
-                patient.setInsuranceStatus("Cash");
+                patient.setpInsuranceStatus("Cash");
             }
 
-            ecoSystem.getUserAccountDirectory().createUserAccount(txtUserName.getText(), txtPassword.getText(), null, new PatientRole());
+            ecoSystem.getUserAccountDirectory().createUser(txtUserName.getText(), txtPassword.getText(), null, new Patient_role());
             ecoSystem.getPatientDirectory().createPatient(patient);
             for (Patient p : ecoSystem.getPatientDirectory().getPatientList()) {
-                if (p.getUserName().equals(txtUserName.getText())) {
+                if (p.getpUserName().equals(txtUserName.getText())) {
+
                     ecoSystem.getPatientDirectory().AddBill(p, "Bed Charge", "Hospital", "Ammount");
                 }
             }
@@ -781,7 +857,9 @@ public class CreatePatientJPanel extends javax.swing.JPanel {
     private javax.swing.JLabel lblRestaurantName5;
     private javax.swing.JTextField txtAccidentLocation;
     private javax.swing.JTextField txtAddress;
+
     private com.toedter.calendar.JDateChooser txtDOB;
+
     private javax.swing.JTextField txtEmail;
     private javax.swing.JTextField txtFirstName;
     private javax.swing.JTextField txtHealthInsuranceID;

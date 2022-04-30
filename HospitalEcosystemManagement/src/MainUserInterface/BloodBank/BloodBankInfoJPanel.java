@@ -155,7 +155,7 @@ public class BloodBankInfoJPanel extends javax.swing.JPanel {
         });
         add(btnBack, new org.netbeans.lib.awtextra.AbsoluteConstraints(1100, 30, 140, 40));
 
-        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/MainFrame/Photos/Blood bank.gif"))); // NOI18N
+        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/MainUserInterface/Images/Blood bank.gif"))); // NOI18N
         jLabel3.setMaximumSize(new java.awt.Dimension(1000, 500));
         add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 110, 980, 430));
 
