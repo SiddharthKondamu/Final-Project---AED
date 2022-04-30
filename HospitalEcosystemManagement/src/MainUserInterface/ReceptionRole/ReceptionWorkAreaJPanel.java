@@ -2,17 +2,17 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JPanel.java to edit this template
  */
-package userinterface.ReceptionRole;
+package MainUserInterface.ReceptionRole;
 
-import Business.EcoSystem;
-import Business.Patient.Patient;
-import Business.UserAccount.UserAccount;
+import BusinessModel.Ecosystem;
+import BusinessModel.Patient.Patient;
+import BusinessModel.UserAccount.User;
 import java.awt.CardLayout;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.table.DefaultTableModel;
 import userinterface.AmbulanceRole.AmbulanceWorkAreaJPanel;
-import userinterface.PatientRole.PatientBillJPanel;
+import MainUserInterface.Patient.PatientBillJPanel;
 
 /**
  *
@@ -24,10 +24,10 @@ public class ReceptionWorkAreaJPanel extends javax.swing.JPanel {
      * Creates new form LabWorkAreaJPanel
      */
     private final JPanel userProcessContainer;
-    private final EcoSystem ecoSystem;
-    UserAccount userAccount;
+    private final Ecosystem ecoSystem;
+    User userAccount;
 
-    public ReceptionWorkAreaJPanel(JPanel userProcessContainer, UserAccount account, EcoSystem system) {
+    public ReceptionWorkAreaJPanel(JPanel userProcessContainer, User account, Ecosystem system) {
         initComponents();
         this.userProcessContainer = userProcessContainer;
         this.ecoSystem = system;
@@ -43,14 +43,12 @@ public class ReceptionWorkAreaJPanel extends javax.swing.JPanel {
 
             Object[] row = new Object[11];
             row[0] = patient;
-            row[1] = patient.getPatientLastName();
-            row[2] = patient.getHealthInsuranceID();
-            row[3] = patient.getAge();
-            
-            row[4] = patient.getEmailAddress();
-            row[5] = patient.getPatientStatus();
-
-            if(!patient.getPatientStatus().equals("Discharged")){
+            row[1] = patient.getpLastName();
+            row[2] = patient.getpHealthInsuranceID();
+            row[3] = patient.getpAge(); 
+            row[4] = patient.getpEmailAddress();
+            row[5] = patient.getpStatus();
+            if(!patient.getpStatus().equals("Discharged")){
             model.addRow(row);}
 
         }

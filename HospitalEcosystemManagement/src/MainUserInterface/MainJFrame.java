@@ -1,38 +1,38 @@
-package MainFrame;
+package MainUserInterface;
 
 import BusinessModel.Ecosystem;
 import BusinessModel.DB4OUtil.DB4OUtil;
 import BusinessModel.Pharmacy.Pharmacy;
-import BusinessModel.Roles.AmbulanceDriverRole;
-import BusinessModel.Roles.BloodBankRole;
-import BusinessModel.Roles.DoctorAdministratorRole;
-import BusinessModel.Roles.InsuranceManagerRole;
-import BusinessModel.Roles.LabRole;
-import BusinessModel.Roles.PatientRole;
-import BusinessModel.Roles.PharmacyRole;
-import BusinessModel.Roles.PoliceDepartmentRole;
-import BusinessModel.Roles.ReceptionRole;
-import BusinessModel.User.UserAccount;
+import BusinessModel.Roles.AmbulanceDriver;
+import BusinessModel.Roles.BloodBank;
+import BusinessModel.Roles.DoctorsAdministrator;
+import BusinessModel.Roles.InsuranceManager;
+import BusinessModel.Roles.Lab;
+import BusinessModel.Roles.Patient_role;
+import BusinessModel.Roles.Pharmacist;
+import BusinessModel.Roles.Police;
+import BusinessModel.Roles.Reception;
+import BusinessModel.UserAccount.User;
 import java.awt.CardLayout;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 
 public class MainJFrame extends javax.swing.JFrame {
-    private final EcoSystem system;
+    private final Ecosystem system;
     private final DB4OUtil dB4OUtil = DB4OUtil.getInstance();
     
     public MainJFrame() {
         initComponents();
         system = dB4OUtil.retrieveSystem();
         this.setSize(1680, 1050);
-        system.getUserAccountDirectory().createUserAccount("bloodbank", "bloodbank", null, new BloodBankRole());
-        system.getUserAccountDirectory().createUserAccount("pharmacy", "pharmacy", null, new PharmacyRole());
-        system.getUserAccountDirectory().createUserAccount("insurance", "insurance", null, new InsuranceManagerRole());
-        system.getUserAccountDirectory().createUserAccount("ambulance", "ambulance", null, new AmbulanceDriverRole());
-        system.getUserAccountDirectory().createUserAccount("lab", "lab", null, new LabRole());
-        system.getUserAccountDirectory().createUserAccount("hospital", "hospital", null, new ReceptionRole());
-        system.getUserAccountDirectory().createUserAccount("cop", "cop", null, new PoliceDepartmentRole());
-        system.getUserAccountDirectory().createUserAccount("doctor", "doctor", null, new DoctorAdministratorRole());
+        system.getUserAccountDirectory().createUser("bloodbank", "bloodbank", null, new BloodBank());
+        system.getUserAccountDirectory().createUser("pharmacy", "pharmacy", null, new Pharmacist());
+        system.getUserAccountDirectory().createUser("insurance", "insurance", null, new InsuranceManager());
+        system.getUserAccountDirectory().createUser("ambulance", "ambulance", null, new AmbulanceDriver());
+        system.getUserAccountDirectory().createUser("lab", "lab", null, new Lab());
+        system.getUserAccountDirectory().createUser("hospital", "hospital", null, new Reception());
+        system.getUserAccountDirectory().createUser("cop", "cop", null, new Police());
+        system.getUserAccountDirectory().createUser("doctor", "doctor", null, new DoctorsAdministrator());
     }
 
     @SuppressWarnings("unchecked")
@@ -99,7 +99,7 @@ public class MainJFrame extends javax.swing.JFrame {
         });
         leftContainer.add(signOutBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 520, 110, 35));
 
-        appLogo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/MainFrame/Photos/hospital-logo.png")));
+        appLogo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/MainUserInterface/Images/hospital-logo.png"))); // NOI18N
         leftContainer.add(appLogo, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 70, 130, 130));
 
         jSplitPane1.setLeftComponent(leftContainer);
@@ -108,7 +108,7 @@ public class MainJFrame extends javax.swing.JFrame {
         mainContainer.setLayout(new java.awt.CardLayout());
 
         homeDisplay.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        homeDisplay.setIcon(new javax.swing.ImageIcon(getClass().getResource("/MainFrame/hospital.jpg")));
+        homeDisplay.setIcon(new javax.swing.ImageIcon(getClass().getResource("/MainUserInterface/Images/hospital.jpg"))); // NOI18N
         homeDisplay.setPreferredSize(new java.awt.Dimension(1080, 720));
         mainContainer.add(homeDisplay, "card2");
 
@@ -121,13 +121,19 @@ public class MainJFrame extends javax.swing.JFrame {
 
     private void signInBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_signInBtnActionPerformed
         try{
-        UserAccount ua = system.getUserAccountDirectory().authenticateUser(userNameInputField.getText(), passwordInputField.getText());
+            /*for(User u : system.getUserAccountDirectory().getUserAccountList()){
+                System.out.println("user ---"+u);
+            }
+            System.out.println("username ---"+userNameInputField.getText());
+            System.out.println("password ---"+passwordInputField.getText());*/
+        User ua = system.getUserAccountDirectory().authenticateUser(userNameInputField.getText(), passwordInputField.getText());
         CardLayout layout = (CardLayout) mainContainer.getLayout();
         mainContainer.add(ua.getRole().createWorkArea(mainContainer, ua, system));
         layout.next(mainContainer);
         signOutBtn.setEnabled(true);
         }
         catch(Exception e){
+            System.out.println("exception due to ---"+e.getMessage());
         JOptionPane.showMessageDialog(null,"Username/Password is wrong!","Warning",JOptionPane.WARNING_MESSAGE);
         }
     }//GEN-LAST:event_signInBtnActionPerformed

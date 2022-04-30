@@ -11,8 +11,6 @@ package BusinessModel.DB4OUtil;
 
 import BusinessModel.SystemConfiguration;
 import BusinessModel.Ecosystem;
-import BusinessModel.Ecosystem;
-import BusinessModel.SystemConfiguration;
 import com.db4o.Db4oEmbedded;
 import com.db4o.ObjectContainer;
 import com.db4o.ObjectSet;
@@ -20,11 +18,9 @@ import com.db4o.config.EmbeddedConfiguration;
 import com.db4o.ta.TransparentPersistenceSupport;
 import java.nio.file.Paths;
 
-import java.nio.file.Paths;
-
 public class DB4OUtil {
 
-    private static final String FILENAME = Paths.get("Databank.db4o").toAbsolutePath().toString();// path to the data store
+    private static final String FILENAME = "C:\\Users\\siddh\\AED-1\\AED_Final_Project\\AED Project Implementation\\Databank.db4o";//Paths.get("Databank.db4o").toAbsolutePath().toString();// path to the data store
     private static DB4OUtil dB4OUtil;
 
     public synchronized static DB4OUtil getInstance() {
@@ -43,14 +39,15 @@ public class DB4OUtil {
 
     private ObjectContainer createConnection() {
         try {
-
             EmbeddedConfiguration config = Db4oEmbedded.newConfiguration();
-            ObjectContainer db = Db4oEmbedded.openFile(config, FILENAME);
+            System.out.println("file name before create connection---"+FILENAME);
+            ObjectContainer database = Db4oEmbedded.openFile(config, FILENAME);
+            System.out.println("database ---"+database);
             config.common().add(new TransparentPersistenceSupport());
             config.common().activationDepth(Integer.MAX_VALUE);
             config.common().updateDepth(Integer.MAX_VALUE);
             config.common().objectClass(Ecosystem.class).cascadeOnUpdate(true);
-            return db;
+            return database;
         } catch (Exception ex) {
             System.out.print(ex.getMessage());
         }
@@ -66,7 +63,9 @@ public class DB4OUtil {
 
     public Ecosystem retrieveSystem() {
         ObjectContainer conn = createConnection();
+        System.out.println("connection ---"+conn);
         ObjectSet<Ecosystem> systems = conn.query(Ecosystem.class);
+       
         Ecosystem system;
         if (systems.isEmpty()) {
             system = SystemConfiguration.configure();

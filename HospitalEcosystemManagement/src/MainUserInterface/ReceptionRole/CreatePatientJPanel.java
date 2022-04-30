@@ -3,12 +3,12 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package userinterface.ReceptionRole;
+package MainUserInterface.ReceptionRole;
 
-import Business.EcoSystem;
-import Business.Patient.Patient;
-import Business.Role.PatientRole;
-import Business.UserAccount.UserAccount;
+import BusinessModel.Ecosystem;
+import BusinessModel.Patient.Patient;
+import BusinessModel.Roles.Patient_role;
+import BusinessModel.UserAccount.User;
 import java.awt.CardLayout;
 import java.awt.Image;
 import java.io.File;
@@ -33,12 +33,12 @@ public class CreatePatientJPanel extends javax.swing.JPanel {
      * Creates new form CreatePatientPanel
      */
     private final JPanel userProcessContainer;
-    private final EcoSystem ecoSystem;
-    UserAccount userAccount;
+    private final Ecosystem ecoSystem;
+    User userAccount;
     String globalSelectedImagePath;
     Boolean IsconcentFormSigned;
 
-    public CreatePatientJPanel(JPanel userProcessContainer, EcoSystem system, UserAccount user) {
+    public CreatePatientJPanel(JPanel userProcessContainer, Ecosystem system, User user) {
         initComponents();
         this.userAccount = user;
         this.userProcessContainer = userProcessContainer;
@@ -100,7 +100,6 @@ public class CreatePatientJPanel extends javax.swing.JPanel {
         jRadioInsurance = new javax.swing.JRadioButton();
         btnBrowse = new javax.swing.JButton();
         lblPhotoImage = new javax.swing.JLabel();
-        txtDOB = new com.toedter.calendar.JDateChooser();
         lblPaymentMethod = new javax.swing.JLabel();
         GenderComboBox = new javax.swing.JComboBox<>();
         BloodGroupComboBox = new javax.swing.JComboBox<>();
@@ -332,11 +331,6 @@ public class CreatePatientJPanel extends javax.swing.JPanel {
         add(btnBrowse, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 490, -1, -1));
         add(lblPhotoImage, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 530, 105, 111));
 
-        txtDOB.setBackground(new java.awt.Color(204, 204, 204));
-        txtDOB.setDateFormatString("MM-dd-yyyy");
-        txtDOB.setMaxSelectableDate(new Date());
-        add(txtDOB, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 370, 130, -1));
-
         lblPaymentMethod.setBackground(new java.awt.Color(255, 255, 255));
         lblPaymentMethod.setFont(new java.awt.Font("Trebuchet MS", 1, 24)); // NOI18N
         lblPaymentMethod.setText("Login Credentials");
@@ -485,36 +479,36 @@ public class CreatePatientJPanel extends javax.swing.JPanel {
                 && (lblErrorPhone.getText() == null || lblErrorPhone.getText().equals(""))
                 && (lblErrorUserName.getText() == null || lblErrorUserName.getText().equals(""))) {
             Patient patient = new Patient(txtUserName.getText());
-            patient.setPatientFirstName(txtFirstName.getText());
-            patient.setPatientLastName(txtLastName.getText());
+            patient.setpFirstName(txtFirstName.getText());
+            patient.setpLastName(txtLastName.getText());
             patient.setAge(CalculateAge(txtDOB.getDate(), java.util.Calendar.getInstance().getTime()));
-            patient.setGender((String) GenderComboBox.getSelectedItem());
-            patient.setHealthInsuranceID(txtHealthInsuranceID.getText());
-            patient.setPatientaddress(txtAddress.getText());
-            patient.setPatientPhoneNumber(txtPhoneNumber.getText());
-            patient.setEmailAddress(txtEmail.getText());
+            patient.setpGender((String) GenderComboBox.getSelectedItem());
+            patient.setpHealthInsuranceID(txtHealthInsuranceID.getText());
+            patient.setpAddress(txtAddress.getText());
+            patient.setpPhoneNo(txtPhoneNumber.getText());
+            patient.setpEmailAddress(txtEmail.getText());
             patient.setDateofBirth(txtDOB.getDate());
-            patient.setInjuryType(txtInjuryType.getText());
-            patient.setAccidentLocation(txtAccidentLocation.getText());
-            patient.setBloodType((String) BloodGroupComboBox.getSelectedItem());
-            patient.setBloodBankStatus("New Patient");
-            patient.setPharmaStatus("New Patient");
-            patient.setLabStatus("New Patient");
-            patient.setPatientStatus("New Patient");
-            patient.setUserName(txtUserName.getText());
-            patient.setPhoto_path(globalSelectedImagePath);
-            patient.setIsConcentFormSigned(IsconcentFormSigned);
-            patient.setDateOfAdmit(java.util.Calendar.getInstance().getTime());
+            patient.setpInjuryType(txtInjuryType.getText());
+            patient.setpAccidentLocation(txtAccidentLocation.getText());
+            patient.setpBloodType((String) BloodGroupComboBox.getSelectedItem());
+            patient.setpBloodBankStatus("New Patient");
+            patient.setpPharmaStatus("New Patient");
+            patient.setpLabStatus("New Patient");
+            patient.setpStatus("New Patient");
+            patient.setpUserName(txtUserName.getText());
+            patient.setpImageUrl(globalSelectedImagePath);
+            patient.setpIsConcentFormSigned(IsconcentFormSigned);
+            patient.setpDateOfAdmit(java.util.Calendar.getInstance().getTime());
             if (jRadioInsurance.isSelected()) {
-                patient.setInsuranceStatus("Insurance");
+                patient.setpInsuranceStatus("Insurance");
             } else {
-                patient.setInsuranceStatus("Cash");
+                patient.setpInsuranceStatus("Cash");
             }
 
-            ecoSystem.getUserAccountDirectory().createUserAccount(txtUserName.getText(), txtPassword.getText(), null, new PatientRole());
+            ecoSystem.getUserAccountDirectory().createUser(txtUserName.getText(), txtPassword.getText(), null, new Patient_role());
             ecoSystem.getPatientDirectory().createPatient(patient);
             for (Patient p : ecoSystem.getPatientDirectory().getPatientList()) {
-                if (p.getUserName().equals(txtUserName.getText())) {
+                if (p.getpUserName().equals(txtUserName.getText())) {
                     ecoSystem.getPatientDirectory().AddBill(p, "Bed Charge", "Hospital", "Ammount");
                 }
             }
@@ -774,7 +768,6 @@ public class CreatePatientJPanel extends javax.swing.JPanel {
     private javax.swing.JLabel lblRestaurantName5;
     private javax.swing.JTextField txtAccidentLocation;
     private javax.swing.JTextField txtAddress;
-    private com.toedter.calendar.JDateChooser txtDOB;
     private javax.swing.JTextField txtEmail;
     private javax.swing.JTextField txtFirstName;
     private javax.swing.JTextField txtHealthInsuranceID;

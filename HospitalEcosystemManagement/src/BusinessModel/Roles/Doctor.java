@@ -12,12 +12,11 @@ import BusinessModel.UserAccount.User;
  *
  * @author Your Name <Puja>
  */
-public class RoleOfInsuranceAuthority extends Role {
+public class Doctor extends Role {
 
     @Override
-    public JPanel createWorkArea(JPanel userProcessContainer, User user, Ecosystem business)
-    {
-        return new InsuranceWorkAreaJPanel(userProcessContainer, user, business);
+    public JPanel createWorkArea(JPanel userProcessContainer, User user, Ecosystem business) {
+        return new DoctorWorkAreaJPanel(userProcessContainer, user, business);
     }
     
 }

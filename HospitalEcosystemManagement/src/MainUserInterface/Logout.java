@@ -2,12 +2,11 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JPanel.java to edit this template
  */
-package MainFrame;
+package MainUserInterface;
 
-import MainUserInterface.*;
 import userinterface.PoliceDepartmentRole.*;
 import BusinessModel.Ecosystem;
-import BusinessModel.Patient.Bills;
+import BusinessModel.Patient.PatientBills;
 import BusinessModel.Patient.Patient;
 import BusinessModel.UserAccount.User;
 import java.awt.CardLayout;

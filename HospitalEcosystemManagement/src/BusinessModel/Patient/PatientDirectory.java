@@ -11,7 +11,40 @@ import java.util.ArrayList;
  * @author siddh
  */
 public class PatientDirectory {
-    private Bills bill;
-    private ArrayList<Patient> patientList;
+    
+    private PatientBills bill;
+    private ArrayList<Patient> patients;
+    
+     public PatientBills AddBill(Patient patient,String ItemName,String Org,String amount){
+        
+        bill = new PatientBills(ItemName, Org, (float) 500);
+        
+        patient.addbill(bill);
+        
+        return bill;
+    }
+    public ArrayList<Patient> getPatientList() {
+        return patients;
+    }
+
+    public void setPatientList(ArrayList<Patient> patientList) {
+        this.patients = patientList;
+    }
+    public void deletePatient(Patient p){
+        patients.remove(p);
+    }
+     public PatientDirectory()
+     {
+         patients = new ArrayList<>();
+     }
+     
+      public Patient createPatient(Patient patient) {
+        patients.add(patient);
+        return patient;
+    }
+    public float billTotal(Patient patient){
+         float billTotal = patient.totalBill();
+         return billTotal;
+    }
     
 }

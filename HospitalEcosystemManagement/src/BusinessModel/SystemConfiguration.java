@@ -5,6 +5,7 @@
 package BusinessModel;
 
 import BusinessModel.Employee.Employee;
+import BusinessModel.Roles.Administrator;
 import BusinessModel.UserAccount.User;
 
 /**
@@ -15,17 +16,18 @@ public class SystemConfiguration {
     
         public static Ecosystem configure() {
 
-        Ecosystem system = Ecosystem.getInstance();
+            Ecosystem system = Ecosystem.getInstance();
 
-        //Create a network
-        //create an enterprise
-        //initialize some organizations
-        //have some employees 
-        //create user account
-        Employee employee = system.getEmployeeDirectory().createEmployee("RRH");
+            //Create a network
+            //create an enterprise
+            //initialize some organizations
+            //have some employees 
+            //create user account
+            System.out.println("existing employees --"+system.getEmployeeDirectory());
+            Employee employee = system.getEmployeeDirectory().createEmployee("RRH");
 
-        //User ua = system.getUserAccountDirectory().createUserAccount("sysadmin", "sysadmin", employee, new SystemAdmin());
+            User ua = system.getUserAccountDirectory().createUser("sysadmin", "sysadmin", employee, new Administrator());
 
-        return system;
-    }
+            return system;
+        }
 }

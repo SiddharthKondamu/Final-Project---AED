@@ -12,7 +12,7 @@ import BusinessModel.UserAccount.User;
  *
  * @author Your Name <Puja>
  */
-public class RoleOfBloodBank extends Role {
+public class BloodBank extends Role {
 
     @Override
     public JPanel createWorkArea(JPanel userProcessContainer, User user, Ecosystem business) {
