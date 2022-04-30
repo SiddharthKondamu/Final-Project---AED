@@ -102,27 +102,27 @@ public class LabWorkAreaJPanel extends javax.swing.JPanel {
         managePatientTable2 = new javax.swing.JTable();
         jLabel5 = new javax.swing.JLabel();
 
-        setBackground(new java.awt.Color(255, 255, 255));
+        setBackground(new java.awt.Color(0, 153, 204));
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel1.setBackground(new java.awt.Color(255, 255, 255));
-        jLabel1.setFont(new java.awt.Font("Georgia", 1, 24)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(15, 85, 177));
+        jLabel1.setFont(new java.awt.Font("Microsoft JhengHei", 1, 24)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel1.setText("Laboratory Center");
-        add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 22, 1295, -1));
+        add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(-10, 30, 1295, -1));
         add(jSeparator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 79, 1295, 10));
 
-        jButton1.setBackground(new java.awt.Color(15, 85, 177));
-        jButton1.setFont(new java.awt.Font("Georgia", 1, 16)); // NOI18N
-        jButton1.setForeground(new java.awt.Color(255, 255, 255));
-        jButton1.setText("Update Available Tests Info");
+        jButton1.setBackground(new java.awt.Color(255, 255, 255));
+        jButton1.setFont(new java.awt.Font("Microsoft JhengHei", 1, 18)); // NOI18N
+        jButton1.setForeground(new java.awt.Color(0, 153, 204));
+        jButton1.setText("Available Tests Info");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton1ActionPerformed(evt);
             }
         });
-        add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(886, 350, 286, 55));
+        add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 110, 240, 50));
 
         managePatientTable1.setFont(new java.awt.Font("Trebuchet MS", 1, 12)); // NOI18N
         managePatientTable1.getTableHeader().setFont(new java.awt.Font("Trebuchet MS", 1, 16));
@@ -154,37 +154,39 @@ public class LabWorkAreaJPanel extends javax.swing.JPanel {
         });
         jScrollPane4.setViewportView(managePatientTable1);
 
-        add(jScrollPane4, new org.netbeans.lib.awtextra.AbsoluteConstraints(119, 143, 1053, 188));
+        add(jScrollPane4, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 230, 1053, 188));
 
-        jButton2.setBackground(new java.awt.Color(15, 85, 177));
-        jButton2.setFont(new java.awt.Font("Georgia", 1, 16)); // NOI18N
-        jButton2.setForeground(new java.awt.Color(255, 255, 255));
+        jButton2.setBackground(new java.awt.Color(255, 255, 255));
+        jButton2.setFont(new java.awt.Font("Microsoft JhengHei", 1, 18)); // NOI18N
+        jButton2.setForeground(new java.awt.Color(0, 153, 204));
         jButton2.setText("View Request");
         jButton2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton2ActionPerformed(evt);
             }
         });
-        add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(683, 349, 185, 57));
+        add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 430, 185, 50));
 
-        jLabel2.setFont(new java.awt.Font("Georgia", 1, 18)); // NOI18N
+        jLabel2.setFont(new java.awt.Font("Microsoft JhengHei", 1, 18)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(255, 255, 255));
         jLabel2.setText("Past Requests");
-        add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(119, 418, 163, 30));
+        add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 510, 163, 30));
 
-        jLabel3.setFont(new java.awt.Font("Georgia", 1, 18)); // NOI18N
+        jLabel3.setFont(new java.awt.Font("Microsoft JhengHei", 1, 18)); // NOI18N
+        jLabel3.setForeground(new java.awt.Color(255, 255, 255));
         jLabel3.setText("Current Requests");
-        add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(119, 100, 185, 25));
+        add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 190, 185, 25));
 
-        jButton3.setBackground(new java.awt.Color(15, 85, 177));
-        jButton3.setFont(new java.awt.Font("Georgia", 1, 16)); // NOI18N
-        jButton3.setForeground(new java.awt.Color(255, 255, 255));
+        jButton3.setBackground(new java.awt.Color(255, 255, 255));
+        jButton3.setFont(new java.awt.Font("Microsoft JhengHei", 1, 18)); // NOI18N
+        jButton3.setForeground(new java.awt.Color(0, 153, 204));
         jButton3.setText("View Request");
         jButton3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton3ActionPerformed(evt);
             }
         });
-        add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(1014, 615, 158, 53));
+        add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 700, 158, 53));
 
         managePatientTable2.setFont(new java.awt.Font("Trebuchet MS", 1, 12)); // NOI18N
         managePatientTable2.getTableHeader().setFont(new java.awt.Font("Trebuchet MS", 1, 16));
@@ -216,8 +218,9 @@ public class LabWorkAreaJPanel extends javax.swing.JPanel {
         });
         jScrollPane6.setViewportView(managePatientTable2);
 
-        add(jScrollPane6, new org.netbeans.lib.awtextra.AbsoluteConstraints(119, 460, 1053, 137));
+        add(jScrollPane6, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 550, 1053, 137));
 
+        jLabel5.setBackground(new java.awt.Color(0, 153, 204));
         jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/MainFrame/Final Image.jpg"))); // NOI18N
         add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1420, 1240));
     }// </editor-fold>//GEN-END:initComponents

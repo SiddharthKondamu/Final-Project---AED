@@ -74,11 +74,9 @@ public class DoctorVisitJPanel extends javax.swing.JPanel {
         btnRequestBlood = new javax.swing.JButton();
         btnRequestMedicine1 = new javax.swing.JButton();
         btnRequestMedicine2 = new javax.swing.JButton();
-        jLabel2 = new javax.swing.JLabel();
-        jLabel3 = new javax.swing.JLabel();
-        jLabel4 = new javax.swing.JLabel();
 
-        setBackground(new java.awt.Color(255, 255, 255));
+        setBackground(new java.awt.Color(0, 153, 204));
+        setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         BillTable.setFont(new java.awt.Font("Trebuchet MS", 1, 14)); // NOI18N
         BillTable.setModel(new javax.swing.table.DefaultTableModel(
@@ -109,144 +107,70 @@ public class DoctorVisitJPanel extends javax.swing.JPanel {
         });
         jScrollPane1.setViewportView(BillTable);
 
-        jLabel1.setBackground(new java.awt.Color(255, 204, 153));
-        jLabel1.setFont(new java.awt.Font("Trebuchet MS", 1, 24)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(15, 85, 177));
+        add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 150, 1420, 191));
+        add(jSeparator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 126, 1402, 10));
+
+        jLabel1.setBackground(new java.awt.Color(0, 153, 204));
+        jLabel1.setFont(new java.awt.Font("Microsoft JhengHei", 1, 36)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel1.setText("Patient History");
+        add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 55, 1382, 60));
 
-        btnRequestLabTests.setBackground(new java.awt.Color(15, 85, 177));
-        btnRequestLabTests.setFont(new java.awt.Font("Trebuchet MS", 1, 14)); // NOI18N
-        btnRequestLabTests.setForeground(new java.awt.Color(255, 255, 255));
+        btnRequestLabTests.setBackground(new java.awt.Color(255, 255, 255));
+        btnRequestLabTests.setFont(new java.awt.Font("Microsoft JhengHei", 1, 18)); // NOI18N
+        btnRequestLabTests.setForeground(new java.awt.Color(0, 153, 204));
         btnRequestLabTests.setText("Request Lab Tests");
         btnRequestLabTests.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnRequestLabTestsActionPerformed(evt);
             }
         });
+        add(btnRequestLabTests, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 370, 200, 60));
 
-        btnRequestMedicine.setBackground(new java.awt.Color(15, 85, 177));
-        btnRequestMedicine.setFont(new java.awt.Font("Trebuchet MS", 1, 14)); // NOI18N
-        btnRequestMedicine.setForeground(new java.awt.Color(255, 255, 255));
+        btnRequestMedicine.setBackground(new java.awt.Color(255, 255, 255));
+        btnRequestMedicine.setFont(new java.awt.Font("Microsoft JhengHei", 1, 18)); // NOI18N
+        btnRequestMedicine.setForeground(new java.awt.Color(0, 153, 204));
         btnRequestMedicine.setText("Request Medicines");
         btnRequestMedicine.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnRequestMedicineActionPerformed(evt);
             }
         });
+        add(btnRequestMedicine, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 370, 200, 60));
 
-        btnRequestBlood.setBackground(new java.awt.Color(15, 85, 177));
-        btnRequestBlood.setFont(new java.awt.Font("Trebuchet MS", 1, 14)); // NOI18N
-        btnRequestBlood.setForeground(new java.awt.Color(255, 255, 255));
+        btnRequestBlood.setBackground(new java.awt.Color(255, 255, 255));
+        btnRequestBlood.setFont(new java.awt.Font("Microsoft JhengHei", 1, 18)); // NOI18N
+        btnRequestBlood.setForeground(new java.awt.Color(0, 153, 204));
         btnRequestBlood.setText("Request Blood");
         btnRequestBlood.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnRequestBloodActionPerformed(evt);
             }
         });
+        add(btnRequestBlood, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 370, 170, 60));
 
-        btnRequestMedicine1.setBackground(new java.awt.Color(15, 85, 177));
-        btnRequestMedicine1.setFont(new java.awt.Font("Trebuchet MS", 1, 14)); // NOI18N
-        btnRequestMedicine1.setForeground(new java.awt.Color(255, 255, 255));
+        btnRequestMedicine1.setBackground(new java.awt.Color(255, 255, 255));
+        btnRequestMedicine1.setFont(new java.awt.Font("Microsoft JhengHei", 1, 18)); // NOI18N
+        btnRequestMedicine1.setForeground(new java.awt.Color(0, 153, 204));
         btnRequestMedicine1.setText("Ready to Discharge");
         btnRequestMedicine1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnRequestMedicine1ActionPerformed(evt);
             }
         });
+        add(btnRequestMedicine1, new org.netbeans.lib.awtextra.AbsoluteConstraints(1030, 380, 220, 50));
 
-        btnRequestMedicine2.setBackground(new java.awt.Color(15, 85, 177));
-        btnRequestMedicine2.setFont(new java.awt.Font("Trebuchet MS", 1, 14)); // NOI18N
-        btnRequestMedicine2.setForeground(new java.awt.Color(255, 255, 255));
+        btnRequestMedicine2.setBackground(new java.awt.Color(255, 255, 255));
+        btnRequestMedicine2.setFont(new java.awt.Font("Microsoft JhengHei", 1, 18)); // NOI18N
+        btnRequestMedicine2.setForeground(new java.awt.Color(0, 153, 204));
         btnRequestMedicine2.setText("End Visit");
         btnRequestMedicine2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnRequestMedicine2ActionPerformed(evt);
             }
         });
-
-        jLabel2.setBackground(new java.awt.Color(255, 255, 255));
-        jLabel2.setFont(new java.awt.Font("Trebuchet MS", 1, 24)); // NOI18N
-        jLabel2.setForeground(new java.awt.Color(15, 85, 177));
-        jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel2.setText("Prescriptions");
-
-        jLabel3.setFont(new java.awt.Font("Trebuchet MS", 1, 24)); // NOI18N
-        jLabel3.setForeground(new java.awt.Color(15, 85, 177));
-        jLabel3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel3.setText("Status");
-
-        jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/userinterface/DoctorRole/patient-history.gif"))); // NOI18N
-
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
-        this.setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jSeparator1, javax.swing.GroupLayout.Alignment.TRAILING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jScrollPane1)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(9, 9, 9)
-                                .addComponent(btnRequestLabTests, javax.swing.GroupLayout.PREFERRED_SIZE, 198, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(26, 26, 26)
-                                .addComponent(btnRequestMedicine, javax.swing.GroupLayout.PREFERRED_SIZE, 137, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(18, 18, 18)
-                                .addComponent(btnRequestBlood, javax.swing.GroupLayout.PREFERRED_SIZE, 138, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 330, Short.MAX_VALUE)
-                                .addComponent(btnRequestMedicine1)
-                                .addGap(62, 62, 62)
-                                .addComponent(btnRequestMedicine2, javax.swing.GroupLayout.PREFERRED_SIZE, 141, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(47, 47, 47)))
-                        .addContainerGap())))
-            .addGroup(layout.createSequentialGroup()
-                .addGap(286, 286, 286)
-                .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 186, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 116, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(173, 173, 173))
-            .addGroup(layout.createSequentialGroup()
-                .addGap(385, 385, 385)
-                .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 449, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
-
-        layout.linkSize(javax.swing.SwingConstants.HORIZONTAL, new java.awt.Component[] {btnRequestBlood, btnRequestLabTests, btnRequestMedicine});
-
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(86, 86, 86)
-                .addComponent(jLabel1)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 191, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(33, 33, 33)
-                        .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(130, 130, 130)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(btnRequestMedicine1, javax.swing.GroupLayout.PREFERRED_SIZE, 59, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(btnRequestMedicine2, javax.swing.GroupLayout.PREFERRED_SIZE, 59, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addGroup(layout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(53, 53, 53)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(btnRequestLabTests, javax.swing.GroupLayout.PREFERRED_SIZE, 68, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(btnRequestMedicine, javax.swing.GroupLayout.PREFERRED_SIZE, 68, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(btnRequestBlood, javax.swing.GroupLayout.PREFERRED_SIZE, 68, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 269, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(190, Short.MAX_VALUE))
-        );
+        add(btnRequestMedicine2, new org.netbeans.lib.awtextra.AbsoluteConstraints(1270, 380, 120, 50));
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnRequestLabTestsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRequestLabTestsActionPerformed
@@ -305,9 +229,6 @@ public class DoctorVisitJPanel extends javax.swing.JPanel {
     private javax.swing.JButton btnRequestMedicine1;
     private javax.swing.JButton btnRequestMedicine2;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JSeparator jSeparator1;
     // End of variables declaration//GEN-END:variables

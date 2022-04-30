@@ -113,16 +113,18 @@ public class DoctorRequestLabTestJPanel extends javax.swing.JPanel {
         btnRemoveTest = new javax.swing.JButton();
         Request = new javax.swing.JButton();
         Request1 = new javax.swing.JButton();
+        jLabel2 = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
 
-        setBackground(new java.awt.Color(255, 255, 255));
+        setBackground(new java.awt.Color(0, 153, 204));
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel1.setBackground(new java.awt.Color(255, 255, 255));
-        jLabel1.setFont(new java.awt.Font("Georgia", 1, 36)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(15, 85, 177));
+        jLabel1.setFont(new java.awt.Font("Microsoft JhengHei", 1, 36)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel1.setText("Request Lab Tests");
-        add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(-40, 30, 1380, -1));
+        add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 10, 500, 60));
 
         carttable.setFont(new java.awt.Font("Trebuchet MS", 1, 14)); // NOI18N
         carttable.setModel(new javax.swing.table.DefaultTableModel(
@@ -153,7 +155,7 @@ public class DoctorRequestLabTestJPanel extends javax.swing.JPanel {
         });
         jScrollPane1.setViewportView(carttable);
 
-        add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 300, 1400, 110));
+        add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(690, 160, 430, 210));
 
         tableTests1.setFont(new java.awt.Font("Trebuchet MS", 1, 14)); // NOI18N
         tableTests1.setModel(new javax.swing.table.DefaultTableModel(
@@ -184,51 +186,61 @@ public class DoctorRequestLabTestJPanel extends javax.swing.JPanel {
         });
         jScrollPane2.setViewportView(tableTests1);
 
-        add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 80, 1400, 130));
+        add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 160, 410, 210));
 
-        btnAddTest.setBackground(new java.awt.Color(15, 85, 177));
-        btnAddTest.setFont(new java.awt.Font("Georgia", 1, 14)); // NOI18N
-        btnAddTest.setForeground(new java.awt.Color(255, 255, 255));
-        btnAddTest.setText("ADD TEST");
+        btnAddTest.setBackground(new java.awt.Color(255, 255, 255));
+        btnAddTest.setFont(new java.awt.Font("Microsoft JhengHei", 1, 12)); // NOI18N
+        btnAddTest.setForeground(new java.awt.Color(0, 153, 204));
+        btnAddTest.setText("ADD >>");
         btnAddTest.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnAddTestActionPerformed(evt);
             }
         });
-        add(btnAddTest, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 230, 170, 50));
+        add(btnAddTest, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 210, 110, 50));
 
-        btnRemoveTest.setBackground(new java.awt.Color(15, 85, 177));
-        btnRemoveTest.setFont(new java.awt.Font("Georgia", 1, 14)); // NOI18N
-        btnRemoveTest.setForeground(new java.awt.Color(255, 255, 255));
-        btnRemoveTest.setText("REMOVE TEST");
+        btnRemoveTest.setBackground(new java.awt.Color(255, 255, 255));
+        btnRemoveTest.setFont(new java.awt.Font("Microsoft JhengHei", 1, 12)); // NOI18N
+        btnRemoveTest.setForeground(new java.awt.Color(0, 153, 204));
+        btnRemoveTest.setText("<< REMOVE ");
         btnRemoveTest.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnRemoveTestActionPerformed(evt);
             }
         });
-        add(btnRemoveTest, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 450, 170, 50));
+        add(btnRemoveTest, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 270, 120, 50));
 
-        Request.setBackground(new java.awt.Color(15, 85, 177));
-        Request.setFont(new java.awt.Font("Georgia", 1, 14)); // NOI18N
-        Request.setForeground(new java.awt.Color(255, 255, 255));
-        Request.setText("REQUEST >>");
+        Request.setBackground(new java.awt.Color(255, 255, 255));
+        Request.setFont(new java.awt.Font("Microsoft JhengHei", 1, 14)); // NOI18N
+        Request.setForeground(new java.awt.Color(0, 153, 204));
+        Request.setText("REQUEST TESTS");
         Request.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 RequestActionPerformed(evt);
             }
         });
-        add(Request, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 540, 141, 60));
+        add(Request, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 420, 170, 50));
 
-        Request1.setBackground(new java.awt.Color(15, 85, 177));
-        Request1.setFont(new java.awt.Font("Trebuchet MS", 1, 14)); // NOI18N
-        Request1.setForeground(new java.awt.Color(255, 255, 255));
-        Request1.setText("<< BACK");
+        Request1.setBackground(new java.awt.Color(255, 255, 255));
+        Request1.setFont(new java.awt.Font("Microsoft JhengHei", 1, 14)); // NOI18N
+        Request1.setForeground(new java.awt.Color(0, 153, 204));
+        Request1.setText("BACK");
         Request1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 Request1ActionPerformed(evt);
             }
         });
-        add(Request1, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 560, 110, 40));
+        add(Request1, new org.netbeans.lib.awtextra.AbsoluteConstraints(890, 20, 110, 40));
+
+        jLabel2.setFont(new java.awt.Font("Microsoft JhengHei", 1, 14)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel2.setText("Available Tests");
+        add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 130, -1, -1));
+
+        jLabel3.setFont(new java.awt.Font("Microsoft JhengHei", 1, 14)); // NOI18N
+        jLabel3.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel3.setText("Selected Tests");
+        add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(890, 130, -1, -1));
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnAddTestActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAddTestActionPerformed
@@ -315,6 +327,8 @@ public class DoctorRequestLabTestJPanel extends javax.swing.JPanel {
     private javax.swing.JButton btnRemoveTest;
     private javax.swing.JTable carttable;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JTable tableTests1;

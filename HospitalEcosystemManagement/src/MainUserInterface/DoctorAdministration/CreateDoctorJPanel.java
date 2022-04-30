@@ -22,7 +22,7 @@ import javax.swing.JFileChooser;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.filechooser.FileNameExtensionFilter;
-import userinterface.ReceptionRole.ReceptionWorkAreaJPanel;
+import MainUserInterface.ReceptionRole.ReceptionWorkAreaJPanel;
 
 /**
  *
@@ -34,11 +34,11 @@ public class CreateDoctorJPanel extends javax.swing.JPanel {
      * Creates new form DoctorAdministratorWorkAreaJPanel
      */
     private final JPanel userProcessContainer;
-    private final EcoSystem ecoSystem;
-    UserAccount userAccount;
+    private final Ecosystem ecoSystem;
+    User userAccount;
     private Doctor photoDoctor;
 
-    public CreateDoctorJPanel(JPanel userProcessContainer, UserAccount user, EcoSystem system) {
+    public CreateDoctorJPanel(JPanel userProcessContainer, User user, Ecosystem system) {
         initComponents();
         this.userAccount = user;
         this.userProcessContainer = userProcessContainer;
@@ -57,7 +57,7 @@ public class CreateDoctorJPanel extends javax.swing.JPanel {
         // DefaultTableModel model = (DefaultTableModel) ManageCustomersTable.getModel();
 
         //model.setRowCount(0);
-        for (UserAccount user : ecoSystem.getUserAccountDirectory().getUserAccountList()) {
+        for (User user : ecoSystem.getUserAccountDirectory().getUserAccountList()) {
 
             if ("Business.Role.DoctorRole".equals(user.getRole().getClass().getName())) {
                 Object[] row = new Object[3];
@@ -491,20 +491,20 @@ public class CreateDoctorJPanel extends javax.swing.JPanel {
                 && (ErrorUserNameLbl.getText() == null || ErrorUserNameLbl.getText().equals(""))     
                 ) {
             Doctor doctor = new Doctor(Passwordtxt.getText());
-            doctor.setDoctorFirstName(FirstNameTxt.getText());
-            doctor.setDoctorLasttName(LastNameTxt.getText());
-            doctor.setDoctorAge((CalculateAge(DOBTxt.getDate(), java.util.Calendar.getInstance().getTime())));
-            doctor.setDoctorGender((String) GComboBox.getSelectedItem());
-            doctor.setDoctorWorkID(txtDoctorID.getText());
-            doctor.setDoctorAddress(AddressTxt.getText());
-            doctor.setDoctorPhoneNumber(PhoneNumberTxt.getText());
+            doctor.setdFirstName(FirstNameTxt.getText());
+            doctor.setdLastName(LastNameTxt.getText());
+            doctor.setdAge((CalculateAge(DOBTxt.getDate(), java.util.Calendar.getInstance().getTime())));
+            doctor.setdGender((String) GComboBox.getSelectedItem());
+            doctor.setdWorkID(txtDoctorID.getText());
+            doctor.setdAddress(AddressTxt.getText());
+            doctor.setdPhoneNumber(PhoneNumberTxt.getText());
             //doctor.setDateofBirth(txtDateOfBirth.getText());
-            doctor.setEmailAddress(EmailTxt.getText());
-            doctor.setSpecialist(SpecialistTxt.getText());
-            doctor.setExperience(ExperienceTxt.getText());
-            doctor.setUserName(Passwordtxt.getText());
+            doctor.setdEmail(EmailTxt.getText());
+            doctor.setdSpecialization(SpecialistTxt.getText());
+            doctor.setdExperience(ExperienceTxt.getText());
+            doctor.setdUserName(Passwordtxt.getText());
             photoDoctor = doctor;
-            ecoSystem.getUserAccountDirectory().createUserAccount(Passwordtxt.getText(), PasswordTxt.getText(), null, new DoctorRole());
+            ecoSystem.getUserAccountDirectory().createUser(Passwordtxt.getText(), PasswordTxt.getText(), null, new Doctor_role());
             ecoSystem.getDoctorDirectory().createDoctor(doctor);
             JOptionPane.showMessageDialog(null, "Doctor added.");
             
