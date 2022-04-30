@@ -216,7 +216,7 @@ public class PharmacyCRUDJpanel extends javax.swing.JPanel {
         add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(1021, 483, 213, 32));
         add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(1021, 543, 213, 32));
 
-        jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/userinterface/PharmacyRole/pharmacy.gif"))); // NOI18N
+        jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/MainUserInterface/Images/pharmacy.gif"))); // NOI18N
         add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(128, 381, 480, 350));
 
         jButton2.setBackground(new java.awt.Color(255, 255, 255));
