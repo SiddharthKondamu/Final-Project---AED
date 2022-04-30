@@ -3,12 +3,12 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package userinterface.DoctorAdministratorRole;
+package MainUserInterface.DoctorAdministration;
 
-import Business.Doctor.Doctor;
-import Business.EcoSystem;
-import Business.Patient.Patient;
-import Business.UserAccount.UserAccount;
+import BusinessModel.Doctor.Doctor;
+import BusinessModel.Ecosystem;
+import BusinessModel.Patient.Patient;
+import BusinessModel.UserAccount.User;
 import java.awt.CardLayout;
 import java.awt.Image;
 import java.text.SimpleDateFormat;
@@ -16,7 +16,7 @@ import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.table.DefaultTableModel;
-import userinterface.AmbulanceRole.DisplayAmbulancePatientJPanel;
+import MainUserInterface.Ambulance.DisplayAmbulancePatientJPanel;
 
 /**
  *
@@ -28,11 +28,11 @@ public class DisplayPatientInfoJPanel extends javax.swing.JPanel {
      * Creates new form DisplayPatientInfoJPanel
      */
     private final JPanel userProcessContainer;
-    private final EcoSystem ecoSystem;
+    private final Ecosystem ecoSystem;
     private final Patient patient;
-    UserAccount userAccount;
+    User userAccount;
 
-    public DisplayPatientInfoJPanel(JPanel userProcessContainer, UserAccount account, EcoSystem system, Patient patient) {
+    public DisplayPatientInfoJPanel(JPanel userProcessContainer, User account, Ecosystem system, Patient patient) {
         initComponents();
         this.userProcessContainer = userProcessContainer;
         this.ecoSystem = system;
@@ -80,188 +80,200 @@ public class DisplayPatientInfoJPanel extends javax.swing.JPanel {
         jScrollPane1 = new javax.swing.JScrollPane();
         DoctorTable = new javax.swing.JTable();
         lblPhotoImage = new javax.swing.JLabel();
-        lblPhoto = new javax.swing.JLabel();
         btnBack = new javax.swing.JButton();
-        jLabel5 = new javax.swing.JLabel();
+        jLabel1 = new javax.swing.JLabel();
 
+        setBackground(new java.awt.Color(0, 153, 204));
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         txtPhoneNumber.setEditable(false);
-        txtPhoneNumber.setBackground(new java.awt.Color(204, 204, 204));
+        txtPhoneNumber.setBackground(new java.awt.Color(255, 255, 255));
         txtPhoneNumber.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtPhoneNumberActionPerformed(evt);
             }
         });
-        add(txtPhoneNumber, new org.netbeans.lib.awtextra.AbsoluteConstraints(740, 120, 150, -1));
+        add(txtPhoneNumber, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 280, 150, 30));
 
         txtInjuryType.setEditable(false);
-        txtInjuryType.setBackground(new java.awt.Color(204, 204, 204));
+        txtInjuryType.setBackground(new java.awt.Color(255, 255, 255));
         txtInjuryType.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtInjuryTypeActionPerformed(evt);
             }
         });
-        add(txtInjuryType, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 230, 150, -1));
+        add(txtInjuryType, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 410, 150, 30));
 
         lblPatientAge.setBackground(new java.awt.Color(255, 255, 255));
-        lblPatientAge.setFont(new java.awt.Font("Georgia", 1, 18)); // NOI18N
+        lblPatientAge.setFont(new java.awt.Font("Microsoft JhengHei", 1, 18)); // NOI18N
+        lblPatientAge.setForeground(new java.awt.Color(255, 255, 255));
         lblPatientAge.setText("Age");
-        add(lblPatientAge, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 90, -1, -1));
+        add(lblPatientAge, new org.netbeans.lib.awtextra.AbsoluteConstraints(650, 130, -1, -1));
 
         lblPhoneNumber5.setBackground(new java.awt.Color(255, 255, 255));
-        lblPhoneNumber5.setFont(new java.awt.Font("Georgia", 1, 18)); // NOI18N
+        lblPhoneNumber5.setFont(new java.awt.Font("Microsoft JhengHei", 1, 18)); // NOI18N
+        lblPhoneNumber5.setForeground(new java.awt.Color(255, 255, 255));
         lblPhoneNumber5.setText("Date of Admit ");
-        add(lblPhoneNumber5, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 200, -1, -1));
+        add(lblPhoneNumber5, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 390, -1, 20));
 
         lblPatientFirstName.setBackground(new java.awt.Color(255, 255, 255));
-        lblPatientFirstName.setFont(new java.awt.Font("Georgia", 1, 18)); // NOI18N
+        lblPatientFirstName.setFont(new java.awt.Font("Microsoft JhengHei", 1, 18)); // NOI18N
+        lblPatientFirstName.setForeground(new java.awt.Color(255, 255, 255));
         lblPatientFirstName.setText("First Name");
-        add(lblPatientFirstName, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 90, -1, -1));
+        add(lblPatientFirstName, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 130, -1, -1));
 
         txtDateOfBirth.setEditable(false);
-        txtDateOfBirth.setBackground(new java.awt.Color(204, 204, 204));
+        txtDateOfBirth.setBackground(new java.awt.Color(255, 255, 255));
         txtDateOfBirth.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtDateOfBirthActionPerformed(evt);
             }
         });
-        add(txtDateOfBirth, new org.netbeans.lib.awtextra.AbsoluteConstraints(910, 120, 130, 20));
+        add(txtDateOfBirth, new org.netbeans.lib.awtextra.AbsoluteConstraints(660, 280, 140, 30));
 
         lblPatientLastName.setBackground(new java.awt.Color(255, 255, 255));
-        lblPatientLastName.setFont(new java.awt.Font("Georgia", 1, 18)); // NOI18N
+        lblPatientLastName.setFont(new java.awt.Font("Microsoft JhengHei", 1, 18)); // NOI18N
+        lblPatientLastName.setForeground(new java.awt.Color(255, 255, 255));
         lblPatientLastName.setText("Last Name");
-        add(lblPatientLastName, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 90, -1, -1));
+        add(lblPatientLastName, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 130, -1, -1));
 
         txtFirstName.setEditable(false);
-        txtFirstName.setBackground(new java.awt.Color(204, 204, 204));
-        add(txtFirstName, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 120, 150, -1));
+        txtFirstName.setBackground(new java.awt.Color(255, 255, 255));
+        add(txtFirstName, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 160, 160, 30));
 
         lblDOB.setBackground(new java.awt.Color(255, 255, 255));
-        lblDOB.setFont(new java.awt.Font("Georgia", 1, 18)); // NOI18N
+        lblDOB.setFont(new java.awt.Font("Microsoft JhengHei", 1, 18)); // NOI18N
+        lblDOB.setForeground(new java.awt.Color(255, 255, 255));
         lblDOB.setText("Date of Birth");
-        add(lblDOB, new org.netbeans.lib.awtextra.AbsoluteConstraints(910, 90, -1, -1));
+        add(lblDOB, new org.netbeans.lib.awtextra.AbsoluteConstraints(660, 250, -1, -1));
 
         lblEmail.setBackground(new java.awt.Color(255, 255, 255));
-        lblEmail.setFont(new java.awt.Font("Georgia", 1, 18)); // NOI18N
+        lblEmail.setFont(new java.awt.Font("Microsoft JhengHei", 1, 18)); // NOI18N
+        lblEmail.setForeground(new java.awt.Color(255, 255, 255));
         lblEmail.setText("Email");
-        add(lblEmail, new org.netbeans.lib.awtextra.AbsoluteConstraints(1100, 90, -1, -1));
+        add(lblEmail, new org.netbeans.lib.awtextra.AbsoluteConstraints(840, 250, -1, 20));
 
         txtAddress.setEditable(false);
-        txtAddress.setBackground(new java.awt.Color(204, 204, 204));
+        txtAddress.setBackground(new java.awt.Color(255, 255, 255));
         txtAddress.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtAddressActionPerformed(evt);
             }
         });
-        add(txtAddress, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 120, 150, -1));
+        add(txtAddress, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 280, 160, 70));
 
         txtEmail.setEditable(false);
-        txtEmail.setBackground(new java.awt.Color(204, 204, 204));
+        txtEmail.setBackground(new java.awt.Color(255, 255, 255));
         txtEmail.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtEmailActionPerformed(evt);
             }
         });
-        add(txtEmail, new org.netbeans.lib.awtextra.AbsoluteConstraints(1060, 120, 150, -1));
+        add(txtEmail, new org.netbeans.lib.awtextra.AbsoluteConstraints(840, 280, 150, 30));
 
         lblPatientAddress.setBackground(new java.awt.Color(255, 255, 255));
-        lblPatientAddress.setFont(new java.awt.Font("Georgia", 1, 18)); // NOI18N
+        lblPatientAddress.setFont(new java.awt.Font("Microsoft JhengHei", 1, 18)); // NOI18N
+        lblPatientAddress.setForeground(new java.awt.Color(255, 255, 255));
         lblPatientAddress.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lblPatientAddress.setText("Address");
-        add(lblPatientAddress, new org.netbeans.lib.awtextra.AbsoluteConstraints(620, 90, -1, -1));
+        add(lblPatientAddress, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 250, -1, -1));
 
         txtBloodGroup.setEditable(false);
-        txtBloodGroup.setBackground(new java.awt.Color(204, 204, 204));
+        txtBloodGroup.setBackground(new java.awt.Color(255, 255, 255));
         txtBloodGroup.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtBloodGroupActionPerformed(evt);
             }
         });
-        add(txtBloodGroup, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 230, 150, -1));
+        add(txtBloodGroup, new org.netbeans.lib.awtextra.AbsoluteConstraints(670, 410, 150, 30));
 
         txtDateOfAdmit.setEditable(false);
-        txtDateOfAdmit.setBackground(new java.awt.Color(204, 204, 204));
+        txtDateOfAdmit.setBackground(new java.awt.Color(255, 255, 255));
         txtDateOfAdmit.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtDateOfAdmitActionPerformed(evt);
             }
         });
-        add(txtDateOfAdmit, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 230, 150, -1));
+        add(txtDateOfAdmit, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 410, 160, 30));
 
         txtPatientStatus.setEditable(false);
-        txtPatientStatus.setBackground(new java.awt.Color(204, 204, 204));
+        txtPatientStatus.setBackground(new java.awt.Color(255, 255, 255));
         txtPatientStatus.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtPatientStatusActionPerformed(evt);
             }
         });
-        add(txtPatientStatus, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 230, 150, -1));
+        add(txtPatientStatus, new org.netbeans.lib.awtextra.AbsoluteConstraints(850, 410, 150, 30));
 
         lblPatientGender.setBackground(new java.awt.Color(255, 255, 255));
-        lblPatientGender.setFont(new java.awt.Font("Georgia", 1, 18)); // NOI18N
+        lblPatientGender.setFont(new java.awt.Font("Microsoft JhengHei", 1, 18)); // NOI18N
+        lblPatientGender.setForeground(new java.awt.Color(255, 255, 255));
         lblPatientGender.setText("Gender");
-        add(lblPatientGender, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 90, -1, -1));
+        add(lblPatientGender, new org.netbeans.lib.awtextra.AbsoluteConstraints(830, 130, -1, -1));
 
         lblPatientPhone.setBackground(new java.awt.Color(255, 255, 255));
-        lblPatientPhone.setFont(new java.awt.Font("Georgia", 1, 18)); // NOI18N
+        lblPatientPhone.setFont(new java.awt.Font("Microsoft JhengHei", 1, 18)); // NOI18N
+        lblPatientPhone.setForeground(new java.awt.Color(255, 255, 255));
         lblPatientPhone.setText("Phone Number");
-        add(lblPatientPhone, new org.netbeans.lib.awtextra.AbsoluteConstraints(740, 90, -1, -1));
+        add(lblPatientPhone, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 250, -1, -1));
 
         lblDisplayPatient.setBackground(new java.awt.Color(255, 255, 255));
-        lblDisplayPatient.setFont(new java.awt.Font("Georgia", 1, 36)); // NOI18N
-        lblDisplayPatient.setForeground(new java.awt.Color(15, 85, 177));
+        lblDisplayPatient.setFont(new java.awt.Font("Microsoft JhengHei", 1, 36)); // NOI18N
+        lblDisplayPatient.setForeground(new java.awt.Color(255, 255, 255));
         lblDisplayPatient.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        lblDisplayPatient.setText("Display Patient");
-        add(lblDisplayPatient, new org.netbeans.lib.awtextra.AbsoluteConstraints(-50, 10, 1394, 82));
+        lblDisplayPatient.setText("Patient Details");
+        add(lblDisplayPatient, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 10, 900, 82));
 
         lblAddress4.setBackground(new java.awt.Color(255, 255, 255));
-        lblAddress4.setFont(new java.awt.Font("Georgia", 1, 18)); // NOI18N
+        lblAddress4.setFont(new java.awt.Font("Microsoft JhengHei", 1, 18)); // NOI18N
+        lblAddress4.setForeground(new java.awt.Color(255, 255, 255));
         lblAddress4.setText("Blood Group");
-        add(lblAddress4, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 200, -1, -1));
+        add(lblAddress4, new org.netbeans.lib.awtextra.AbsoluteConstraints(670, 390, -1, 20));
 
-        btnAssignDoctor.setBackground(new java.awt.Color(15, 85, 177));
-        btnAssignDoctor.setFont(new java.awt.Font("Trebuchet MS", 1, 18)); // NOI18N
-        btnAssignDoctor.setForeground(new java.awt.Color(255, 255, 255));
+        btnAssignDoctor.setBackground(new java.awt.Color(255, 255, 255));
+        btnAssignDoctor.setFont(new java.awt.Font("Microsoft JhengHei", 1, 18)); // NOI18N
+        btnAssignDoctor.setForeground(new java.awt.Color(0, 153, 204));
         btnAssignDoctor.setText("Assign Doctor");
         btnAssignDoctor.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnAssignDoctorActionPerformed(evt);
             }
         });
-        add(btnAssignDoctor, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 720, -1, 48));
+        add(btnAssignDoctor, new org.netbeans.lib.awtextra.AbsoluteConstraints(620, 810, -1, 48));
 
         lblPatientStatus.setBackground(new java.awt.Color(255, 255, 255));
-        lblPatientStatus.setFont(new java.awt.Font("Georgia", 1, 18)); // NOI18N
+        lblPatientStatus.setFont(new java.awt.Font("Microsoft JhengHei", 1, 18)); // NOI18N
+        lblPatientStatus.setForeground(new java.awt.Color(255, 255, 255));
         lblPatientStatus.setText("Patient Status");
-        add(lblPatientStatus, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 200, -1, -1));
+        add(lblPatientStatus, new org.netbeans.lib.awtextra.AbsoluteConstraints(850, 390, -1, 20));
 
         txtGender.setEditable(false);
-        txtGender.setBackground(new java.awt.Color(204, 204, 204));
-        add(txtGender, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 120, 110, 20));
+        txtGender.setBackground(new java.awt.Color(255, 255, 255));
+        add(txtGender, new org.netbeans.lib.awtextra.AbsoluteConstraints(830, 160, 140, 30));
 
         lblPhoneNumber4.setBackground(new java.awt.Color(255, 255, 255));
-        lblPhoneNumber4.setFont(new java.awt.Font("Georgia", 1, 18)); // NOI18N
+        lblPhoneNumber4.setFont(new java.awt.Font("Microsoft JhengHei", 1, 18)); // NOI18N
+        lblPhoneNumber4.setForeground(new java.awt.Color(255, 255, 255));
         lblPhoneNumber4.setText("Injury Type");
-        add(lblPhoneNumber4, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 200, -1, -1));
+        add(lblPhoneNumber4, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 390, -1, 20));
 
         txtAge.setEditable(false);
-        txtAge.setBackground(new java.awt.Color(204, 204, 204));
+        txtAge.setBackground(new java.awt.Color(255, 255, 255));
         txtAge.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtAgeActionPerformed(evt);
             }
         });
-        add(txtAge, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 120, 80, 20));
+        add(txtAge, new org.netbeans.lib.awtextra.AbsoluteConstraints(650, 160, 130, 30));
 
         txtLastName.setEditable(false);
-        txtLastName.setBackground(new java.awt.Color(204, 204, 204));
+        txtLastName.setBackground(new java.awt.Color(255, 255, 255));
         txtLastName.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtLastNameActionPerformed(evt);
             }
         });
-        add(txtLastName, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 120, 150, -1));
+        add(txtLastName, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 160, 170, 30));
 
         DoctorTable.setFont(new java.awt.Font("Georgia", 1, 14)); // NOI18N
         DoctorTable.getTableHeader().setFont(new java.awt.Font("Trebuchet", 1, 16));
@@ -293,27 +305,26 @@ public class DisplayPatientInfoJPanel extends javax.swing.JPanel {
         });
         jScrollPane1.setViewportView(DoctorTable);
 
-        add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 490, 1400, 170));
-        add(lblPhotoImage, new org.netbeans.lib.awtextra.AbsoluteConstraints(910, 270, 140, 136));
+        add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 600, 1400, 170));
 
-        lblPhoto.setBackground(new java.awt.Color(255, 255, 255));
-        lblPhoto.setFont(new java.awt.Font("Georgia", 1, 18)); // NOI18N
-        lblPhoto.setText("Photo");
-        add(lblPhoto, new org.netbeans.lib.awtextra.AbsoluteConstraints(790, 230, -1, -1));
+        lblPhotoImage.setText("Patient Image");
+        add(lblPhotoImage, new org.netbeans.lib.awtextra.AbsoluteConstraints(1080, 160, 200, 200));
 
-        btnBack.setBackground(new java.awt.Color(15, 85, 177));
-        btnBack.setFont(new java.awt.Font("Trebuchet MS", 1, 18)); // NOI18N
-        btnBack.setForeground(new java.awt.Color(255, 255, 255));
+        btnBack.setBackground(new java.awt.Color(255, 255, 255));
+        btnBack.setFont(new java.awt.Font("Microsoft JhengHei", 1, 18)); // NOI18N
+        btnBack.setForeground(new java.awt.Color(0, 153, 204));
         btnBack.setText("Back");
         btnBack.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnBackActionPerformed(evt);
             }
         });
-        add(btnBack, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 840, 160, 48));
+        add(btnBack, new org.netbeans.lib.awtextra.AbsoluteConstraints(1160, 30, 120, -1));
 
-        jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/MainFrame/Final Image.jpg"))); // NOI18N
-        add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(-40, -20, 1480, 1010));
+        jLabel1.setFont(new java.awt.Font("Microsoft JhengHei", 1, 36)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel1.setText("Available doctors");
+        add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 530, 360, -1));
     }// </editor-fold>//GEN-END:initComponents
 
     private void txtInjuryTypeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtInjuryTypeActionPerformed
@@ -389,16 +400,16 @@ public class DisplayPatientInfoJPanel extends javax.swing.JPanel {
 
         model.setRowCount(0);
 
-        for (Doctor Doctor : ecoSystem.getDoctorDirectory().getDoctorList()) {
+        for (Doctor Doctor : ecoSystem.getDoctorDirectory().getDoctors()) {
 
             Object[] row = new Object[9];
             row[0] = Doctor;
-            row[1] = Doctor.getDoctorLasttName();
-            row[2] = Doctor.getDoctorWorkID();
-            row[3] = Doctor.getDoctorAddress();
-            row[4] = Doctor.getDoctorAge();
-            row[5] = Doctor.getDoctorGender();
-            row[6] = Doctor.getEmailAddress();
+            row[1] = Doctor.getdLastName();
+            row[2] = Doctor.getdWorkID();
+            row[3] = Doctor.getdAddress();
+            row[4] = Doctor.getdAge();
+            row[5] = Doctor.getdGender();
+            row[6] = Doctor.getdEmail();
 
             model.addRow(row);
 
@@ -407,27 +418,27 @@ public class DisplayPatientInfoJPanel extends javax.swing.JPanel {
 
      private void populatePatientInfo() {
         
-        txtFirstName.setText(patient.getPatientFirstName());
-        txtLastName.setText(patient.getPatientLastName());
-        txtAge.setText(Integer.toString(patient.getAge()));
-        txtGender.setText(patient.getGender());
-        txtAddress.setText(patient.getPatientaddress());
-        txtPhoneNumber.setText(patient.getPatientPhoneNumber());
-        txtEmail.setText(patient.getEmailAddress());
-        if(patient.getDateofBirth() != null)
+        txtFirstName.setText(patient.getpFirstName());
+        txtLastName.setText(patient.getpLastName());
+        txtAge.setText(Integer.toString(patient.getpAge()));
+        txtGender.setText(patient.getpGender());
+        txtAddress.setText(patient.getpAddress());
+        txtPhoneNumber.setText(patient.getpPhoneNo());
+        txtEmail.setText(patient.getpEmailAddress());
+        if(patient.getPdob()!= null)
         {
-            txtDateOfBirth.setText(new SimpleDateFormat("MM-dd-yyyy").format(patient.getDateofBirth()));
+            txtDateOfBirth.setText(new SimpleDateFormat("MM-dd-yyyy").format(patient.getPdob()));
         }
-        if(patient.getDateOfAdmit() != null)
+        if(patient.getpDateOfAdmit()!= null)
         {
-            txtDateOfAdmit.setText(new SimpleDateFormat("MM-dd-yyyy").format(patient.getDateOfAdmit()));
+            txtDateOfAdmit.setText(new SimpleDateFormat("MM-dd-yyyy").format(patient.getPdob()));
         }
         
-        txtInjuryType.setText(patient.getInjuryType());
-        txtBloodGroup.setText(patient.getBloodType());
-        txtPatientStatus.setText(patient.getPatientStatus());
+        txtInjuryType.setText(patient.getpInjuryType());
+        txtBloodGroup.setText(patient.getpBloodType());
+        txtPatientStatus.setText(patient.getpStatus());
         
-        ImageIcon ii = new ImageIcon(patient.getPhoto_path());
+        ImageIcon ii = new ImageIcon(patient.getpImageUrl());
         Image image = ii.getImage().getScaledInstance(130, 130, Image.SCALE_SMOOTH);
         lblPhotoImage.setIcon(new ImageIcon(image));
 
@@ -438,7 +449,7 @@ public class DisplayPatientInfoJPanel extends javax.swing.JPanel {
     private javax.swing.JTable DoctorTable;
     private javax.swing.JButton btnAssignDoctor;
     private javax.swing.JButton btnBack;
-    private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JLabel lblAddress4;
     private javax.swing.JLabel lblDOB;
@@ -453,7 +464,6 @@ public class DisplayPatientInfoJPanel extends javax.swing.JPanel {
     private javax.swing.JLabel lblPatientStatus;
     private javax.swing.JLabel lblPhoneNumber4;
     private javax.swing.JLabel lblPhoneNumber5;
-    private javax.swing.JLabel lblPhoto;
     private javax.swing.JLabel lblPhotoImage;
     private javax.swing.JTextField txtAddress;
     private javax.swing.JTextField txtAge;

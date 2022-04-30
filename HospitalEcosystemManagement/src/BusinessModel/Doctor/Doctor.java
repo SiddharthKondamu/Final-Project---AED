@@ -4,6 +4,8 @@
  */
 package BusinessModel.Doctor;
 
+import BusinessModel.Patient.Patient;
+import java.util.ArrayList;
 import java.util.Date;
 
 /**
@@ -26,12 +28,21 @@ public class Doctor {
     private String dSpecialization;
     private String dExperience;
     private String dImageUrl;
-
+    private ArrayList<Patient> treatedPatientList;
+    
+    public Doctor() {
+    
+    }
+     
     public Doctor(String dUserName) {
         this.dUserName = dUserName;
     }
+    public ArrayList<Patient> getTreatedPatientList() {
+        return treatedPatientList;
+    }
 
-    public Doctor() {
+    public void setTreatedPatientList(ArrayList<Patient> treatedPatientList) {
+        this.treatedPatientList = treatedPatientList;
     }
 
     public String getdUserName() {

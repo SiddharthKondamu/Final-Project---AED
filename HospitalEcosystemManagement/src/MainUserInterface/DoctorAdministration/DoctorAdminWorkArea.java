@@ -97,12 +97,17 @@ public class DoctorAdminWorkArea extends javax.swing.JPanel {
         PatientTable = new javax.swing.JTable();
         btnAssignDoctor = new javax.swing.JButton();
         jLabel5 = new javax.swing.JLabel();
+        jLabel1 = new javax.swing.JLabel();
+
+        setBackground(new java.awt.Color(0, 153, 204));
+        setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         lblManageCustomers.setBackground(new java.awt.Color(255, 255, 255));
-        lblManageCustomers.setFont(new java.awt.Font("Georgia", 1, 36)); // NOI18N
-        lblManageCustomers.setForeground(new java.awt.Color(15, 85, 177));
+        lblManageCustomers.setFont(new java.awt.Font("Microsoft JhengHei", 1, 36)); // NOI18N
+        lblManageCustomers.setForeground(new java.awt.Color(255, 255, 255));
         lblManageCustomers.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        lblManageCustomers.setText("Doctor Administrator Work  Area");
+        lblManageCustomers.setText("Assign Patients to Doctors");
+        add(lblManageCustomers, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 11, 2621, -1));
 
         DoctorTable.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 2));
         DoctorTable.getTableHeader().setFont(new java.awt.Font("Trebuchet MS", 1, 16));
@@ -135,6 +140,8 @@ public class DoctorAdminWorkArea extends javax.swing.JPanel {
         });
         jScrollPane1.setViewportView(DoctorTable);
 
+        add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(670, 460, 1260, 191));
+
         btnCreateDoctor.setBackground(new java.awt.Color(15, 85, 177));
         btnCreateDoctor.setFont(new java.awt.Font("Georgia", 1, 18)); // NOI18N
         btnCreateDoctor.setForeground(new java.awt.Color(255, 255, 255));
@@ -144,6 +151,7 @@ public class DoctorAdminWorkArea extends javax.swing.JPanel {
                 btnCreateDoctorActionPerformed(evt);
             }
         });
+        add(btnCreateDoctor, new org.netbeans.lib.awtextra.AbsoluteConstraints(1050, 740, 198, 68));
 
         upBtn.setBackground(new java.awt.Color(255, 255, 51));
         upBtn.setFont(new java.awt.Font("Georgia", 1, 14)); // NOI18N
@@ -153,6 +161,7 @@ public class DoctorAdminWorkArea extends javax.swing.JPanel {
                 upBtnActionPerformed(evt);
             }
         });
+        add(upBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(1280, 740, 175, 51));
 
         dBtn4.setBackground(new java.awt.Color(255, 0, 51));
         dBtn4.setFont(new java.awt.Font("Georgia", 1, 14)); // NOI18N
@@ -162,6 +171,7 @@ public class DoctorAdminWorkArea extends javax.swing.JPanel {
                 dBtn4ActionPerformed(evt);
             }
         });
+        add(dBtn4, new org.netbeans.lib.awtextra.AbsoluteConstraints(1490, 740, 175, 51));
 
         PatientTable.setFont(new java.awt.Font("Georgia", 1, 14)); // NOI18N
         PatientTable.getTableHeader().setFont(new java.awt.Font("Trebuchet MS", 1, 16));
@@ -193,6 +203,8 @@ public class DoctorAdminWorkArea extends javax.swing.JPanel {
         });
         jScrollPane2.setViewportView(PatientTable);
 
+        add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 150, 1260, 193));
+
         btnAssignDoctor.setBackground(new java.awt.Color(15, 85, 177));
         btnAssignDoctor.setFont(new java.awt.Font("Georgia", 1, 18)); // NOI18N
         btnAssignDoctor.setForeground(new java.awt.Color(255, 255, 255));
@@ -202,78 +214,14 @@ public class DoctorAdminWorkArea extends javax.swing.JPanel {
                 btnAssignDoctorActionPerformed(evt);
             }
         });
+        add(btnAssignDoctor, new org.netbeans.lib.awtextra.AbsoluteConstraints(1280, 400, 198, 68));
 
+        jLabel5.setBackground(new java.awt.Color(0, 153, 204));
         jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/MainFrame/Final Image.jpg"))); // NOI18N
+        add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(1670, 90, 1480, 1010));
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
-        this.setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jScrollPane2)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(lblManageCustomers, javax.swing.GroupLayout.DEFAULT_SIZE, 1347, Short.MAX_VALUE)
-                        .addGap(123, 123, 123))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addComponent(jScrollPane1)
-                        .addContainerGap())))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(upBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 163, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(35, 35, 35)
-                .addComponent(dBtn4, javax.swing.GroupLayout.PREFERRED_SIZE, 175, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(205, 205, 205))
-            .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(509, 509, 509)
-                        .addComponent(btnAssignDoctor, javax.swing.GroupLayout.PREFERRED_SIZE, 198, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(505, 505, 505)
-                        .addComponent(btnCreateDoctor, javax.swing.GroupLayout.PREFERRED_SIZE, 198, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(layout.createSequentialGroup()
-                    .addGap(0, 0, Short.MAX_VALUE)
-                    .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 1480, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGap(0, 0, Short.MAX_VALUE)))
-        );
-
-        layout.linkSize(javax.swing.SwingConstants.HORIZONTAL, new java.awt.Component[] {dBtn4, upBtn});
-
-        layout.linkSize(javax.swing.SwingConstants.HORIZONTAL, new java.awt.Component[] {btnAssignDoctor, btnCreateDoctor});
-
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(lblManageCustomers)
-                .addGap(52, 52, 52)
-                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 193, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(26, 26, 26)
-                .addComponent(btnAssignDoctor, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(37, 37, 37)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 191, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(upBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(dBtn4, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(4, 4, 4)
-                .addComponent(btnCreateDoctor, javax.swing.GroupLayout.PREFERRED_SIZE, 68, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(250, Short.MAX_VALUE))
-            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(layout.createSequentialGroup()
-                    .addGap(0, 0, Short.MAX_VALUE)
-                    .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 1010, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGap(0, 0, Short.MAX_VALUE)))
-        );
-
-        layout.linkSize(javax.swing.SwingConstants.VERTICAL, new java.awt.Component[] {dBtn4, upBtn});
-
-        layout.linkSize(javax.swing.SwingConstants.VERTICAL, new java.awt.Component[] {btnAssignDoctor, btnCreateDoctor});
-
+        jLabel1.setText("jLabel1");
+        add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(1310, 100, -1, -1));
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnCreateDoctorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCreateDoctorActionPerformed
@@ -342,6 +290,7 @@ public class DoctorAdminWorkArea extends javax.swing.JPanel {
     private javax.swing.JButton btnAssignDoctor;
     private javax.swing.JButton btnCreateDoctor;
     private javax.swing.JButton dBtn4;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;

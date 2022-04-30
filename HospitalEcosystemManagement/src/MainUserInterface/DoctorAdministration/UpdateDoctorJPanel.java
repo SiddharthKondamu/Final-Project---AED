@@ -63,8 +63,6 @@ public class UpdateDoctorJPanel extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        lblUserName = new javax.swing.JLabel();
-        jSeparator1 = new javax.swing.JSeparator();
         jPanel1 = new javax.swing.JPanel();
         lblRestaurantName = new javax.swing.JLabel();
         lblRestaurantInfo = new javax.swing.JLabel();
@@ -89,139 +87,159 @@ public class UpdateDoctorJPanel extends javax.swing.JPanel {
         txtAddress = new javax.swing.JTextField();
         lblAddress4 = new javax.swing.JLabel();
         txtExperience = new javax.swing.JTextField();
-        btnSubmit = new javax.swing.JButton();
         txtUsername = new javax.swing.JTextField();
         jLabel2 = new javax.swing.JLabel();
-        lblUserName1 = new javax.swing.JLabel();
-        jLabel1 = new javax.swing.JLabel();
+        btnSubmit = new javax.swing.JButton();
+        doctorImageLbl = new javax.swing.JLabel();
 
-        setBackground(new java.awt.Color(255, 255, 255));
+        setBackground(new java.awt.Color(0, 153, 204));
 
-        lblUserName.setBackground(new java.awt.Color(0, 0, 0));
-        lblUserName.setFont(new java.awt.Font("Times New Roman", 3, 18)); // NOI18N
-        lblUserName.setText("Username");
-
-        jPanel1.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel1.setBackground(new java.awt.Color(0, 153, 204));
+        jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         lblRestaurantName.setBackground(new java.awt.Color(0, 0, 0));
-        lblRestaurantName.setFont(new java.awt.Font("Georgia", 1, 18)); // NOI18N
+        lblRestaurantName.setFont(new java.awt.Font("Microsoft JhengHei", 1, 18)); // NOI18N
+        lblRestaurantName.setForeground(new java.awt.Color(255, 255, 255));
         lblRestaurantName.setText("First Name");
+        jPanel1.add(lblRestaurantName, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 390, 113, -1));
 
         lblRestaurantInfo.setBackground(new java.awt.Color(255, 255, 255));
-        lblRestaurantInfo.setFont(new java.awt.Font("Georgia", 1, 36)); // NOI18N
-        lblRestaurantInfo.setForeground(new java.awt.Color(15, 85, 177));
+        lblRestaurantInfo.setFont(new java.awt.Font("Microsoft JhengHei", 1, 36)); // NOI18N
+        lblRestaurantInfo.setForeground(new java.awt.Color(255, 255, 255));
         lblRestaurantInfo.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lblRestaurantInfo.setText("Update Doctor");
+        jPanel1.add(lblRestaurantInfo, new org.netbeans.lib.awtextra.AbsoluteConstraints(192, 22, 1154, -1));
+        jPanel1.add(txtFirstName, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 380, 170, 33));
 
         lblPhoneNumber.setBackground(new java.awt.Color(0, 0, 0));
-        lblPhoneNumber.setFont(new java.awt.Font("Georgia", 1, 18)); // NOI18N
+        lblPhoneNumber.setFont(new java.awt.Font("Microsoft JhengHei", 1, 18)); // NOI18N
+        lblPhoneNumber.setForeground(new java.awt.Color(255, 255, 255));
         lblPhoneNumber.setText("Last Name");
+        jPanel1.add(lblPhoneNumber, new org.netbeans.lib.awtextra.AbsoluteConstraints(820, 380, 101, -1));
 
         txtLastName.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtLastNameActionPerformed(evt);
             }
         });
+        jPanel1.add(txtLastName, new org.netbeans.lib.awtextra.AbsoluteConstraints(950, 370, 185, 30));
 
         lblAddress.setBackground(new java.awt.Color(0, 0, 0));
-        lblAddress.setFont(new java.awt.Font("Georgia", 1, 18)); // NOI18N
+        lblAddress.setFont(new java.awt.Font("Microsoft JhengHei", 1, 18)); // NOI18N
+        lblAddress.setForeground(new java.awt.Color(255, 255, 255));
         lblAddress.setText("Age");
+        jPanel1.add(lblAddress, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 460, 40, -1));
 
         txtAge.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtAgeActionPerformed(evt);
             }
         });
+        jPanel1.add(txtAge, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 450, 170, 40));
 
         lblRestaurantName1.setBackground(new java.awt.Color(255, 255, 255));
-        lblRestaurantName1.setFont(new java.awt.Font("Georgia", 1, 18)); // NOI18N
+        lblRestaurantName1.setFont(new java.awt.Font("Microsoft JhengHei", 1, 18)); // NOI18N
+        lblRestaurantName1.setForeground(new java.awt.Color(255, 255, 255));
         lblRestaurantName1.setText("Gender");
+        jPanel1.add(lblRestaurantName1, new org.netbeans.lib.awtextra.AbsoluteConstraints(850, 440, 80, -1));
 
         txtGender.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtGenderActionPerformed(evt);
             }
         });
+        jPanel1.add(txtGender, new org.netbeans.lib.awtextra.AbsoluteConstraints(950, 440, 180, 30));
 
         lblPhoneNumber1.setBackground(new java.awt.Color(255, 255, 255));
-        lblPhoneNumber1.setFont(new java.awt.Font("Georgia", 1, 18)); // NOI18N
+        lblPhoneNumber1.setFont(new java.awt.Font("Microsoft JhengHei", 1, 18)); // NOI18N
+        lblPhoneNumber1.setForeground(new java.awt.Color(255, 255, 255));
         lblPhoneNumber1.setText("Doctor Work ID");
+        jPanel1.add(lblPhoneNumber1, new org.netbeans.lib.awtextra.AbsoluteConstraints(780, 310, -1, -1));
 
         txtDoctorID.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtDoctorIDActionPerformed(evt);
             }
         });
+        jPanel1.add(txtDoctorID, new org.netbeans.lib.awtextra.AbsoluteConstraints(950, 310, 185, 33));
 
         lblAddress1.setBackground(new java.awt.Color(255, 255, 255));
-        lblAddress1.setFont(new java.awt.Font("Georgia", 1, 18)); // NOI18N
+        lblAddress1.setFont(new java.awt.Font("Microsoft JhengHei", 1, 18)); // NOI18N
+        lblAddress1.setForeground(new java.awt.Color(255, 255, 255));
         lblAddress1.setText("Phone Number");
+        jPanel1.add(lblAddress1, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 590, 147, 30));
 
         txtPhoneNumber.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtPhoneNumberActionPerformed(evt);
             }
         });
+        jPanel1.add(txtPhoneNumber, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 590, 170, 30));
 
         lblRestaurantName2.setBackground(new java.awt.Color(255, 255, 255));
-        lblRestaurantName2.setFont(new java.awt.Font("Georgia", 1, 18)); // NOI18N
+        lblRestaurantName2.setFont(new java.awt.Font("Microsoft JhengHei", 1, 18)); // NOI18N
+        lblRestaurantName2.setForeground(new java.awt.Color(255, 255, 255));
         lblRestaurantName2.setText("Date of Birth");
+        jPanel1.add(lblRestaurantName2, new org.netbeans.lib.awtextra.AbsoluteConstraints(810, 570, -1, -1));
 
         txtDateOfBirth.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtDateOfBirthActionPerformed(evt);
             }
         });
+        jPanel1.add(txtDateOfBirth, new org.netbeans.lib.awtextra.AbsoluteConstraints(950, 570, 180, 30));
 
         lblPhoneNumber2.setBackground(new java.awt.Color(255, 255, 255));
-        lblPhoneNumber2.setFont(new java.awt.Font("Georgia", 1, 18)); // NOI18N
+        lblPhoneNumber2.setFont(new java.awt.Font("Microsoft JhengHei", 1, 18)); // NOI18N
+        lblPhoneNumber2.setForeground(new java.awt.Color(255, 255, 255));
         lblPhoneNumber2.setText("Email");
+        jPanel1.add(lblPhoneNumber2, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 530, -1, -1));
 
         txtEmail.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtEmailActionPerformed(evt);
             }
         });
+        jPanel1.add(txtEmail, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 520, 170, 30));
 
         lblAddress2.setBackground(new java.awt.Color(255, 255, 255));
-        lblAddress2.setFont(new java.awt.Font("Georgia", 1, 18)); // NOI18N
+        lblAddress2.setFont(new java.awt.Font("Microsoft JhengHei", 1, 18)); // NOI18N
+        lblAddress2.setForeground(new java.awt.Color(255, 255, 255));
         lblAddress2.setText("Specialist");
+        jPanel1.add(lblAddress2, new org.netbeans.lib.awtextra.AbsoluteConstraints(840, 640, -1, 30));
 
         txtSpecialist.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtSpecialistActionPerformed(evt);
             }
         });
+        jPanel1.add(txtSpecialist, new org.netbeans.lib.awtextra.AbsoluteConstraints(950, 640, 180, 30));
 
         lblAddress3.setBackground(new java.awt.Color(255, 255, 255));
-        lblAddress3.setFont(new java.awt.Font("Georgia", 1, 18)); // NOI18N
+        lblAddress3.setFont(new java.awt.Font("Microsoft JhengHei", 1, 18)); // NOI18N
+        lblAddress3.setForeground(new java.awt.Color(255, 255, 255));
         lblAddress3.setText("Address");
+        jPanel1.add(lblAddress3, new org.netbeans.lib.awtextra.AbsoluteConstraints(850, 500, 80, -1));
 
         txtAddress.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtAddressActionPerformed(evt);
             }
         });
+        jPanel1.add(txtAddress, new org.netbeans.lib.awtextra.AbsoluteConstraints(950, 500, 180, 30));
 
         lblAddress4.setBackground(new java.awt.Color(255, 255, 255));
-        lblAddress4.setFont(new java.awt.Font("Georgia", 1, 18)); // NOI18N
+        lblAddress4.setFont(new java.awt.Font("Microsoft JhengHei", 1, 18)); // NOI18N
+        lblAddress4.setForeground(new java.awt.Color(255, 255, 255));
         lblAddress4.setText("Experience");
+        jPanel1.add(lblAddress4, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 650, 110, 30));
 
         txtExperience.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtExperienceActionPerformed(evt);
             }
         });
-
-        btnSubmit.setBackground(new java.awt.Color(15, 85, 177));
-        btnSubmit.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
-        btnSubmit.setForeground(new java.awt.Color(255, 255, 255));
-        btnSubmit.setText("Update");
-        btnSubmit.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnSubmitActionPerformed(evt);
-            }
-        });
+        jPanel1.add(txtExperience, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 650, 170, 30));
 
         txtUsername.setEditable(false);
         txtUsername.addActionListener(new java.awt.event.ActionListener() {
@@ -229,164 +247,43 @@ public class UpdateDoctorJPanel extends javax.swing.JPanel {
                 txtUsernameActionPerformed(evt);
             }
         });
+        jPanel1.add(txtUsername, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 310, 174, 33));
 
-        jLabel2.setFont(new java.awt.Font("Georgia", 1, 18)); // NOI18N
+        jLabel2.setFont(new java.awt.Font("Microsoft JhengHei", 1, 18)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(255, 255, 255));
         jLabel2.setText("Username");
+        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 310, 115, 33));
 
-        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-        jPanel1.setLayout(jPanel1Layout);
-        jPanel1Layout.setHorizontalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(10, 10, 10)
-                        .addComponent(lblRestaurantInfo, javax.swing.GroupLayout.PREFERRED_SIZE, 1154, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(49, 49, 49)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(lblPhoneNumber, javax.swing.GroupLayout.PREFERRED_SIZE, 101, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                .addComponent(lblAddress1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(lblPhoneNumber1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(lblAddress3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(lblRestaurantName1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(lblAddress, javax.swing.GroupLayout.PREFERRED_SIZE, 109, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(lblAddress4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                            .addComponent(lblRestaurantName, javax.swing.GroupLayout.PREFERRED_SIZE, 113, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(lblAddress2)
-                            .addComponent(lblPhoneNumber2)
-                            .addComponent(lblRestaurantName2))
-                        .addGap(59, 59, 59)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(txtLastName, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(txtAge, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(txtAddress, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(txtDateOfBirth, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(txtGender, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(txtDoctorID, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(txtPhoneNumber, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(txtEmail, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(txtSpecialist, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(txtExperience, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(txtFirstName, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addGap(126, 126, 126)
-                                .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(txtUsername, javax.swing.GroupLayout.PREFERRED_SIZE, 174, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(407, 407, 407)
-                        .addComponent(btnSubmit, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(364, Short.MAX_VALUE))
-        );
-        jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(lblRestaurantInfo)
-                .addGap(51, 51, 51)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(lblRestaurantName)
-                    .addComponent(txtFirstName, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(txtUsername, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel2))
-                .addGap(18, 18, 18)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(txtLastName, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(lblPhoneNumber))
-                .addGap(18, 18, 18)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(lblAddress)
-                    .addComponent(txtAge, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(lblRestaurantName1)
-                    .addComponent(txtGender, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(17, 17, 17)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(lblPhoneNumber1)
-                    .addComponent(txtDoctorID, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(23, 23, 23)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(txtAddress, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(lblAddress3))
-                .addGap(18, 18, 18)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(txtPhoneNumber, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(lblAddress1))
-                .addGap(16, 16, 16)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(txtDateOfBirth, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(lblRestaurantName2))
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(68, 68, 68)
-                        .addComponent(lblAddress2))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(18, 18, 18)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(txtEmail, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(lblPhoneNumber2))
-                        .addGap(18, 18, 18)
-                        .addComponent(txtSpecialist, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGap(28, 28, 28)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(lblAddress4)
-                    .addComponent(txtExperience, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addComponent(btnSubmit, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 1478, Short.MAX_VALUE))
-        );
+        btnSubmit.setBackground(new java.awt.Color(255, 255, 255));
+        btnSubmit.setFont(new java.awt.Font("Microsoft JhengHei", 1, 18)); // NOI18N
+        btnSubmit.setForeground(new java.awt.Color(0, 153, 204));
+        btnSubmit.setText("Update");
+        btnSubmit.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnSubmitActionPerformed(evt);
+            }
+        });
+        jPanel1.add(btnSubmit, new org.netbeans.lib.awtextra.AbsoluteConstraints(720, 760, 140, 40));
 
-        lblUserName1.setBackground(new java.awt.Color(0, 0, 0));
-        lblUserName1.setFont(new java.awt.Font("Times New Roman", 3, 18)); // NOI18N
-        lblUserName1.setForeground(new java.awt.Color(255, 255, 255));
-        lblUserName1.setText("Username");
-
-        jLabel1.setFont(new java.awt.Font("Tahoma", 3, 14)); // NOI18N
-        jLabel1.setText("Password");
+        doctorImageLbl.setFont(new java.awt.Font("Microsoft JhengHei", 1, 18)); // NOI18N
+        doctorImageLbl.setForeground(new java.awt.Color(255, 255, 255));
+        doctorImageLbl.setText("doctor image");
+        jPanel1.add(doctorImageLbl, new org.netbeans.lib.awtextra.AbsoluteConstraints(700, 100, 160, 140));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(18, 18, 18)
-                .addComponent(jSeparator1, javax.swing.GroupLayout.DEFAULT_SIZE, 1520, Short.MAX_VALUE)
-                .addContainerGap())
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(lblUserName))
-                .addGap(544, 544, 544))
-            .addGroup(layout.createSequentialGroup()
+                .addGap(34, 34, 34)
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
-            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                    .addContainerGap(905, Short.MAX_VALUE)
-                    .addComponent(lblUserName1)
-                    .addGap(565, 565, 565)))
+                .addContainerGap(168, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(95, 95, 95)
-                .addComponent(lblUserName, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(26, 26, 26)
-                .addComponent(jLabel1)
-                .addContainerGap(1383, Short.MAX_VALUE))
-            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(layout.createSequentialGroup()
-                    .addGap(127, 127, 127)
-                    .addComponent(lblUserName1, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addContainerGap(3497, Short.MAX_VALUE)))
+                .addGap(0, 2897, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 
@@ -455,10 +352,9 @@ public class UpdateDoctorJPanel extends javax.swing.JPanel {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnSubmit;
-    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel doctorImageLbl;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JSeparator jSeparator1;
     private javax.swing.JLabel lblAddress;
     private javax.swing.JLabel lblAddress1;
     private javax.swing.JLabel lblAddress2;
@@ -471,8 +367,6 @@ public class UpdateDoctorJPanel extends javax.swing.JPanel {
     private javax.swing.JLabel lblRestaurantName;
     private javax.swing.JLabel lblRestaurantName1;
     private javax.swing.JLabel lblRestaurantName2;
-    private javax.swing.JLabel lblUserName;
-    private javax.swing.JLabel lblUserName1;
     private javax.swing.JTextField txtAddress;
     private javax.swing.JTextField txtAge;
     private javax.swing.JTextField txtDateOfBirth;
