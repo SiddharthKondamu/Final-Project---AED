@@ -12,7 +12,7 @@ import javax.swing.JPanel;
  *
  * @author Your Name <Puja>
  */
-public class PharmacistRole {
+public class PharmacistRole extends Role{
     
      @Override
     public JPanel createWorkArea(JPanel userProcessContainer, User user, Ecosystem business) {
