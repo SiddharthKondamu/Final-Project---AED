@@ -15,6 +15,7 @@ import BusinessModel.PoliceDepartment.PoliceDepartment;
 import BusinessModel.Roles.Role;
 import java.util.ArrayList;
 
+
 /**
  *
  * @author siddh
@@ -41,9 +42,83 @@ public class Ecosystem extends Organisation{
         return business;
     }
 
+    public static Ecosystem getBusiness() {
+        return business;
+    }
+
+    public static void setBusiness(Ecosystem business) {
+        Ecosystem.business = business;
+    }
+
+    public PatientDirectory getPatientDirectory() {
+        return patientDirectory;
+    }
+
+    public void setPatientDirectory(PatientDirectory patientDirectory) {
+        this.patientDirectory = patientDirectory;
+    }
+
+    public DoctorDirectory getDoctorDirectory() {
+        return doctorDirectory;
+    }
+
+    public void setDoctorDirectory(DoctorDirectory doctorDirectory) {
+        this.doctorDirectory = doctorDirectory;
+    }
+
+    public AmbulanceDirectory getAmbulanceDirectory() {
+        return ambulanceDirectory;
+    }
+
+    public void setAmbulanceDirectory(AmbulanceDirectory ambulanceDirectory) {
+        this.ambulanceDirectory = ambulanceDirectory;
+    }
+
+    public BloodBank getBloodBank() {
+        return bloodBank;
+    }
+
+    public void setBloodBank(BloodBank bloodBank) {
+        this.bloodBank = bloodBank;
+    }
+
+    public Lab getLab() {
+        return lab;
+    }
+
+    public void setLab(Lab lab) {
+        this.lab = lab;
+    }
+
+    public Pharmacy getPharmacy() {
+        return pharmacy;
+    }
+
+    public void setPharmacy(Pharmacy pharmacy) {
+        this.pharmacy = pharmacy;
+    }
+
+    public InsuranceDirectory getInsuranceDirectory() {
+        return insuranceDirectory;
+    }
+
+    public void setInsuranceDirectory(InsuranceDirectory insuranceDirectory) {
+        this.insuranceDirectory = insuranceDirectory;
+    }
+
+    public PoliceDepartment getPoliceRecords() {
+        return policeRecords;
+    }
+
+    public void setPoliceRecords(PoliceDepartment policeRecords) {
+        this.policeRecords = policeRecords;
+    }
+
+    
     @Override
     public ArrayList<Role> getSupportedRole() {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
+    
     
 }
