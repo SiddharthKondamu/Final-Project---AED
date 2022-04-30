@@ -113,7 +113,6 @@ public class DoctorRequestLabTestJPanel extends javax.swing.JPanel {
         btnRemoveTest = new javax.swing.JButton();
         Request = new javax.swing.JButton();
         Request1 = new javax.swing.JButton();
-        jLabel2 = new javax.swing.JLabel();
 
         setBackground(new java.awt.Color(255, 255, 255));
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -229,10 +228,7 @@ public class DoctorRequestLabTestJPanel extends javax.swing.JPanel {
                 Request1ActionPerformed(evt);
             }
         });
-        add(Request1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 740, 110, 40));
-
-        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/userinterface/DoctorRole/labbbb.gif"))); // NOI18N
-        add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(840, 450, 540, 390));
+        add(Request1, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 560, 110, 40));
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnAddTestActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAddTestActionPerformed
@@ -319,7 +315,6 @@ public class DoctorRequestLabTestJPanel extends javax.swing.JPanel {
     private javax.swing.JButton btnRemoveTest;
     private javax.swing.JTable carttable;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JTable tableTests1;

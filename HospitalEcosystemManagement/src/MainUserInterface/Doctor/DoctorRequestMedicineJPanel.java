@@ -113,7 +113,6 @@ public class DoctorRequestMedicineJPanel extends javax.swing.JPanel {
         btnAddMedicine1 = new javax.swing.JButton();
         Request = new javax.swing.JButton();
         Request1 = new javax.swing.JButton();
-        jLabel2 = new javax.swing.JLabel();
 
         setBackground(new java.awt.Color(255, 255, 255));
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -229,9 +228,6 @@ public class DoctorRequestMedicineJPanel extends javax.swing.JPanel {
             }
         });
         add(Request1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 555, 128, 42));
-
-        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/userinterface/DoctorRole/medicine.gif"))); // NOI18N
-        add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(930, 420, -1, -1));
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnRemoveMedicineActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRemoveMedicineActionPerformed
@@ -314,7 +310,6 @@ public class DoctorRequestMedicineJPanel extends javax.swing.JPanel {
     private javax.swing.JButton btnRemoveMedicine;
     private javax.swing.JTable cartTableMedicines;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JTable tableRequestMedicine1;

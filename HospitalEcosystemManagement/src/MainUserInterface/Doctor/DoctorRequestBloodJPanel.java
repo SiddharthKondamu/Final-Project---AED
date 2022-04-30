@@ -53,9 +53,6 @@ public class DoctorRequestBloodJPanel extends javax.swing.JPanel {
         lblRequestBloodQuantity = new javax.swing.JLabel();
         btnProcessRequest = new javax.swing.JButton();
         Request1 = new javax.swing.JButton();
-        jLabel2 = new javax.swing.JLabel();
-        jLabel5 = new javax.swing.JLabel();
-        jLabel3 = new javax.swing.JLabel();
 
         setBackground(new java.awt.Color(255, 255, 255));
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -100,15 +97,6 @@ public class DoctorRequestBloodJPanel extends javax.swing.JPanel {
             }
         });
         add(Request1, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 560, 128, 42));
-        add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(165, 452, -1, -1));
-
-        jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/userinterface/DoctorRole/5477160.png"))); // NOI18N
-        jLabel5.setText("jLabel5");
-        add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(930, 80, 450, 510));
-
-        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/MainFrame/Final Image.jpg"))); // NOI18N
-        jLabel3.setText("jLabel3");
-        add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(-11, 0, 7540, -1));
     }// </editor-fold>//GEN-END:initComponents
 
     private void BloodRequestQuantityBoxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BloodRequestQuantityBoxActionPerformed
@@ -145,9 +133,6 @@ public class DoctorRequestBloodJPanel extends javax.swing.JPanel {
     private javax.swing.JButton Request1;
     private javax.swing.JButton btnProcessRequest;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel lblRequestBloodQuantity;
     // End of variables declaration//GEN-END:variables
 }
