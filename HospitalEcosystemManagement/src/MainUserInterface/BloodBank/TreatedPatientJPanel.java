@@ -123,7 +123,7 @@ public class TreatedPatientJPanel extends javax.swing.JPanel {
         });
         add(btnBack, new org.netbeans.lib.awtextra.AbsoluteConstraints(630, 700, 240, 40));
 
-        jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/MainFrame/Photos/bloodDonation.jpeg"))); // NOI18N
+        jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/MainUserInterface/Images/bloodDonation.jpeg"))); // NOI18N
         add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 110, 390, 350));
     }// </editor-fold>//GEN-END:initComponents
 
