@@ -25,7 +25,11 @@ public class UserDirectory {
     }
 
     public User authenticateUser(String username, String password) {
+        System.out.println("username ---"+ username);
+          System.out.println("password ---"+password);
         for (User ua : userList) {
+            System.out.println("username ---"+ ua.getUsername());
+          System.out.println("password ---"+ua.getPassword());
             if (ua.getUsername().equals(username) && ua.getPassword().equals(password)) {
                 return ua;
             }
@@ -53,6 +57,14 @@ public class UserDirectory {
         
     }
     public boolean findIfUsernameIsUnique(String username) {
+        for (User ua : userList) {
+            if (ua.getUsername().equals(username)) {
+                return false;
+            }
+        }
+        return true;
+    }
+        public boolean checkIfUsernameIsUnique(String username) {
         for (User ua : userList) {
             if (ua.getUsername().equals(username)) {
                 return false;
