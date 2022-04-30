@@ -120,21 +120,16 @@ public class MainJFrame extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void signInBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_signInBtnActionPerformed
-        try{
-            /*for(User u : system.getUserAccountDirectory().getUserAccountList()){
-                System.out.println("user ---"+u);
-            }
-            System.out.println("username ---"+userNameInputField.getText());
-            System.out.println("password ---"+passwordInputField.getText());*/
-        User ua = system.getUserAccountDirectory().authenticateUser(userNameInputField.getText(), passwordInputField.getText());
-        CardLayout layout = (CardLayout) mainContainer.getLayout();
-        mainContainer.add(ua.getRole().createWorkArea(mainContainer, ua, system));
-        layout.next(mainContainer);
-        signOutBtn.setEnabled(true);
+        try{ 
+            User ua = system.getUserAccountDirectory().authenticateUser(userNameInputField.getText(), passwordInputField.getText());
+            CardLayout layout = (CardLayout) mainContainer.getLayout();
+            mainContainer.add(ua.getRole().createWorkArea(mainContainer, ua, system));
+            layout.next(mainContainer);
+            signOutBtn.setEnabled(true);
         }
         catch(Exception e){
             System.out.println("exception due to ---"+e.getMessage());
-        JOptionPane.showMessageDialog(null,"Username/Password is wrong!","Warning",JOptionPane.WARNING_MESSAGE);
+            JOptionPane.showMessageDialog(null,"Username/Password is wrong!","Warning",JOptionPane.WARNING_MESSAGE);
         }
     }//GEN-LAST:event_signInBtnActionPerformed
 
