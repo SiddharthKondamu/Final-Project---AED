@@ -87,7 +87,7 @@ public class DoctorVisitJPanel extends javax.swing.JPanel {
                 {null, null, null, null, null}
             },
             new String [] {
-                "Item Name", "Organization", "Ammount", "Status", "Result"
+                "Item Name", "Organization", "Amount", "Status", "Result"
             }
         ) {
             Class[] types = new Class [] {

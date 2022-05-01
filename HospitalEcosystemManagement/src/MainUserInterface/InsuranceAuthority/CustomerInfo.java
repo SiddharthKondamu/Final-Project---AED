@@ -138,7 +138,7 @@ public class CustomerInfo extends javax.swing.JPanel {
                 {null, null, null}
             },
             new String [] {
-                "Item Name", "Organization", "Ammount"
+                "Item Name", "Organization", "Amount"
             }
         ) {
             Class[] types = new Class [] {

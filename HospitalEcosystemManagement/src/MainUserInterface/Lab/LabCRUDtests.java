@@ -250,7 +250,7 @@ public class LabCRUDtests extends javax.swing.JPanel {
                 populatetableTests();
             }
         } else {
-            JOptionPane.showMessageDialog(null, "Select a Customer to delete!");
+            JOptionPane.showMessageDialog(null, "Please Select a Row!");
         }
     }//GEN-LAST:event_dBtn4ActionPerformed
 

@@ -126,7 +126,7 @@ public class PastRecords extends javax.swing.JPanel {
                 btnUpdateAmbulanceRecordActionPerformed(evt);
             }
         });
-        add(btnUpdateAmbulanceRecord, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 451, 235, 50));
+        add(btnUpdateAmbulanceRecord, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 420, 160, 50));
 
         btnUpdateAmbulanceRecord1.setBackground(new java.awt.Color(255, 255, 255));
         btnUpdateAmbulanceRecord1.setFont(new java.awt.Font("Microsoft Sans Serif", 1, 14)); // NOI18N
@@ -137,7 +137,7 @@ public class PastRecords extends javax.swing.JPanel {
                 btnUpdateAmbulanceRecord1ActionPerformed(evt);
             }
         });
-        add(btnUpdateAmbulanceRecord1, new org.netbeans.lib.awtextra.AbsoluteConstraints(650, 30, 235, 50));
+        add(btnUpdateAmbulanceRecord1, new org.netbeans.lib.awtextra.AbsoluteConstraints(745, 30, 140, 50));
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnUpdateAmbulanceRecordActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnUpdateAmbulanceRecordActionPerformed

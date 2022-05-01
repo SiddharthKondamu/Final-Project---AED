@@ -273,7 +273,7 @@ public class DoctorAdminWorkArea extends javax.swing.JPanel {
                 populateNetworkTable();
             }
         } else {
-            JOptionPane.showMessageDialog(null, "Select a Customer to delete!");
+            JOptionPane.showMessageDialog(null, "Please Select a Patient");
         }
     }//GEN-LAST:event_dBtn4ActionPerformed
 

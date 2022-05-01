@@ -196,7 +196,7 @@ public class ReceptionDischarge extends javax.swing.JPanel {
         int selectedRowIndex = ManageCustomersTable.getSelectedRow();
         if (selectedRowIndex < 0)
         {
-            JOptionPane.showMessageDialog(null, "Please select a row from the table to view details", "Warning", JOptionPane.WARNING_MESSAGE);
+            JOptionPane.showMessageDialog(null, "Please select a row from the table!", "Warning", JOptionPane.WARNING_MESSAGE);
         }
         else
         {
