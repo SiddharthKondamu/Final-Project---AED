@@ -2,11 +2,11 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JPanel.java to edit this template
  */
-package userinterface.LabRole;
+package MainUserInterface.Lab;
 
 import BusinessModel.Ecosystem;
-import Business.Lab.Tests;
-import Business.Patient.Patient;
+import BusinessModel.Lab.Tests;
+import BusinessModel.Patient.Patient;
 import BusinessModel.UserAccount.User;
 import java.awt.CardLayout;
 import javax.swing.JOptionPane;
@@ -47,14 +47,14 @@ public class LabWorkAreaJPanel extends javax.swing.JPanel {
             Object[] row = new Object[7];
             
             row[0] = patient;
-            row[1] = patient.getPatientLastName();
-            row[2] = patient.getHealthInsuranceID();
+            row[1] = patient.getpLastName();
+            row[2] = patient.getpHealthInsuranceID();
             
-            row[3] = patient.getAge();
-            row[4] = patient.getEmailAddress();
-            row[5] = patient.getLabStatus();
+            row[3] = patient.getpAge();
+            row[4] = patient.getpEmailAddress();
+            row[5] = patient.getpLabStatus();
             
-            if(!patient.getLabStatus().equals("Delivered")){
+            if(!patient.getpLabStatus().equals("Delivered")){
             model.addRow(row);}
 
         }
@@ -69,13 +69,13 @@ public class LabWorkAreaJPanel extends javax.swing.JPanel {
             Object[] row = new Object[7];
             
             row[0] = patient;
-            row[1] = patient.getPatientLastName();
-            row[2] = patient.getHealthInsuranceID();
+            row[1] = patient.getpLastName();
+            row[2] = patient.getpHealthInsuranceID();
             
-            row[3] = patient.getAge();
-            row[4] = patient.getEmailAddress();
-            row[5] = patient.getLabStatus();
-            if(patient.getLabStatus().equals("Delivered")){
+            row[3] = patient.getpAge();
+            row[4] = patient.getpEmailAddress();
+            row[5] = patient.getpLabStatus();
+            if(patient.getpLabStatus().equals("Delivered")){
             model.addRow(row);}
 
         }
