@@ -54,11 +54,12 @@ public class MainJFrame extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        leftContainer.setBackground(new java.awt.Color(153, 153, 255));
+        leftContainer.setBackground(new java.awt.Color(255, 255, 255));
         leftContainer.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         signInBtn.setBackground(new java.awt.Color(255, 255, 255));
-        signInBtn.setFont(new java.awt.Font("Gill Sans", 3, 18)); // NOI18N
+        signInBtn.setFont(new java.awt.Font("Microsoft JhengHei", 1, 18)); // NOI18N
+        signInBtn.setForeground(new java.awt.Color(0, 153, 204));
         signInBtn.setText("Sign-in");
         signInBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -76,20 +77,21 @@ public class MainJFrame extends javax.swing.JFrame {
         leftContainer.add(userNameInputField, new org.netbeans.lib.awtextra.AbsoluteConstraints(18, 276, 118, 35));
         leftContainer.add(passwordInputField, new org.netbeans.lib.awtextra.AbsoluteConstraints(18, 368, 118, 35));
 
-        jLabel1.setFont(new java.awt.Font("Gill Sans", 3, 18)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel1.setFont(new java.awt.Font("Microsoft JhengHei", 1, 18)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(0, 153, 204));
         jLabel1.setText("Username");
         leftContainer.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 240, -1, -1));
 
         jLabel2.setBackground(new java.awt.Color(255, 255, 255));
-        jLabel2.setFont(new java.awt.Font("Gill Sans", 3, 18)); // NOI18N
-        jLabel2.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel2.setFont(new java.awt.Font("Microsoft JhengHei", 1, 18)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(0, 153, 204));
         jLabel2.setText("Password");
         leftContainer.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 330, 108, -1));
         leftContainer.add(loginJLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(128, 231, -1, -1));
 
         signOutBtn.setBackground(new java.awt.Color(255, 255, 255));
-        signOutBtn.setFont(new java.awt.Font("Gill Sans", 3, 18)); // NOI18N
+        signOutBtn.setFont(new java.awt.Font("Microsoft JhengHei", 1, 18)); // NOI18N
+        signOutBtn.setForeground(new java.awt.Color(0, 153, 204));
         signOutBtn.setText("Sign-out");
         signOutBtn.setEnabled(false);
         signOutBtn.addActionListener(new java.awt.event.ActionListener() {
@@ -109,7 +111,6 @@ public class MainJFrame extends javax.swing.JFrame {
 
         homeDisplay.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         homeDisplay.setIcon(new javax.swing.ImageIcon(getClass().getResource("/MainUserInterface/Images/hospital.jpg"))); // NOI18N
-        homeDisplay.setPreferredSize(new java.awt.Dimension(1080, 720));
         mainContainer.add(homeDisplay, "card2");
 
         jSplitPane1.setRightComponent(mainContainer);
@@ -120,21 +121,16 @@ public class MainJFrame extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void signInBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_signInBtnActionPerformed
-        try{
-            /*for(User u : system.getUserAccountDirectory().getUserAccountList()){
-                System.out.println("user ---"+u);
-            }
-            System.out.println("username ---"+userNameInputField.getText());
-            System.out.println("password ---"+passwordInputField.getText());*/
-        User ua = system.getUserAccountDirectory().authenticateUser(userNameInputField.getText(), passwordInputField.getText());
-        CardLayout layout = (CardLayout) mainContainer.getLayout();
-        mainContainer.add(ua.getRole().createWorkArea(mainContainer, ua, system));
-        layout.next(mainContainer);
-        signOutBtn.setEnabled(true);
+        try{ 
+            User ua = system.getUserAccountDirectory().authenticateUser(userNameInputField.getText(), passwordInputField.getText());
+            CardLayout layout = (CardLayout) mainContainer.getLayout();
+            mainContainer.add(ua.getRole().createWorkArea(mainContainer, ua, system));
+            layout.next(mainContainer);
+            signOutBtn.setEnabled(true);
         }
         catch(Exception e){
             System.out.println("exception due to ---"+e.getMessage());
-        JOptionPane.showMessageDialog(null,"Username/Password is wrong!","Warning",JOptionPane.WARNING_MESSAGE);
+            JOptionPane.showMessageDialog(null,"Username/Password is wrong!","Warning",JOptionPane.WARNING_MESSAGE);
         }
     }//GEN-LAST:event_signInBtnActionPerformed
 
