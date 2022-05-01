@@ -231,15 +231,20 @@ public class ReceptionWorkAreaJPanel extends javax.swing.JPanel {
 
     private void createPatBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_createPatBtnActionPerformed
         // TODO add your handling code here:
-        CreatePatientJPanel createPatient = new CreatePatientJPanel(userProcessContainer, ecoSystem, userAccount);
-        userProcessContainer.add("Add Patient", createPatient);
-        CardLayout layout = (CardLayout) userProcessContainer.getLayout();
-        layout.next(userProcessContainer);
+        try{
+            CreatePatientJPanel createPatient = new CreatePatientJPanel(userProcessContainer, ecoSystem, userAccount);
+            userProcessContainer.add("Add Patient", createPatient);
+            CardLayout layout = (CardLayout) userProcessContainer.getLayout();
+            layout.next(userProcessContainer);
+        }catch(Exception e){
+            System.out.println("exception due to---"+e.getMessage());
+        }
+        
     }//GEN-LAST:event_createPatBtnActionPerformed
 
     private void billPatBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_billPatBtnActionPerformed
         // TODO add your handling code here:
-        /*int selectedRow = patientTable.getSelectedRow();
+        int selectedRow = patientTable.getSelectedRow();
         if (selectedRow >= 0) {
 
             Patient patient = (Patient) patientTable.getValueAt(selectedRow, 0);
@@ -251,7 +256,7 @@ public class ReceptionWorkAreaJPanel extends javax.swing.JPanel {
 
         } else {
             JOptionPane.showMessageDialog(null, "Select a Customer to delete!");
-        }*/
+        }
 
     }//GEN-LAST:event_billPatBtnActionPerformed
 
@@ -277,11 +282,18 @@ public class ReceptionWorkAreaJPanel extends javax.swing.JPanel {
 
     private void updateAmbulRecBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_updateAmbulRecBtnActionPerformed
         // TODO add your handling code here:
-
-        AmbulanceWorkAreaJPanel ambulanceWorkAreaJPanel = new AmbulanceWorkAreaJPanel(userProcessContainer, userAccount, ecoSystem);
-        userProcessContainer.add("Ambulance Work Area", ambulanceWorkAreaJPanel);
-        CardLayout layout = (CardLayout) userProcessContainer.getLayout();
-        layout.next(userProcessContainer);
+        try{
+            System.out.println("ambulance record button clicked");
+            AmbulanceWorkAreaJPanel ambulanceWAJPanel = new AmbulanceWorkAreaJPanel(userProcessContainer, userAccount, ecoSystem);
+            //AmbulanceWorkAreaJPanel ambulanceWorkAreaJPanel = new AmbulanceWorkAreaJPanel(userProcessContainer, userAccount, ecoSystem);
+            userProcessContainer.add("AmbulanceWorkArea", ambulanceWAJPanel);
+            CardLayout layout = (CardLayout) userProcessContainer.getLayout();
+            layout.next(userProcessContainer);
+        }
+        catch(Exception e){
+            System.out.println("exception due to---"+e.getMessage());
+        }
+        
     }//GEN-LAST:event_updateAmbulRecBtnActionPerformed
 
     private void btnUpdate1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnUpdate1ActionPerformed
@@ -303,18 +315,18 @@ public class ReceptionWorkAreaJPanel extends javax.swing.JPanel {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
-        /*ReceptionDischarge ambulanceWorkAreaJPanel = new ReceptionDischarge(userProcessContainer, userAccount, ecoSystem);
+        ReceptionDischarge ambulanceWorkAreaJPanel = new ReceptionDischarge(userProcessContainer, userAccount, ecoSystem);
         userProcessContainer.add("Discharge", ambulanceWorkAreaJPanel);
         CardLayout layout = (CardLayout) userProcessContainer.getLayout();
-        layout.next(userProcessContainer);*/
+        layout.next(userProcessContainer);
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         // TODO add your handling code here:
-        //PastRecords ambulanceWorkAreaJPanel = new PastRecords(userProcessContainer, userAccount, ecoSystem);
-        /*userProcessContainer.add("Past Records", ambulanceWorkAreaJPanel);
+        PastRecords ambulanceWorkAreaJPanel = new PastRecords(userProcessContainer, userAccount, ecoSystem);
+        userProcessContainer.add("Past Records", ambulanceWorkAreaJPanel);
         CardLayout layout = (CardLayout) userProcessContainer.getLayout();
-        layout.next(userProcessContainer);*/
+        layout.next(userProcessContainer);
     }//GEN-LAST:event_jButton2ActionPerformed
 
 

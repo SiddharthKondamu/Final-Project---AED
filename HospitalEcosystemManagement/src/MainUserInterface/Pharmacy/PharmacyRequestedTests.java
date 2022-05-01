@@ -48,7 +48,9 @@ public class PharmacyRequestedTests extends javax.swing.JPanel {
             row[3] = b.getStatus();
             row[4] = b.getResult();
             
-            if(b.getOrgType().equals("Pharmacy")&& b.getStatus().equals("Requested")){
+
+            if(b.getOrgType().equals("Pharmacy")&&b.getStatus().equals("Requested")){
+
             model.addRow(row);}
         }
     }

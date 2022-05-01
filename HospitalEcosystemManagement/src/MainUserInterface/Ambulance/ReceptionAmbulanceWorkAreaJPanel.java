@@ -36,7 +36,21 @@ public class ReceptionAmbulanceWorkAreaJPanel extends javax.swing.JPanel {
         this.ecoSystem = ecoSystem;
         this.ambulance = ambulance;
     }
-
+    
+    public ReceptionAmbulanceWorkAreaJPanel(JPanel userProcessContainer, Ecosystem ecoSystem, User userAccount, Ambulance ambulance, Patient patientDetails) {
+        initComponents();
+        this.userProcessContainer = userProcessContainer;
+        this.ecoSystem = ecoSystem;
+        this.ambulance = ambulance;
+        setUpTextFields(patientDetails);
+    }
+    
+    public void setUpTextFields(Patient p){
+        txtPatientUserName.setText(p.getpUserName());
+        txtPatientFirstName.setText(p.getpFirstName());
+        txtPatientLastName.setText(p.getpLastName());
+        txtPatientLocation.setText(p.getpAccidentLocation());
+    }
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -134,7 +148,7 @@ public class ReceptionAmbulanceWorkAreaJPanel extends javax.swing.JPanel {
         });
         add(Route_JButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(1020, 530, 180, 40));
 
-        jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/MainFrame/Photos/emergency.gif"))); // NOI18N
+        jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/MainUserInterface/Images/emergency.gif"))); // NOI18N
         add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 110, 540, 300));
     }// </editor-fold>//GEN-END:initComponents
 
@@ -172,11 +186,11 @@ public class ReceptionAmbulanceWorkAreaJPanel extends javax.swing.JPanel {
         
         JOptionPane.showMessageDialog(null, "Help Is On The Way");
         
-        /*ReceptionWorkAreaJPanel receptionWorkAreaJPanel = new ReceptionWorkAreaJPanel(userProcessContainer, userAccount, ecoSystem);
+        ReceptionWorkAreaJPanel receptionWorkAreaJPanel = new ReceptionWorkAreaJPanel(userProcessContainer, userAccount, ecoSystem);
         userProcessContainer.add("Reception Work Area", receptionWorkAreaJPanel);
         CardLayout layout = (CardLayout) userProcessContainer.getLayout();
         layout.next(userProcessContainer);
-        */
+        
     }//GEN-LAST:event_btnSubmitActionPerformed
 
     private void Route_JButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Route_JButtonActionPerformed
@@ -186,7 +200,17 @@ public class ReceptionAmbulanceWorkAreaJPanel extends javax.swing.JPanel {
         CardLayout layout = (CardLayout) userProcessContainer.getLayout();
         layout.next(userProcessContainer);
         */
-       GoogleMapsAmbulanceJPanel GoogleMapsWorkAreaJPanel = new GoogleMapsAmbulanceJPanel(userProcessContainer, ecoSystem, userAccount, ambulance, txtPatientLocation.getText());
+            Patient patient = new Patient(txtPatientUserName.getText());
+            patient.setpFirstName(txtPatientFirstName.getText());
+            patient.setpLastName(txtPatientLastName.getText());
+            patient.setpAccidentLocation(txtPatientLocation.getText());
+            patient.setpStatus("NewPatient");
+            patient.setpBloodBankStatus("NewPatient");
+            patient.setpPharmaStatus("NewPatient");
+            patient.setpLabStatus("NewPatient");
+            patient.setpDateOfAdmit(java.util.Calendar.getInstance().getTime());
+            
+       GoogleMapsAmbulanceJPanel GoogleMapsWorkAreaJPanel = new GoogleMapsAmbulanceJPanel(userProcessContainer, ecoSystem, userAccount, ambulance, txtPatientLocation.getText(), patient);
         userProcessContainer.add("Google Maps Work Area", GoogleMapsWorkAreaJPanel);
         CardLayout layout = (CardLayout) userProcessContainer.getLayout();
         layout.next(userProcessContainer);

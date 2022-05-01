@@ -8,6 +8,7 @@ package MainUserInterface.DoctorAdministration;
 import BusinessModel.Ecosystem;
 import BusinessModel.Patient.Patient;
 import BusinessModel.Doctor.Doctor;
+import BusinessModel.Ecosystem;
 import BusinessModel.Roles.Doctor_role;
 import BusinessModel.Roles.Patient_role;
 import BusinessModel.UserAccount.User;

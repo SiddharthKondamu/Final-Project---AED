@@ -26,7 +26,8 @@ public class PharmacyPastRequest extends javax.swing.JPanel {
     JPanel userProcessContainer;
     User account;
     Ecosystem ecoSystem;
-    
+
+
     public PharmacyPastRequest(JPanel userProcessContainer, User account, Patient p,Ecosystem ecoSystem) {
         initComponents();
         this.userProcessContainer = userProcessContainer;
@@ -52,7 +53,9 @@ public class PharmacyPastRequest extends javax.swing.JPanel {
             row[3] = b.getStatus();
             row[4] = b.getResult();
             
-            if(b.getOrgType().equals("Pharmacy")&& b.getStatus().equals("Delivered")){
+
+            if(b.getOrgType().equals("Pharmacy")&&b.getStatus().equals("Delivered")){
+
             model.addRow(row);}
         }
     }
