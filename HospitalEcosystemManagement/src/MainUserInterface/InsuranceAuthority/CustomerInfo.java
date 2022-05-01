@@ -34,14 +34,14 @@ public class CustomerInfo extends javax.swing.JPanel {
         this.userProcessContainer = userProcessContainer;
         this.patient = p;
         this.user = account;
-        txtFirstName.setText(p.getpFirstName());
-        txtLastName.setText(p.getpLastName());
-        txtAddress.setText(p.getpAddress());
-        txtAge.setText(Integer.toString(p.getpAge()));
-        txtGender.setText(p.getpGender());
-        txtHealthInsuranceID.setText(p.getpHealthInsuranceID());
-        txtPhoneNumber.setText(p.getpPhoneNo());
-        txtPhoneNumber1.setText(p.getpPoliceStatus());
+        txtpFirstName.setText(p.getpFirstName());
+        txtpLastName.setText(p.getpLastName());
+        txtpAddress.setText(p.getpAddress());
+        txtpAge.setText(Integer.toString(p.getpAge()));
+        txtpGender.setText(p.getpGender());
+        txtphInsuranceID.setText(p.getpHealthInsuranceID());
+        txtpNumber.setText(p.getpPhoneNo());
+        txtpVerification.setText(p.getpPoliceStatus());
         try{
             String s = p.getpHealthInsuranceID().substring(3,7)+"-"+p.getpHealthInsuranceID().substring(7,9)+"-"+p.getpHealthInsuranceID().substring(9,11);
             SimpleDateFormat input =new SimpleDateFormat("yyyy-MM-dd");
@@ -67,7 +67,7 @@ public class CustomerInfo extends javax.swing.JPanel {
         populateBillTable();
     }
           private void populateBillTable() {
-        DefaultTableModel model = (DefaultTableModel) BillTalble.getModel();
+        DefaultTableModel model = (DefaultTableModel) table1.getModel();
 
         model.setRowCount(0);
 
@@ -93,29 +93,29 @@ public class CustomerInfo extends javax.swing.JPanel {
         jLabel1 = new javax.swing.JLabel();
         jSeparator1 = new javax.swing.JSeparator();
         jScrollPane1 = new javax.swing.JScrollPane();
-        BillTalble = new javax.swing.JTable();
-        lblPatientPhone = new javax.swing.JLabel();
-        txtAddress = new javax.swing.JTextField();
-        lblPatientAddress = new javax.swing.JLabel();
-        txtHealthInsuranceID = new javax.swing.JTextField();
-        lblPatientHealthInsuranceID = new javax.swing.JLabel();
-        txtGender = new javax.swing.JTextField();
-        lblPatientGender = new javax.swing.JLabel();
-        txtPhoneNumber = new javax.swing.JTextField();
-        txtFirstName = new javax.swing.JTextField();
-        lblPatientFirstName = new javax.swing.JLabel();
-        txtAge = new javax.swing.JTextField();
-        lblPatientAge = new javax.swing.JLabel();
-        txtLastName = new javax.swing.JTextField();
-        lblPatientLastName = new javax.swing.JLabel();
+        table1 = new javax.swing.JTable();
+        lblpPhone = new javax.swing.JLabel();
+        txtpAddress = new javax.swing.JTextField();
+        lblpAddress = new javax.swing.JLabel();
+        txtphInsuranceID = new javax.swing.JTextField();
+        lblpHealthInsuranceID = new javax.swing.JLabel();
+        txtpGender = new javax.swing.JTextField();
+        lblpGender = new javax.swing.JLabel();
+        txtpNumber = new javax.swing.JTextField();
+        txtpFirstName = new javax.swing.JTextField();
+        lblpFirstName = new javax.swing.JLabel();
+        txtpAge = new javax.swing.JTextField();
+        lblpAge = new javax.swing.JLabel();
+        txtpLastName = new javax.swing.JTextField();
+        lblpLastName = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
-        jButton1 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
-        jButton3 = new javax.swing.JButton();
-        txtPhoneNumber1 = new javax.swing.JTextField();
-        lblPatientPhone1 = new javax.swing.JLabel();
-        jButton4 = new javax.swing.JButton();
+        aprvBtn = new javax.swing.JButton();
+        rjctBtn = new javax.swing.JButton();
+        verificationBtn = new javax.swing.JButton();
+        txtpVerification = new javax.swing.JTextField();
+        lblpVerification = new javax.swing.JLabel();
+        backBtn = new javax.swing.JButton();
         jLabel4 = new javax.swing.JLabel();
 
         setBackground(new java.awt.Color(0, 153, 204));
@@ -128,9 +128,9 @@ public class CustomerInfo extends javax.swing.JPanel {
         add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(-460, 20, 1382, -1));
         add(jSeparator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 80, 1392, 10));
 
-        BillTalble.getTableHeader().setFont(new java.awt.Font("Trebuchet MS", 1, 16));
-        BillTalble.setFont(new java.awt.Font("Trebuchet MS", 1, 14)); // NOI18N
-        BillTalble.setModel(new javax.swing.table.DefaultTableModel(
+        table1.getTableHeader().setFont(new java.awt.Font("Trebuchet MS", 1, 16));
+        table1.setFont(new java.awt.Font("Trebuchet MS", 1, 14)); // NOI18N
+        table1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null},
                 {null, null, null},
@@ -156,103 +156,103 @@ public class CustomerInfo extends javax.swing.JPanel {
                 return canEdit [columnIndex];
             }
         });
-        jScrollPane1.setViewportView(BillTalble);
+        jScrollPane1.setViewportView(table1);
 
         add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 150, 680, 460));
 
-        lblPatientPhone.setBackground(new java.awt.Color(255, 255, 255));
-        lblPatientPhone.setFont(new java.awt.Font("Microsoft Sans Serif", 1, 18)); // NOI18N
-        lblPatientPhone.setForeground(new java.awt.Color(255, 255, 255));
-        lblPatientPhone.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        lblPatientPhone.setText("Phone Number");
-        add(lblPatientPhone, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 570, -1, 30));
+        lblpPhone.setBackground(new java.awt.Color(255, 255, 255));
+        lblpPhone.setFont(new java.awt.Font("Microsoft Sans Serif", 1, 18)); // NOI18N
+        lblpPhone.setForeground(new java.awt.Color(255, 255, 255));
+        lblpPhone.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        lblpPhone.setText("Phone Number");
+        add(lblpPhone, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 570, -1, 30));
 
-        txtAddress.setEditable(false);
-        txtAddress.addActionListener(new java.awt.event.ActionListener() {
+        txtpAddress.setEditable(false);
+        txtpAddress.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtAddressActionPerformed(evt);
+                txtpAddressActionPerformed(evt);
             }
         });
-        add(txtAddress, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 330, 150, 40));
+        add(txtpAddress, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 330, 150, 40));
 
-        lblPatientAddress.setBackground(new java.awt.Color(255, 255, 255));
-        lblPatientAddress.setFont(new java.awt.Font("Microsoft Sans Serif", 1, 18)); // NOI18N
-        lblPatientAddress.setForeground(new java.awt.Color(255, 255, 255));
-        lblPatientAddress.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        lblPatientAddress.setText("Address");
-        add(lblPatientAddress, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 340, 76, 18));
+        lblpAddress.setBackground(new java.awt.Color(255, 255, 255));
+        lblpAddress.setFont(new java.awt.Font("Microsoft Sans Serif", 1, 18)); // NOI18N
+        lblpAddress.setForeground(new java.awt.Color(255, 255, 255));
+        lblpAddress.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        lblpAddress.setText("Address");
+        add(lblpAddress, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 340, 76, 18));
 
-        txtHealthInsuranceID.setEditable(false);
-        txtHealthInsuranceID.addActionListener(new java.awt.event.ActionListener() {
+        txtphInsuranceID.setEditable(false);
+        txtphInsuranceID.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtHealthInsuranceIDActionPerformed(evt);
+                txtphInsuranceIDActionPerformed(evt);
             }
         });
-        add(txtHealthInsuranceID, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 270, 150, 40));
+        add(txtphInsuranceID, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 270, 150, 40));
 
-        lblPatientHealthInsuranceID.setBackground(new java.awt.Color(255, 255, 255));
-        lblPatientHealthInsuranceID.setFont(new java.awt.Font("Microsoft Sans Serif", 1, 18)); // NOI18N
-        lblPatientHealthInsuranceID.setForeground(new java.awt.Color(255, 255, 255));
-        lblPatientHealthInsuranceID.setText("InsuranceID");
-        add(lblPatientHealthInsuranceID, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 280, 106, -1));
+        lblpHealthInsuranceID.setBackground(new java.awt.Color(255, 255, 255));
+        lblpHealthInsuranceID.setFont(new java.awt.Font("Microsoft Sans Serif", 1, 18)); // NOI18N
+        lblpHealthInsuranceID.setForeground(new java.awt.Color(255, 255, 255));
+        lblpHealthInsuranceID.setText("Insurance Id");
+        add(lblpHealthInsuranceID, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 280, 106, -1));
 
-        txtGender.setEditable(false);
-        add(txtGender, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 510, 150, 40));
+        txtpGender.setEditable(false);
+        add(txtpGender, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 510, 150, 40));
 
-        lblPatientGender.setBackground(new java.awt.Color(255, 255, 255));
-        lblPatientGender.setFont(new java.awt.Font("Microsoft Sans Serif", 1, 18)); // NOI18N
-        lblPatientGender.setForeground(new java.awt.Color(255, 255, 255));
-        lblPatientGender.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        lblPatientGender.setText("Gender");
-        add(lblPatientGender, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 520, 98, 30));
+        lblpGender.setBackground(new java.awt.Color(255, 255, 255));
+        lblpGender.setFont(new java.awt.Font("Microsoft Sans Serif", 1, 18)); // NOI18N
+        lblpGender.setForeground(new java.awt.Color(255, 255, 255));
+        lblpGender.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        lblpGender.setText("Gender");
+        add(lblpGender, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 520, 98, 30));
 
-        txtPhoneNumber.setEditable(false);
-        txtPhoneNumber.addActionListener(new java.awt.event.ActionListener() {
+        txtpNumber.setEditable(false);
+        txtpNumber.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtPhoneNumberActionPerformed(evt);
+                txtpNumberActionPerformed(evt);
             }
         });
-        add(txtPhoneNumber, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 570, 150, 40));
+        add(txtpNumber, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 570, 150, 40));
 
-        txtFirstName.setEditable(false);
-        add(txtFirstName, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 156, 150, 40));
+        txtpFirstName.setEditable(false);
+        add(txtpFirstName, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 156, 150, 40));
 
-        lblPatientFirstName.setBackground(new java.awt.Color(255, 255, 255));
-        lblPatientFirstName.setFont(new java.awt.Font("Microsoft Sans Serif", 1, 18)); // NOI18N
-        lblPatientFirstName.setForeground(new java.awt.Color(255, 255, 255));
-        lblPatientFirstName.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        lblPatientFirstName.setText("First Name");
-        add(lblPatientFirstName, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 170, 116, -1));
+        lblpFirstName.setBackground(new java.awt.Color(255, 255, 255));
+        lblpFirstName.setFont(new java.awt.Font("Microsoft Sans Serif", 1, 18)); // NOI18N
+        lblpFirstName.setForeground(new java.awt.Color(255, 255, 255));
+        lblpFirstName.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        lblpFirstName.setText("First Name");
+        add(lblpFirstName, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 170, 116, -1));
 
-        txtAge.setEditable(false);
-        txtAge.addActionListener(new java.awt.event.ActionListener() {
+        txtpAge.setEditable(false);
+        txtpAge.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtAgeActionPerformed(evt);
+                txtpAgeActionPerformed(evt);
             }
         });
-        add(txtAge, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 390, 150, 40));
+        add(txtpAge, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 390, 150, 40));
 
-        lblPatientAge.setBackground(new java.awt.Color(255, 255, 255));
-        lblPatientAge.setFont(new java.awt.Font("Microsoft Sans Serif", 1, 18)); // NOI18N
-        lblPatientAge.setForeground(new java.awt.Color(255, 255, 255));
-        lblPatientAge.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        lblPatientAge.setText("Age");
-        add(lblPatientAge, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 400, 50, -1));
+        lblpAge.setBackground(new java.awt.Color(255, 255, 255));
+        lblpAge.setFont(new java.awt.Font("Microsoft Sans Serif", 1, 18)); // NOI18N
+        lblpAge.setForeground(new java.awt.Color(255, 255, 255));
+        lblpAge.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        lblpAge.setText("Age");
+        add(lblpAge, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 400, 50, -1));
 
-        txtLastName.setEditable(false);
-        txtLastName.addActionListener(new java.awt.event.ActionListener() {
+        txtpLastName.setEditable(false);
+        txtpLastName.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtLastNameActionPerformed(evt);
+                txtpLastNameActionPerformed(evt);
             }
         });
-        add(txtLastName, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 216, 150, 40));
+        add(txtpLastName, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 216, 150, 40));
 
-        lblPatientLastName.setBackground(new java.awt.Color(255, 255, 255));
-        lblPatientLastName.setFont(new java.awt.Font("Microsoft Sans Serif", 1, 18)); // NOI18N
-        lblPatientLastName.setForeground(new java.awt.Color(255, 255, 255));
-        lblPatientLastName.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        lblPatientLastName.setText("Last Name");
-        add(lblPatientLastName, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 230, 116, -1));
+        lblpLastName.setBackground(new java.awt.Color(255, 255, 255));
+        lblpLastName.setFont(new java.awt.Font("Microsoft Sans Serif", 1, 18)); // NOI18N
+        lblpLastName.setForeground(new java.awt.Color(255, 255, 255));
+        lblpLastName.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        lblpLastName.setText("Last Name");
+        add(lblpLastName, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 230, 116, -1));
 
         jLabel2.setFont(new java.awt.Font("Georgia", 1, 24)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(51, 204, 0));
@@ -264,63 +264,63 @@ public class CustomerInfo extends javax.swing.JPanel {
         jLabel3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(716, 284, 304, 33));
 
-        jButton1.setBackground(new java.awt.Color(255, 255, 255));
-        jButton1.setFont(new java.awt.Font("Microsoft Sans Serif", 1, 18)); // NOI18N
-        jButton1.setForeground(new java.awt.Color(0, 255, 0));
-        jButton1.setText("Approve");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        aprvBtn.setBackground(new java.awt.Color(255, 255, 255));
+        aprvBtn.setFont(new java.awt.Font("Microsoft Sans Serif", 1, 18)); // NOI18N
+        aprvBtn.setForeground(new java.awt.Color(0, 255, 0));
+        aprvBtn.setText("Approve");
+        aprvBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                aprvBtnActionPerformed(evt);
             }
         });
-        add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 630, 210, 70));
+        add(aprvBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 630, 210, 70));
 
-        jButton2.setBackground(new java.awt.Color(255, 255, 255));
-        jButton2.setFont(new java.awt.Font("Microsoft Sans Serif", 1, 18)); // NOI18N
-        jButton2.setForeground(new java.awt.Color(255, 0, 51));
-        jButton2.setText("Reject");
-        jButton2.addActionListener(new java.awt.event.ActionListener() {
+        rjctBtn.setBackground(new java.awt.Color(255, 255, 255));
+        rjctBtn.setFont(new java.awt.Font("Microsoft Sans Serif", 1, 18)); // NOI18N
+        rjctBtn.setForeground(new java.awt.Color(255, 0, 51));
+        rjctBtn.setText("Reject");
+        rjctBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton2ActionPerformed(evt);
+                rjctBtnActionPerformed(evt);
             }
         });
-        add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(900, 630, 210, 70));
+        add(rjctBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(900, 630, 210, 70));
 
-        jButton3.setBackground(new java.awt.Color(255, 255, 255));
-        jButton3.setFont(new java.awt.Font("Microsoft Sans Serif", 1, 18)); // NOI18N
-        jButton3.setForeground(new java.awt.Color(0, 51, 153));
-        jButton3.setText("Send for Verification");
-        jButton3.addActionListener(new java.awt.event.ActionListener() {
+        verificationBtn.setBackground(new java.awt.Color(255, 255, 255));
+        verificationBtn.setFont(new java.awt.Font("Microsoft Sans Serif", 1, 18)); // NOI18N
+        verificationBtn.setForeground(new java.awt.Color(0, 51, 153));
+        verificationBtn.setText("Send for Verification");
+        verificationBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton3ActionPerformed(evt);
+                verificationBtnActionPerformed(evt);
             }
         });
-        add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(660, 630, 220, 70));
+        add(verificationBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(660, 630, 220, 70));
 
-        txtPhoneNumber1.setEditable(false);
-        txtPhoneNumber1.addActionListener(new java.awt.event.ActionListener() {
+        txtpVerification.setEditable(false);
+        txtpVerification.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtPhoneNumber1ActionPerformed(evt);
+                txtpVerificationActionPerformed(evt);
             }
         });
-        add(txtPhoneNumber1, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 450, 150, 40));
+        add(txtpVerification, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 450, 150, 40));
 
-        lblPatientPhone1.setBackground(new java.awt.Color(255, 255, 255));
-        lblPatientPhone1.setFont(new java.awt.Font("Microsoft Sans Serif", 1, 18)); // NOI18N
-        lblPatientPhone1.setForeground(new java.awt.Color(255, 255, 255));
-        lblPatientPhone1.setText("Police Verification");
-        add(lblPatientPhone1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 460, 156, -1));
+        lblpVerification.setBackground(new java.awt.Color(255, 255, 255));
+        lblpVerification.setFont(new java.awt.Font("Microsoft Sans Serif", 1, 18)); // NOI18N
+        lblpVerification.setForeground(new java.awt.Color(255, 255, 255));
+        lblpVerification.setText("Police Verification");
+        add(lblpVerification, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 460, 156, -1));
 
-        jButton4.setBackground(new java.awt.Color(255, 255, 255));
-        jButton4.setFont(new java.awt.Font("Microsoft Sans Serif", 1, 18)); // NOI18N
-        jButton4.setForeground(new java.awt.Color(0, 153, 204));
-        jButton4.setText("Back");
-        jButton4.addActionListener(new java.awt.event.ActionListener() {
+        backBtn.setBackground(new java.awt.Color(255, 255, 255));
+        backBtn.setFont(new java.awt.Font("Microsoft Sans Serif", 1, 18)); // NOI18N
+        backBtn.setForeground(new java.awt.Color(0, 153, 204));
+        backBtn.setText("Back");
+        backBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton4ActionPerformed(evt);
+                backBtnActionPerformed(evt);
             }
         });
-        add(jButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(930, 20, 190, 50));
+        add(backBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(930, 20, 190, 50));
 
         jLabel4.setFont(new java.awt.Font("Georgia", 1, 18)); // NOI18N
         jLabel4.setForeground(new java.awt.Color(255, 51, 51));
@@ -328,23 +328,23 @@ public class CustomerInfo extends javax.swing.JPanel {
         add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(780, 580, 390, 41));
     }// </editor-fold>//GEN-END:initComponents
 
-    private void txtAddressActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtAddressActionPerformed
+    private void txtpAddressActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtpAddressActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_txtAddressActionPerformed
+    }//GEN-LAST:event_txtpAddressActionPerformed
 
-    private void txtHealthInsuranceIDActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtHealthInsuranceIDActionPerformed
+    private void txtphInsuranceIDActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtphInsuranceIDActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_txtHealthInsuranceIDActionPerformed
+    }//GEN-LAST:event_txtphInsuranceIDActionPerformed
 
-    private void txtAgeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtAgeActionPerformed
+    private void txtpAgeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtpAgeActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_txtAgeActionPerformed
+    }//GEN-LAST:event_txtpAgeActionPerformed
 
-    private void txtLastNameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtLastNameActionPerformed
+    private void txtpLastNameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtpLastNameActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_txtLastNameActionPerformed
+    }//GEN-LAST:event_txtpLastNameActionPerformed
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    private void aprvBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_aprvBtnActionPerformed
         // TODO add your handling code here:
         patient.setpInsuranceStatus("Approved");
         try{
@@ -355,18 +355,18 @@ public class CustomerInfo extends javax.swing.JPanel {
         userProcessContainer.add("Insurance main", bill);
         CardLayout layout = (CardLayout) userProcessContainer.getLayout();
         layout.next(userProcessContainer);
-    }//GEN-LAST:event_jButton1ActionPerformed
+    }//GEN-LAST:event_aprvBtnActionPerformed
 
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+    private void rjctBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rjctBtnActionPerformed
         // TODO add your handling code here:
         patient.setpInsuranceStatus("Rejected");
         InsuranceWorkAreaJPanel bill = new InsuranceWorkAreaJPanel(userProcessContainer, user, ecoSystem);
         userProcessContainer.add("Insurance main", bill);
         CardLayout layout = (CardLayout) userProcessContainer.getLayout();
         layout.next(userProcessContainer);
-    }//GEN-LAST:event_jButton2ActionPerformed
+    }//GEN-LAST:event_rjctBtnActionPerformed
 
-    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+    private void verificationBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_verificationBtnActionPerformed
         // TODO add your handling code here:
         if(patient.getpPoliceStatus().equals("Verifying")||patient.getpPoliceStatus().equals("Verified")||patient.getpPoliceStatus().equals("Rejected")){
             JOptionPane.showMessageDialog(null, "Already verifying/Verified.");
@@ -374,55 +374,55 @@ public class CustomerInfo extends javax.swing.JPanel {
         else{
         patient.setpPoliceStatus("Verifying");
         ecoSystem.getPoliceRecords().addtoRecord(patient);
-        txtPhoneNumber1.setText(patient.getpPoliceStatus());
+        txtpVerification.setText(patient.getpPoliceStatus());
         }
-    }//GEN-LAST:event_jButton3ActionPerformed
+    }//GEN-LAST:event_verificationBtnActionPerformed
 
-    private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
+    private void backBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_backBtnActionPerformed
         // TODO add your handling code here:
         //patient.setInsuranceStatus("Approved");
         InsuranceWorkAreaJPanel bill = new InsuranceWorkAreaJPanel(userProcessContainer, user, ecoSystem);
         userProcessContainer.add("Insurance main", bill);
         CardLayout layout = (CardLayout) userProcessContainer.getLayout();
         layout.next(userProcessContainer);
-    }//GEN-LAST:event_jButton4ActionPerformed
+    }//GEN-LAST:event_backBtnActionPerformed
 
-    private void txtPhoneNumber1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtPhoneNumber1ActionPerformed
+    private void txtpVerificationActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtpVerificationActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_txtPhoneNumber1ActionPerformed
+    }//GEN-LAST:event_txtpVerificationActionPerformed
 
-    private void txtPhoneNumberActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtPhoneNumberActionPerformed
+    private void txtpNumberActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtpNumberActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_txtPhoneNumberActionPerformed
+    }//GEN-LAST:event_txtpNumberActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JTable BillTalble;
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton3;
-    private javax.swing.JButton jButton4;
+    private javax.swing.JButton aprvBtn;
+    private javax.swing.JButton backBtn;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JSeparator jSeparator1;
-    private javax.swing.JLabel lblPatientAddress;
-    private javax.swing.JLabel lblPatientAge;
-    private javax.swing.JLabel lblPatientFirstName;
-    private javax.swing.JLabel lblPatientGender;
-    private javax.swing.JLabel lblPatientHealthInsuranceID;
-    private javax.swing.JLabel lblPatientLastName;
-    private javax.swing.JLabel lblPatientPhone;
-    private javax.swing.JLabel lblPatientPhone1;
-    private javax.swing.JTextField txtAddress;
-    private javax.swing.JTextField txtAge;
-    private javax.swing.JTextField txtFirstName;
-    private javax.swing.JTextField txtGender;
-    private javax.swing.JTextField txtHealthInsuranceID;
-    private javax.swing.JTextField txtLastName;
-    private javax.swing.JTextField txtPhoneNumber;
-    private javax.swing.JTextField txtPhoneNumber1;
+    private javax.swing.JLabel lblpAddress;
+    private javax.swing.JLabel lblpAge;
+    private javax.swing.JLabel lblpFirstName;
+    private javax.swing.JLabel lblpGender;
+    private javax.swing.JLabel lblpHealthInsuranceID;
+    private javax.swing.JLabel lblpLastName;
+    private javax.swing.JLabel lblpPhone;
+    private javax.swing.JLabel lblpVerification;
+    private javax.swing.JButton rjctBtn;
+    private javax.swing.JTable table1;
+    private javax.swing.JTextField txtpAddress;
+    private javax.swing.JTextField txtpAge;
+    private javax.swing.JTextField txtpFirstName;
+    private javax.swing.JTextField txtpGender;
+    private javax.swing.JTextField txtpLastName;
+    private javax.swing.JTextField txtpNumber;
+    private javax.swing.JTextField txtpVerification;
+    private javax.swing.JTextField txtphInsuranceID;
+    private javax.swing.JButton verificationBtn;
     // End of variables declaration//GEN-END:variables
 }

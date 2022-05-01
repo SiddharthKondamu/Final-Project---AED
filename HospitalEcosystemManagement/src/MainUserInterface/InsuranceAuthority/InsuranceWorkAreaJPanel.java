@@ -36,7 +36,7 @@ public class InsuranceWorkAreaJPanel extends javax.swing.JPanel {
         
     }
           private void populatePatientTable() {
-        DefaultTableModel model = (DefaultTableModel) managePatientTable1.getModel();
+        DefaultTableModel model = (DefaultTableModel) PatientTbl.getModel();
 
         model.setRowCount(0);
 
@@ -70,8 +70,8 @@ public class InsuranceWorkAreaJPanel extends javax.swing.JPanel {
         jButton1 = new javax.swing.JButton();
         jSeparator1 = new javax.swing.JSeparator();
         jScrollPane4 = new javax.swing.JScrollPane();
-        managePatientTable1 = new javax.swing.JTable();
-        jButton2 = new javax.swing.JButton();
+        PatientTbl = new javax.swing.JTable();
+        recBtn = new javax.swing.JButton();
 
         setBackground(new java.awt.Color(0, 153, 204));
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -79,7 +79,7 @@ public class InsuranceWorkAreaJPanel extends javax.swing.JPanel {
         jLabel1.setFont(new java.awt.Font("Microsoft Sans Serif", 1, 36)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel1.setText("Insurance Company");
+        jLabel1.setText("Insurer");
         add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(-480, 50, 1380, -1));
 
         jButton1.setBackground(new java.awt.Color(255, 255, 255));
@@ -95,9 +95,9 @@ public class InsuranceWorkAreaJPanel extends javax.swing.JPanel {
         add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 330, 220, 80));
         add(jSeparator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 126, 1380, 10));
 
-        managePatientTable1.getTableHeader().setFont(new java.awt.Font("Trebuchet MS", 1, 16));
-        managePatientTable1.setFont(new java.awt.Font("Trebuchet MS", 1, 12));
-        managePatientTable1.setModel(new javax.swing.table.DefaultTableModel(
+        PatientTbl.getTableHeader().setFont(new java.awt.Font("Trebuchet MS", 1, 16));
+        PatientTbl.setFont(new java.awt.Font("Trebuchet MS", 1, 12));
+        PatientTbl.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null, null, null, null},
                 {null, null, null, null, null, null, null},
@@ -123,31 +123,31 @@ public class InsuranceWorkAreaJPanel extends javax.swing.JPanel {
                 return canEdit [columnIndex];
             }
         });
-        jScrollPane4.setViewportView(managePatientTable1);
+        jScrollPane4.setViewportView(PatientTbl);
 
         add(jScrollPane4, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 160, 980, 260));
 
-        jButton2.setBackground(new java.awt.Color(255, 255, 255));
-        jButton2.setFont(new java.awt.Font("Microsoft Sans Serif", 1, 18)); // NOI18N
-        jButton2.setForeground(new java.awt.Color(0, 153, 204));
-        jButton2.setText("View Past Records");
-        jButton2.addActionListener(new java.awt.event.ActionListener() {
+        recBtn.setBackground(new java.awt.Color(255, 255, 255));
+        recBtn.setFont(new java.awt.Font("Microsoft Sans Serif", 1, 18)); // NOI18N
+        recBtn.setForeground(new java.awt.Color(0, 153, 204));
+        recBtn.setText("View Past Records");
+        recBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton2ActionPerformed(evt);
+                recBtnActionPerformed(evt);
             }
         });
-        add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 180, 220, 90));
+        add(recBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 180, 220, 90));
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
-        int selectedRow = managePatientTable1.getSelectedRow();
+        int selectedRow = PatientTbl.getSelectedRow();
         if(selectedRow<0){
             JOptionPane.showMessageDialog(null,"Please select a row from the table to view details","Warning",JOptionPane.WARNING_MESSAGE);
         }
         else{
             
-            Patient d = (Patient) managePatientTable1.getValueAt(selectedRow, 0);
+            Patient d = (Patient) PatientTbl.getValueAt(selectedRow, 0);
             //d.get
             CustomerInfo bill = new CustomerInfo(userProcessContainer,ecoSystem, d, userAccount);
             userProcessContainer.add("Customer Bill", bill);
@@ -158,21 +158,21 @@ public class InsuranceWorkAreaJPanel extends javax.swing.JPanel {
         }
     }//GEN-LAST:event_jButton1ActionPerformed
 
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+    private void recBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_recBtnActionPerformed
         // TODO add your handling code here:
             InsurancePastCustomers bill = new InsurancePastCustomers(userProcessContainer, userAccount,ecoSystem);
             userProcessContainer.add("Past Customers", bill);
             CardLayout layout = (CardLayout) userProcessContainer.getLayout();
             layout.next(userProcessContainer);
-    }//GEN-LAST:event_jButton2ActionPerformed
+    }//GEN-LAST:event_recBtnActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JTable PatientTbl;
     private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JScrollPane jScrollPane4;
     private javax.swing.JSeparator jSeparator1;
-    private javax.swing.JTable managePatientTable1;
+    private javax.swing.JButton recBtn;
     // End of variables declaration//GEN-END:variables
 }
