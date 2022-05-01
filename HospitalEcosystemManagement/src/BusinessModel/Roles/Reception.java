@@ -6,6 +6,7 @@ package BusinessModel.Roles;
 
 import BusinessModel.Ecosystem;
 import BusinessModel.UserAccount.User;
+import MainUserInterface.ReceptionRole.ReceptionWorkAreaJPanel;
 import javax.swing.JPanel;
 
 /**

@@ -6,6 +6,7 @@ package BusinessModel.Roles;
 
 import BusinessModel.Ecosystem;
 import BusinessModel.UserAccount.User;
+import MainUserInterface.Pharmacy.PharmacyWorkAreaJPanel;
 import javax.swing.JPanel;
 
 /**

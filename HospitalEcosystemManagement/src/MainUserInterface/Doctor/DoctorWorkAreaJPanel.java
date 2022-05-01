@@ -6,9 +6,9 @@
 package userinterface.DoctorRole;
 
 import Business.Doctor.Doctor;
-import Business.EcoSystem;
+import BusinessModel.Ecosystem;
 import Business.Patient.Patient;
-import Business.UserAccount.UserAccount;
+import BusinessModel.UserAccount.User;
 import java.awt.CardLayout;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
@@ -20,7 +20,7 @@ import userinterface.ReceptionRole.CreatePatientJPanel;
 
 /**
  *
- * @author ronitchougule
+ * @author Siddh
  */
 public class DoctorWorkAreaJPanel extends javax.swing.JPanel {
 
@@ -28,10 +28,10 @@ public class DoctorWorkAreaJPanel extends javax.swing.JPanel {
      * Creates new form DoctorWorkAreaJPanel
      */
     private final JPanel userProcessContainer;
-    private final EcoSystem ecoSystem;
-    UserAccount userAccount;
+    private final Ecosystem ecoSystem;
+    User userAccount;
 
-    public DoctorWorkAreaJPanel(JPanel userProcessContainer, UserAccount account, EcoSystem system) {
+    public DoctorWorkAreaJPanel(JPanel userProcessContainer, User account, Ecosystem system) {
         initComponents();
         this.userProcessContainer = userProcessContainer;
         this.ecoSystem = system;
