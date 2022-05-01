@@ -17,6 +17,7 @@ public class DoctorsAdministrator extends Role {
 
     @Override
      public JPanel createWorkArea(JPanel userProcessContainer, User user, Ecosystem business) {
+        System.out.println("inside doctors admin role---");
         return new DoctorAdminWorkArea(userProcessContainer, user, business);
     }
 

@@ -51,7 +51,7 @@ public class ReceptionWorkAreaJPanel extends javax.swing.JPanel {
         model.setRowCount(0);
         for (Patient patient : ecoSystem.getPatientDirectory().getPatientList()) {
             Object[] row = new Object[11];
-            row[0] = patient;
+            row[0] = patient.getpFirstName();
             row[1] = patient.getpLastName();
             row[2] = patient.getpHealthInsuranceID();
             row[3] = patient.getpAge(); 
@@ -85,10 +85,8 @@ public class ReceptionWorkAreaJPanel extends javax.swing.JPanel {
         jPanel1 = new javax.swing.JPanel();
         jLabel2 = new javax.swing.JLabel();
 
-
         setBackground(new java.awt.Color(0, 153, 204));
         setToolTipText("");
-
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         createPatBtn.setBackground(new java.awt.Color(102, 102, 0));
@@ -103,10 +101,8 @@ public class ReceptionWorkAreaJPanel extends javax.swing.JPanel {
         add(createPatBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(980, 80, 260, 42));
 
         jLabel1.setBackground(new java.awt.Color(255, 255, 255));
-
         jLabel1.setFont(new java.awt.Font("Microsoft Sans Serif", 1, 36)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));
-
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel1.setText("Hospital ");
         add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 10, 860, 80));
@@ -197,7 +193,7 @@ public class ReceptionWorkAreaJPanel extends javax.swing.JPanel {
                 jButton1ActionPerformed(evt);
             }
         });
-        add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(980, 390, 260, 42));
+        add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(800, 390, 260, 42));
 
         jButton2.setBackground(new java.awt.Color(102, 102, 0));
         jButton2.setFont(new java.awt.Font("Georgia", 1, 14)); // NOI18N
@@ -210,7 +206,6 @@ public class ReceptionWorkAreaJPanel extends javax.swing.JPanel {
         });
         add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(980, 710, 250, 42));
 
-
         jLabel3.setFont(new java.awt.Font("Microsoft Sans Serif", 1, 24)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(255, 255, 255));
         jLabel3.setText("Current Patient List");
@@ -222,7 +217,6 @@ public class ReceptionWorkAreaJPanel extends javax.swing.JPanel {
         jLabel2.setBackground(new java.awt.Color(255, 255, 255));
         jLabel2.setFont(new java.awt.Font("Malayalam Sangam MN", 1, 14)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(255, 255, 255));
-
         jLabel2.setText("Perform an action");
         jPanel1.add(jLabel2);
 
@@ -315,16 +309,16 @@ public class ReceptionWorkAreaJPanel extends javax.swing.JPanel {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
-        ReceptionDischarge ambulanceWorkAreaJPanel = new ReceptionDischarge(userProcessContainer, userAccount, ecoSystem);
-        userProcessContainer.add("Discharge", ambulanceWorkAreaJPanel);
+        ReceptionDischarge receptionDischarge = new ReceptionDischarge(userProcessContainer, userAccount, ecoSystem);
+        userProcessContainer.add("Discharge", receptionDischarge);
         CardLayout layout = (CardLayout) userProcessContainer.getLayout();
         layout.next(userProcessContainer);
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         // TODO add your handling code here:
-        PastRecords ambulanceWorkAreaJPanel = new PastRecords(userProcessContainer, userAccount, ecoSystem);
-        userProcessContainer.add("Past Records", ambulanceWorkAreaJPanel);
+        PastRecords pastRecords = new PastRecords(userProcessContainer, userAccount, ecoSystem);
+        userProcessContainer.add("Past Records", pastRecords);
         CardLayout layout = (CardLayout) userProcessContainer.getLayout();
         layout.next(userProcessContainer);
     }//GEN-LAST:event_jButton2ActionPerformed

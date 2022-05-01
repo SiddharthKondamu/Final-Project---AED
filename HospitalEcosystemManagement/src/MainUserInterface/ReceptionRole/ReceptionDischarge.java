@@ -8,6 +8,7 @@ package MainUserInterface.ReceptionRole;
 import BusinessModel.Ecosystem;
 import BusinessModel.Patient.Patient;
 import BusinessModel.UserAccount.User;
+import BusinessUtil.Mail.SendMail;
 import java.awt.CardLayout;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
@@ -78,11 +79,11 @@ public class ReceptionDischarge extends javax.swing.JPanel {
         setBackground(new java.awt.Color(0, 153, 204));
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel1.setFont(new java.awt.Font("Microsoft Sans Serif", 1, 36)); // NOI18N
+        jLabel1.setFont(new java.awt.Font("Microsoft JhengHei", 1, 36)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel1.setText("DISCHARGE");
-        add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(-470, 20, 1260, 80));
+        jLabel1.setText("DISCHARGE PATIENT");
+        add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 10, 640, 80));
         add(jSeparator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 92, 1260, 10));
 
         ManageCustomersTable.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 2));
@@ -115,39 +116,40 @@ public class ReceptionDischarge extends javax.swing.JPanel {
         });
         jScrollPane1.setViewportView(ManageCustomersTable);
 
-        add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 290, 1190, 216));
+        add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 180, 1190, 216));
 
-        btnUpdateAmbulanceRecord.setBackground(new java.awt.Color(15, 85, 177));
-        btnUpdateAmbulanceRecord.setFont(new java.awt.Font("Georgia", 1, 14)); // NOI18N
-        btnUpdateAmbulanceRecord.setForeground(new java.awt.Color(255, 255, 255));
+        btnUpdateAmbulanceRecord.setBackground(new java.awt.Color(255, 255, 255));
+        btnUpdateAmbulanceRecord.setFont(new java.awt.Font("Microsoft JhengHei", 1, 18)); // NOI18N
+        btnUpdateAmbulanceRecord.setForeground(new java.awt.Color(0, 153, 204));
         btnUpdateAmbulanceRecord.setText("Discharge");
         btnUpdateAmbulanceRecord.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnUpdateAmbulanceRecordActionPerformed(evt);
             }
         });
-        add(btnUpdateAmbulanceRecord, new org.netbeans.lib.awtextra.AbsoluteConstraints(620, 170, 235, 70));
+        add(btnUpdateAmbulanceRecord, new org.netbeans.lib.awtextra.AbsoluteConstraints(740, 450, 140, 40));
 
-        btnUpdate1.setBackground(new java.awt.Color(15, 85, 177));
-        btnUpdate1.setFont(new java.awt.Font("Georgia", 1, 14)); // NOI18N
-        btnUpdate1.setForeground(new java.awt.Color(255, 255, 255));
+        btnUpdate1.setBackground(new java.awt.Color(255, 255, 255));
+        btnUpdate1.setFont(new java.awt.Font("Microsoft JhengHei", 1, 18)); // NOI18N
+        btnUpdate1.setForeground(new java.awt.Color(0, 153, 204));
         btnUpdate1.setText("Send to Insurance Check");
         btnUpdate1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnUpdate1ActionPerformed(evt);
             }
         });
-        add(btnUpdate1, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 170, 240, 70));
+        add(btnUpdate1, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 450, 260, 40));
 
         btnUpdateAmbulanceRecord1.setBackground(new java.awt.Color(255, 255, 255));
-        btnUpdateAmbulanceRecord1.setFont(new java.awt.Font("Microsoft Sans Serif", 1, 14)); // NOI18N
+        btnUpdateAmbulanceRecord1.setFont(new java.awt.Font("Microsoft JhengHei", 1, 18)); // NOI18N
+        btnUpdateAmbulanceRecord1.setForeground(new java.awt.Color(0, 153, 204));
         btnUpdateAmbulanceRecord1.setText("Back");
         btnUpdateAmbulanceRecord1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnUpdateAmbulanceRecord1ActionPerformed(evt);
             }
         });
-        add(btnUpdateAmbulanceRecord1, new org.netbeans.lib.awtextra.AbsoluteConstraints(1070, 40, 120, 40));
+        add(btnUpdateAmbulanceRecord1, new org.netbeans.lib.awtextra.AbsoluteConstraints(1050, 30, 120, 40));
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnUpdateAmbulanceRecordActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnUpdateAmbulanceRecordActionPerformed
@@ -160,18 +162,17 @@ public class ReceptionDischarge extends javax.swing.JPanel {
         else 
         {
             Patient patient = (Patient) ManageCustomersTable.getValueAt(selectedRowIndex, 0);
-            
             if(patient.getpInsuranceStatus().equals("Verifying Insurance")){
-            JOptionPane.showMessageDialog(null, "Cannot discharge verifying insurance.", "Warning", JOptionPane.WARNING_MESSAGE);
+                JOptionPane.showMessageDialog(null, "Cannot discharge verifying insurance.", "Warning", JOptionPane.WARNING_MESSAGE);
             }
             else if(patient.getpInsuranceStatus().equals("Cash")||patient.getpInsuranceStatus().equals("Rejected")){
-            patient.setpStatus("Discharged");
-            JOptionPane.showMessageDialog(null, "Cash payment Received.Patient Discharged.", "Information", JOptionPane.INFORMATION_MESSAGE);
+                patient.setpStatus("Discharged");
+                JOptionPane.showMessageDialog(null, "Cash payment Received.Patient Discharged.", "Information", JOptionPane.INFORMATION_MESSAGE);
             }
             else{
-            patient.setpStatus("Discharged");
-           //patient.setPoliceStatus("Not Verified");
-            JOptionPane.showMessageDialog(null, "Insurance payment Received.Patient Discharged.", "Warning", JOptionPane.INFORMATION_MESSAGE);
+                patient.setpStatus("Discharged");
+                SendMail.sendMail(patient.getpEmailAddress(), "Hello "+patient.getpFirstName()+", your account has been successfully created in Hospital EcoSystem Management!");
+                JOptionPane.showMessageDialog(null, "Insurance payment Received.Patient Discharged.", "Warning", JOptionPane.INFORMATION_MESSAGE);
             }
             //patient.setStatus("Insurance Verification");
             populateNetworkTable();
