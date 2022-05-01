@@ -84,7 +84,7 @@ public class PastRecords extends javax.swing.JPanel {
         lblManageCustomers.setForeground(new java.awt.Color(255, 255, 255));
         lblManageCustomers.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         lblManageCustomers.setText("                      Manage Patients");
-        add(lblManageCustomers, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 11, 590, 70));
+        add(lblManageCustomers, new org.netbeans.lib.awtextra.AbsoluteConstraints(-130, 10, 590, 70));
 
         ManageCustomersTable.setFont(new java.awt.Font("Trebuchet MS", 1, 14)); // NOI18N
         ManageCustomersTable.setModel(new javax.swing.table.DefaultTableModel(
@@ -130,6 +130,7 @@ public class PastRecords extends javax.swing.JPanel {
 
         btnUpdateAmbulanceRecord1.setBackground(new java.awt.Color(255, 255, 255));
         btnUpdateAmbulanceRecord1.setFont(new java.awt.Font("Microsoft Sans Serif", 1, 14)); // NOI18N
+        btnUpdateAmbulanceRecord1.setForeground(new java.awt.Color(0, 153, 204));
         btnUpdateAmbulanceRecord1.setText("Back");
         btnUpdateAmbulanceRecord1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
