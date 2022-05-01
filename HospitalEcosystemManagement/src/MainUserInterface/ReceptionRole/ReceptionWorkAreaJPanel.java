@@ -51,7 +51,7 @@ public class ReceptionWorkAreaJPanel extends javax.swing.JPanel {
         model.setRowCount(0);
         for (Patient patient : ecoSystem.getPatientDirectory().getPatientList()) {
             Object[] row = new Object[11];
-            row[0] = patient.getpFirstName();
+            row[0] = patient;
             row[1] = patient.getpLastName();
             row[2] = patient.getpHealthInsuranceID();
             row[3] = patient.getpAge(); 

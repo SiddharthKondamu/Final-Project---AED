@@ -7,6 +7,7 @@ package MainUserInterface.ReceptionRole;
 
 import BusinessModel.Ecosystem;
 import BusinessModel.Patient.Patient;
+import BusinessModel.Patient.PatientBills;
 import BusinessModel.UserAccount.User;
 import BusinessUtil.Mail.SendMail;
 import java.awt.CardLayout;
@@ -162,16 +163,21 @@ public class ReceptionDischarge extends javax.swing.JPanel {
         else 
         {
             Patient patient = (Patient) ManageCustomersTable.getValueAt(selectedRowIndex, 0);
+            int totalAmount = 0;
+            for (PatientBills b : patient.getpBills()) {
+                totalAmount += b.getAmount();
+            }
             if(patient.getpInsuranceStatus().equals("Verifying Insurance")){
                 JOptionPane.showMessageDialog(null, "Cannot discharge verifying insurance.", "Warning", JOptionPane.WARNING_MESSAGE);
             }
             else if(patient.getpInsuranceStatus().equals("Cash")||patient.getpInsuranceStatus().equals("Rejected")){
                 patient.setpStatus("Discharged");
+                SendMail.sendMail(patient.getpEmailAddress(), "Hello "+patient.getpFirstName()+", you have been discharged and your total bill amount is "+String.valueOf(totalAmount));
                 JOptionPane.showMessageDialog(null, "Cash payment Received.Patient Discharged.", "Information", JOptionPane.INFORMATION_MESSAGE);
             }
             else{
                 patient.setpStatus("Discharged");
-                SendMail.sendMail(patient.getpEmailAddress(), "Hello "+patient.getpFirstName()+", your account has been successfully created in Hospital EcoSystem Management!");
+                SendMail.sendMail(patient.getpEmailAddress(), "Hello "+patient.getpFirstName()+", you have been discharged and your total bill amount is "+String.valueOf(totalAmount));
                 JOptionPane.showMessageDialog(null, "Insurance payment Received.Patient Discharged.", "Warning", JOptionPane.INFORMATION_MESSAGE);
             }
             //patient.setStatus("Insurance Verification");

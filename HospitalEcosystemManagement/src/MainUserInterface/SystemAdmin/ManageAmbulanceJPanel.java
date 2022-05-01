@@ -68,15 +68,28 @@ public class ManageAmbulanceJPanel extends javax.swing.JPanel {
         lblUserName = new javax.swing.JLabel();
         txtName = new javax.swing.JTextField();
         lblName = new javax.swing.JLabel();
+        jPanel1 = new javax.swing.JPanel();
+        lblManageCustomers1 = new javax.swing.JLabel();
+        jScrollPane2 = new javax.swing.JScrollPane();
+        ManageCustomersTable1 = new javax.swing.JTable();
+        btnSubmit1 = new javax.swing.JButton();
+        lblPassword1 = new javax.swing.JLabel();
+        txtPassword1 = new javax.swing.JPasswordField();
+        txtUserName1 = new javax.swing.JTextField();
+        lblUserName1 = new javax.swing.JLabel();
+        txtName1 = new javax.swing.JTextField();
+        lblName1 = new javax.swing.JLabel();
 
         setBackground(new java.awt.Color(0, 153, 204));
         setForeground(new java.awt.Color(0, 153, 204));
+        setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         lblManageCustomers.setBackground(new java.awt.Color(119, 197, 147));
         lblManageCustomers.setFont(new java.awt.Font("Microsoft Sans Serif", 1, 36)); // NOI18N
         lblManageCustomers.setForeground(new java.awt.Color(255, 255, 255));
         lblManageCustomers.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         lblManageCustomers.setText("                      Manage Customers");
+        add(lblManageCustomers, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 29, 590, 70));
 
         ManageCustomersTable.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 2));
         ManageCustomersTable.setModel(new javax.swing.table.DefaultTableModel(
@@ -107,6 +120,8 @@ public class ManageAmbulanceJPanel extends javax.swing.JPanel {
         });
         jScrollPane1.setViewportView(ManageCustomersTable);
 
+        add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(337, 167, 730, 382));
+
         btnSubmit.setBackground(new java.awt.Color(255, 255, 255));
         btnSubmit.setFont(new java.awt.Font("Microsoft Sans Serif", 1, 24)); // NOI18N
         btnSubmit.setForeground(new java.awt.Color(0, 153, 204));
@@ -116,89 +131,173 @@ public class ManageAmbulanceJPanel extends javax.swing.JPanel {
                 btnSubmitActionPerformed(evt);
             }
         });
+        add(btnSubmit, new org.netbeans.lib.awtextra.AbsoluteConstraints(77, 481, 148, 68));
 
         lblPassword.setBackground(new java.awt.Color(0, 0, 0));
         lblPassword.setFont(new java.awt.Font("Microsoft Sans Serif", 1, 24)); // NOI18N
         lblPassword.setForeground(new java.awt.Color(255, 255, 255));
         lblPassword.setText("Password");
+        add(lblPassword, new org.netbeans.lib.awtextra.AbsoluteConstraints(12, 380, -1, 30));
 
         txtPassword.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtPasswordActionPerformed(evt);
             }
         });
+        add(txtPassword, new org.netbeans.lib.awtextra.AbsoluteConstraints(163, 386, 144, 30));
 
         txtUserName.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtUserNameActionPerformed(evt);
             }
         });
+        add(txtUserName, new org.netbeans.lib.awtextra.AbsoluteConstraints(163, 292, 144, 30));
 
         lblUserName.setBackground(new java.awt.Color(0, 0, 0));
         lblUserName.setFont(new java.awt.Font("Microsoft Sans Serif", 1, 24)); // NOI18N
         lblUserName.setForeground(new java.awt.Color(255, 255, 255));
         lblUserName.setText("Username");
+        add(lblUserName, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 286, -1, 30));
+        add(txtName, new org.netbeans.lib.awtextra.AbsoluteConstraints(163, 200, 144, 30));
 
         lblName.setBackground(new java.awt.Color(0, 0, 0));
         lblName.setFont(new java.awt.Font("Microsoft Sans Serif", 1, 24)); // NOI18N
         lblName.setForeground(new java.awt.Color(255, 255, 255));
         lblName.setText("Name");
+        add(lblName, new org.netbeans.lib.awtextra.AbsoluteConstraints(59, 194, -1, 30));
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
-        this.setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
+        jPanel1.setBackground(new java.awt.Color(0, 153, 204));
+        jPanel1.setForeground(new java.awt.Color(0, 153, 204));
+
+        lblManageCustomers1.setBackground(new java.awt.Color(119, 197, 147));
+        lblManageCustomers1.setFont(new java.awt.Font("Microsoft Sans Serif", 1, 36)); // NOI18N
+        lblManageCustomers1.setForeground(new java.awt.Color(255, 255, 255));
+        lblManageCustomers1.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        lblManageCustomers1.setText("                      Manage Customers");
+
+        ManageCustomersTable1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 2));
+        ManageCustomersTable1.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null}
+            },
+            new String [] {
+                "Name", "User Name", "Password"
+            }
+        ) {
+            Class[] types = new Class [] {
+                java.lang.String.class, java.lang.String.class, java.lang.String.class
+            };
+            boolean[] canEdit = new boolean [] {
+                false, false, false
+            };
+
+            public Class getColumnClass(int columnIndex) {
+                return types [columnIndex];
+            }
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        jScrollPane2.setViewportView(ManageCustomersTable1);
+
+        btnSubmit1.setBackground(new java.awt.Color(255, 255, 255));
+        btnSubmit1.setFont(new java.awt.Font("Microsoft Sans Serif", 1, 24)); // NOI18N
+        btnSubmit1.setForeground(new java.awt.Color(0, 153, 204));
+        btnSubmit1.setText("Submit");
+        btnSubmit1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnSubmit1ActionPerformed(evt);
+            }
+        });
+
+        lblPassword1.setBackground(new java.awt.Color(0, 0, 0));
+        lblPassword1.setFont(new java.awt.Font("Microsoft Sans Serif", 1, 24)); // NOI18N
+        lblPassword1.setForeground(new java.awt.Color(255, 255, 255));
+        lblPassword1.setText("Password");
+
+        txtPassword1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtPassword1ActionPerformed(evt);
+            }
+        });
+
+        txtUserName1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtUserName1ActionPerformed(evt);
+            }
+        });
+
+        lblUserName1.setBackground(new java.awt.Color(0, 0, 0));
+        lblUserName1.setFont(new java.awt.Font("Microsoft Sans Serif", 1, 24)); // NOI18N
+        lblUserName1.setForeground(new java.awt.Color(255, 255, 255));
+        lblUserName1.setText("Username");
+
+        lblName1.setBackground(new java.awt.Color(0, 0, 0));
+        lblName1.setFont(new java.awt.Font("Microsoft Sans Serif", 1, 24)); // NOI18N
+        lblName1.setForeground(new java.awt.Color(255, 255, 255));
+        lblName1.setText("Name");
+
+        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
+        jPanel1.setLayout(jPanel1Layout);
+        jPanel1Layout.setHorizontalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(lblManageCustomers, javax.swing.GroupLayout.PREFERRED_SIZE, 590, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(lblManageCustomers1, javax.swing.GroupLayout.PREFERRED_SIZE, 590, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
                         .addContainerGap()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(lblUserName)
-                            .addComponent(lblPassword)
-                            .addComponent(lblName))
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(lblUserName1)
+                            .addComponent(lblPassword1)
+                            .addComponent(lblName1))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 39, Short.MAX_VALUE)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(txtName, javax.swing.GroupLayout.PREFERRED_SIZE, 144, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(txtUserName, javax.swing.GroupLayout.PREFERRED_SIZE, 144, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(txtPassword, javax.swing.GroupLayout.PREFERRED_SIZE, 144, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(txtName1, javax.swing.GroupLayout.PREFERRED_SIZE, 144, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(txtUserName1, javax.swing.GroupLayout.PREFERRED_SIZE, 144, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(txtPassword1, javax.swing.GroupLayout.PREFERRED_SIZE, 144, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(30, 30, 30))
-                    .addGroup(layout.createSequentialGroup()
+                    .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(77, 77, 77)
-                        .addComponent(btnSubmit, javax.swing.GroupLayout.PREFERRED_SIZE, 148, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(btnSubmit1, javax.swing.GroupLayout.PREFERRED_SIZE, 148, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 730, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 730, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(238, 238, 238))
         );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
+        jPanel1Layout.setVerticalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(29, 29, 29)
-                .addComponent(lblManageCustomers, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addGroup(layout.createSequentialGroup()
+                .addComponent(lblManageCustomers1, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(txtName, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(lblName, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(txtName1, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(lblName1, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(56, 56, 56)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(lblUserName, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(txtUserName, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(lblUserName1, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(txtUserName1, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(58, 58, 58)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(txtPassword, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(lblPassword, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(txtPassword1, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(lblPassword1, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(65, 65, 65)
-                        .addComponent(btnSubmit, javax.swing.GroupLayout.PREFERRED_SIZE, 68, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(btnSubmit1, javax.swing.GroupLayout.PREFERRED_SIZE, 68, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(68, 68, 68)
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 382, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 382, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(3101, Short.MAX_VALUE))
         );
+
+        add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnSubmitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSubmitActionPerformed
@@ -230,17 +329,40 @@ public class ManageAmbulanceJPanel extends javax.swing.JPanel {
         // TODO add your handling code here:
     }//GEN-LAST:event_txtUserNameActionPerformed
 
+    private void btnSubmit1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSubmit1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnSubmit1ActionPerformed
+
+    private void txtPassword1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtPassword1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtPassword1ActionPerformed
+
+    private void txtUserName1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtUserName1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtUserName1ActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTable ManageCustomersTable;
+    private javax.swing.JTable ManageCustomersTable1;
     private javax.swing.JButton btnSubmit;
+    private javax.swing.JButton btnSubmit1;
+    private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JLabel lblManageCustomers;
+    private javax.swing.JLabel lblManageCustomers1;
     private javax.swing.JLabel lblName;
+    private javax.swing.JLabel lblName1;
     private javax.swing.JLabel lblPassword;
+    private javax.swing.JLabel lblPassword1;
     private javax.swing.JLabel lblUserName;
+    private javax.swing.JLabel lblUserName1;
     private javax.swing.JTextField txtName;
+    private javax.swing.JTextField txtName1;
     private javax.swing.JPasswordField txtPassword;
+    private javax.swing.JPasswordField txtPassword1;
     private javax.swing.JTextField txtUserName;
+    private javax.swing.JTextField txtUserName1;
     // End of variables declaration//GEN-END:variables
 }
