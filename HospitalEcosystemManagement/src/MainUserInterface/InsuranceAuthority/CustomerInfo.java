@@ -348,7 +348,7 @@ public class CustomerInfo extends javax.swing.JPanel {
         // TODO add your handling code here:
         patient.setpInsuranceStatus("Approved");
         try{
-        ecoSystem.sendEmail("hospital.aed@zohomail.com", "Approval Confirmation for "+patient.getpFirstName(), "Patient Insurance Approved Name: "+patient.getpFirstName()+" "+patient.getpLastName(), "insurance.aed@zohomail.com", "Bangbang@8899");
+        //ecoSystem.sendEmail("hospital.aed@zohomail.com", "Approval Confirmation for "+patient.getpFirstName(), "Patient Insurance Approved Name: "+patient.getpFirstName()+" "+patient.getpLastName(), "insurance.aed@zohomail.com", "Bangbang@8899");
         }
         catch(Exception e){}
         InsuranceWorkAreaJPanel bill = new InsuranceWorkAreaJPanel(userProcessContainer, user, ecoSystem);
