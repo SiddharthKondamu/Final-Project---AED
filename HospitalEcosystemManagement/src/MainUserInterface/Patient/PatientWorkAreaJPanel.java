@@ -25,9 +25,9 @@ public class PatientWorkAreaJPanel extends javax.swing.JPanel {
      */
     private final JPanel userProcessContainer;
     private final Ecosystem ecoSystem;
-    UserAccount userAccount;
+    User userAccount;
 
-    public PatientWorkAreaJPanel(JPanel userProcessContainer, UserAccount account, Ecosystem business) {
+    public PatientWorkAreaJPanel(JPanel userProcessContainer, User account, Ecosystem business) {
         initComponents();
         this.userProcessContainer = userProcessContainer;
         this.ecoSystem = business;

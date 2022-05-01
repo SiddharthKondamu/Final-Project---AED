@@ -7,6 +7,7 @@ package BusinessModel.Roles;
 import BusinessModel.Ecosystem;
 import javax.swing.JPanel;
 import BusinessModel.UserAccount.User;
+import userinterface.DoctorAdministratorRole.DoctorAdminWorkArea;
 
 /**
  *

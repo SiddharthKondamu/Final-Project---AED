@@ -24,10 +24,10 @@ public class PharmacyWorkAreaJPanel extends javax.swing.JPanel {
      */
     JPanel userProcessContainer;
     Ecosystem ecosystem;
-    UserAccount userAccount;
+    User userAccount;
     Medicine m;
     
-    public PharmacyWorkAreaJPanel(JPanel userProcessContainer, UserAccount account, Ecosystem business) {
+    public PharmacyWorkAreaJPanel(JPanel userProcessContainer, User account, Ecosystem business) {
         initComponents();
         this.userProcessContainer = userProcessContainer;
         this.ecosystem = business;

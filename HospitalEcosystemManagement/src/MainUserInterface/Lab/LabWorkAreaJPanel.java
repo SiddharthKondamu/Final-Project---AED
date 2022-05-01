@@ -4,10 +4,10 @@
  */
 package userinterface.LabRole;
 
-import Business.EcoSystem;
+import BusinessModel.Ecosystem;
 import Business.Lab.Tests;
 import Business.Patient.Patient;
-import Business.UserAccount.UserAccount;
+import BusinessModel.UserAccount.User;
 import java.awt.CardLayout;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
@@ -23,11 +23,11 @@ public class LabWorkAreaJPanel extends javax.swing.JPanel {
      * Creates new form LabWorkAreaJPanel
      */
     private JPanel userProcessContainer;
-    private EcoSystem ecosystem;
-    private UserAccount userAccount;
+    private Ecosystem ecosystem;
+    private User userAccount;
     private Tests t;
     
-    public LabWorkAreaJPanel(JPanel userProcessContainer, UserAccount account, EcoSystem business) {
+    public LabWorkAreaJPanel(JPanel userProcessContainer, User account, Ecosystem business) {
         initComponents();
         this.userProcessContainer = userProcessContainer;
         this.ecosystem = business;
