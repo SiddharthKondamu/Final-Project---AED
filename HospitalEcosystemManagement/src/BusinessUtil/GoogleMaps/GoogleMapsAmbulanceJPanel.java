@@ -6,6 +6,7 @@ package BusinessUtil.GoogleMaps;
 
 import BusinessModel.Ambulance.Ambulance;
 import BusinessModel.Ecosystem;
+import BusinessModel.Patient.Patient;
 import BusinessModel.UserAccount.User;
 import MainUserInterface.Ambulance.ReceptionAmbulanceWorkAreaJPanel;
 import com.kingaspx.util.BrowserUtil;
@@ -38,6 +39,7 @@ public class GoogleMapsAmbulanceJPanel extends javax.swing.JPanel {
     private final JPanel userProcessContainer;
     private final Ecosystem ecoSystem;
     private final Ambulance ambulance;
+    private final Patient patient;
     User userAccount;
     
     public GoogleMapsAmbulanceJPanel(JPanel userProcessContainer, Ecosystem system,User account, Ambulance ambulance, String accidentLocation) {
@@ -47,6 +49,18 @@ public class GoogleMapsAmbulanceJPanel extends javax.swing.JPanel {
         this.ecoSystem = system;
         this.ambulance = ambulance;
         this.accidentLocation = accidentLocation;
+        this.patient = new Patient();
+        open_site();
+    }
+    
+    public GoogleMapsAmbulanceJPanel(JPanel userProcessContainer, Ecosystem system,User account, Ambulance ambulance, String accidentLocation, Patient p) {
+        initComponents();
+        this.userProcessContainer = userProcessContainer;
+        this.userAccount = account;
+        this.ecoSystem = system;
+        this.ambulance = ambulance;
+        this.accidentLocation = accidentLocation;
+        this.patient = p;
         open_site();
     }
 
@@ -125,7 +139,7 @@ public class GoogleMapsAmbulanceJPanel extends javax.swing.JPanel {
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
         // TODO add your handling code here:
         //ReceptionAmbulanceWorkAreaJPanel
-        ReceptionAmbulanceWorkAreaJPanel emergencyRegistrationPanel = new ReceptionAmbulanceWorkAreaJPanel(userProcessContainer,ecoSystem, userAccount,ambulance);
+        ReceptionAmbulanceWorkAreaJPanel emergencyRegistrationPanel = new ReceptionAmbulanceWorkAreaJPanel(userProcessContainer,ecoSystem, userAccount,ambulance, this.patient);
         userProcessContainer.add("Patient Bill", emergencyRegistrationPanel);
         CardLayout layout = (CardLayout) userProcessContainer.getLayout();
         layout.next(userProcessContainer);

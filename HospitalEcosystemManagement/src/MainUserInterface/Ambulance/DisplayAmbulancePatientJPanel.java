@@ -54,6 +54,7 @@ public class DisplayAmbulancePatientJPanel extends javax.swing.JPanel {
         jLabel3 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
 
+        setBackground(new java.awt.Color(0, 153, 204));
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         AmbulanceTable.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 2));
@@ -87,9 +88,9 @@ public class DisplayAmbulancePatientJPanel extends javax.swing.JPanel {
 
         add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 260, 1390, 191));
 
-        btnPastPatients.setBackground(new java.awt.Color(15, 85, 177));
-        btnPastPatients.setFont(new java.awt.Font("Georgia", 1, 14)); // NOI18N
-        btnPastPatients.setForeground(new java.awt.Color(255, 255, 255));
+        btnPastPatients.setBackground(new java.awt.Color(255, 255, 255));
+        btnPastPatients.setFont(new java.awt.Font("Microsoft JhengHei", 1, 18)); // NOI18N
+        btnPastPatients.setForeground(new java.awt.Color(0, 153, 204));
         btnPastPatients.setText("Past Patients");
         btnPastPatients.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -98,9 +99,9 @@ public class DisplayAmbulancePatientJPanel extends javax.swing.JPanel {
         });
         add(btnPastPatients, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 510, 200, 40));
 
-        btnCurrentPatient.setBackground(new java.awt.Color(15, 85, 177));
-        btnCurrentPatient.setFont(new java.awt.Font("Georgia", 1, 14)); // NOI18N
-        btnCurrentPatient.setForeground(new java.awt.Color(255, 255, 255));
+        btnCurrentPatient.setBackground(new java.awt.Color(255, 255, 255));
+        btnCurrentPatient.setFont(new java.awt.Font("Microsoft JhengHei", 1, 18)); // NOI18N
+        btnCurrentPatient.setForeground(new java.awt.Color(0, 153, 204));
         btnCurrentPatient.setText("Current Patient");
         btnCurrentPatient.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -110,10 +111,10 @@ public class DisplayAmbulancePatientJPanel extends javax.swing.JPanel {
         add(btnCurrentPatient, new org.netbeans.lib.awtextra.AbsoluteConstraints(750, 510, 200, 40));
 
         jLabel1.setBackground(new java.awt.Color(255, 255, 255));
-        jLabel1.setFont(new java.awt.Font("Georgia", 1, 36)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(15, 85, 177));
+        jLabel1.setFont(new java.awt.Font("Microsoft JhengHei", 1, 36)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel1.setText("DISPLAY AMBULANCE");
+        jLabel1.setText("AMBULANCES DETAILS");
         add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 6, 1409, 80));
         add(jSeparator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 100, 1432, 10));
 
