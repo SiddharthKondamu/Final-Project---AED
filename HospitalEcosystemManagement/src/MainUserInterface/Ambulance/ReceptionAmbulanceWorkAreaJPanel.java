@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package MainUserinterface.Ambulance;
+package MainUserInterface.Ambulance;
 
 import BusinessModel.Ambulance.Ambulance;
 import BusinessModel.Ecosystem;
@@ -14,7 +14,7 @@ import BusinessUtil.GoogleMaps.GoogleMapsAmbulanceJPanel;
 import java.awt.CardLayout;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
-import userinterface.ReceptionRole.ReceptionWorkAreaJPanel;
+import MainUserInterface.ReceptionRole.ReceptionWorkAreaJPanel;
 
 /**
  *

@@ -30,7 +30,7 @@ public class MainJFrame extends javax.swing.JFrame {
         system.getUserAccountDirectory().createUser("insurance", "insurance", null, new InsuranceManager());
         system.getUserAccountDirectory().createUser("ambulance", "ambulance", null, new AmbulanceDriver());
         system.getUserAccountDirectory().createUser("lab", "lab", null, new Lab());
-        system.getUserAccountDirectory().createUser("hospital", "hospital", null, new Reception());
+        system.getUserAccountDirectory().createUser("hos", "hos", null, new Reception());
         system.getUserAccountDirectory().createUser("cop", "cop", null, new Police());
         system.getUserAccountDirectory().createUser("doctor", "doctor", null, new DoctorsAdministrator());
     }
@@ -124,11 +124,13 @@ public class MainJFrame extends javax.swing.JFrame {
         try{ 
             User ua = system.getUserAccountDirectory().authenticateUser(userNameInputField.getText(), passwordInputField.getText());
             CardLayout layout = (CardLayout) mainContainer.getLayout();
+            System.out.println("role of user ---"+ua.getRole());
             mainContainer.add(ua.getRole().createWorkArea(mainContainer, ua, system));
             layout.next(mainContainer);
             signOutBtn.setEnabled(true);
         }
         catch(Exception e){
+            System.out.println("exception ---"+e.getStackTrace());
             System.out.println("exception due to ---"+e.getMessage());
             JOptionPane.showMessageDialog(null,"Username/Password is wrong!","Warning",JOptionPane.WARNING_MESSAGE);
         }
