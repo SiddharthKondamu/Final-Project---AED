@@ -395,23 +395,23 @@ public class CreatePatientJPanel extends javax.swing.JPanel {
 
         lblErrorFname.setFont(new java.awt.Font("Lucida Grande", 3, 14)); // NOI18N
         lblErrorFname.setForeground(new java.awt.Color(255, 51, 51));
-        add(lblErrorFname, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 242, 110, 21));
+        add(lblErrorFname, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 260, 110, 30));
 
         lblErrorLname.setFont(new java.awt.Font("Lucida Grande", 3, 14)); // NOI18N
         lblErrorLname.setForeground(new java.awt.Color(255, 51, 51));
-        add(lblErrorLname, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 242, 77, 21));
+        add(lblErrorLname, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 260, 100, 30));
 
         lblErrorHId.setFont(new java.awt.Font("Lucida Grande", 3, 14)); // NOI18N
         lblErrorHId.setForeground(new java.awt.Color(255, 51, 51));
-        add(lblErrorHId, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 220, 124, 21));
+        add(lblErrorHId, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 470, 124, 21));
 
         lblErrorPhone.setFont(new java.awt.Font("Lucida Grande", 3, 14)); // NOI18N
         lblErrorPhone.setForeground(new java.awt.Color(255, 51, 51));
-        add(lblErrorPhone, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 385, 135, 20));
+        add(lblErrorPhone, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 400, 135, 20));
 
         lblErrorAddress.setFont(new java.awt.Font("Lucida Grande", 3, 14)); // NOI18N
         lblErrorAddress.setForeground(new java.awt.Color(255, 51, 51));
-        add(lblErrorAddress, new org.netbeans.lib.awtextra.AbsoluteConstraints(680, 232, 74, 21));
+        add(lblErrorAddress, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 550, 130, 21));
 
         lblErrorEmail.setFont(new java.awt.Font("Lucida Grande", 3, 14)); // NOI18N
         lblErrorEmail.setForeground(new java.awt.Color(255, 51, 51));
@@ -419,19 +419,19 @@ public class CreatePatientJPanel extends javax.swing.JPanel {
 
         lblErrorInjury.setFont(new java.awt.Font("Lucida Grande", 3, 14)); // NOI18N
         lblErrorInjury.setForeground(new java.awt.Color(255, 51, 51));
-        add(lblErrorInjury, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 430, 87, 22));
+        add(lblErrorInjury, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 410, 140, 22));
 
         lblErrorUserName.setFont(new java.awt.Font("Lucida Grande", 3, 14)); // NOI18N
         lblErrorUserName.setForeground(new java.awt.Color(255, 51, 51));
-        add(lblErrorUserName, new org.netbeans.lib.awtextra.AbsoluteConstraints(740, 490, 200, 26));
+        add(lblErrorUserName, new org.netbeans.lib.awtextra.AbsoluteConstraints(1010, 270, 200, 26));
 
         lblErrorPassword.setFont(new java.awt.Font("Lucida Grande", 3, 14)); // NOI18N
         lblErrorPassword.setForeground(new java.awt.Color(255, 51, 51));
-        add(lblErrorPassword, new org.netbeans.lib.awtextra.AbsoluteConstraints(740, 550, 200, 26));
+        add(lblErrorPassword, new org.netbeans.lib.awtextra.AbsoluteConstraints(990, 410, 200, 26));
 
         lblErrorAccidentLocation.setFont(new java.awt.Font("Lucida Grande", 3, 14)); // NOI18N
         lblErrorAccidentLocation.setForeground(new java.awt.Color(255, 51, 51));
-        add(lblErrorAccidentLocation, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 380, 116, 22));
+        add(lblErrorAccidentLocation, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 270, 116, 22));
 
         jLabel1.setFont(new java.awt.Font("Trebuchet MS", 1, 24)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));
@@ -458,7 +458,8 @@ public class CreatePatientJPanel extends javax.swing.JPanel {
         add(jSeparator4, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 140, 1434, 5));
 
         btnSubmit1.setBackground(new java.awt.Color(153, 153, 153));
-        btnSubmit1.setFont(new java.awt.Font("Trebuchet MS", 1, 14)); // NOI18N
+        btnSubmit1.setFont(new java.awt.Font("Microsoft Sans Serif", 1, 14)); // NOI18N
+        btnSubmit1.setForeground(new java.awt.Color(255, 255, 255));
         btnSubmit1.setText("Back");
         btnSubmit1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -560,7 +561,7 @@ public class CreatePatientJPanel extends javax.swing.JPanel {
             layout.next(userProcessContainer);
 
         } else {
-            JOptionPane.showMessageDialog(null, "Username is not Unique and Please Fill Correct Details");
+            JOptionPane.showMessageDialog(null, "Invalid details");
         }
 
 
@@ -625,7 +626,7 @@ public class CreatePatientJPanel extends javax.swing.JPanel {
         Pattern pattern = Pattern.compile(PATTERN);
         Matcher match = pattern.matcher(txtFirstName.getText());
         if (!match.matches()) {
-            lblErrorFname.setText("Wrong Input. Please Try Again.");
+            lblErrorFname.setText("Invalid!");
         } else {
             lblErrorFname.setText(null);
         }
@@ -640,7 +641,7 @@ public class CreatePatientJPanel extends javax.swing.JPanel {
         Pattern pattern = Pattern.compile(PATTERN);
         Matcher match = pattern.matcher(txtLastName.getText());
         if (!match.matches()) {
-            lblErrorLname.setText("Wrong Input. Please Try Again.");
+            lblErrorLname.setText("Invalid!");
         } else {
             lblErrorLname.setText(null);
         }
@@ -654,7 +655,7 @@ public class CreatePatientJPanel extends javax.swing.JPanel {
         Pattern pattern = Pattern.compile(PATTERN);
         Matcher match = pattern.matcher(txtHealthInsuranceID.getText());
         if (!match.matches()) {
-            lblErrorHId.setText("Wrong Input. Please Try Again.");
+            lblErrorHId.setText("Invalid!");
         } else {
             lblErrorHId.setText(null);
         }
@@ -668,7 +669,7 @@ public class CreatePatientJPanel extends javax.swing.JPanel {
         Pattern pattern = Pattern.compile(PATTERN);
         Matcher match = pattern.matcher(txtAddress.getText());
         if (!match.matches()) {
-            lblErrorAddress.setText("Wrong Input. Please Try Again.");
+            lblErrorAddress.setText("Invalid!");
         } else {
             lblErrorAddress.setText(null);
         }
@@ -683,7 +684,7 @@ public class CreatePatientJPanel extends javax.swing.JPanel {
         Pattern pattern = Pattern.compile(PATTERN);
         Matcher match = pattern.matcher(txtPhoneNumber.getText());
         if (!match.matches()) {
-            lblErrorPhone.setText("Wrong Input. Please Try Again.");
+            lblErrorPhone.setText("Invalid!");
         } else {
             lblErrorPhone.setText(null);
         }
@@ -697,7 +698,7 @@ public class CreatePatientJPanel extends javax.swing.JPanel {
         Pattern pattern = Pattern.compile(PATTERN);
         Matcher match = pattern.matcher(txtEmail.getText());
         if (!match.matches()) {
-            lblErrorEmail.setText("Wrong Input. Please Try Again.");
+            lblErrorEmail.setText("Invalid!");
         } else {
             lblErrorEmail.setText(null);
         }
@@ -715,7 +716,7 @@ public class CreatePatientJPanel extends javax.swing.JPanel {
         Pattern pattern = Pattern.compile(PATTERN);
         Matcher match = pattern.matcher(txtInjuryType.getText());
         if (!match.matches()) {
-            lblErrorInjury.setText("Wrong Input. Please Try Again.");
+            lblErrorInjury.setText("Invalid!");
         } else {
             lblErrorInjury.setText(null);
         }
@@ -729,7 +730,7 @@ public class CreatePatientJPanel extends javax.swing.JPanel {
         Pattern pattern = Pattern.compile(PATTERN);
         Matcher match = pattern.matcher(txtUserName.getText());
         if (!match.matches()) {
-            lblErrorUserName.setText("Wrong Input. Please Try Again.");
+            lblErrorUserName.setText("Invalid!");
         } else {
             lblErrorUserName.setText(null);
         }
@@ -743,7 +744,7 @@ public class CreatePatientJPanel extends javax.swing.JPanel {
         Pattern pattern = Pattern.compile(PATTERN);
         Matcher match = pattern.matcher(txtPassword.getText());
         if (!match.matches()) {
-            lblErrorPassword.setText("Wrong Input. Please Try Again.");
+            lblErrorPassword.setText("Invalid!");
         } else {
             lblErrorPassword.setText(null);
         }
