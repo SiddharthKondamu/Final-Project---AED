@@ -3,12 +3,12 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package userinterface.DoctorRole;
+package MainUserInterface.Doctor;
 
-import Business.EcoSystem;
-import Business.Patient.Bills;
-import Business.Patient.Patient;
-import Business.UserAccount.UserAccount;
+import BusinessModel.Ecosystem;
+import BusinessModel.Patient.PatientBills;
+import BusinessModel.Patient.Patient;
+import BusinessModel.UserAccount.User;
 import java.awt.CardLayout;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
@@ -16,7 +16,7 @@ import javax.swing.table.DefaultTableModel;
 
 /**
  *
- * @author ronitchougule
+ * @author siddh
  */
 public class DoctorVisitJPanel extends javax.swing.JPanel {
 
@@ -24,11 +24,11 @@ public class DoctorVisitJPanel extends javax.swing.JPanel {
      * Creates new form DoctorVisitJPanel
      */
     private JPanel userProcessContainer;
-    private EcoSystem ecoSystem;
-    private UserAccount userAccount;
+    private Ecosystem ecoSystem;
+    private User userAccount;
     private Patient patient;
 
-    public DoctorVisitJPanel(JPanel userProcessContainer, UserAccount account, EcoSystem ecoSystem, Patient patient) {
+    public DoctorVisitJPanel(JPanel userProcessContainer, User account, Ecosystem ecoSystem, Patient patient) {
         initComponents();
         this.userProcessContainer = userProcessContainer;
         this.ecoSystem = ecoSystem;
@@ -42,13 +42,13 @@ public class DoctorVisitJPanel extends javax.swing.JPanel {
 
         model.setRowCount(0);
 
-        for (Bills b : patient.getBillsList()) {
+        for (PatientBills b : patient.getpBills()) {
 
             Object[] row = new Object[7];
-            row[0] = b.getItemName();
-            row[1] = b.getOrganziationType();
-            row[2] = b.getItemAmount();
-            row[3] = b.getItemStatus();
+            row[0] = b.getName();
+            row[1] = b.getOrgType();
+            row[2] = b.getAmount();
+            row[3] = b.getStatus();
             row[4] = b.getResult();
             
             model.addRow(row);
@@ -204,7 +204,7 @@ public class DoctorVisitJPanel extends javax.swing.JPanel {
 
     private void btnRequestMedicine1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRequestMedicine1ActionPerformed
         // TODO add your handling code here:
-        patient.setPatientStatus("Ready to Discharge");
+        patient.setpStatus("Ready to Discharge");
         DoctorWorkAreaJPanel doctor = new DoctorWorkAreaJPanel(userProcessContainer,userAccount,ecoSystem);
         userProcessContainer.add("Request Blood", doctor);
         CardLayout layout = (CardLayout) userProcessContainer.getLayout();
@@ -213,7 +213,7 @@ public class DoctorVisitJPanel extends javax.swing.JPanel {
 
     private void btnRequestMedicine2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRequestMedicine2ActionPerformed
         // TODO add your handling code here:
-        patient.setPatientStatus("Under Observation");
+        patient.setpStatus("Under Observation");
         DoctorWorkAreaJPanel doctor = new DoctorWorkAreaJPanel(userProcessContainer,userAccount,ecoSystem);
         userProcessContainer.add("Request Blood", doctor);
         CardLayout layout = (CardLayout) userProcessContainer.getLayout();

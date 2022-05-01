@@ -26,7 +26,7 @@ import MainUserInterface.ReceptionRole.ReceptionWorkAreaJPanel;
 
 /**
  *
- * @author ronitchougule
+ * @author siddh
  */
 public class CreateDoctorJPanel extends javax.swing.JPanel {
 

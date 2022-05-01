@@ -46,13 +46,13 @@ public class BloodBankWorkAreaJPanel extends javax.swing.JPanel {
 
         model.setRowCount(0);
 
-        for (PatientBills b : billPatient.getBillsList()) {
+        for (PatientBills b : billPatient.getpBills()) {
             
                 Object[] row = new Object[3];
-                row[0] = b.getItemName();
-                row[1] = b.getOrganziationType();
-                row[2] = b.getItemAmount();
-                if(b.getOrganziationType().toLowerCase().equals("blood bank"))
+                row[0] = b.getName();
+                row[1] = b.getOrgType();
+                row[2] = b.getAmount();
+                if(b.getOrgType().toLowerCase().equals("blood bank"))
                 {
                     model.addRow(row);
                 }
@@ -65,17 +65,17 @@ public class BloodBankWorkAreaJPanel extends javax.swing.JPanel {
         model.setRowCount(0);
 
         for (Patient patient : ecoSystem.getPatientDirectory().getPatientList()) {
-            if (patient.getBloodBankStatus().equals("Requested") || patient.getBloodBankStatus().equals("Unavailable")) {
+            if (patient.getpBloodBankStatus().equals("Requested") || patient.getpBloodBankStatus().equals("Unavailable")) {
                 Object[] row = new Object[9];
                 row[0] = patient;
-                row[1] = patient.getHealthInsuranceID();
-                row[2] = patient.getUserName();
-                row[3] = patient.getPatientLastName();
-                row[4] = patient.getAge();
-                row[5] = patient.getInsuranceStatus();
-                row[6] = patient.getEmailAddress();
-                row[7] = patient.getBloodBankStatus();
-                row[8] = patient.getBloodBagQuantity();
+                row[1] = patient.getpHealthInsuranceID();
+                row[2] = patient.getpUserName();
+                row[3] = patient.getpLastName();
+                row[4] = patient.getpAge();
+                row[5] = patient.getpInsuranceStatus();
+                row[6] = patient.getpEmailAddress();
+                row[7] = patient.getpBloodBankStatus();
+                row[8] = patient.getpBloodBagQuantity();
                 model.addRow(row);
             }
         }
@@ -255,12 +255,12 @@ public class BloodBankWorkAreaJPanel extends javax.swing.JPanel {
             Patient patient = (Patient) ManagePatientTable.getValueAt(selectedRowIndex, 0);
 
             for (Patient p : ecoSystem.getPatientDirectory().getPatientList()) {
-                if (patient.getUserName().equals(p.getUserName())) {
+                if (patient.getpUserName().equals(p.getpUserName())) {
                     if (!((String) BloodRequestStatusBox.getSelectedItem()).equals("Select Status")) {
-                        p.setBloodBankStatus((String) BloodRequestStatusBox.getSelectedItem());
+                        p.setpBloodBankStatus((String) BloodRequestStatusBox.getSelectedItem());
                         billPatient = p;
-                        if (p.getBloodBankStatus().equals("Blood Delivered")) {
-                            for (int bloodBag = 0; bloodBag < Integer.parseInt(billPatient.getBloodBagQuantity()); bloodBag++) {
+                        if (p.getpBloodBankStatus().equals("Blood Delivered")) {
+                            for (int bloodBag = 0; bloodBag < Integer.parseInt(billPatient.getpBloodBagQuantity()); bloodBag++) {
                                 ecoSystem.getPatientDirectory().AddBill(billPatient, "Blood Charges", "Blood Bank", "");
                                 ecoSystem.getBloodBank().AddTreatedPatientList(billPatient);
                             }

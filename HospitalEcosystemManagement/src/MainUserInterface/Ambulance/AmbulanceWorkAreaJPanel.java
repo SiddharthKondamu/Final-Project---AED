@@ -168,7 +168,7 @@ public class AmbulanceWorkAreaJPanel extends javax.swing.JPanel {
         } else {
             Ambulance ambulance = (Ambulance) ManageAmbulanceTable.getValueAt(selectedRowIndex, 0);
             if (!ambulance.getStatus().toLowerCase().equals("busy")) {
-                //ReceptionAmbulanceWorkAreaJPanel receptionAmbulanceWorkAreaJPanel = new ReceptionAmbulanceWorkAreaJPanel(userProcessContainer, ecoSystem, userAccount, ambulance);
+                ReceptionAmbulanceWorkAreaJPanel receptionAmbulanceWorkAreaJPanel = new ReceptionAmbulanceWorkAreaJPanel(userProcessContainer, ecoSystem, userAccount, ambulance);
                 userProcessContainer.add("Add Patient", receptionAmbulanceWorkAreaJPanel);
                 CardLayout layout = (CardLayout) userProcessContainer.getLayout();
                 layout.next(userProcessContainer);

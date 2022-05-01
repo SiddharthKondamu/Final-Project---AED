@@ -20,7 +20,7 @@ import java.nio.file.Paths;
 
 public class DB4OUtil {
 
-    private static final String FILENAME = "C:\\Users\\siddh\\AED-1\\AED_Final_Project\\AED Project Implementation\\Databank.db4o";//Paths.get("Databank.db4o").toAbsolutePath().toString();// path to the data store
+    private static final String FILENAME = "C:\\Users\\siddh\\AED-1\\AED_Final_Project\\AED Project Implementation\\Databank.db4o";
     private static DB4OUtil dB4OUtil;
 
     public synchronized static DB4OUtil getInstance() {
@@ -49,7 +49,7 @@ public class DB4OUtil {
             config.common().objectClass(Ecosystem.class).cascadeOnUpdate(true);
             return database;
         } catch (Exception ex) {
-            System.out.print(ex.getMessage());
+            System.out.print("exception ----"+ex.getMessage());
         }
         return null;
     }

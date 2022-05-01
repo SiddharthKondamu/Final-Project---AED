@@ -3,13 +3,13 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package userinterface.DoctorRole;
+package MainUserInterface.Doctor;
 
-import Business.EcoSystem;
-import Business.Lab.Tests;
-import Business.Patient.Bills;
-import Business.Patient.Patient;
-import Business.UserAccount.UserAccount;
+import BusinessModel.Ecosystem;
+import BusinessModel.Lab.Tests;
+import BusinessModel.Patient.PatientBills;
+import BusinessModel.Patient.Patient;
+import BusinessModel.UserAccount.User;
 import java.awt.CardLayout;
 import static java.lang.Integer.sum;
 import java.util.ArrayList;
@@ -19,7 +19,7 @@ import javax.swing.table.DefaultTableModel;
 
 /**
  *
- * @author ronitchougule
+ * @author siddh
  */
 public class DoctorRequestLabTestJPanel extends javax.swing.JPanel {
 
@@ -27,14 +27,14 @@ public class DoctorRequestLabTestJPanel extends javax.swing.JPanel {
      * Creates new form DoctorRequestLabTestJPanel
      */
     private JPanel userProcessContainer;
-    private EcoSystem ecosystem;
-    private UserAccount userAccount;
+    private Ecosystem ecosystem;
+    private User userAccount;
     private Patient patient;
     
     ArrayList<Tests> items=new ArrayList<Tests>();
 
     
-    public DoctorRequestLabTestJPanel(JPanel userProcessContainer, UserAccount account, EcoSystem ecosystem, Patient patient) {
+    public DoctorRequestLabTestJPanel(JPanel userProcessContainer, User account, Ecosystem ecosystem, Patient patient) {
         initComponents();
         this.userProcessContainer = userProcessContainer;
         this.ecosystem = ecosystem;
@@ -69,13 +69,13 @@ public class DoctorRequestLabTestJPanel extends javax.swing.JPanel {
         for (Patient patient : ecosystem.getPatientDirectory().getPatientList()) {
 
             Object[] row = new Object[7];
-            row[0] = patient.getUserName();
-            row[1] = patient.getHealthInsuranceID();
-            row[2] = patient.getPatientFirstName();
-            row[3] = patient.getPatientLastName();
-            row[4] = patient.getAge();
-            row[5] = patient.getPatientaddress();
-            row[6] = patient.getEmailAddress();
+            row[0] = patient.getpUserName();
+            row[1] = patient.getpHealthInsuranceID();
+            row[2] = patient.getpFirstName();
+            row[3] = patient.getpLastName();
+            row[4] = patient.getpAge();
+            row[5] = patient.getpAddress();
+            row[6] = patient.getpEmailAddress();
             
           //  model.addRow(row);
 
@@ -297,7 +297,7 @@ public class DoctorRequestLabTestJPanel extends javax.swing.JPanel {
         for(Tests t:items){
             //String itemName,String organization1,float itemAmount, String result, String itemStatus
             JOptionPane.showMessageDialog(null,"Request Placed.","Success",JOptionPane.INFORMATION_MESSAGE);        
-             Bills bill = new Bills(t.getTestName(), "Lab", t.getPrice(),"Awaiting","Requested");
+             PatientBills bill = new PatientBills(t.getTestName(), "Lab", t.getPrice(),"Awaiting","Requested");
              patient.addbill(bill);
              DoctorVisitJPanel doctorVisit = new DoctorVisitJPanel(userProcessContainer, userAccount, ecosystem, patient);
             userProcessContainer.add("Visit Doctor", doctorVisit);
@@ -306,7 +306,7 @@ public class DoctorRequestLabTestJPanel extends javax.swing.JPanel {
              //ecosystem.AddTreatedPatientList(patient);
         }
         ecosystem.getLab().AddTreatedPatientList(patient);
-        patient.setLabStatus("Requested");
+        patient.setpLabStatus("Requested");
         }
      
     }//GEN-LAST:event_RequestActionPerformed

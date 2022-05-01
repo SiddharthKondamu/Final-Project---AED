@@ -14,11 +14,11 @@ import javax.swing.JPanel;
  * @author Your Name <Puja>
  */
 public class Reception extends Role {
+    
     @Override
     public JPanel createWorkArea(JPanel userProcessContainer, User user, Ecosystem business) {
+        System.out.println("inside create work area for reception");
         return new ReceptionWorkAreaJPanel(userProcessContainer, user, business);
 }
-
-   
-    
+  
 }

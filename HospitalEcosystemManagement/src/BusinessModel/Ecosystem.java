@@ -61,7 +61,7 @@ public class Ecosystem extends Organisation{
     }
 
     public PatientDirectory getPatientDirectory() {
-        return patientDirectory;
+        return patientDirectory = (patientDirectory == null) ? new PatientDirectory() : patientDirectory;
     }
 
     public void setPatientDirectory(PatientDirectory patientDirectory) {
@@ -69,7 +69,7 @@ public class Ecosystem extends Organisation{
     }
 
     public DoctorDirectory getDoctorDirectory() {
-        return doctorDirectory;
+        return doctorDirectory = (doctorDirectory == null) ? new DoctorDirectory() : doctorDirectory;
     }
 
     public void setDoctorDirectory(DoctorDirectory doctorDirectory) {
@@ -77,7 +77,7 @@ public class Ecosystem extends Organisation{
     }
 
     public AmbulanceDirectory getAmbulanceDirectory() {
-        return ambulanceDirectory;
+        return ambulanceDirectory = (ambulanceDirectory == null) ? new AmbulanceDirectory() : ambulanceDirectory;
     }
 
     public void setAmbulanceDirectory(AmbulanceDirectory ambulanceDirectory) {
@@ -85,7 +85,7 @@ public class Ecosystem extends Organisation{
     }
 
     public BloodBank getBloodBank() {
-        return bloodBank;
+        return bloodBank = (bloodBank == null) ? new BloodBank() : bloodBank;
     }
 
     public void setBloodBank(BloodBank bloodBank) {
@@ -93,7 +93,7 @@ public class Ecosystem extends Organisation{
     }
 
     public Lab getLab() {
-        return lab;
+        return lab = (lab == null)? new Lab() : lab;
     }
 
     public void setLab(Lab lab) {
@@ -101,7 +101,7 @@ public class Ecosystem extends Organisation{
     }
 
     public Pharmacy getPharmacy() {
-        return pharmacy;
+        return pharmacy = (pharmacy == null)? new Pharmacy() : pharmacy;
     }
 
     public void setPharmacy(Pharmacy pharmacy) {
@@ -109,7 +109,7 @@ public class Ecosystem extends Organisation{
     }
 
     public InsuranceDirectory getInsuranceDirectory() {
-        return insuranceDirectory;
+        return insuranceDirectory = (insuranceDirectory == null)? new InsuranceDirectory() : insuranceDirectory;
     }
 
     public void setInsuranceDirectory(InsuranceDirectory insuranceDirectory) {
@@ -117,7 +117,7 @@ public class Ecosystem extends Organisation{
     }
 
     public PoliceDepartment getPoliceRecords() {
-        return policeRecords;
+        return policeRecords = (policeRecords == null)? new PoliceDepartment() : policeRecords;
     }
 
     public void setPoliceRecords(PoliceDepartment policeRecords) {

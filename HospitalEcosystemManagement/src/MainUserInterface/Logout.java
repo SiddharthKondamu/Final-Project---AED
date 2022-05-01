@@ -4,7 +4,7 @@
  */
 package MainUserInterface;
 
-import userinterface.PoliceDepartmentRole.*;
+import MainUserInterface.Police.*;
 import BusinessModel.Ecosystem;
 import BusinessModel.Patient.PatientBills;
 import BusinessModel.Patient.Patient;
