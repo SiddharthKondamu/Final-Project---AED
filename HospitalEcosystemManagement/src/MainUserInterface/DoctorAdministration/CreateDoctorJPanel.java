@@ -710,7 +710,7 @@ public class CreateDoctorJPanel extends javax.swing.JPanel {
             String selectedImagePath = selectedImageFile.getAbsolutePath();
             JOptionPane.showMessageDialog(null, selectedImagePath);
             //Display image on jlable
-            photoDoctor.setPhoto_path(selectedImagePath);
+            photoDoctor.setdImageUrl(selectedImagePath);
 
             ImageIcon ii = new ImageIcon(selectedImagePath);
             //Resize image to fit jlabel

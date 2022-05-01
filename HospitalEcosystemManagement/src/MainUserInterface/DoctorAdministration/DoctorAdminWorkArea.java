@@ -3,11 +3,11 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package userinterface.DoctorAdministratorRole;
+package MainUserInterface.DoctorAdministration;
 
-import Business.Doctor.Doctor;
+import BusinessModel.Doctor.Doctor;
 import BusinessModel.Ecosystem;
-import Business.Patient.Patient;
+import BusinessModel.Patient.Patient;
 import BusinessModel.UserAccount.User;
 import java.awt.CardLayout;
 import javax.swing.JOptionPane;
@@ -41,16 +41,16 @@ public class DoctorAdminWorkArea extends javax.swing.JPanel {
 
         model.setRowCount(0);
 
-        for (Doctor Doctor : ecoSystem.getDoctorDirectory().getDoctorList()) {
+        for (Doctor Doctor : ecoSystem.getDoctorDirectory().getDoctors()) {
 
             Object[] row = new Object[9];
             row[0] = Doctor;
-            row[1] = Doctor.getDoctorLasttName();
-            row[2] = Doctor.getDoctorWorkID();
-            row[3] = Doctor.getDoctorAddress();
-            row[4] = Doctor.getDoctorAge();
-            row[5] = Doctor.getDoctorGender();
-            row[6] = Doctor.getEmailAddress();
+            row[1] = Doctor.getdLastName();
+            row[2] = Doctor.getdWorkID();
+            row[3] = Doctor.getdAddress();
+            row[4] = Doctor.getdAge();
+            row[5] = Doctor.getdGender();
+            row[6] = Doctor.getdEmail();
 
             model.addRow(row);
 
@@ -66,12 +66,12 @@ public class DoctorAdminWorkArea extends javax.swing.JPanel {
 
             Object[] row = new Object[7];
             row[0] = patient;
-            row[1] = patient.getPatientLastName();
-            row[2] = patient.getInjuryType();
-            row[3] = patient.getBloodType();
-            row[4] = patient.getAge();
-            row[5] = patient.getGender();
-            row[6] = patient.getEmailAddress();
+            row[1] = patient.getpLastName();
+            row[2] = patient.getpInjuryType();
+            row[3] = patient.getpBloodType();
+            row[4] = patient.getpAge();
+            row[5] = patient.getpGender();
+            row[6] = patient.getpEmailAddress();
 
             model.addRow(row);
 
