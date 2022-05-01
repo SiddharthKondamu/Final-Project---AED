@@ -2,13 +2,12 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JPanel.java to edit this template
  */
-package userinterface.LabRole;
+package MainUserInterface.Lab;
 
-import Business.EcoSystem;
-import Business.EcoSystem;
-import Business.Lab.Tests;
-import Business.Patient.Patient;
-import Business.UserAccount.UserAccount;
+import BusinessModel.Ecosystem;
+import BusinessModel.Lab.Tests;
+import BusinessModel.Patient.Patient;
+import BusinessModel.UserAccount.User;
 import java.awt.CardLayout;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
@@ -26,11 +25,11 @@ public class LabCRUDtests extends javax.swing.JPanel {
      * Creates new form LabWorkAreaJPanel
      */
     private JPanel userProcessContainer;
-    private EcoSystem ecosystem;
-    private UserAccount userAccount;
+    private Ecosystem ecosystem;
+    private User userAccount;
     private Tests t;
 
-    public LabCRUDtests(JPanel userProcessContainer, UserAccount account, EcoSystem business) {
+    public LabCRUDtests(JPanel userProcessContainer, User account, Ecosystem business) {
         initComponents();
         this.userProcessContainer = userProcessContainer;
         this.ecosystem = business;

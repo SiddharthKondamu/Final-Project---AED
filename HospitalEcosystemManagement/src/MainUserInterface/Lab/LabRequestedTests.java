@@ -2,12 +2,12 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JPanel.java to edit this template
  */
-package userinterface.LabRole;
+package MainUserInterface.Lab;
 
-import Business.EcoSystem;
-import Business.Patient.Bills;
-import Business.Patient.Patient;
-import Business.UserAccount.UserAccount;
+import BusinessModel.Ecosystem;
+import BusinessModel.Patient.PatientBills;
+import BusinessModel.Patient.Patient;
+import BusinessModel.UserAccount.User;
 import java.awt.CardLayout;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
@@ -24,16 +24,16 @@ public class LabRequestedTests extends javax.swing.JPanel {
      */
     Patient p;
     JPanel userProcessContainer;
-    UserAccount account;
-    EcoSystem ecoSystem;
-    public LabRequestedTests(JPanel userProcessContainer, UserAccount account, Patient p,EcoSystem ecoSystem) {
+    User account;
+    Ecosystem ecoSystem;
+    public LabRequestedTests(JPanel userProcessContainer, User account, Patient p,Ecosystem ecoSystem) {
         initComponents();
         this.ecoSystem = ecoSystem;
         this.userProcessContainer = userProcessContainer;
         this.account = account;
         this.p = p;
         populateBillTable();
-        jLabel3.setText("Customer Name: "+p.getPatientFirstName()+" "+p.getPatientLastName());
+        jLabel3.setText("Customer Name: "+p.getpFirstName()+" "+p.getpLastName());
        
     }
         private void populateBillTable() {
@@ -41,13 +41,13 @@ public class LabRequestedTests extends javax.swing.JPanel {
 
         model.setRowCount(0);
 
-        for (Bills b : p.getBillsList()) {
+        for (PatientBills b : p.getpBills()) {
 
             Object[] row = new Object[5];
             row[0] = b;
-            row[1] = b.getOrganziationType();
-            row[2] = b.getItemAmount();
-            row[3] = b.getItemStatus();
+            row[1] = b.getOrgType();
+            row[2] = b.getAmount();
+            row[3] = b.getStatus();
             row[4] = b.getResult();
             if(row[1].equals("Lab")&&row[3].equals("Requested")){
             model.addRow(row);
@@ -160,10 +160,10 @@ public class LabRequestedTests extends javax.swing.JPanel {
                 JOptionPane.showMessageDialog(null, "Pls select a row!!", "Warning", JOptionPane.WARNING_MESSAGE);
             } 
             else {
-                for(Bills b: p.getBillsList()){
-                    if(b==((Bills) BillTable.getValueAt(selectedRowIndex, 0))){
+                for(PatientBills b: p.getpBills()){
+                    if(b==((PatientBills) BillTable.getValueAt(selectedRowIndex, 0))){
                         
-                        b.setItemStatus("Delivered");
+                        b.setStatus("Delivered");
                         b.setResult(txtResult.getText());
                         JOptionPane.showMessageDialog(null, "Results Sent!!", "Success", JOptionPane.INFORMATION_MESSAGE);
                         populateBillTable();
@@ -174,7 +174,7 @@ public class LabRequestedTests extends javax.swing.JPanel {
                     
                 }
                 if(BillTable.getRowCount()==0){
-                        p.setLabStatus("Delivered");
+                        p.setpLabStatus("Delivered");
                         
                         LabWorkAreaJPanel doctorRequestLabTestJPanel = new LabWorkAreaJPanel(userProcessContainer, account,ecoSystem);
                         userProcessContainer.add("Request Lab Tests", doctorRequestLabTestJPanel);

@@ -3,15 +3,14 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package userinterface.DoctorAdministratorRole;
+package MainUserInterface.DoctorAdministration;
 
-import Business.EcoSystem;
-import Business.Patient.Patient;
-import Business.Doctor.Doctor;
-import Business.EcoSystem;
-import Business.Role.DoctorRole;
-import Business.Role.PatientRole;
-import Business.UserAccount.UserAccount;
+import BusinessModel.Ecosystem;
+import BusinessModel.Patient.Patient;
+import BusinessModel.Doctor.Doctor;
+import BusinessModel.Roles.Doctor_role;
+import BusinessModel.Roles.Patient_role;
+import BusinessModel.UserAccount.User;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.table.DefaultTableModel;
@@ -26,27 +25,27 @@ public class UpdateDoctorJPanel extends javax.swing.JPanel {
      * Creates new form DoctorAdministratorWorkAreaJPanel
      */
     private final JPanel userProcessContainer;
-    private final EcoSystem ecoSystem;
-    UserAccount userAccount;
+    private final Ecosystem ecoSystem;
+    User userAccount;
     Doctor d;
-    public UpdateDoctorJPanel(JPanel userProcessContainer,UserAccount user, EcoSystem system, Doctor d) {
+    public UpdateDoctorJPanel(JPanel userProcessContainer,User user, Ecosystem system, Doctor d) {
         initComponents();
         this.userAccount = user;
         this.userProcessContainer = userProcessContainer;
         this.ecoSystem = system;
         this.d=d;
-        txtAddress.setText(d.getDoctorAddress());
-        txtAge.setText(Integer.toHexString(d.getDoctorAge()));
+        txtAddress.setText(d.getdAddress());
+        txtAge.setText(Integer.toHexString(d.getdAge()));
         //txtDateOfBirth.setText(d.getDateofBirth());
-        txtDoctorID.setText(d.getDoctorWorkID());
-        txtEmail.setText(d.getEmailAddress());
-        txtExperience.setText(d.getExperience());
-        txtFirstName.setText(d.getDoctorFirstName());
-        txtLastName.setText(d.getDoctorLasttName());
-        txtGender.setText(d.getDoctorGender());
-        txtPhoneNumber.setText(d.getDoctorPhoneNumber());
-        txtSpecialist.setText(d.getSpecialist());
-        txtUsername.setText(d.getUserName());
+        txtDoctorID.setText(d.getdWorkID());
+        txtEmail.setText(d.getdEmail());
+        txtExperience.setText(d.getdExperience());
+        txtFirstName.setText(d.getdFirstName());
+        txtLastName.setText(d.getdLastName());
+        txtGender.setText(d.getdGender());
+        txtPhoneNumber.setText(d.getdPhoneNumber());
+        txtSpecialist.setText(d.getdSpecialization());
+        txtUsername.setText(d.getdUserName());
         
     }
 
@@ -329,17 +328,17 @@ public class UpdateDoctorJPanel extends javax.swing.JPanel {
 
     private void btnSubmitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSubmitActionPerformed
         // TODO add your handling code here:
-       d.setDoctorFirstName(txtFirstName.getText());
-        d.setDoctorLasttName(txtLastName.getText());
-       d.setDoctorAge(Integer.parseInt( txtAge.getText()));
-        d.setDoctorGender(txtGender.getText());
-        d.setDoctorWorkID(txtDoctorID.getText());
-        d.setDoctorAddress(txtAddress.getText());
-        d.setDoctorPhoneNumber(txtPhoneNumber.getText());
+       d.setdFirstName(txtFirstName.getText());
+        d.setdLastName(txtLastName.getText());
+       d.setdAge(Integer.parseInt( txtAge.getText()));
+        d.setdGender(txtGender.getText());
+        d.setdWorkID(txtDoctorID.getText());
+        d.setdAddress(txtAddress.getText());
+        d.setdPhoneNumber(txtPhoneNumber.getText());
         //doctor.setDateofBirth(txtDateOfBirth.getText());
-        d.setEmailAddress(txtEmail.getText());
-        d.setSpecialist(txtSpecialist.getText());
-        d.setExperience(txtExperience.getText());
+        d.setdEmail(txtEmail.getText());
+        d.setdSpecialization(txtSpecialist.getText());
+        d.setdExperience(txtExperience.getText());
         //d.setUserName(txtUsername.getText());
         JOptionPane.showMessageDialog(null, "Update Complete.");
         
