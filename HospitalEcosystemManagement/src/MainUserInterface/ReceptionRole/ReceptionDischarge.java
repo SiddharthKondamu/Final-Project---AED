@@ -202,7 +202,7 @@ public class ReceptionDischarge extends javax.swing.JPanel {
                 JOptionPane.showMessageDialog(null, "Cash payment method is not eligible.", "Warning", JOptionPane.WARNING_MESSAGE);
             }
             else{
-                ecoSystem.getInsurance().addServedCustomers(patient);
+                ecoSystem.getInsuranceDirectory().addServedCustomers(patient);
                 patient.setpInsuranceStatus("Verifying Insurance");
                 patient.setpPoliceStatus("Not Verified");
                 try{
