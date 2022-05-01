@@ -204,7 +204,7 @@ public class ReceptionWorkAreaJPanel extends javax.swing.JPanel {
 
         jLabel3.setFont(new java.awt.Font("Microsoft Sans Serif", 1, 24)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel3.setText("Current Patient List");
+        jLabel3.setText("Current Patients List");
         add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 120, -1, 50));
 
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
