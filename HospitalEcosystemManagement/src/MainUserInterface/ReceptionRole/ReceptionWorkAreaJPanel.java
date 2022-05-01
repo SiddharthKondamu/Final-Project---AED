@@ -276,7 +276,7 @@ public class ReceptionWorkAreaJPanel extends javax.swing.JPanel {
             populateNetworkTable();
 
         } else {
-            JOptionPane.showMessageDialog(null, "Select a Customer to delete!");
+            JOptionPane.showMessageDialog(null, "Please Select a Patient!");
         }
 
     }//GEN-LAST:event_billPatBtnActionPerformed
@@ -297,7 +297,7 @@ public class ReceptionWorkAreaJPanel extends javax.swing.JPanel {
                 populateNetworkTable();
             }
         } else {
-            JOptionPane.showMessageDialog(null, "Select a Customer to delete!");
+            JOptionPane.showMessageDialog(null, "Please Select a Patient!");
         }
     }//GEN-LAST:event_delBtnActionPerformed
 
@@ -329,7 +329,7 @@ public class ReceptionWorkAreaJPanel extends javax.swing.JPanel {
             layout.next(userProcessContainer);
 
         } else {
-            JOptionPane.showMessageDialog(null, "Select a Customer to Update!");
+            JOptionPane.showMessageDialog(null, "Please Select a Patient!");
         }
 
     }//GEN-LAST:event_btnUpdate1ActionPerformed
