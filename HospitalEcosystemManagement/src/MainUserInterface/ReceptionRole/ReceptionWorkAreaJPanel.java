@@ -80,18 +80,18 @@ public class ReceptionWorkAreaJPanel extends javax.swing.JPanel {
         delBtn = new javax.swing.JButton();
         updateAmbulRecBtn = new javax.swing.JButton();
         btnUpdate1 = new javax.swing.JButton();
-        jButton1 = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
         jLabel3 = new javax.swing.JLabel();
         jPanel1 = new javax.swing.JPanel();
         jLabel2 = new javax.swing.JLabel();
+        jButton1 = new javax.swing.JButton();
 
         setBackground(new java.awt.Color(0, 153, 204));
         setToolTipText("");
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         createPatBtn.setBackground(new java.awt.Color(0, 153, 204));
-        createPatBtn.setFont(new java.awt.Font("Microsoft Sans Serif", 1, 14)); // NOI18N
+        createPatBtn.setFont(new java.awt.Font("Microsoft Sans Serif", 1, 18)); // NOI18N
         createPatBtn.setForeground(new java.awt.Color(255, 255, 255));
         createPatBtn.setText("Create New Patient");
         createPatBtn.addActionListener(new java.awt.event.ActionListener() {
@@ -148,7 +148,7 @@ public class ReceptionWorkAreaJPanel extends javax.swing.JPanel {
         add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 180, 920, 640));
 
         billPatBtn.setBackground(new java.awt.Color(0, 153, 204));
-        billPatBtn.setFont(new java.awt.Font("Microsoft Sans Serif", 1, 14)); // NOI18N
+        billPatBtn.setFont(new java.awt.Font("Microsoft Sans Serif", 1, 18)); // NOI18N
         billPatBtn.setForeground(new java.awt.Color(255, 255, 255));
         billPatBtn.setText("Bill the Patient");
         billPatBtn.addActionListener(new java.awt.event.ActionListener() {
@@ -159,7 +159,7 @@ public class ReceptionWorkAreaJPanel extends javax.swing.JPanel {
         add(billPatBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(980, 600, 260, 42));
 
         delBtn.setBackground(new java.awt.Color(0, 153, 204));
-        delBtn.setFont(new java.awt.Font("Microsoft Sans Serif", 1, 14)); // NOI18N
+        delBtn.setFont(new java.awt.Font("Microsoft Sans Serif", 1, 18)); // NOI18N
         delBtn.setForeground(new java.awt.Color(255, 255, 255));
         delBtn.setText("Delete Patient");
         delBtn.addActionListener(new java.awt.event.ActionListener() {
@@ -170,7 +170,7 @@ public class ReceptionWorkAreaJPanel extends javax.swing.JPanel {
         add(delBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(980, 290, 260, 42));
 
         updateAmbulRecBtn.setBackground(new java.awt.Color(0, 153, 204));
-        updateAmbulRecBtn.setFont(new java.awt.Font("Microsoft Sans Serif", 1, 14)); // NOI18N
+        updateAmbulRecBtn.setFont(new java.awt.Font("Microsoft Sans Serif", 1, 18)); // NOI18N
         updateAmbulRecBtn.setForeground(new java.awt.Color(255, 255, 255));
         updateAmbulRecBtn.setText("Ambulance Record");
         updateAmbulRecBtn.addActionListener(new java.awt.event.ActionListener() {
@@ -181,7 +181,7 @@ public class ReceptionWorkAreaJPanel extends javax.swing.JPanel {
         add(updateAmbulRecBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(980, 490, 260, 42));
 
         btnUpdate1.setBackground(new java.awt.Color(0, 153, 204));
-        btnUpdate1.setFont(new java.awt.Font("Microsoft Sans Serif", 1, 14)); // NOI18N
+        btnUpdate1.setFont(new java.awt.Font("Microsoft Sans Serif", 1, 18)); // NOI18N
         btnUpdate1.setForeground(new java.awt.Color(255, 255, 255));
         btnUpdate1.setText("Update Patient");
         btnUpdate1.addActionListener(new java.awt.event.ActionListener() {
@@ -191,19 +191,8 @@ public class ReceptionWorkAreaJPanel extends javax.swing.JPanel {
         });
         add(btnUpdate1, new org.netbeans.lib.awtextra.AbsoluteConstraints(980, 180, 260, 42));
 
-        jButton1.setBackground(new java.awt.Color(0, 153, 204));
-        jButton1.setFont(new java.awt.Font("Microsoft Sans Serif", 1, 14)); // NOI18N
-        jButton1.setForeground(new java.awt.Color(255, 255, 255));
-        jButton1.setText("Discharge a Patient");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
-            }
-        });
-        add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(800, 390, 260, 42));
-
         jButton2.setBackground(new java.awt.Color(0, 153, 204));
-        jButton2.setFont(new java.awt.Font("Microsoft Sans Serif", 1, 14)); // NOI18N
+        jButton2.setFont(new java.awt.Font("Microsoft Sans Serif", 1, 18)); // NOI18N
         jButton2.setForeground(new java.awt.Color(255, 255, 255));
         jButton2.setText("Discharged Patients");
         jButton2.addActionListener(new java.awt.event.ActionListener() {
@@ -211,7 +200,7 @@ public class ReceptionWorkAreaJPanel extends javax.swing.JPanel {
                 jButton2ActionPerformed(evt);
             }
         });
-        add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(980, 710, 250, 42));
+        add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(980, 710, 260, 42));
 
         jLabel3.setFont(new java.awt.Font("Microsoft Sans Serif", 1, 24)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(255, 255, 255));
@@ -225,7 +214,38 @@ public class ReceptionWorkAreaJPanel extends javax.swing.JPanel {
         jLabel2.setFont(new java.awt.Font("Malayalam Sangam MN", 1, 14)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(255, 255, 255));
         jLabel2.setText("Perform an action");
-        jPanel1.add(jLabel2);
+
+        jButton1.setBackground(new java.awt.Color(0, 153, 204));
+        jButton1.setFont(new java.awt.Font("Microsoft Sans Serif", 1, 18)); // NOI18N
+        jButton1.setForeground(new java.awt.Color(255, 255, 255));
+        jButton1.setText("Discharge a Patient");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
+        jPanel1.setLayout(jPanel1Layout);
+        jPanel1Layout.setHorizontalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(84, 84, 84)
+                .addComponent(jLabel2))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 260, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
+        );
+        jPanel1Layout.setVerticalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(5, 5, 5)
+                .addComponent(jLabel2)
+                .addGap(352, 352, 352)
+                .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
+        );
 
         add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(970, 10, 280, 810));
     }// </editor-fold>//GEN-END:initComponents
