@@ -42,13 +42,13 @@ public class TreatedPatientJPanel extends javax.swing.JPanel {
 
             Object[] row = new Object[8];
             row[0] = patient;
-            row[1] = patient.getHealthInsuranceID();
-            row[2] = patient.getUserName();
-            row[3] = patient.getPatientLastName();
-            row[4] = patient.getAge();
-            row[5] = patient.getInsuranceStatus();
-            row[6] = patient.getEmailAddress();
-            row[7] = patient.getBloodBankStatus();
+            row[1] = patient.getpHealthInsuranceID();
+            row[2] = patient.getpUserName();
+            row[3] = patient.getpLastName();
+            row[4] = patient.getpAge();
+            row[5] = patient.getpInsuranceStatus();
+            row[6] = patient.getpEmailAddress();
+            row[7] = patient.getpBloodBankStatus();
             model.addRow(row);
 
         }

@@ -20,7 +20,7 @@ import MainUserInterface.Ambulance.DisplayAmbulancePatientJPanel;
 
 /**
  *
- * @author ronitchougule
+ * @author siddh
  */
 public class DisplayPatientInfoJPanel extends javax.swing.JPanel {
 

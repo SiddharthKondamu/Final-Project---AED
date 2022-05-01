@@ -296,7 +296,7 @@ public class DoctorRequestMedicineJPanel extends javax.swing.JPanel {
                 //ecosystem.AddTreatedPatientList(patient);
             }
             ecosystem.getPharmacy().AddpharmaRecordList(patient);
-            patient.setPharmaStatus("Requested");
+            patient.setpPharmaStatus("Requested");
             
             DoctorVisitJPanel doctorVisit = new DoctorVisitJPanel(userProcessContainer, userAccount, ecosystem, patient);
             userProcessContainer.add("Visit Doctor", doctorVisit);

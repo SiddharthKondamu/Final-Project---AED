@@ -306,7 +306,7 @@ public class DoctorRequestLabTestJPanel extends javax.swing.JPanel {
              //ecosystem.AddTreatedPatientList(patient);
         }
         ecosystem.getLab().AddTreatedPatientList(patient);
-        patient.setLabStatus("Requested");
+        patient.setpLabStatus("Requested");
         }
      
     }//GEN-LAST:event_RequestActionPerformed
