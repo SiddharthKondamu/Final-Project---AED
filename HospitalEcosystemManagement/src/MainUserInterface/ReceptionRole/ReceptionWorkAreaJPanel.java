@@ -13,7 +13,7 @@ import java.awt.CardLayout;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.table.DefaultTableModel;
-import userinterface.AmbulanceRole.AmbulanceWorkAreaJPanel;
+import MainUserInterface.Ambulance.AmbulanceWorkAreaJPanel;
 
 //import MainUserInterface.Patient.PatientBillJPanel;
 
@@ -51,7 +51,7 @@ public class ReceptionWorkAreaJPanel extends javax.swing.JPanel {
         model.setRowCount(0);
         for (Patient patient : ecoSystem.getPatientDirectory().getPatientList()) {
             Object[] row = new Object[11];
-            row[0] = patient;
+            row[0] = patient.getpFirstName();
             row[1] = patient.getpLastName();
             row[2] = patient.getpHealthInsuranceID();
             row[3] = patient.getpAge(); 
@@ -286,7 +286,7 @@ public class ReceptionWorkAreaJPanel extends javax.swing.JPanel {
 
     private void btnUpdate1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnUpdate1ActionPerformed
         // TODO add your handling code here:
-        /*int selectedRow = patientTable.getSelectedRow();
+        int selectedRow = patientTable.getSelectedRow();
         if (selectedRow >= 0) {
 
             Patient patient = (Patient) patientTable.getValueAt(selectedRow, 0);
@@ -297,7 +297,7 @@ public class ReceptionWorkAreaJPanel extends javax.swing.JPanel {
 
         } else {
             JOptionPane.showMessageDialog(null, "Select a Customer to Update!");
-        }*/
+        }
 
     }//GEN-LAST:event_btnUpdate1ActionPerformed
 
