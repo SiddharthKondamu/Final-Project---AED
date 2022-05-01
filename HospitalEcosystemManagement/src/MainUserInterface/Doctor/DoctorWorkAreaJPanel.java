@@ -41,9 +41,7 @@ public class DoctorWorkAreaJPanel extends javax.swing.JPanel {
 
     private void populatePatientTable() {
         DefaultTableModel model = (DefaultTableModel) PatientTable.getModel();
-
         model.setRowCount(0);
-
         for (Doctor doctor : ecoSystem.getDoctorDirectory().getDoctors()) {
             if (doctor.getdUserName().equals(userAccount.getUsername())) {
                 for (Patient patient : doctor.getTreatedPatientList()) 
@@ -60,7 +58,6 @@ public class DoctorWorkAreaJPanel extends javax.swing.JPanel {
                     model.addRow(row);}
                 }
             }
-
         }
     }
     private void populatePatientTable1() {

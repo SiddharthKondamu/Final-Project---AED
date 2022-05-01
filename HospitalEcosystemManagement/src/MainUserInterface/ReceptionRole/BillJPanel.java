@@ -38,18 +38,18 @@ public class BillJPanel extends javax.swing.JPanel {
 
     private void populateBillTable() {
         DefaultTableModel model = (DefaultTableModel) talble.getModel();
-
         model.setRowCount(0);
-
+        int totalAmount = 0;
         for (PatientBills b : patient.getpBills()) {
-
             Object[] row = new Object[7];
             row[0] = b.getName();
             row[1] = b.getOrgType();
             row[2] = b.getAmount();
+            totalAmount += b.getAmount();
             model.addRow(row);
-
         }
+        this.totalAmounttxt.setText(String.valueOf(totalAmount));
+        
     }
 
     /**
@@ -69,15 +69,19 @@ public class BillJPanel extends javax.swing.JPanel {
         bckBtn = new javax.swing.JButton();
         jLabel2 = new javax.swing.JLabel();
         textBill = new javax.swing.JLabel();
+        totalAmounttxt = new javax.swing.JTextField();
 
         setBackground(new java.awt.Color(0, 153, 204));
         setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel1.setBackground(new java.awt.Color(255, 255, 255));
-        jLabel1.setFont(new java.awt.Font("Microsoft Sans Serif", 1, 36)); // NOI18N
+        jLabel1.setFont(new java.awt.Font("Microsoft JhengHei", 1, 36)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel1.setText("View Bill");
+        add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 60, 437, -1));
+        add(jSeparator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 145, 1915, 10));
 
         talble.setFont(new java.awt.Font("Trebuchet MS", 1, 14)); // NOI18N
         talble.setModel(new javax.swing.table.DefaultTableModel(
@@ -88,7 +92,7 @@ public class BillJPanel extends javax.swing.JPanel {
                 {null, null, null}
             },
             new String [] {
-                "Item Name", "Organization", "Ammount"
+                "Item Name", "Organization", "Amount"
             }
         ) {
             Class[] types = new Class [] {
@@ -108,79 +112,32 @@ public class BillJPanel extends javax.swing.JPanel {
         });
         jScrollPane1.setViewportView(talble);
 
+        add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 200, 550, 251));
+
         lblPatientName.setBackground(new java.awt.Color(255, 255, 255));
         lblPatientName.setFont(new java.awt.Font("Microsoft Sans Serif", 1, 24)); // NOI18N
         lblPatientName.setForeground(new java.awt.Color(255, 255, 255));
         lblPatientName.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        add(lblPatientName, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 291, 347, 44));
 
-        bckBtn.setBackground(new java.awt.Color(15, 85, 177));
-        bckBtn.setFont(new java.awt.Font("Trebuchet MS", 1, 14)); // NOI18N
-        bckBtn.setForeground(new java.awt.Color(255, 255, 255));
+        bckBtn.setBackground(new java.awt.Color(255, 255, 255));
+        bckBtn.setFont(new java.awt.Font("Microsoft JhengHei", 1, 18)); // NOI18N
+        bckBtn.setForeground(new java.awt.Color(0, 153, 204));
         bckBtn.setText("<< Back");
         bckBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 bckBtnActionPerformed(evt);
             }
         });
+        add(bckBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(1241, 61, 120, 40));
+        add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(1255, 406, 481, 387));
 
         textBill.setBackground(new java.awt.Color(255, 255, 255));
-        textBill.setFont(new java.awt.Font("Microsoft Sans Serif", 1, 24)); // NOI18N
+        textBill.setFont(new java.awt.Font("Microsoft JhengHei", 1, 24)); // NOI18N
         textBill.setForeground(new java.awt.Color(255, 255, 255));
-        textBill.setText("Bill for the patient:");
-
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
-        this.setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jSeparator1, javax.swing.GroupLayout.Alignment.TRAILING)
-            .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(229, 229, 229)
-                        .addComponent(textBill)
-                        .addGap(122, 122, 122))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(lblPatientName, javax.swing.GroupLayout.PREFERRED_SIZE, 347, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(61, 61, 61)))
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 473, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 224, Short.MAX_VALUE)
-                .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 481, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(179, Short.MAX_VALUE))
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 437, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(bckBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(576, 576, 576))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(80, 80, 80)
-                        .addComponent(jLabel1)
-                        .addGap(23, 23, 23))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(bckBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(44, 44, 44)))
-                .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(79, 79, 79)
-                        .addComponent(textBill)
-                        .addGap(29, 29, 29)
-                        .addComponent(lblPatientName, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(62, 62, 62)
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 251, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(251, 251, 251)
-                        .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 387, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(389, Short.MAX_VALUE))
-        );
+        textBill.setText("Total bill amount of patient :");
+        add(textBill, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 470, -1, 30));
+        add(totalAmounttxt, new org.netbeans.lib.awtextra.AbsoluteConstraints(960, 469, 120, 30));
     }// </editor-fold>//GEN-END:initComponents
 
     private void bckBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bckBtnActionPerformed
@@ -201,5 +158,6 @@ public class BillJPanel extends javax.swing.JPanel {
     private javax.swing.JLabel lblPatientName;
     private javax.swing.JTable talble;
     private javax.swing.JLabel textBill;
+    private javax.swing.JTextField totalAmounttxt;
     // End of variables declaration//GEN-END:variables
 }

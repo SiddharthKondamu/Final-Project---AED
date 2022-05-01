@@ -10,6 +10,7 @@ import BusinessModel.Ecosystem;
 import BusinessModel.Patient.Patient;
 import BusinessModel.Roles.Patient_role;
 import BusinessModel.UserAccount.User;
+import BusinessUtil.Mail.SendMail;
 import java.awt.CardLayout;
 import java.awt.Image;
 import java.io.File;
@@ -542,6 +543,7 @@ public class CreatePatientJPanel extends javax.swing.JPanel {
 
             ecoSystem.getUserAccountDirectory().createUser(txtUserName.getText(), txtPassword.getText(), null, new Patient_role());
             ecoSystem.getPatientDirectory().createPatient(patient);
+            SendMail.sendMail(patient.getpEmailAddress(), "Hello "+patient.getpFirstName()+", your account has been successfully created in Hospital EcoSystem Management!");
             for (Patient p : ecoSystem.getPatientDirectory().getPatientList()) {
                 if (p.getpUserName().equals(txtUserName.getText())) {
                     ecoSystem.getPatientDirectory().AddBill(p, "Bed Charge", "Hospital", "Ammount");

@@ -23,7 +23,7 @@ import javax.mail.internet.MimeMessage;
  */
 public class SendMail {
     
-    public static void sendMail(String recepient){
+    public static void sendMail(String recepient, String msg){
         
         System.out.println("Preparing to send email");
         Properties properties = new Properties();
@@ -33,8 +33,8 @@ public class SendMail {
         properties.put("mail.smtp.port", "587");
         properties.put("mail.smtp.ssl.trust", "*");
         
-        String senderEmail = "siddharthkondamu@gmail.com";
-        String senderPassword = "siddharth2sai";
+        String senderEmail = "hospitalecosystemmgmt@gmail.com";
+        String senderPassword = "aed123456";
         
         Session session = Session.getInstance(properties, new Authenticator(){
             @Override
@@ -43,7 +43,7 @@ public class SendMail {
             }
         });  
         
-        Message message = prepareMessage(session,senderEmail, recepient);
+        Message message = prepareMessage(session,senderEmail, recepient, msg);
         
         try {
             Transport.send(message);
@@ -54,14 +54,14 @@ public class SendMail {
    
     }
 
-    private static Message prepareMessage(Session session,String senderEmail, String recepientEmail){
+    private static Message prepareMessage(Session session,String senderEmail, String recepientEmail, String msg){
       
         try {
             Message message = new MimeMessage(session);
             message.setFrom(new InternetAddress(senderEmail));
             message.setRecipient(Message.RecipientType.TO, new InternetAddress(recepientEmail));
             message.setSubject("Hello from AED Project");
-            message.setText("Test mail from AED");
+            message.setText(msg);
             return message;
         } catch (Exception ex) {
             Logger.getLogger(SendMail.class.getName()).log(Level.SEVERE, null, ex);

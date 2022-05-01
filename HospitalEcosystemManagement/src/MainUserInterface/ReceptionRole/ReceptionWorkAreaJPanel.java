@@ -51,7 +51,7 @@ public class ReceptionWorkAreaJPanel extends javax.swing.JPanel {
         model.setRowCount(0);
         for (Patient patient : ecoSystem.getPatientDirectory().getPatientList()) {
             Object[] row = new Object[11];
-            row[0] = patient.getpFirstName();
+            row[0] = patient;
             row[1] = patient.getpLastName();
             row[2] = patient.getpHealthInsuranceID();
             row[3] = patient.getpAge(); 
@@ -194,7 +194,7 @@ public class ReceptionWorkAreaJPanel extends javax.swing.JPanel {
                 jButton1ActionPerformed(evt);
             }
         });
-        add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(980, 390, 260, 42));
+        add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(800, 390, 260, 42));
 
         jButton2.setBackground(new java.awt.Color(0, 153, 204));
         jButton2.setFont(new java.awt.Font("Microsoft Sans Serif", 1, 14)); // NOI18N
@@ -250,7 +250,7 @@ public class ReceptionWorkAreaJPanel extends javax.swing.JPanel {
             populateNetworkTable();
 
         } else {
-            JOptionPane.showMessageDialog(null, "Select a Customer to delete!");
+            JOptionPane.showMessageDialog(null, "Please Select a Patient!");
         }
 
     }//GEN-LAST:event_billPatBtnActionPerformed
@@ -271,7 +271,7 @@ public class ReceptionWorkAreaJPanel extends javax.swing.JPanel {
                 populateNetworkTable();
             }
         } else {
-            JOptionPane.showMessageDialog(null, "Select a Customer to delete!");
+            JOptionPane.showMessageDialog(null, "Please Select a Patient!");
         }
     }//GEN-LAST:event_delBtnActionPerformed
 
@@ -303,23 +303,23 @@ public class ReceptionWorkAreaJPanel extends javax.swing.JPanel {
             layout.next(userProcessContainer);
 
         } else {
-            JOptionPane.showMessageDialog(null, "Select a Customer to Update!");
+            JOptionPane.showMessageDialog(null, "Please Select a Patient!");
         }
 
     }//GEN-LAST:event_btnUpdate1ActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
-        ReceptionDischarge ambulanceWorkAreaJPanel = new ReceptionDischarge(userProcessContainer, userAccount, ecoSystem);
-        userProcessContainer.add("Discharge", ambulanceWorkAreaJPanel);
+        ReceptionDischarge receptionDischarge = new ReceptionDischarge(userProcessContainer, userAccount, ecoSystem);
+        userProcessContainer.add("Discharge", receptionDischarge);
         CardLayout layout = (CardLayout) userProcessContainer.getLayout();
         layout.next(userProcessContainer);
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         // TODO add your handling code here:
-        PastRecords ambulanceWorkAreaJPanel = new PastRecords(userProcessContainer, userAccount, ecoSystem);
-        userProcessContainer.add("Past Records", ambulanceWorkAreaJPanel);
+        PastRecords pastRecords = new PastRecords(userProcessContainer, userAccount, ecoSystem);
+        userProcessContainer.add("Past Records", pastRecords);
         CardLayout layout = (CardLayout) userProcessContainer.getLayout();
         layout.next(userProcessContainer);
     }//GEN-LAST:event_jButton2ActionPerformed
