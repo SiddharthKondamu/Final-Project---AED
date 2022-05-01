@@ -23,15 +23,15 @@ public class PharmacyRequestedTests extends javax.swing.JPanel {
      */
     Patient p;
     JPanel userProcessContainer;
-    UserAccount account;
+    User account;
     Ecosystem ecoSystem;
-    public PharmacyRequestedTests(JPanel userProcessContainer, UserAccount account, Patient p,Ecosystem ecoSystem) {
+    public PharmacyRequestedTests(JPanel userProcessContainer, User account, Patient p,Ecosystem ecoSystem) {
         initComponents();
         this.userProcessContainer = userProcessContainer;
         this.account = account;
         this.ecoSystem = ecoSystem;
         this.p = p;
-        jLabel3.setText("Customer Name: "+p.getPatientFirstName()+" "+p.getPatientLastName());
+        jLabel3.setText("Customer Name: "+p.getpFirstName()+" "+p.getpLastName());
         populateBillTable();
     }
         private void populateBillTable() {
@@ -39,16 +39,16 @@ public class PharmacyRequestedTests extends javax.swing.JPanel {
 
         model.setRowCount(0);
 
-        for (Bills b : p.getBillsList()) {
+        for (PatientBills b : p.getpBills()) {
 
             Object[] row = new Object[7];
-            row[0] = b.getItemName();
-            row[1] = b.getOrganziationType();
-            row[2] = b.getItemAmount();
-            row[3] = b.getItemStatus();
+            row[0] = b.getName();
+            row[1] = b.getOrgType();
+            row[2] = b.getAmount();
+            row[3] = b.getStatus();
             row[4] = b.getResult();
             
-            if(b.getOrganziationType().equals("Pharmacy")&&b.getItemStatus().equals("Requested")){
+            if(b.getOrgType().equals("Pharmacy")&& b.getStatus().equals("Requested")){
             model.addRow(row);}
         }
     }
@@ -131,11 +131,11 @@ public class PharmacyRequestedTests extends javax.swing.JPanel {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
-        for (Bills b : p.getBillsList()) {
-            if(b.getOrganziationType().equals("Pharmacy")){
-            b.setItemStatus("Delivered");}
+        for (PatientBills b : p.getpBills()) {
+            if(b.getOrgType().equals("Pharmacy")){
+            b.setStatus("Delivered");}
             }
-        p.setPharmaStatus("Delivered");
+        p.setpPharmaStatus("Delivered");
         populateBillTable();
         PharmacyWorkAreaJPanel bill = new PharmacyWorkAreaJPanel(userProcessContainer, account, ecoSystem);
         userProcessContainer.add("Insurance main", bill);

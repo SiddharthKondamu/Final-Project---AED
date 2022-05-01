@@ -46,13 +46,13 @@ public class PharmacyWorkAreaJPanel extends javax.swing.JPanel {
             Object[] row = new Object[7];
             
             row[0] = patient;
-            row[1] = patient.getPatientLastName();
-            row[2] = patient.getPharmaStatus();
-            row[3] = patient.getHealthInsuranceID();
-            row[4] = patient.getAge();
-            row[5] = patient.getPatientaddress();
-            row[6] = patient.getEmailAddress();
-           if(patient.getPharmaStatus().equals("Requested")){
+            row[1] = patient.getpLastName();
+            row[2] = patient.getpPharmaStatus();
+            row[3] = patient.getpHealthInsuranceID();
+            row[4] = patient.getpAge();
+            row[5] = patient.getpAddress();
+            row[6] = patient.getpEmailAddress();
+           if(patient.getpPharmaStatus().equals("Requested")){
             model.addRow(row);
            }
         }
@@ -67,13 +67,13 @@ public class PharmacyWorkAreaJPanel extends javax.swing.JPanel {
             Object[] row = new Object[7];
             
             row[0] = patient;
-            row[1] = patient.getPatientLastName();
-            row[2] = patient.getPharmaStatus();
-            row[3] = patient.getHealthInsuranceID();
-            row[4] = patient.getAge();
-            row[5] = patient.getPatientaddress();
-            row[6] = patient.getEmailAddress();
-           if(patient.getPharmaStatus().equals("Delivered")){
+            row[1] = patient.getpLastName();
+            row[2] = patient.getpPharmaStatus();
+            row[3] = patient.getpHealthInsuranceID();
+            row[4] = patient.getpAge();
+            row[5] = patient.getpAddress();
+            row[6] = patient.getpEmailAddress();
+           if(patient.getpPharmaStatus().equals("Delivered")){
             model.addRow(row);
            }
         }
@@ -239,7 +239,7 @@ public class PharmacyWorkAreaJPanel extends javax.swing.JPanel {
         else 
         {
             Patient patient = (Patient) managePatientTable1.getValueAt(selectedRowIndex, 0);
-            PharmacypastReq doctorRequestLabTestJPanel = new PharmacypastReq(userProcessContainer, userAccount,patient,ecosystem);
+            PharmacyPastRequest doctorRequestLabTestJPanel = new PharmacyPastRequest(userProcessContainer, userAccount,patient,ecosystem);
             userProcessContainer.add("Past Tests", doctorRequestLabTestJPanel);
             CardLayout layout = (CardLayout) userProcessContainer.getLayout();
             layout.next(userProcessContainer);

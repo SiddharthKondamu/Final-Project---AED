@@ -30,7 +30,7 @@ public class PharmacyCRUDJpanel extends javax.swing.JPanel {
     User userAccount;
     Medicine m;
     
-    public PharmacyCRUDJpanel(JPanel userProcessContainer, UserAccount account, Ecosystem business) {
+    public PharmacyCRUDJpanel(JPanel userProcessContainer, User account, Ecosystem business) {
         initComponents();
         this.userProcessContainer = userProcessContainer;
         this.ecosystem = business;
