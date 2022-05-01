@@ -15,7 +15,7 @@ import javax.swing.table.DefaultTableModel;
 
 /**
  *
- * @author sahil
+ * @author sahilmattoo
  */
 public class BillJPanel extends javax.swing.JPanel {
 
@@ -77,7 +77,7 @@ public class BillJPanel extends javax.swing.JPanel {
         jLabel1.setFont(new java.awt.Font("Microsoft Sans Serif", 1, 36)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel1.setText("Payment");
+        jLabel1.setText("View Bill");
 
         BillTalble.setFont(new java.awt.Font("Trebuchet MS", 1, 14)); // NOI18N
         BillTalble.setModel(new javax.swing.table.DefaultTableModel(
