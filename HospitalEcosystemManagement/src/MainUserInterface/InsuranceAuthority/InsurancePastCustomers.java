@@ -37,7 +37,7 @@ public class InsurancePastCustomers extends javax.swing.JPanel {
     }
           
 private void populatePatientTable1() {
-        DefaultTableModel model = (DefaultTableModel) managePatientTable1.getModel();
+        DefaultTableModel model = (DefaultTableModel) patientTable.getModel();
 
         model.setRowCount(0);
 
@@ -69,23 +69,23 @@ private void populatePatientTable1() {
         jLabel1 = new javax.swing.JLabel();
         jSeparator1 = new javax.swing.JSeparator();
         jScrollPane4 = new javax.swing.JScrollPane();
-        managePatientTable1 = new javax.swing.JTable();
-        jButton1 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
+        patientTable = new javax.swing.JTable();
+        viewDtlsBtn = new javax.swing.JButton();
+        backBtn = new javax.swing.JButton();
 
         setBackground(new java.awt.Color(0, 153, 204));
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel1.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
+        jLabel1.setFont(new java.awt.Font("Microsoft Sans Serif", 1, 36)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel1.setText("Insurance Company");
-        add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(-460, 50, 1400, -1));
+        jLabel1.setText("Insurer");
+        add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(-500, 50, 1400, -1));
         add(jSeparator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 126, 1400, 10));
 
-        managePatientTable1.getTableHeader().setFont(new java.awt.Font("Trebuchet MS", 1, 16));
-        managePatientTable1.setFont(new java.awt.Font("Trebuchet MS", 1, 12));
-        managePatientTable1.setModel(new javax.swing.table.DefaultTableModel(
+        patientTable.getTableHeader().setFont(new java.awt.Font("Trebuchet MS", 1, 16));
+        patientTable.setFont(new java.awt.Font("Trebuchet MS", 1, 12));
+        patientTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null, null, null, null},
                 {null, null, null, null, null, null, null},
@@ -111,42 +111,42 @@ private void populatePatientTable1() {
                 return canEdit [columnIndex];
             }
         });
-        jScrollPane4.setViewportView(managePatientTable1);
+        jScrollPane4.setViewportView(patientTable);
 
         add(jScrollPane4, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 180, 990, 200));
 
-        jButton1.setBackground(new java.awt.Color(255, 255, 255));
-        jButton1.setFont(new java.awt.Font("Microsoft Sans Serif", 1, 18)); // NOI18N
-        jButton1.setForeground(new java.awt.Color(0, 153, 204));
-        jButton1.setText("View Details");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        viewDtlsBtn.setBackground(new java.awt.Color(255, 255, 255));
+        viewDtlsBtn.setFont(new java.awt.Font("Microsoft Sans Serif", 1, 18)); // NOI18N
+        viewDtlsBtn.setForeground(new java.awt.Color(0, 153, 204));
+        viewDtlsBtn.setText("View Details");
+        viewDtlsBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                viewDtlsBtnActionPerformed(evt);
             }
         });
-        add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 180, 220, 80));
+        add(viewDtlsBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 180, 220, 80));
 
-        jButton2.setBackground(new java.awt.Color(255, 255, 255));
-        jButton2.setFont(new java.awt.Font("Microsoft Sans Serif", 1, 18)); // NOI18N
-        jButton2.setForeground(new java.awt.Color(0, 153, 204));
-        jButton2.setText("Back");
-        jButton2.addActionListener(new java.awt.event.ActionListener() {
+        backBtn.setBackground(new java.awt.Color(255, 255, 255));
+        backBtn.setFont(new java.awt.Font("Microsoft Sans Serif", 1, 18)); // NOI18N
+        backBtn.setForeground(new java.awt.Color(0, 153, 204));
+        backBtn.setText("Back");
+        backBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton2ActionPerformed(evt);
+                backBtnActionPerformed(evt);
             }
         });
-        add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 300, 220, 80));
+        add(backBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 300, 220, 80));
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    private void viewDtlsBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_viewDtlsBtnActionPerformed
         // TODO add your handling code here:
-        int selectedRow = managePatientTable1.getSelectedRow();
+        int selectedRow = patientTable.getSelectedRow();
         if(selectedRow<0){
             JOptionPane.showMessageDialog(null,"Please select a row from the table to view details","Warning",JOptionPane.WARNING_MESSAGE);
         }
         else{
 
-            Patient d = (Patient) managePatientTable1.getValueAt(selectedRow, 0);
+            Patient d = (Patient) patientTable.getValueAt(selectedRow, 0);
             //d.get
             PastCustomerInfo bill = new PastCustomerInfo(userProcessContainer,ecoSystem, d, userAccount);
             userProcessContainer.add("Past Customer", bill);
@@ -154,24 +154,24 @@ private void populatePatientTable1() {
             layout.next(userProcessContainer);
 
         }
-    }//GEN-LAST:event_jButton1ActionPerformed
+    }//GEN-LAST:event_viewDtlsBtnActionPerformed
 
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+    private void backBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_backBtnActionPerformed
         // TODO add your handling code here:
         //patient.setInsuranceStatus("Approved");
         InsuranceWorkAreaJPanel bill = new InsuranceWorkAreaJPanel(userProcessContainer, userAccount, ecoSystem);
         userProcessContainer.add("Insurance main", bill);
         CardLayout layout = (CardLayout) userProcessContainer.getLayout();
         layout.next(userProcessContainer);
-    }//GEN-LAST:event_jButton2ActionPerformed
+    }//GEN-LAST:event_backBtnActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
+    private javax.swing.JButton backBtn;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JScrollPane jScrollPane4;
     private javax.swing.JSeparator jSeparator1;
-    private javax.swing.JTable managePatientTable1;
+    private javax.swing.JTable patientTable;
+    private javax.swing.JButton viewDtlsBtn;
     // End of variables declaration//GEN-END:variables
 }
