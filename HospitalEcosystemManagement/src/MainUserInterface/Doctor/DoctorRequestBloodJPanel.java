@@ -3,11 +3,11 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package userinterface.DoctorRole;
+package MainUserInterface.Doctor;
 
-import Business.EcoSystem;
-import Business.Patient.Patient;
-import Business.UserAccount.UserAccount;
+import BusinessModel.Ecosystem;
+import BusinessModel.Patient.Patient;
+import BusinessModel.UserAccount.User;
 import java.awt.CardLayout;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
@@ -22,11 +22,11 @@ public class DoctorRequestBloodJPanel extends javax.swing.JPanel {
      * Creates new form DoctorRequestBloodJPanel
      */
     private JPanel userProcessContainer;
-    private EcoSystem ecosystem;
-    private UserAccount userAccount;
+    private Ecosystem ecosystem;
+    private User userAccount;
     private Patient patient;
 
-    public DoctorRequestBloodJPanel(JPanel userProcessContainer, UserAccount account, EcoSystem ecosystem, Patient patient) {
+    public DoctorRequestBloodJPanel(JPanel userProcessContainer, User account, Ecosystem ecosystem, Patient patient) {
         initComponents();
         this.userProcessContainer = userProcessContainer;
         this.ecosystem = ecosystem;
@@ -109,8 +109,8 @@ public class DoctorRequestBloodJPanel extends javax.swing.JPanel {
 
         if (!((String) BloodRequestQuantityBox.getSelectedItem()).equals("Select Quantity")) {
 
-            patient.setBloodBankStatus("Requested");
-            patient.setBloodBagQuantity((String) BloodRequestQuantityBox.getSelectedItem());
+            patient.setpBloodBankStatus("Requested");
+            patient.setpBloodBagQuantity((String) BloodRequestQuantityBox.getSelectedItem());
             
             JOptionPane.showMessageDialog(null, "Blood Request Sent", "Information Message", JOptionPane.INFORMATION_MESSAGE);
             DoctorVisitJPanel doctorVisit = new DoctorVisitJPanel(userProcessContainer, userAccount, ecosystem, patient);

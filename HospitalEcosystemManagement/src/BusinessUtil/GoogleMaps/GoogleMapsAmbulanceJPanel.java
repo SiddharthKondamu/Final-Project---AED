@@ -7,6 +7,7 @@ package BusinessUtil.GoogleMaps;
 import BusinessModel.Ambulance.Ambulance;
 import BusinessModel.Ecosystem;
 import BusinessModel.UserAccount.User;
+import MainUserInterface.Ambulance.ReceptionAmbulanceWorkAreaJPanel;
 import com.kingaspx.util.BrowserUtil;
 import com.kingaspx.version.Version;
 import com.teamdev.jxbrowser.chromium.Browser;
@@ -23,7 +24,6 @@ import com.teamdev.jxbrowser.chromium.swing.BrowserView;
 import java.awt.BorderLayout;
 import java.awt.CardLayout;
 import javax.swing.JPanel;
-import MainUserinterface.Ambulance.ReceptionAmbulanceWorkAreaJPanel;
 
 /**
  *

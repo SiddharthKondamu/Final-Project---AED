@@ -15,7 +15,7 @@ import javax.swing.JPanel;
 import javax.swing.table.DefaultTableModel;
 import userinterface.AmbulanceRole.AmbulanceWorkAreaJPanel;
 
-import MainUserInterface.Patient.PatientBillJPanel;
+//import MainUserInterface.Patient.PatientBillJPanel;
 
 
 /**
@@ -35,30 +35,30 @@ public class ReceptionWorkAreaJPanel extends javax.swing.JPanel {
     public ReceptionWorkAreaJPanel(JPanel userProcessContainer, User account, Ecosystem system) {
 
         initComponents();
+        System.out.println("inside Reception work area");
         this.userProcessContainer = userProcessContainer;
         this.ecoSystem = system;
+        System.out.println("existing patients in the portal ---");
+        for (Patient patient : ecoSystem.getPatientDirectory().getPatientList()) {
+            System.out.println("patient---"+patient.getpFirstName());
+        }
         populateNetworkTable();
     }
 
     private void populateNetworkTable() {
+        
         DefaultTableModel model = (DefaultTableModel) patientTable.getModel();
-
         model.setRowCount(0);
-
         for (Patient patient : ecoSystem.getPatientDirectory().getPatientList()) {
-
             Object[] row = new Object[11];
             row[0] = patient;
-
             row[1] = patient.getpLastName();
             row[2] = patient.getpHealthInsuranceID();
             row[3] = patient.getpAge(); 
             row[4] = patient.getpEmailAddress();
             row[5] = patient.getpStatus();
             if(!patient.getpStatus().equals("Discharged")){
-
             model.addRow(row);}
-
         }
     }
 
@@ -239,7 +239,7 @@ public class ReceptionWorkAreaJPanel extends javax.swing.JPanel {
 
     private void billPatBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_billPatBtnActionPerformed
         // TODO add your handling code here:
-        int selectedRow = patientTable.getSelectedRow();
+        /*int selectedRow = patientTable.getSelectedRow();
         if (selectedRow >= 0) {
 
             Patient patient = (Patient) patientTable.getValueAt(selectedRow, 0);
@@ -251,7 +251,7 @@ public class ReceptionWorkAreaJPanel extends javax.swing.JPanel {
 
         } else {
             JOptionPane.showMessageDialog(null, "Select a Customer to delete!");
-        }
+        }*/
 
     }//GEN-LAST:event_billPatBtnActionPerformed
 
@@ -265,7 +265,7 @@ public class ReceptionWorkAreaJPanel extends javax.swing.JPanel {
                 
                 Patient p = (Patient) patientTable.getValueAt(selectedRow, 0);
                 //System.out.print(p.getGender());
-                ecoSystem.getUserAccountDirectory().deleteUserAccount(p.getUserName());
+                ecoSystem.getUserAccountDirectory().deleteUser(p.getpUserName());
                 //UserAccount user = (UserAccount) networkJTable.getValueAt(selectedRow, 0); 
                 ecoSystem.getPatientDirectory().deletePatient(p);
                 populateNetworkTable();
@@ -286,7 +286,7 @@ public class ReceptionWorkAreaJPanel extends javax.swing.JPanel {
 
     private void btnUpdate1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnUpdate1ActionPerformed
         // TODO add your handling code here:
-        int selectedRow = patientTable.getSelectedRow();
+        /*int selectedRow = patientTable.getSelectedRow();
         if (selectedRow >= 0) {
 
             Patient patient = (Patient) patientTable.getValueAt(selectedRow, 0);
@@ -297,24 +297,24 @@ public class ReceptionWorkAreaJPanel extends javax.swing.JPanel {
 
         } else {
             JOptionPane.showMessageDialog(null, "Select a Customer to Update!");
-        }
+        }*/
 
     }//GEN-LAST:event_btnUpdate1ActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
-        ReceptionDischarge ambulanceWorkAreaJPanel = new ReceptionDischarge(userProcessContainer, userAccount, ecoSystem);
+        /*ReceptionDischarge ambulanceWorkAreaJPanel = new ReceptionDischarge(userProcessContainer, userAccount, ecoSystem);
         userProcessContainer.add("Discharge", ambulanceWorkAreaJPanel);
         CardLayout layout = (CardLayout) userProcessContainer.getLayout();
-        layout.next(userProcessContainer);
+        layout.next(userProcessContainer);*/
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         // TODO add your handling code here:
-        PastRecords ambulanceWorkAreaJPanel = new PastRecords(userProcessContainer, userAccount, ecoSystem);
-        userProcessContainer.add("Past Records", ambulanceWorkAreaJPanel);
+        //PastRecords ambulanceWorkAreaJPanel = new PastRecords(userProcessContainer, userAccount, ecoSystem);
+        /*userProcessContainer.add("Past Records", ambulanceWorkAreaJPanel);
         CardLayout layout = (CardLayout) userProcessContainer.getLayout();
-        layout.next(userProcessContainer);
+        layout.next(userProcessContainer);*/
     }//GEN-LAST:event_jButton2ActionPerformed
 
 

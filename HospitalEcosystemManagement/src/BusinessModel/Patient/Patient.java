@@ -43,6 +43,7 @@ public class Patient {
 
     public Patient(String pUserName) {
         this.pUserName = pUserName;
+        pBills = new ArrayList<>();
     }
     
     
