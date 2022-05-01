@@ -3,19 +3,19 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package userinterface.DoctorRole;
+package MainUserInterface.Doctor;
 
-import Business.Doctor.Doctor;
-import Business.EcoSystem;
-import Business.Patient.Patient;
-import Business.UserAccount.UserAccount;
+import BusinessModel.Doctor.Doctor;
+import BusinessModel.Ecosystem;
+import BusinessModel.Patient.Patient;
+import BusinessModel.UserAccount.User;
 import java.awt.CardLayout;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.table.DefaultTableModel;
-import userinterface.DoctorAdministratorRole.DisplayPatientInfoJPanel;
-import userinterface.LabRole.LabWorkAreaJPanel;
-import userinterface.PharmacyRole.PharmacyWorkAreaJPanel;
+import MainUserInterface.DoctorAdministration.DisplayPatientInfoJPanel;
+import MainUserInterface.Lab.LabWorkAreaJPanel;
+import MainUserInterface.Pharmacy.PharmacyWorkAreaJPanel;
 import userinterface.ReceptionRole.CreatePatientJPanel;
 
 /**
@@ -28,10 +28,10 @@ public class DoctorWorkAreaJPanel extends javax.swing.JPanel {
      * Creates new form DoctorWorkAreaJPanel
      */
     private final JPanel userProcessContainer;
-    private final EcoSystem ecoSystem;
-    UserAccount userAccount;
+    private final Ecosystem ecoSystem;
+    User userAccount;
 
-    public DoctorWorkAreaJPanel(JPanel userProcessContainer, UserAccount account, EcoSystem system) {
+    public DoctorWorkAreaJPanel(JPanel userProcessContainer, User account, Ecosystem system) {
         initComponents();
         this.userProcessContainer = userProcessContainer;
         this.ecoSystem = system;
@@ -45,19 +45,19 @@ public class DoctorWorkAreaJPanel extends javax.swing.JPanel {
 
         model.setRowCount(0);
 
-        for (Doctor doctor : ecoSystem.getDoctorDirectory().getDoctorList()) {
-            if (doctor.getUserName().equals(userAccount.getUsername())) {
+        for (Doctor doctor : ecoSystem.getDoctorDirectory().getDoctors()) {
+            if (doctor.getdUserName().equals(userAccount.getUsername())) {
                 for (Patient patient : doctor.getTreatedPatientList()) 
                 {
                     Object[] row = new Object[7];
                     row[0] = patient;
-                    row[1] = patient.getPatientLastName();
-                    row[2] = patient.getInjuryType();
-                    row[3] = patient.getBloodType();
-                    row[4] = patient.getAge();
-                    row[5] = patient.getGender();
-                    row[6] = patient.getPatientStatus();
-                    if(!patient.getStatus().equals("Discharged")){
+                    row[1] = patient.getpLastName();
+                    row[2] = patient.getpInjuryType();
+                    row[3] = patient.getpBloodType();
+                    row[4] = patient.getpAge();
+                    row[5] = patient.getpGender();
+                    row[6] = patient.getpStatus();
+                    if(!patient.getpStatus().equals("Discharged")){
                     model.addRow(row);}
                 }
             }
@@ -69,19 +69,19 @@ public class DoctorWorkAreaJPanel extends javax.swing.JPanel {
 
         model.setRowCount(0);
 
-        for (Doctor doctor : ecoSystem.getDoctorDirectory().getDoctorList()) {
-            if (doctor.getUserName().equals(userAccount.getUsername())) {
+        for (Doctor doctor : ecoSystem.getDoctorDirectory().getDoctors()) {
+            if (doctor.getdUserName().equals(userAccount.getUsername())) {
                 for (Patient patient : doctor.getTreatedPatientList()) 
                 {
                     Object[] row = new Object[7];
                     row[0] = patient;
-                    row[1] = patient.getPatientLastName();
-                    row[2] = patient.getInjuryType();
-                    row[3] = patient.getBloodType();
-                    row[4] = patient.getAge();
-                    row[5] = patient.getGender();
-                    row[6] = patient.getPatientStatus();
-                    if(patient.getStatus().equals("Discharged")){
+                    row[1] = patient.getpLastName();
+                    row[2] = patient.getpInjuryType();
+                    row[3] = patient.getpBloodType();
+                    row[4] = patient.getpAge();
+                    row[5] = patient.getpGender();
+                    row[6] = patient.getpStatus();
+                    if(patient.getpStatus().equals("Discharged")){
                     model.addRow(row);}
                 }
             }
@@ -213,11 +213,11 @@ public class DoctorWorkAreaJPanel extends javax.swing.JPanel {
         else 
         {
             Patient patient = (Patient) PatientTable.getValueAt(selectedRowIndex, 0);
-            if(patient.getStatus().equals("Doctor Visiting")){
+            if(patient.getpStatus().equals("Doctor Visiting")){
             JOptionPane.showMessageDialog(null, "Patient is in visit.", "Warning", JOptionPane.WARNING_MESSAGE);
             }
             else{
-            patient.setStatus("Doctor Visiting");
+            patient.setpStatus("Doctor Visiting");
             DoctorVisitJPanel doctorVisit = new DoctorVisitJPanel(userProcessContainer, userAccount, ecoSystem, patient);
             userProcessContainer.add("Visit Doctor", doctorVisit);
             CardLayout layout = (CardLayout) userProcessContainer.getLayout();

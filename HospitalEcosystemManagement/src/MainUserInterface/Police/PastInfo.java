@@ -34,19 +34,19 @@ public class PastInfo extends javax.swing.JPanel {
         this.userProcessContainer = userProcessContainer;
         this.patient = p;
         this.account = account;
-        txtFirstName.setText(p.getPatientFirstName());
-        txtLastName.setText(p.getPatientLastName());
-        txtAddress.setText(p.getPatientaddress());
+        txtFirstName.setText(p.getpFirstName());
+        txtLastName.setText(p.getpLastName());
+        txtAddress.setText(p.getpAddress());
         try{
         SimpleDateFormat input =new SimpleDateFormat("yyyy-MM-dd");
-        txtAge.setText((input.format(p.getDateofBirth())));
+        txtAge.setText((input.format(p.getPdob())));
         }
         catch(Exception e){}
-        txtGender.setText(p.getGender());
-        txtHealthInsuranceID.setText(p.getHealthInsuranceID());
-        txtPhoneNumber.setText(p.getPatientPhoneNumber());
-        txtInsuranceStatus.setText(p.getAccidentLocation());
-        txtPoliceVerification.setText(p.getPoliceStatus());
+        txtGender.setText(p.getpGender());
+        txtHealthInsuranceID.setText(p.getpHealthInsuranceID());
+        txtPhoneNumber.setText(p.getpPhoneNo());
+        txtInsuranceStatus.setText(p.getpAccidentLocation());
+        txtPoliceVerification.setText(p.getpPoliceStatus());
         
     }
           

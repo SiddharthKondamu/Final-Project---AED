@@ -7,7 +7,7 @@ package MainUserInterface.ReceptionRole;
 
 import BusinessModel.Ecosystem;
 import BusinessModel.Patient.Patient;
-import BusinessModel.UserAccount.UserAccount;
+import BusinessModel.UserAccount.User;
 import java.awt.CardLayout;
 import java.awt.Image;
 import java.io.File;
@@ -33,10 +33,10 @@ public class UpdatePatientJPanel extends javax.swing.JPanel {
      */
     private final JPanel userProcessContainer;
     private final Ecosystem ecoSystem;
-    UserAccount userAccount;
+    User userAccount;
     Patient patient;
 
-    public UpdatePatientJPanel(JPanel userProcessContainer, EcoSystem system, UserAccount user, Patient patient) {
+    public UpdatePatientJPanel(JPanel userProcessContainer, Ecosystem system, User user, Patient patient) {
         initComponents();
         this.userAccount = user;
         this.userProcessContainer = userProcessContainer;
@@ -58,20 +58,20 @@ public class UpdatePatientJPanel extends javax.swing.JPanel {
         BloodGroupComboBox.addItem("AB+");
         BloodGroupComboBox.addItem("AB-");
 
-        txtAddress.setText(patient.getPatientaddress());
-        BloodGroupComboBox.setSelectedItem(patient.getBloodType());
-        txtDOB.setDate(patient.getDateofBirth());
-        txtEmail.setText(patient.getEmailAddress());
-        txtFirstName.setText(patient.getPatientFirstName());
-        GenderComboBox.setSelectedItem(patient.getGender());
-        txtHealthInsuranceID.setText(patient.getHealthInsuranceID());
-        txtInjuryType.setText(patient.getInjuryType());
-        txtLastName.setText(patient.getPatientLastName());
-        txtPhoneNumber.setText(patient.getPatientPhoneNumber());
-        txtUserName.setText(patient.getUserName());
-        txtAccidentLocation.setText(patient.getAccidentLocation());
-        if (patient.getInsuranceStatus() != null) {
-            if (patient.getInsuranceStatus().equals("Insurance")) {
+        txtAddress.setText(patient.getpAddress());
+        BloodGroupComboBox.setSelectedItem(patient.getpBloodType());
+        txtDOB.setDate(patient.getPdob());
+        txtEmail.setText(patient.getpEmailAddress());
+        txtFirstName.setText(patient.getpFirstName());
+        GenderComboBox.setSelectedItem(patient.getpGender());
+        txtHealthInsuranceID.setText(patient.getpHealthInsuranceID());
+        txtInjuryType.setText(patient.getpInjuryType());
+        txtLastName.setText(patient.getpLastName());
+        txtPhoneNumber.setText(patient.getpPhoneNo());
+        txtUserName.setText(patient.getpUserName());
+        txtAccidentLocation.setText(patient.getpAccidentLocation());
+        if (patient.getpInsuranceStatus() != null) {
+            if (patient.getpInsuranceStatus().equals("Insurance")) {
                 jRadioInsurance.setSelected(true);
                 jRadioCash.setSelected(false);
             } else {
@@ -79,7 +79,7 @@ public class UpdatePatientJPanel extends javax.swing.JPanel {
                 jRadioInsurance.setSelected(false);
             }
         }
-        ImageIcon ii = new ImageIcon(patient.getPhoto_path());
+        ImageIcon ii = new ImageIcon(patient.getpImageUrl());
         Image image = ii.getImage().getScaledInstance(130, 130, Image.SCALE_SMOOTH);
         lblPhotoImage.setIcon(new ImageIcon(image));
 
@@ -453,23 +453,23 @@ public class UpdatePatientJPanel extends javax.swing.JPanel {
                 && (lblErrorInjury.getText() == null || lblErrorInjury.getText().equals(""))
                 && (lblErrorPhone.getText() == null || lblErrorPhone.getText().equals(""))
                 && (lblErrorUserName.getText() == null || lblErrorUserName.getText().equals(""))) {
-            patient.setPatientFirstName(txtFirstName.getText());
-            patient.setPatientLastName(txtLastName.getText());
-            patient.setAge(CalculateAge(txtDOB.getDate(), java.util.Calendar.getInstance().getTime()));
-            patient.setGender((String) GenderComboBox.getSelectedItem());
-            patient.setHealthInsuranceID(txtHealthInsuranceID.getText());
-            patient.setPatientaddress(txtAddress.getText());
-            patient.setPatientPhoneNumber(txtPhoneNumber.getText());
-            patient.setEmailAddress(txtEmail.getText());
-            patient.setDateofBirth(txtDOB.getDate());
-            patient.setInjuryType(txtInjuryType.getText());
-            patient.setBloodType((String) BloodGroupComboBox.getSelectedItem());
-            patient.setUserName(txtUserName.getText());
-            patient.setAccidentLocation(txtAccidentLocation.getText());
+            patient.setpFirstName(txtFirstName.getText());
+            patient.setpLastName(txtLastName.getText());
+            patient.setpAge(CalculateAge(txtDOB.getDate(), java.util.Calendar.getInstance().getTime()));
+            patient.setpGender((String) GenderComboBox.getSelectedItem());
+            patient.setpHealthInsuranceID(txtHealthInsuranceID.getText());
+            patient.setpAddress(txtAddress.getText());
+            patient.setpPhoneNo(txtPhoneNumber.getText());
+            patient.setpEmailAddress(txtEmail.getText());
+            patient.setPdob(txtDOB.getDate());
+            patient.setpInjuryType(txtInjuryType.getText());
+            patient.setpBloodType((String) BloodGroupComboBox.getSelectedItem());
+            patient.setpUserName(txtUserName.getText());
+            patient.setpAccidentLocation(txtAccidentLocation.getText());
             if (jRadioInsurance.isSelected()) {
-                patient.setInsuranceStatus("Insurance");
+                patient.setpInsuranceStatus("Insurance");
             } else {
-                patient.setInsuranceStatus("Cash");
+                patient.setpInsuranceStatus("Cash");
             }
             JOptionPane.showMessageDialog(null, "Update Complete.");
 
@@ -510,7 +510,7 @@ public class UpdatePatientJPanel extends javax.swing.JPanel {
             String selectedImagePath = selectedImageFile.getAbsolutePath();
             JOptionPane.showMessageDialog(null, selectedImagePath);
             //Display image on jlable
-            patient.setPhoto_path(selectedImagePath);
+            patient.setpImageUrl(selectedImagePath);
 
             ImageIcon ii = new ImageIcon(selectedImagePath);
             //Resize image to fit jlabel

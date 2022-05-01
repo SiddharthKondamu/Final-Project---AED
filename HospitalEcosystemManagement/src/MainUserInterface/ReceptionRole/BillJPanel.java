@@ -5,10 +5,10 @@
 package MainUserInterface.ReceptionRole;
 
 import BusinessModel.Ecosystem;
-import userinterface.PatientRole.*;
-import BusinessModel.Patient.Bills;
+import MainUserInterface.Patient.*;
+import BusinessModel.Patient.PatientBills;
 import BusinessModel.Patient.Patient;
-import BusinessModel.UserAccount.UserAccount;
+import BusinessModel.UserAccount.User;
 import java.awt.CardLayout;
 import javax.swing.JPanel;
 import javax.swing.table.DefaultTableModel;
@@ -24,15 +24,15 @@ public class BillJPanel extends javax.swing.JPanel {
      */
     JPanel userProcessContainer;
     Patient patient;
-    UserAccount account;
-    EcoSystem system;
-    public BillJPanel(JPanel userProcessContainer, Patient p,UserAccount account,EcoSystem system) {
+    User account;
+    Ecosystem system;
+    public BillJPanel(JPanel userProcessContainer, Patient p,User account,Ecosystem system) {
         initComponents();
         this.account = account;
         this.system = system;
         this.userProcessContainer = userProcessContainer;
         this.patient = p;
-        lblPatientName.setText(patient.getPatientFirstName() + " " + patient.getPatientLastName());
+        lblPatientName.setText(patient.getpFirstName() + " " + patient.getpLastName());
         populateBillTable();
     }
 
@@ -41,12 +41,12 @@ public class BillJPanel extends javax.swing.JPanel {
 
         model.setRowCount(0);
 
-        for (Bills b : patient.getBillsList()) {
+        for (PatientBills b : patient.getpBills()) {
 
             Object[] row = new Object[7];
-            row[0] = b.getItemName();
-            row[1] = b.getOrganziationType();
-            row[2] = b.getItemAmount();
+            row[0] = b.getName();
+            row[1] = b.getOrgType();
+            row[2] = b.getAmount();
             model.addRow(row);
 
         }

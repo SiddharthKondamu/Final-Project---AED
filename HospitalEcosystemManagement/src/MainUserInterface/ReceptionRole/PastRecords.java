@@ -5,17 +5,16 @@
 package MainUserInterface.ReceptionRole;
 
 
-import Business.EcoSystem;
-import Business.EcoSystem;
-import Business.Patient.Patient;
-import Business.UserAccount.UserAccount;
+import BusinessModel.Ecosystem;
+import BusinessModel.Patient.Patient;
+import BusinessModel.UserAccount.User;
 import java.awt.CardLayout;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.table.DefaultTableModel;
-import userinterface.AmbulanceRole.AmbulanceWorkAreaJPanel;
-import userinterface.AmbulanceRole.ReceptionAmbulanceWorkAreaJPanel;
-import userinterface.PatientRole.PatientBillJPanel;
+import MainUserInterface.Ambulance.AmbulanceWorkAreaJPanel;
+import MainUserInterface.Ambulance.ReceptionAmbulanceWorkAreaJPanel;
+import MainUserInterface.Patient.PatientBillJPanel;
 
 /**
  *
@@ -27,10 +26,10 @@ public class PastRecords extends javax.swing.JPanel {
      * Creates new form LabWorkAreaJPanel
      */
     private final JPanel userProcessContainer;
-    private final EcoSystem ecoSystem;
-    UserAccount userAccount;
+    private final Ecosystem ecoSystem;
+    User userAccount;
 
-    public PastRecords(JPanel userProcessContainer, UserAccount account, EcoSystem system) {
+    public PastRecords(JPanel userProcessContainer, User account, Ecosystem system) {
         initComponents();
         this.userProcessContainer = userProcessContainer;
         this.ecoSystem = system;
@@ -46,14 +45,14 @@ public class PastRecords extends javax.swing.JPanel {
 
             Object[] row = new Object[10];
             row[0] = patient;
-            row[1] = patient.getPatientLastName();
-            row[2] = patient.getGender();
-            row[3] = patient.getHealthInsuranceID();
-            row[4] = patient.getAge();
-            row[5] = patient.getEmailAddress();
-            row[6] = patient.getInsuranceStatus();
-            row[7] = patient.getStatus();
-            if(patient.getPatientStatus().equals("Discharged")){
+            row[1] = patient.getpLastName();
+            row[2] = patient.getpGender();
+            row[3] = patient.getpHealthInsuranceID();
+            row[4] = patient.getpAge();
+            row[5] = patient.getpEmailAddress();
+            row[6] = patient.getpInsuranceStatus();
+            row[7] = patient.getpStatus();
+            if(patient.getpStatus().equals("Discharged")){
             model.addRow(row);
             }
 
@@ -77,12 +76,15 @@ public class PastRecords extends javax.swing.JPanel {
         btnUpdateAmbulanceRecord1 = new javax.swing.JButton();
 
         setBackground(new java.awt.Color(0, 153, 204));
+        setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        add(jSeparator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(944, 60, 1, 10));
 
         lblManageCustomers.setBackground(new java.awt.Color(119, 197, 147));
         lblManageCustomers.setFont(new java.awt.Font("Microsoft Sans Serif", 1, 36)); // NOI18N
         lblManageCustomers.setForeground(new java.awt.Color(255, 255, 255));
         lblManageCustomers.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         lblManageCustomers.setText("                      Manage Patients");
+        add(lblManageCustomers, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 11, 590, 70));
 
         ManageCustomersTable.setFont(new java.awt.Font("Trebuchet MS", 1, 14)); // NOI18N
         ManageCustomersTable.setModel(new javax.swing.table.DefaultTableModel(
@@ -113,6 +115,8 @@ public class PastRecords extends javax.swing.JPanel {
         });
         jScrollPane1.setViewportView(ManageCustomersTable);
 
+        add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 143, 925, 191));
+
         btnUpdateAmbulanceRecord.setBackground(new java.awt.Color(255, 255, 255));
         btnUpdateAmbulanceRecord.setFont(new java.awt.Font("Microsoft Sans Serif", 1, 14)); // NOI18N
         btnUpdateAmbulanceRecord.setForeground(new java.awt.Color(0, 204, 204));
@@ -122,6 +126,7 @@ public class PastRecords extends javax.swing.JPanel {
                 btnUpdateAmbulanceRecordActionPerformed(evt);
             }
         });
+        add(btnUpdateAmbulanceRecord, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 451, 235, 50));
 
         btnUpdateAmbulanceRecord1.setBackground(new java.awt.Color(255, 255, 255));
         btnUpdateAmbulanceRecord1.setFont(new java.awt.Font("Microsoft Sans Serif", 1, 14)); // NOI18N
@@ -131,50 +136,7 @@ public class PastRecords extends javax.swing.JPanel {
                 btnUpdateAmbulanceRecord1ActionPerformed(evt);
             }
         });
-
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
-        this.setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(0, 0, Short.MAX_VALUE)
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 925, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(lblManageCustomers, javax.swing.GroupLayout.PREFERRED_SIZE, 730, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(204, 204, 204))
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                                .addComponent(btnUpdateAmbulanceRecord1, javax.swing.GroupLayout.PREFERRED_SIZE, 235, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)))
-                        .addComponent(jSeparator1, javax.swing.GroupLayout.DEFAULT_SIZE, 1, Short.MAX_VALUE)))
-                .addGap(30, 30, 30))
-            .addGroup(layout.createSequentialGroup()
-                .addGap(340, 340, 340)
-                .addComponent(btnUpdateAmbulanceRecord, javax.swing.GroupLayout.PREFERRED_SIZE, 235, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(60, 60, 60)
-                        .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(lblManageCustomers, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(btnUpdateAmbulanceRecord1, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 191, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(117, 117, 117)
-                .addComponent(btnUpdateAmbulanceRecord, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(501, Short.MAX_VALUE))
-        );
+        add(btnUpdateAmbulanceRecord1, new org.netbeans.lib.awtextra.AbsoluteConstraints(650, 30, 235, 50));
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnUpdateAmbulanceRecordActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnUpdateAmbulanceRecordActionPerformed

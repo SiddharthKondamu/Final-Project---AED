@@ -4,14 +4,14 @@
  * and open the template in the editor.
  */
 
-package userinterface.DoctorRole;
+package MainUserInterface.Doctor;
 
-import Business.EcoSystem;
-import Business.Lab.Tests;
-import Business.Patient.Bills;
-import Business.Patient.Patient;
-import Business.Pharmacy.Medicine;
-import Business.UserAccount.UserAccount;
+import BusinessModel.Ecosystem;
+import BusinessModel.Lab.Tests;
+import BusinessModel.Patient.PatientBills;
+import BusinessModel.Patient.Patient;
+import BusinessModel.Pharmacy.Medicine;
+import BusinessModel.UserAccount.User;
 import java.awt.CardLayout;
 import java.util.ArrayList;
 import javax.swing.JOptionPane;
@@ -27,14 +27,14 @@ public class DoctorRequestMedicineJPanel extends javax.swing.JPanel {
     /** Creates new form DoctorRequestMedicineJPanel */
     
     private JPanel userProcessContainer;
-    private EcoSystem ecosystem;
-    private UserAccount userAccount;
+    private Ecosystem ecosystem;
+    private User userAccount;
     private Patient patient;
     Medicine m;
     ArrayList<Medicine> items=new ArrayList<Medicine>();
 
     
-    public DoctorRequestMedicineJPanel(JPanel userProcessContainer, UserAccount account, EcoSystem ecosystem, Patient patient) {
+    public DoctorRequestMedicineJPanel(JPanel userProcessContainer, User account, Ecosystem ecosystem, Patient patient) {
         initComponents();
         this.userProcessContainer = userProcessContainer;
         this.ecosystem = ecosystem;
@@ -83,13 +83,13 @@ public class DoctorRequestMedicineJPanel extends javax.swing.JPanel {
         for (Patient patient : ecosystem.getPatientDirectory().getPatientList()) {
 
             Object[] row = new Object[7];
-            row[0] = patient.getUserName();
-            row[1] = patient.getHealthInsuranceID();
-            row[2] = patient.getPatientFirstName();
-            row[3] = patient.getPatientLastName();
-            row[4] = patient.getAge();
-            row[5] = patient.getPatientaddress();
-            row[6] = patient.getEmailAddress();
+            row[0] = patient.getpUserName();
+            row[1] = patient.getpHealthInsuranceID();
+            row[2] = patient.getpFirstName();
+            row[3] = patient.getpLastName();
+            row[4] = patient.getpAge();
+            row[5] = patient.getpAddress();
+            row[6] = patient.getpEmailAddress();
             
           //  model.addRow(row);
 
@@ -290,7 +290,7 @@ public class DoctorRequestMedicineJPanel extends javax.swing.JPanel {
             for(Medicine t:items){
                 //String itemName,String organization1,float itemAmount, String result, String itemStatus
 
-                Bills bill = new Bills(t.getMedName(), "Pharmacy", t.getPrice(),"","Requested");
+                PatientBills bill = new PatientBills(t.getMedName(), "Pharmacy", t.getPrice(),"","Requested");
                 patient.addbill(bill);
                 
                 //ecosystem.AddTreatedPatientList(patient);
