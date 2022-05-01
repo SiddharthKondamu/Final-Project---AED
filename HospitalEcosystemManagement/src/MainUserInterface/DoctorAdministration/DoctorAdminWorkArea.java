@@ -95,7 +95,6 @@ public class DoctorAdminWorkArea extends javax.swing.JPanel {
         dBtn4 = new javax.swing.JButton();
         jScrollPane2 = new javax.swing.JScrollPane();
         PatientTable = new javax.swing.JTable();
-        jLabel5 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
         btnAssignDoctor1 = new javax.swing.JButton();
         jLabel2 = new javax.swing.JLabel();
@@ -209,10 +208,6 @@ public class DoctorAdminWorkArea extends javax.swing.JPanel {
 
         add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 200, 850, 193));
 
-        jLabel5.setBackground(new java.awt.Color(0, 153, 204));
-        jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/MainFrame/Final Image.jpg"))); // NOI18N
-        add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(1750, 150, 1480, 1010));
-
         jLabel1.setBackground(new java.awt.Color(0, 153, 204));
         jLabel1.setFont(new java.awt.Font("Microsoft JhengHei", 1, 36)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));
@@ -290,7 +285,6 @@ public class DoctorAdminWorkArea extends javax.swing.JPanel {
     private javax.swing.JButton dBtn4;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel5;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JLabel lblManageCustomers;

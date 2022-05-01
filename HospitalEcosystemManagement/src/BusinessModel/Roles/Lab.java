@@ -18,6 +18,7 @@ public class Lab extends Role {
 
     @Override
     public JPanel createWorkArea(JPanel userProcessContainer, User user, Ecosystem business) {
+        System.out.println("inside createWork Area for Lab");
         return new LabWorkAreaJPanel(userProcessContainer, user, business);
     }
     
