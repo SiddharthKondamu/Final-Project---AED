@@ -44,7 +44,7 @@
               <Table columnCount="5" rowCount="4">
                 <Column editable="false" title="Item Name" type="java.lang.String"/>
                 <Column editable="false" title="Organization" type="java.lang.String"/>
-                <Column editable="false" title="Ammount" type="java.lang.String"/>
+                <Column editable="false" title="Amount" type="java.lang.String"/>
                 <Column editable="true" title="Status" type="java.lang.Object"/>
                 <Column editable="true" title="Result" type="java.lang.Object"/>
               </Table>

@@ -458,7 +458,7 @@ public class CreatePatientJPanel extends javax.swing.JPanel {
         jSeparator4.setBackground(new java.awt.Color(0, 0, 0));
         add(jSeparator4, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 140, 1434, 5));
 
-        btnSubmit1.setBackground(new java.awt.Color(153, 153, 153));
+        btnSubmit1.setBackground(new java.awt.Color(0, 153, 204));
         btnSubmit1.setFont(new java.awt.Font("Microsoft Sans Serif", 1, 14)); // NOI18N
         btnSubmit1.setForeground(new java.awt.Color(255, 255, 255));
         btnSubmit1.setText("Back");
