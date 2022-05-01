@@ -36,7 +36,21 @@ public class ReceptionAmbulanceWorkAreaJPanel extends javax.swing.JPanel {
         this.ecoSystem = ecoSystem;
         this.ambulance = ambulance;
     }
-
+    
+    public ReceptionAmbulanceWorkAreaJPanel(JPanel userProcessContainer, Ecosystem ecoSystem, User userAccount, Ambulance ambulance, Patient patientDetails) {
+        initComponents();
+        this.userProcessContainer = userProcessContainer;
+        this.ecoSystem = ecoSystem;
+        this.ambulance = ambulance;
+        setUpTextFields(patientDetails);
+    }
+    
+    public void setUpTextFields(Patient p){
+        txtPatientUserName.setText(p.getpUserName());
+        txtPatientFirstName.setText(p.getpFirstName());
+        txtPatientLastName.setText(p.getpLastName());
+        txtPatientLocation.setText(p.getpAccidentLocation());
+    }
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -186,7 +200,17 @@ public class ReceptionAmbulanceWorkAreaJPanel extends javax.swing.JPanel {
         CardLayout layout = (CardLayout) userProcessContainer.getLayout();
         layout.next(userProcessContainer);
         */
-       GoogleMapsAmbulanceJPanel GoogleMapsWorkAreaJPanel = new GoogleMapsAmbulanceJPanel(userProcessContainer, ecoSystem, userAccount, ambulance, txtPatientLocation.getText());
+            Patient patient = new Patient(txtPatientUserName.getText());
+            patient.setpFirstName(txtPatientFirstName.getText());
+            patient.setpLastName(txtPatientLastName.getText());
+            patient.setpAccidentLocation(txtPatientLocation.getText());
+            patient.setpStatus("NewPatient");
+            patient.setpBloodBankStatus("NewPatient");
+            patient.setpPharmaStatus("NewPatient");
+            patient.setpLabStatus("NewPatient");
+            patient.setpDateOfAdmit(java.util.Calendar.getInstance().getTime());
+            
+       GoogleMapsAmbulanceJPanel GoogleMapsWorkAreaJPanel = new GoogleMapsAmbulanceJPanel(userProcessContainer, ecoSystem, userAccount, ambulance, txtPatientLocation.getText(), patient);
         userProcessContainer.add("Google Maps Work Area", GoogleMapsWorkAreaJPanel);
         CardLayout layout = (CardLayout) userProcessContainer.getLayout();
         layout.next(userProcessContainer);
