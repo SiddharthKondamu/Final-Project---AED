@@ -6,7 +6,7 @@ package MainUserInterface.Pharmacy;
 
 import BusinessModel.Ecosystem;
 import BusinessModel.Patient.Patient;
-import BusinessModel.Pharmacy.medicine;
+import BusinessModel.Pharmacy.Medicine;
 import BusinessModel.UserAccount.User;
 import java.awt.CardLayout;
 import javax.swing.JOptionPane;
