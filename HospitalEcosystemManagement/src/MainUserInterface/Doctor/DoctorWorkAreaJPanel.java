@@ -20,7 +20,7 @@ import userinterface.ReceptionRole.CreatePatientJPanel;
 
 /**
  *
- * @author ronitchougule
+ * @author siddh
  */
 public class DoctorWorkAreaJPanel extends javax.swing.JPanel {
 

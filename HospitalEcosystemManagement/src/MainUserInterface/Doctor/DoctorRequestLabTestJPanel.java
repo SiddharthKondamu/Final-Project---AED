@@ -19,7 +19,7 @@ import javax.swing.table.DefaultTableModel;
 
 /**
  *
- * @author ronitchougule
+ * @author siddh
  */
 public class DoctorRequestLabTestJPanel extends javax.swing.JPanel {
 

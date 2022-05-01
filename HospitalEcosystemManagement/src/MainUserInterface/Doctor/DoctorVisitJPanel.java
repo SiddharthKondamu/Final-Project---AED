@@ -16,7 +16,7 @@ import javax.swing.table.DefaultTableModel;
 
 /**
  *
- * @author ronitchougule
+ * @author siddh
  */
 public class DoctorVisitJPanel extends javax.swing.JPanel {
 

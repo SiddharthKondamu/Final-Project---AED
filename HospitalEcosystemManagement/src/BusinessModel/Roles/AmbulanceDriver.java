@@ -6,6 +6,7 @@ package BusinessModel.Roles;
 
 import BusinessModel.Ecosystem;
 import BusinessModel.UserAccount.User;
+import MainUserInterface.Ambulance.DisplayAmbulancePatientJPanel;
 import javax.swing.JPanel;
 
 /**
