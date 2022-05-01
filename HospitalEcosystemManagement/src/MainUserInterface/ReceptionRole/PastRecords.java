@@ -19,7 +19,7 @@ import userinterface.PatientRole.PatientBillJPanel;
 
 /**
  *
- * @author sahil
+ * @author sahilmattoo
  */
 public class PastRecords extends javax.swing.JPanel {
 
