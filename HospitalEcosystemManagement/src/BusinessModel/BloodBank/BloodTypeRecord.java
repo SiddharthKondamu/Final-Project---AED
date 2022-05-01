@@ -9,5 +9,23 @@ package BusinessModel.BloodBank;
  * @author siddh
  */
 public class BloodTypeRecord {
-    
+     private String bloodType;
+    private int amount;
+
+    public String getBloodType() {
+        return bloodType;
+    }
+
+    public void setBloodType(String bloodType) {
+        this.bloodType = bloodType;
+    }
+
+    public int getAmount() {
+        return amount;
+    }
+
+    public void setAmount(int amount) {
+        this.amount = amount;
+    }
+  
 }
