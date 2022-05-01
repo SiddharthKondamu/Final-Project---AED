@@ -6,9 +6,9 @@
 package userinterface.DoctorAdministratorRole;
 
 import Business.Doctor.Doctor;
-import Business.EcoSystem;
+import BusinessModel.Ecosystem;
 import Business.Patient.Patient;
-import Business.UserAccount.UserAccount;
+import BusinessModel.UserAccount.User;
 import java.awt.CardLayout;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
@@ -16,7 +16,7 @@ import javax.swing.table.DefaultTableModel;
 
 /**
  *
- * @author ronitchougule
+ * @author Siddh
  */
 public class DoctorAdminWorkArea extends javax.swing.JPanel {
 
@@ -24,10 +24,10 @@ public class DoctorAdminWorkArea extends javax.swing.JPanel {
      * Creates new form DoctorAdminWorkArea
      */
     private final JPanel userProcessContainer;
-    private final EcoSystem ecoSystem;
-    UserAccount userAccount;
+    private final Ecosystem ecoSystem;
+    User userAccount;
 
-    public DoctorAdminWorkArea(JPanel userProcessContainer, UserAccount account, EcoSystem system) {
+    public DoctorAdminWorkArea(JPanel userProcessContainer, User account, Ecosystem system) {
         initComponents();
         this.userProcessContainer = userProcessContainer;
         this.ecoSystem = system;
