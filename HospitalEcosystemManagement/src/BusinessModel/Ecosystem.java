@@ -124,17 +124,17 @@ public class Ecosystem extends Organisation{
         this.policeRecords = policeRecords;
     }
 
-    /*public void smsTwillio(String patient){
-        String ACCOUNT_SID = "ACe0f3315ee6a8b5ffe1daa7113cfdfa9e";
-        String AUTH_TOKEN = "106b3aee2a24d019656b48dd16cc784b";
-        Twilio.init(ACCOUNT_SID, AUTH_TOKEN);  
-        Message message = Message.creator(
-        new com.twilio.type.PhoneNumber("+18573087606"),
-        new com.twilio.type.PhoneNumber("+12168593172"),
-        "Please Verify this patient: "+patient)
-        .create();
-        System.out.println(message.getSid());
-    }
+//    public void smsTwillio(String patient){
+//        String ACCOUNT_SID = "ACe0f3315ee6a8b5ffe1daa7113cfdfa9e";
+//        String AUTH_TOKEN = "106b3aee2a24d019656b48dd16cc784b";
+//        Twilio.init(ACCOUNT_SID, AUTH_TOKEN);  
+//        Message message = Message.creator(
+//        new com.twilio.type.PhoneNumber("+18573087606"),
+//        new com.twilio.type.PhoneNumber("+12168593172"),
+//        "Please Verify this patient: "+patient)
+//        .create();
+//        System.out.println(message.getSid());
+//    }
     public void sendEmail(String toMail,String Subject,String Content,String username,String password){
         Properties properties = new Properties();
         properties.setProperty("mail.smtp.host", "smtp.zoho.com");
@@ -170,7 +170,7 @@ public class Ecosystem extends Organisation{
         catch (MessagingException e) 
         {   e.printStackTrace();
         }
-    }*/
+    }
     
     @Override
     public ArrayList<Role> getSupportedRole() {

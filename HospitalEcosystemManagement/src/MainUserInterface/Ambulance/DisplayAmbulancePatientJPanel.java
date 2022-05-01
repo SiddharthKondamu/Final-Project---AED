@@ -17,7 +17,7 @@ import MainUserInterface.ReceptionRole.UpdatePatientJPanel;
 
 /**
  *
- * @author ronitchougule
+ * @author Siddh
  */
 public class DisplayAmbulancePatientJPanel extends javax.swing.JPanel {
 

@@ -18,7 +18,7 @@ import MainUserInterface.ReceptionRole.ReceptionWorkAreaJPanel;
 
 /**
  *
- * @author ronitchougule
+ * @author Siddh
  */
 public class ReceptionAmbulanceWorkAreaJPanel extends javax.swing.JPanel {
 

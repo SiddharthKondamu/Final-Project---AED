@@ -16,7 +16,7 @@ import javax.swing.JPanel;
 
 /**
  *
- * @author ronitchougule
+ * @author Siddh
  */
 public class AmbulanceInformationJPanel extends javax.swing.JPanel {
 
