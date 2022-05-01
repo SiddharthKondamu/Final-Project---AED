@@ -16,7 +16,6 @@ import javax.swing.table.DefaultTableModel;
 import MainUserInterface.DoctorAdministration.DisplayPatientInfoJPanel;
 import MainUserInterface.Lab.LabWorkAreaJPanel;
 import MainUserInterface.Pharmacy.PharmacyWorkAreaJPanel;
-import userinterface.ReceptionRole.CreatePatientJPanel;
 
 /**
  *

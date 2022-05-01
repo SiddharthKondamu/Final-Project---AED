@@ -89,8 +89,8 @@ public class ReceptionWorkAreaJPanel extends javax.swing.JPanel {
         setToolTipText("");
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        createPatBtn.setBackground(new java.awt.Color(102, 102, 0));
-        createPatBtn.setFont(new java.awt.Font("Georgia", 1, 14)); // NOI18N
+        createPatBtn.setBackground(new java.awt.Color(0, 153, 204));
+        createPatBtn.setFont(new java.awt.Font("Microsoft Sans Serif", 1, 14)); // NOI18N
         createPatBtn.setForeground(new java.awt.Color(255, 255, 255));
         createPatBtn.setText("Create New Patient");
         createPatBtn.addActionListener(new java.awt.event.ActionListener() {
@@ -107,9 +107,10 @@ public class ReceptionWorkAreaJPanel extends javax.swing.JPanel {
         jLabel1.setText("Hospital ");
         add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 10, 860, 80));
 
-        patientTable.setBackground(new java.awt.Color(167, 197, 177));
+        patientTable.setBackground(new java.awt.Color(0, 153, 204));
         patientTable.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         patientTable.setFont(new java.awt.Font("Trebuchet MS", 1, 14)); // NOI18N
+        patientTable.setForeground(new java.awt.Color(255, 255, 255));
         patientTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null, null, null},
@@ -140,8 +141,8 @@ public class ReceptionWorkAreaJPanel extends javax.swing.JPanel {
 
         add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 180, 920, 640));
 
-        billPatBtn.setBackground(new java.awt.Color(102, 102, 0));
-        billPatBtn.setFont(new java.awt.Font("Georgia", 1, 14)); // NOI18N
+        billPatBtn.setBackground(new java.awt.Color(0, 153, 204));
+        billPatBtn.setFont(new java.awt.Font("Microsoft Sans Serif", 1, 14)); // NOI18N
         billPatBtn.setForeground(new java.awt.Color(255, 255, 255));
         billPatBtn.setText("Bill the Patient");
         billPatBtn.addActionListener(new java.awt.event.ActionListener() {
@@ -151,8 +152,8 @@ public class ReceptionWorkAreaJPanel extends javax.swing.JPanel {
         });
         add(billPatBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(980, 600, 260, 42));
 
-        delBtn.setBackground(new java.awt.Color(102, 102, 0));
-        delBtn.setFont(new java.awt.Font("Georgia", 1, 14)); // NOI18N
+        delBtn.setBackground(new java.awt.Color(0, 153, 204));
+        delBtn.setFont(new java.awt.Font("Microsoft Sans Serif", 1, 14)); // NOI18N
         delBtn.setForeground(new java.awt.Color(255, 255, 255));
         delBtn.setText("Delete Patient");
         delBtn.addActionListener(new java.awt.event.ActionListener() {
@@ -162,8 +163,8 @@ public class ReceptionWorkAreaJPanel extends javax.swing.JPanel {
         });
         add(delBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(980, 290, 260, 42));
 
-        updateAmbulRecBtn.setBackground(new java.awt.Color(102, 102, 0));
-        updateAmbulRecBtn.setFont(new java.awt.Font("Georgia", 1, 14)); // NOI18N
+        updateAmbulRecBtn.setBackground(new java.awt.Color(0, 153, 204));
+        updateAmbulRecBtn.setFont(new java.awt.Font("Microsoft Sans Serif", 1, 14)); // NOI18N
         updateAmbulRecBtn.setForeground(new java.awt.Color(255, 255, 255));
         updateAmbulRecBtn.setText("Ambulance Record");
         updateAmbulRecBtn.addActionListener(new java.awt.event.ActionListener() {
@@ -173,8 +174,8 @@ public class ReceptionWorkAreaJPanel extends javax.swing.JPanel {
         });
         add(updateAmbulRecBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(980, 490, 260, 42));
 
-        btnUpdate1.setBackground(new java.awt.Color(102, 102, 0));
-        btnUpdate1.setFont(new java.awt.Font("Georgia", 1, 14)); // NOI18N
+        btnUpdate1.setBackground(new java.awt.Color(0, 153, 204));
+        btnUpdate1.setFont(new java.awt.Font("Microsoft Sans Serif", 1, 14)); // NOI18N
         btnUpdate1.setForeground(new java.awt.Color(255, 255, 255));
         btnUpdate1.setText("Update Patient");
         btnUpdate1.addActionListener(new java.awt.event.ActionListener() {
@@ -184,8 +185,8 @@ public class ReceptionWorkAreaJPanel extends javax.swing.JPanel {
         });
         add(btnUpdate1, new org.netbeans.lib.awtextra.AbsoluteConstraints(980, 180, 260, 42));
 
-        jButton1.setBackground(new java.awt.Color(102, 102, 0));
-        jButton1.setFont(new java.awt.Font("Georgia", 1, 14)); // NOI18N
+        jButton1.setBackground(new java.awt.Color(0, 153, 204));
+        jButton1.setFont(new java.awt.Font("Microsoft Sans Serif", 1, 14)); // NOI18N
         jButton1.setForeground(new java.awt.Color(255, 255, 255));
         jButton1.setText("Discharge a Patient");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
@@ -195,8 +196,8 @@ public class ReceptionWorkAreaJPanel extends javax.swing.JPanel {
         });
         add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(800, 390, 260, 42));
 
-        jButton2.setBackground(new java.awt.Color(102, 102, 0));
-        jButton2.setFont(new java.awt.Font("Georgia", 1, 14)); // NOI18N
+        jButton2.setBackground(new java.awt.Color(0, 153, 204));
+        jButton2.setFont(new java.awt.Font("Microsoft Sans Serif", 1, 14)); // NOI18N
         jButton2.setForeground(new java.awt.Color(255, 255, 255));
         jButton2.setText("Discharged Patients");
         jButton2.addActionListener(new java.awt.event.ActionListener() {
@@ -211,7 +212,7 @@ public class ReceptionWorkAreaJPanel extends javax.swing.JPanel {
         jLabel3.setText("Current Patient List");
         add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 120, -1, 50));
 
-        jPanel1.setBackground(new java.awt.Color(0, 0, 0));
+        jPanel1.setBackground(new java.awt.Color(255, 255, 255));
         jPanel1.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED, java.awt.Color.gray, java.awt.Color.darkGray, java.awt.Color.lightGray, java.awt.Color.darkGray));
 
         jLabel2.setBackground(new java.awt.Color(255, 255, 255));
