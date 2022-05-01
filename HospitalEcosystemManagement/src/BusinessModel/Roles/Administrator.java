@@ -8,6 +8,7 @@ import BusinessModel.Ecosystem;
 import BusinessModel.UserAccount.User;
 import BusinessModel.UserAccount.User;
 import MainUserInterface.SystemAdmin.AdministratorJPanel;
+import MainUserInterface.SystemAdmin.SystemAdminWorkAreaJPanel;
 import javax.swing.JPanel;
 
 /**
@@ -19,7 +20,7 @@ public class Administrator extends Role{
     
     
     public JPanel createWorkArea(JPanel userProcessContainer, User user, Ecosystem system) {
-        return new AdministratorJPanel(userProcessContainer, system);
+        return new SystemAdminWorkAreaJPanel(userProcessContainer, system);
     }
 
 }
