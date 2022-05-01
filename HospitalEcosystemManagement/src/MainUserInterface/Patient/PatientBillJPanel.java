@@ -25,7 +25,7 @@ public class PatientBillJPanel extends javax.swing.JPanel {
         initComponents();
         this.userProcessContainer = userProcessContainer;
         this.patient = p;
-        lblPatientName.setText(patient.getPatientFirstName() + " " + patient.getPatientLastName());
+        lblPatientName.setText(patient.getpFirstName() + " " + patient.getpLastName());
         populateBillTable();
     }
 
@@ -34,12 +34,12 @@ public class PatientBillJPanel extends javax.swing.JPanel {
 
         model.setRowCount(0);
 
-        for (Bills b : patient.getBillsList()) {
+        for (PatientBills b : patient.getpBills()) {
 
             Object[] row = new Object[7];
-            row[0] = b.getItemName();
-            row[1] = b.getOrganziationType();
-            row[2] = b.getItemAmount();
+            row[0] = b.getName();
+            row[1] = b.getOrgType();
+            row[2] = b.getAmount();
             model.addRow(row);
 
         }

@@ -28,18 +28,19 @@ public class AmbulanceWorkAreaJPanel extends javax.swing.JPanel {
     User userAccount;
 
     public AmbulanceWorkAreaJPanel(JPanel userProcessContainer, User account, Ecosystem system) {
+        System.out.println("inside amubulance work area");
         initComponents();
         this.userProcessContainer = userProcessContainer;
         this.userAccount = account;
         this.ecoSystem = system;
+        
         populateNetworkTable();
     }
 
     private void populateNetworkTable() {
+        System.out.println("inside amubulance network table");
         DefaultTableModel model = (DefaultTableModel) ManageAmbulanceTable.getModel();
-
         model.setRowCount(0);
-
         for (Ambulance ambulance : ecoSystem.getAmbulanceDirectory().getAmbulances()) {
 
             Object[] row = new Object[5];
@@ -148,7 +149,7 @@ public class AmbulanceWorkAreaJPanel extends javax.swing.JPanel {
         add(btnSubmit1, new org.netbeans.lib.awtextra.AbsoluteConstraints(1109, 40, 150, 40));
 
         jLabel4.setFont(new java.awt.Font("Microsoft JhengHei", 1, 18)); // NOI18N
-        jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/MainFrame/Photos/AmbulanceDriver.jpg"))); // NOI18N
+        jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/MainUserInterface/Images/AmbulanceDriver.jpg"))); // NOI18N
         add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 120, 440, 320));
     }// </editor-fold>//GEN-END:initComponents
 

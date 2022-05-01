@@ -299,21 +299,21 @@ public class PatientWorkAreaJPanel extends javax.swing.JPanel {
 
     private void populatePatientInfo() {
         for (Patient patient : ecoSystem.getPatientDirectory().getPatientList()) {
-            if (userAccount.getUsername().equals(patient.getUserName())) {
-                txtFirstName.setText(patient.getPatientFirstName());
-                txtLastName.setText(patient.getPatientLastName());
-                txtAge.setText(Integer.toString(patient.getAge()));
-                txtGender.setText(patient.getGender());
-                txtAddress.setText(patient.getPatientaddress());
-                txtPhoneNumber.setText(patient.getPatientPhoneNumber());
-                txtEmail.setText(patient.getEmailAddress());
-                txtDateOfBirth.setText(new SimpleDateFormat("MM-dd-yyyy").format(patient.getDateofBirth()));
-                txtDateOfAdmit.setText(new SimpleDateFormat("MM-dd-yyyy").format(patient.getDateOfAdmit()));
-                txtInjuryType.setText(patient.getInjuryType());
-                txtBloodGroup.setText(patient.getBloodType());
-                txtPatientStatus.setText(patient.getPatientStatus());
+            if (userAccount.getUsername().equals(patient.getpUserName())) {
+                txtFirstName.setText(patient.getpFirstName());
+                txtLastName.setText(patient.getpLastName());
+                txtAge.setText(Integer.toString(patient.getpAge()));
+                txtGender.setText(patient.getpGender());
+                txtAddress.setText(patient.getpAddress());
+                txtPhoneNumber.setText(patient.getpPhoneNo());
+                txtEmail.setText(patient.getpEmailAddress());
+                txtDateOfBirth.setText(new SimpleDateFormat("MM-dd-yyyy").format(patient.getPdob()));
+                txtDateOfAdmit.setText(new SimpleDateFormat("MM-dd-yyyy").format(patient.getpDateOfAdmit()));
+                txtInjuryType.setText(patient.getpInjuryType());
+                txtBloodGroup.setText(patient.getpBloodType());
+                txtPatientStatus.setText(patient.getpStatus());
 
-                ImageIcon ii = new ImageIcon(patient.getPhoto_path());
+                ImageIcon ii = new ImageIcon(patient.getpImageUrl());
                 Image image = ii.getImage().getScaledInstance(130, 130, Image.SCALE_SMOOTH);
                 lblPhotoImage.setIcon(new ImageIcon(image));
             }
@@ -327,13 +327,13 @@ public class PatientWorkAreaJPanel extends javax.swing.JPanel {
 
         model.setRowCount(0);
         for (Patient patient : ecoSystem.getPatientDirectory().getPatientList()) {
-            if (userAccount.getUsername().equals(patient.getUserName())) {
-                for (Bills b : patient.getBillsList()) {
+            if (userAccount.getUsername().equals(patient.getpUserName())) {
+                for (PatientBills b : patient.getpBills()) {
 
                     Object[] row = new Object[7];
-                    row[0] = b.getItemName();
-                    row[1] = b.getOrganziationType();
-                    row[2] = b.getItemAmount();
+                    row[0] = b.getName();
+                    row[1] = b.getOrgType();
+                    row[2] = b.getAmount();
                     model.addRow(row);
 
                 }

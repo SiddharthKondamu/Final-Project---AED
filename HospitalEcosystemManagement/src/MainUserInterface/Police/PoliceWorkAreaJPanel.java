@@ -37,19 +37,19 @@ public class PoliceWorkAreaJPanel extends javax.swing.JPanel {
 
         model.setRowCount(0);
 
-        for (Patient patient : ecoSystem.getPoliceRecord().getPoliceRecordsList()) {
+        for (Patient patient : ecoSystem.getPoliceRecords().getPoliceRecordsList()) {
 
             Object[] row = new Object[7];
             row[0] = patient;
-            row[1] = patient.getPatientLastName();
+            row[1] = patient.getpLastName();
             
-            row[2] = patient.getHealthInsuranceID();
-            row[3] = patient.getAge();
-            row[4] = patient.getPatientaddress();
-            row[5] = patient.getEmailAddress();
-            row[6] = patient.getPoliceStatus();
+            row[2] = patient.getpHealthInsuranceID();
+            row[3] = patient.getpAge();
+            row[4] = patient.getpAddress();
+            row[5] = patient.getpEmailAddress();
+            row[6] = patient.getpPoliceStatus();
             
-            if(patient.getPoliceStatus().equals("Verifying")){
+            if(patient.getpPoliceStatus().equals("Verifying")){
             model.addRow(row);}
 
         }
@@ -59,18 +59,18 @@ public class PoliceWorkAreaJPanel extends javax.swing.JPanel {
 
         model.setRowCount(0);
 
-        for (Patient patient : ecoSystem.getPoliceRecord().getPoliceRecordsList()) {
+        for (Patient patient : ecoSystem.getPoliceRecords().getPoliceRecordsList()) {
 
             Object[] row = new Object[7];
             row[0] = patient;
-            row[1] = patient.getPatientLastName();
+            row[1] = patient.getpLastName();
             
-            row[2] = patient.getHealthInsuranceID();
-            row[3] = patient.getAge();
-            row[4] = patient.getPatientaddress();
-            row[5] = patient.getEmailAddress();
-            row[6] = patient.getPoliceStatus();
-            if(!patient.getPoliceStatus().equals("Verifying")){
+            row[2] = patient.getpHealthInsuranceID();
+            row[3] = patient.getpAge();
+            row[4] = patient.getpAddress();
+            row[5] = patient.getpEmailAddress();
+            row[6] = patient.getpPoliceStatus();
+            if(!patient.getpPoliceStatus().equals("Verifying")){
             model.addRow(row);}
 
         }

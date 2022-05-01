@@ -202,12 +202,12 @@ public class ReceptionDischarge extends javax.swing.JPanel {
                 JOptionPane.showMessageDialog(null, "Cash payment method is not eligible.", "Warning", JOptionPane.WARNING_MESSAGE);
             }
             else{
-                ecoSystem.getInsurance().addServedCustomers(patient);
+                ecoSystem.getInsuranceDirectory().addServedCustomers(patient);
                 patient.setpInsuranceStatus("Verifying Insurance");
                 patient.setpPoliceStatus("Not Verified");
                 try{
-        ecoSystem.sendEmail("insurance.aed@zohomail.com", "Approval Request for "+ patient.getpFirstName(), "Please verify insurance approval request of "+patient.getpFirstName()+" "+patient.getpLastName()+" Insurance ID "+patient.getpHealthInsuranceID(), "hospital.aed@zohomail.com", "Bangbang@8899");
-                ecoSystem.smsTwillio(patient.getpFirstName()+" "+patient.getpLastName());
+                    //ecoSystem.sendEmail("insurance.aed@zohomail.com", "Approval Request for "+ patient.getpFirstName(), "Please verify insurance approval request of "+patient.getpFirstName()+" "+patient.getpLastName()+" Insurance ID "+patient.getpHealthInsuranceID(), "hospital.aed@zohomail.com", "Bangbang@8899");
+                    //ecoSystem.smsTwillio(patient.getpFirstName()+" "+patient.getpLastName());
                 }
         catch(Exception e){}
                 JOptionPane.showMessageDialog(null, "Sent to Insurance Approval", "Warning", JOptionPane.INFORMATION_MESSAGE);
