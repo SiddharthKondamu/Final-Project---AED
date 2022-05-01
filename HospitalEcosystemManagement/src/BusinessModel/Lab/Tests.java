@@ -10,4 +10,36 @@ package BusinessModel.Lab;
  */
 public class Tests {
     
+    private String testName;
+    private int price;
+    private String usage;
+
+    public String getTestName() {
+        return testName;
+    }
+
+    public void setTestName(String testName) {
+        this.testName = testName;
+    }
+
+    public int getPrice() {
+        return price;
+    }
+
+    public void setPrice(int price) {
+        this.price = price;
+    }
+
+    public String getUsage() {
+        return usage;
+    }
+
+    public void setUsage(String usage) {
+        this.usage = usage;
+    }
+        @Override
+    public String toString() {
+        return testName;
+    }
+    
 }

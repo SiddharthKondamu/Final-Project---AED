@@ -14,13 +14,12 @@ import javax.swing.JPanel;
 import javax.swing.table.DefaultTableModel;
 import MainUserInterface.Ambulance.AmbulanceWorkAreaJPanel;
 import MainUserInterface.Ambulance.ReceptionAmbulanceWorkAreaJPanel;
-import MainUserInterface.Patient.PatientBillJPanel;
 
 /**
  *
  * @author sahilmattoo
  */
-public class PastRecords extends javax.swing.JPanel {
+public class ReceptionDischarge extends javax.swing.JPanel {
 
     /**
      * Creates new form LabWorkAreaJPanel
@@ -29,7 +28,7 @@ public class PastRecords extends javax.swing.JPanel {
     private final Ecosystem ecoSystem;
     User userAccount;
 
-    public PastRecords(JPanel userProcessContainer, User account, Ecosystem system) {
+    public ReceptionDischarge(JPanel userProcessContainer, User account, Ecosystem system) {
         initComponents();
         this.userProcessContainer = userProcessContainer;
         this.ecoSystem = system;
@@ -52,7 +51,7 @@ public class PastRecords extends javax.swing.JPanel {
             row[5] = patient.getpEmailAddress();
             row[6] = patient.getpInsuranceStatus();
             row[7] = patient.getpStatus();
-            if(patient.getpStatus().equals("Discharged")){
+            if(patient.getpStatus().equals("Ready to Discharge")){
             model.addRow(row);
             }
 
@@ -68,24 +67,25 @@ public class PastRecords extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jLabel1 = new javax.swing.JLabel();
         jSeparator1 = new javax.swing.JSeparator();
-        lblManageCustomers = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
         ManageCustomersTable = new javax.swing.JTable();
         btnUpdateAmbulanceRecord = new javax.swing.JButton();
+        btnUpdate1 = new javax.swing.JButton();
         btnUpdateAmbulanceRecord1 = new javax.swing.JButton();
 
         setBackground(new java.awt.Color(0, 153, 204));
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-        add(jSeparator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(944, 60, 1, 10));
 
-        lblManageCustomers.setBackground(new java.awt.Color(119, 197, 147));
-        lblManageCustomers.setFont(new java.awt.Font("Microsoft Sans Serif", 1, 36)); // NOI18N
-        lblManageCustomers.setForeground(new java.awt.Color(255, 255, 255));
-        lblManageCustomers.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        lblManageCustomers.setText("                      Manage Patients");
-        add(lblManageCustomers, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 11, 590, 70));
+        jLabel1.setFont(new java.awt.Font("Microsoft Sans Serif", 1, 36)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel1.setText("DISCHARGE");
+        add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(-470, 20, 1260, 80));
+        add(jSeparator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 92, 1260, 10));
 
+        ManageCustomersTable.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 2));
         ManageCustomersTable.setFont(new java.awt.Font("Trebuchet MS", 1, 14)); // NOI18N
         ManageCustomersTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -115,18 +115,29 @@ public class PastRecords extends javax.swing.JPanel {
         });
         jScrollPane1.setViewportView(ManageCustomersTable);
 
-        add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 143, 925, 191));
+        add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 290, 1190, 216));
 
-        btnUpdateAmbulanceRecord.setBackground(new java.awt.Color(255, 255, 255));
-        btnUpdateAmbulanceRecord.setFont(new java.awt.Font("Microsoft Sans Serif", 1, 14)); // NOI18N
-        btnUpdateAmbulanceRecord.setForeground(new java.awt.Color(0, 204, 204));
-        btnUpdateAmbulanceRecord.setText("Bill");
+        btnUpdateAmbulanceRecord.setBackground(new java.awt.Color(15, 85, 177));
+        btnUpdateAmbulanceRecord.setFont(new java.awt.Font("Georgia", 1, 14)); // NOI18N
+        btnUpdateAmbulanceRecord.setForeground(new java.awt.Color(255, 255, 255));
+        btnUpdateAmbulanceRecord.setText("Discharge");
         btnUpdateAmbulanceRecord.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnUpdateAmbulanceRecordActionPerformed(evt);
             }
         });
-        add(btnUpdateAmbulanceRecord, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 451, 235, 50));
+        add(btnUpdateAmbulanceRecord, new org.netbeans.lib.awtextra.AbsoluteConstraints(620, 170, 235, 70));
+
+        btnUpdate1.setBackground(new java.awt.Color(15, 85, 177));
+        btnUpdate1.setFont(new java.awt.Font("Georgia", 1, 14)); // NOI18N
+        btnUpdate1.setForeground(new java.awt.Color(255, 255, 255));
+        btnUpdate1.setText("Send to Insurance Check");
+        btnUpdate1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnUpdate1ActionPerformed(evt);
+            }
+        });
+        add(btnUpdate1, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 170, 240, 70));
 
         btnUpdateAmbulanceRecord1.setBackground(new java.awt.Color(255, 255, 255));
         btnUpdateAmbulanceRecord1.setFont(new java.awt.Font("Microsoft Sans Serif", 1, 14)); // NOI18N
@@ -136,7 +147,7 @@ public class PastRecords extends javax.swing.JPanel {
                 btnUpdateAmbulanceRecord1ActionPerformed(evt);
             }
         });
-        add(btnUpdateAmbulanceRecord1, new org.netbeans.lib.awtextra.AbsoluteConstraints(650, 30, 235, 50));
+        add(btnUpdateAmbulanceRecord1, new org.netbeans.lib.awtextra.AbsoluteConstraints(1070, 40, 120, 40));
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnUpdateAmbulanceRecordActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnUpdateAmbulanceRecordActionPerformed
@@ -149,13 +160,21 @@ public class PastRecords extends javax.swing.JPanel {
         else 
         {
             Patient patient = (Patient) ManageCustomersTable.getValueAt(selectedRowIndex, 0);
-            BillJPanel patientBillJPanel = new BillJPanel(userProcessContainer, patient,userAccount,ecoSystem);
-            userProcessContainer.add("Patient Bill", patientBillJPanel);
-            CardLayout layout = (CardLayout) userProcessContainer.getLayout();
-            layout.next(userProcessContainer);
-            populateNetworkTable();
+            
+            if(patient.getpInsuranceStatus().equals("Verifying Insurance")){
+            JOptionPane.showMessageDialog(null, "Cannot discharge verifying insurance.", "Warning", JOptionPane.WARNING_MESSAGE);
+            }
+            else if(patient.getpInsuranceStatus().equals("Cash")||patient.getpInsuranceStatus().equals("Rejected")){
+            patient.setpStatus("Discharged");
+            JOptionPane.showMessageDialog(null, "Cash payment Received.Patient Discharged.", "Information", JOptionPane.INFORMATION_MESSAGE);
+            }
+            else{
+            patient.setpStatus("Discharged");
+           //patient.setPoliceStatus("Not Verified");
+            JOptionPane.showMessageDialog(null, "Insurance payment Received.Patient Discharged.", "Warning", JOptionPane.INFORMATION_MESSAGE);
+            }
             //patient.setStatus("Insurance Verification");
-            //populateNetworkTable();
+            populateNetworkTable();
             //ManageCustomersTable doctorRequestLabTestJPanel = new ManageCustomersTable(userProcessContainer, userAccount,patient);
             //userProcessContainer.add("Request Lab Tests", doctorRequestLabTestJPanel);
             //CardLayout layout = (CardLayout) userProcessContainer.getLayout();
@@ -163,21 +182,61 @@ public class PastRecords extends javax.swing.JPanel {
         }
     }//GEN-LAST:event_btnUpdateAmbulanceRecordActionPerformed
 
+    private void btnUpdate1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnUpdate1ActionPerformed
+        // TODO add your handling code here:
+        
+              
+        int selectedRowIndex = ManageCustomersTable.getSelectedRow();
+        if (selectedRowIndex < 0)
+        {
+            JOptionPane.showMessageDialog(null, "Please select a row from the table to view details", "Warning", JOptionPane.WARNING_MESSAGE);
+        }
+        else
+        {
+            Patient patient = (Patient) ManageCustomersTable.getValueAt(selectedRowIndex, 0);
+
+            if(patient.getpInsuranceStatus().equals("Verifying Insurance")||patient.getpInsuranceStatus().equals("Rejected")||patient.getpInsuranceStatus().equals("Approved")){
+                JOptionPane.showMessageDialog(null, "Already Verifying or verified", "Warning", JOptionPane.WARNING_MESSAGE);
+            }
+            else if(patient.getpInsuranceStatus().equals("Cash")){
+                JOptionPane.showMessageDialog(null, "Cash payment method is not eligible.", "Warning", JOptionPane.WARNING_MESSAGE);
+            }
+            else{
+                ecoSystem.getInsurance().addServedCustomers(patient);
+                patient.setpInsuranceStatus("Verifying Insurance");
+                patient.setpPoliceStatus("Not Verified");
+                try{
+        ecoSystem.sendEmail("insurance.aed@zohomail.com", "Approval Request for "+ patient.getpFirstName(), "Please verify insurance approval request of "+patient.getpFirstName()+" "+patient.getpLastName()+" Insurance ID "+patient.getpHealthInsuranceID(), "hospital.aed@zohomail.com", "Bangbang@8899");
+                ecoSystem.smsTwillio(patient.getpFirstName()+" "+patient.getpLastName());
+                }
+        catch(Exception e){}
+                JOptionPane.showMessageDialog(null, "Sent to Insurance Approval", "Warning", JOptionPane.INFORMATION_MESSAGE);
+            }
+            //patient.setStatus("Insurance Verification");
+            populateNetworkTable();
+            //ManageCustomersTable doctorRequestLabTestJPanel = new ManageCustomersTable(userProcessContainer, userAccount,patient);
+            //userProcessContainer.add("Request Lab Tests", doctorRequestLabTestJPanel);
+            //CardLayout layout = (CardLayout) userProcessContainer.getLayout();
+            //layout.next(userProcessContainer);
+        }
+    }//GEN-LAST:event_btnUpdate1ActionPerformed
+
     private void btnUpdateAmbulanceRecord1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnUpdateAmbulanceRecord1ActionPerformed
         // TODO add your handling code here:
         ReceptionWorkAreaJPanel patientBillJPanel = new ReceptionWorkAreaJPanel(userProcessContainer,userAccount,ecoSystem);
         userProcessContainer.add("Patient Bill", patientBillJPanel);
-            CardLayout layout = (CardLayout) userProcessContainer.getLayout();
-            layout.next(userProcessContainer);
+        CardLayout layout = (CardLayout) userProcessContainer.getLayout();
+        layout.next(userProcessContainer);
     }//GEN-LAST:event_btnUpdateAmbulanceRecord1ActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTable ManageCustomersTable;
+    private javax.swing.JButton btnUpdate1;
     private javax.swing.JButton btnUpdateAmbulanceRecord;
     private javax.swing.JButton btnUpdateAmbulanceRecord1;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JSeparator jSeparator1;
-    private javax.swing.JLabel lblManageCustomers;
     // End of variables declaration//GEN-END:variables
 }
