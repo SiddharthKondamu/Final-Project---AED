@@ -60,13 +60,13 @@ public class CurrentPatientDetailsJPanel extends javax.swing.JPanel {
         lblPatientLastName = new javax.swing.JLabel();
         lblPatientFirstName = new javax.swing.JLabel();
         lblPatientLocation = new javax.swing.JLabel();
-        lblFirstName = new javax.swing.JLabel();
-        lblLastName = new javax.swing.JLabel();
-        lblLocation = new javax.swing.JLabel();
         btnSetFree = new javax.swing.JButton();
         jSeparator1 = new javax.swing.JSeparator();
         btnSetFree1 = new javax.swing.JButton();
         jLabel3 = new javax.swing.JLabel();
+        lblFirstName = new javax.swing.JTextField();
+        lblLastName = new javax.swing.JTextField();
+        lblLocation = new javax.swing.JTextField();
 
         setBackground(new java.awt.Color(0, 153, 204));
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -96,21 +96,6 @@ public class CurrentPatientDetailsJPanel extends javax.swing.JPanel {
         lblPatientLocation.setText("Patient Location");
         add(lblPatientLocation, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 490, -1, -1));
 
-        lblFirstName.setBackground(new java.awt.Color(0, 153, 204));
-        lblFirstName.setFont(new java.awt.Font("Times New Roman", 3, 18)); // NOI18N
-        lblFirstName.setForeground(new java.awt.Color(255, 255, 255));
-        add(lblFirstName, new org.netbeans.lib.awtextra.AbsoluteConstraints(680, 390, 200, 21));
-
-        lblLastName.setBackground(new java.awt.Color(0, 153, 204));
-        lblLastName.setFont(new java.awt.Font("Times New Roman", 3, 18)); // NOI18N
-        lblLastName.setForeground(new java.awt.Color(255, 255, 255));
-        add(lblLastName, new org.netbeans.lib.awtextra.AbsoluteConstraints(680, 440, 200, 21));
-
-        lblLocation.setBackground(new java.awt.Color(0, 153, 204));
-        lblLocation.setFont(new java.awt.Font("Times New Roman", 3, 18)); // NOI18N
-        lblLocation.setForeground(new java.awt.Color(255, 255, 255));
-        add(lblLocation, new org.netbeans.lib.awtextra.AbsoluteConstraints(680, 490, 200, 21));
-
         btnSetFree.setBackground(new java.awt.Color(255, 255, 255));
         btnSetFree.setFont(new java.awt.Font("Georgia", 1, 14)); // NOI18N
         btnSetFree.setForeground(new java.awt.Color(0, 153, 204));
@@ -132,10 +117,13 @@ public class CurrentPatientDetailsJPanel extends javax.swing.JPanel {
                 btnSetFree1ActionPerformed(evt);
             }
         });
-        add(btnSetFree1, new org.netbeans.lib.awtextra.AbsoluteConstraints(625, 630, 150, 38));
+        add(btnSetFree1, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 550, 150, 38));
 
         jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/MainUserInterface/Images/emergency.gif"))); // NOI18N
         add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 140, 480, 170));
+        add(lblFirstName, new org.netbeans.lib.awtextra.AbsoluteConstraints(700, 390, 210, 30));
+        add(lblLastName, new org.netbeans.lib.awtextra.AbsoluteConstraints(700, 440, 210, 30));
+        add(lblLocation, new org.netbeans.lib.awtextra.AbsoluteConstraints(700, 490, 210, 30));
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnSetFreeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSetFreeActionPerformed
@@ -165,9 +153,9 @@ public class CurrentPatientDetailsJPanel extends javax.swing.JPanel {
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JSeparator jSeparator1;
-    private javax.swing.JLabel lblFirstName;
-    private javax.swing.JLabel lblLastName;
-    private javax.swing.JLabel lblLocation;
+    private javax.swing.JTextField lblFirstName;
+    private javax.swing.JTextField lblLastName;
+    private javax.swing.JTextField lblLocation;
     private javax.swing.JLabel lblPatientFirstName;
     private javax.swing.JLabel lblPatientLastName;
     private javax.swing.JLabel lblPatientLocation;
