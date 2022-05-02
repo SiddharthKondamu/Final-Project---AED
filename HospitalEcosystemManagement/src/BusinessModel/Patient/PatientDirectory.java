@@ -17,7 +17,7 @@ public class PatientDirectory {
     
      public PatientBills AddBill(Patient patient,String ItemName,String Org,String amount){
         
-        bill = new PatientBills(ItemName, Org, (float) 500);
+        bill = new PatientBills(ItemName, Org, (float) 800);
         patient.addbill(bill);
         return bill;
     }

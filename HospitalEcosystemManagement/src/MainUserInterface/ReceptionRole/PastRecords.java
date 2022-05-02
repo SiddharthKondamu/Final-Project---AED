@@ -44,7 +44,7 @@ public class PastRecords extends javax.swing.JPanel {
         for (Patient patient : ecoSystem.getPatientDirectory().getPatientList()) {
 
             Object[] row = new Object[10];
-            row[0] = patient;
+            row[0] = patient.getpFirstName();
             row[1] = patient.getpLastName();
             row[2] = patient.getpGender();
             row[3] = patient.getpHealthInsuranceID();
@@ -52,6 +52,7 @@ public class PastRecords extends javax.swing.JPanel {
             row[5] = patient.getpEmailAddress();
             row[6] = patient.getpInsuranceStatus();
             row[7] = patient.getpStatus();
+            row[8] = patient;
             if(patient.getpStatus().equals("Discharged")){
             model.addRow(row);
             }
@@ -84,25 +85,25 @@ public class PastRecords extends javax.swing.JPanel {
         lblManageCustomers.setForeground(new java.awt.Color(255, 255, 255));
         lblManageCustomers.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         lblManageCustomers.setText("                      Manage Patients");
-        add(lblManageCustomers, new org.netbeans.lib.awtextra.AbsoluteConstraints(-130, 10, 590, 70));
+        add(lblManageCustomers, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 20, 590, 70));
 
         ManageCustomersTable.setFont(new java.awt.Font("Trebuchet MS", 1, 14)); // NOI18N
         ManageCustomersTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null}
+                {null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null}
             },
             new String [] {
-                "Name", "Last", "Gender", "HealthId", "Age", "Email", "Payment", "Patien Status"
+                "Name", "Last", "Gender", "HealthId", "Age", "Email", "Payment", "Patien Status", "obj"
             }
         ) {
             Class[] types = new Class [] {
-                java.lang.String.class, java.lang.Object.class, java.lang.Object.class, java.lang.String.class, java.lang.Object.class, java.lang.Object.class, java.lang.Object.class, java.lang.Object.class
+                java.lang.String.class, java.lang.Object.class, java.lang.Object.class, java.lang.String.class, java.lang.Object.class, java.lang.Object.class, java.lang.Object.class, java.lang.Object.class, java.lang.Object.class
             };
             boolean[] canEdit = new boolean [] {
-                false, false, false, false, false, false, false, false
+                false, false, false, false, false, false, false, false, false
             };
 
             public Class getColumnClass(int columnIndex) {
@@ -114,6 +115,11 @@ public class PastRecords extends javax.swing.JPanel {
             }
         });
         jScrollPane1.setViewportView(ManageCustomersTable);
+        if (ManageCustomersTable.getColumnModel().getColumnCount() > 0) {
+            ManageCustomersTable.getColumnModel().getColumn(8).setMinWidth(0);
+            ManageCustomersTable.getColumnModel().getColumn(8).setPreferredWidth(0);
+            ManageCustomersTable.getColumnModel().getColumn(8).setMaxWidth(0);
+        }
 
         add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 143, 925, 191));
 
@@ -149,7 +155,7 @@ public class PastRecords extends javax.swing.JPanel {
         } 
         else 
         {
-            Patient patient = (Patient) ManageCustomersTable.getValueAt(selectedRowIndex, 0);
+            Patient patient = (Patient) ManageCustomersTable.getValueAt(selectedRowIndex, 8);
             BillJPanel patientBillJPanel = new BillJPanel(userProcessContainer, patient,userAccount,ecoSystem);
             userProcessContainer.add("Patient Bill", patientBillJPanel);
             CardLayout layout = (CardLayout) userProcessContainer.getLayout();

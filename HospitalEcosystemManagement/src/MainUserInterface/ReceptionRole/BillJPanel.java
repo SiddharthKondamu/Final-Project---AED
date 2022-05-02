@@ -119,7 +119,7 @@ public class BillJPanel extends javax.swing.JPanel {
         lblPatientName.setFont(new java.awt.Font("Microsoft Sans Serif", 1, 24)); // NOI18N
         lblPatientName.setForeground(new java.awt.Color(255, 255, 255));
         lblPatientName.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        add(lblPatientName, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 291, 347, 44));
+        add(lblPatientName, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 260, 347, 44));
 
         bckBtn.setBackground(new java.awt.Color(255, 255, 255));
         bckBtn.setFont(new java.awt.Font("Microsoft JhengHei", 1, 18)); // NOI18N

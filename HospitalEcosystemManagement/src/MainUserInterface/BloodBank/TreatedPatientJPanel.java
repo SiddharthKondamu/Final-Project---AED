@@ -40,8 +40,8 @@ public class TreatedPatientJPanel extends javax.swing.JPanel {
 
         for (Patient patient : ecoSystem.getBloodBank().getBloodrequestedPatients()) {
 
-            Object[] row = new Object[8];
-            row[0] = patient;
+            Object[] row = new Object[9];
+            row[0] = patient.getpFirstName();
             row[1] = patient.getpHealthInsuranceID();
             row[2] = patient.getpUserName();
             row[3] = patient.getpLastName();
@@ -49,6 +49,7 @@ public class TreatedPatientJPanel extends javax.swing.JPanel {
             row[5] = patient.getpInsuranceStatus();
             row[6] = patient.getpEmailAddress();
             row[7] = patient.getpBloodBankStatus();
+            row[8] = patient;
             model.addRow(row);
 
         }
@@ -76,20 +77,20 @@ public class TreatedPatientJPanel extends javax.swing.JPanel {
         ManagePatientTable.setFont(new java.awt.Font("Trebuchet MS", 1, 14)); // NOI18N
         ManagePatientTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null}
+                {null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null}
             },
             new String [] {
-                "User Name", "HealthId", "First", "Last", "Age", "Address", "Email", "Blood Request Status"
+                "User Name", "HealthId", "First", "Last", "Age", "Address", "Email", "Blood Request Status", "obj"
             }
         ) {
             Class[] types = new Class [] {
-                java.lang.String.class, java.lang.String.class, java.lang.Object.class, java.lang.Object.class, java.lang.Object.class, java.lang.Object.class, java.lang.Object.class, java.lang.Object.class
+                java.lang.String.class, java.lang.String.class, java.lang.Object.class, java.lang.Object.class, java.lang.Object.class, java.lang.Object.class, java.lang.Object.class, java.lang.Object.class, java.lang.Object.class
             };
             boolean[] canEdit = new boolean [] {
-                false, false, false, false, false, false, false, false
+                false, false, false, false, false, false, false, false, false
             };
 
             public Class getColumnClass(int columnIndex) {
@@ -101,6 +102,11 @@ public class TreatedPatientJPanel extends javax.swing.JPanel {
             }
         });
         jScrollPane3.setViewportView(ManagePatientTable);
+        if (ManagePatientTable.getColumnModel().getColumnCount() > 0) {
+            ManagePatientTable.getColumnModel().getColumn(8).setMinWidth(0);
+            ManagePatientTable.getColumnModel().getColumn(8).setPreferredWidth(0);
+            ManagePatientTable.getColumnModel().getColumn(8).setMaxWidth(0);
+        }
 
         add(jScrollPane3, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 480, 1260, 191));
 

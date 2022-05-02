@@ -50,7 +50,7 @@ public class Logout extends javax.swing.JPanel {
 
         setBackground(new java.awt.Color(0, 153, 204));
 
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/MainUserInterface/Images/logout.jpeg"))); // NOI18N
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/MainUserInterface/Images/Hospital.gif"))); // NOI18N
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);

@@ -86,10 +86,10 @@ public class CreateDoctorJPanel extends javax.swing.JPanel {
         lblExperience = new javax.swing.JLabel();
         PhoneNumberTxt = new javax.swing.JTextField();
         btnSubmit = new javax.swing.JButton();
-        PasswordTxt = new javax.swing.JTextField();
+        UsernameTxt = new javax.swing.JTextField();
         FirstNameLbl = new javax.swing.JLabel();
         lblSpeciality = new javax.swing.JLabel();
-        Passwordtxt = new javax.swing.JTextField();
+        PasswordTxt = new javax.swing.JTextField();
         DateOfBirthLbl = new javax.swing.JLabel();
         ExperienceTxt = new javax.swing.JTextField();
         PhoneNoLbl = new javax.swing.JLabel();
@@ -97,7 +97,6 @@ public class CreateDoctorJPanel extends javax.swing.JPanel {
         PasswordLbl = new javax.swing.JLabel();
         lLastNameLbl = new javax.swing.JLabel();
         FirstNameTxt = new javax.swing.JTextField();
-        lblPhotoImage = new javax.swing.JLabel();
         lblRestaurantInfo = new javax.swing.JLabel();
         EmailTxt = new javax.swing.JTextField();
         EmailLbl = new javax.swing.JLabel();
@@ -114,9 +113,8 @@ public class CreateDoctorJPanel extends javax.swing.JPanel {
         lblErrorWorkExperience = new javax.swing.JLabel();
         ErrorUserNameLbl = new javax.swing.JLabel();
         ErrorPasswordLbl = new javax.swing.JLabel();
-        jLabel1 = new javax.swing.JLabel();
+        lblPhotoImage = new javax.swing.JLabel();
         qualificationImageLbl = new javax.swing.JButton();
-        profileImageLbl = new javax.swing.JButton();
         lblErrorDoctorWorkID = new javax.swing.JLabel();
         txtDOB = new com.toedter.calendar.JDateChooser();
 
@@ -201,17 +199,17 @@ public class CreateDoctorJPanel extends javax.swing.JPanel {
         });
         add(btnSubmit, new org.netbeans.lib.awtextra.AbsoluteConstraints(710, 680, 140, 40));
 
-        PasswordTxt.addActionListener(new java.awt.event.ActionListener() {
+        UsernameTxt.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                PasswordTxtActionPerformed(evt);
+                UsernameTxtActionPerformed(evt);
             }
         });
-        PasswordTxt.addKeyListener(new java.awt.event.KeyAdapter() {
+        UsernameTxt.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyReleased(java.awt.event.KeyEvent evt) {
-                PasswordTxtKeyReleased(evt);
+                UsernameTxtKeyReleased(evt);
             }
         });
-        add(PasswordTxt, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 90, 170, 30));
+        add(UsernameTxt, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 90, 170, 30));
 
         FirstNameLbl.setBackground(new java.awt.Color(0, 0, 0));
         FirstNameLbl.setFont(new java.awt.Font("Microsoft JhengHei", 1, 18)); // NOI18N
@@ -227,17 +225,17 @@ public class CreateDoctorJPanel extends javax.swing.JPanel {
         lblSpeciality.setText("Specialist");
         add(lblSpeciality, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 580, 90, -1));
 
-        Passwordtxt.addActionListener(new java.awt.event.ActionListener() {
+        PasswordTxt.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                PasswordtxtActionPerformed(evt);
+                PasswordTxtActionPerformed(evt);
             }
         });
-        Passwordtxt.addKeyListener(new java.awt.event.KeyAdapter() {
+        PasswordTxt.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyReleased(java.awt.event.KeyEvent evt) {
-                PasswordtxtKeyReleased(evt);
+                PasswordTxtKeyReleased(evt);
             }
         });
-        add(Passwordtxt, new org.netbeans.lib.awtextra.AbsoluteConstraints(810, 90, 170, 30));
+        add(PasswordTxt, new org.netbeans.lib.awtextra.AbsoluteConstraints(810, 90, 170, 30));
 
         DateOfBirthLbl.setBackground(new java.awt.Color(255, 255, 255));
         DateOfBirthLbl.setFont(new java.awt.Font("Microsoft JhengHei", 1, 18)); // NOI18N
@@ -294,9 +292,6 @@ public class CreateDoctorJPanel extends javax.swing.JPanel {
             }
         });
         add(FirstNameTxt, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 160, 170, 30));
-
-        lblPhotoImage.setText("qualification image");
-        add(lblPhotoImage, new org.netbeans.lib.awtextra.AbsoluteConstraints(1140, 520, 140, 135));
 
         lblRestaurantInfo.setBackground(new java.awt.Color(255, 255, 255));
         lblRestaurantInfo.setFont(new java.awt.Font("Microsoft JhengHei", 1, 36)); // NOI18N
@@ -423,8 +418,8 @@ public class CreateDoctorJPanel extends javax.swing.JPanel {
         });
         add(ErrorPasswordLbl, new org.netbeans.lib.awtextra.AbsoluteConstraints(810, 120, 200, 26));
 
-        jLabel1.setText("doctor_Image");
-        add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(1120, 90, 180, 200));
+        lblPhotoImage.setText("doctor_Image");
+        add(lblPhotoImage, new org.netbeans.lib.awtextra.AbsoluteConstraints(1120, 90, 180, 200));
 
         qualificationImageLbl.setBackground(new java.awt.Color(255, 255, 255));
         qualificationImageLbl.setFont(new java.awt.Font("Microsoft JhengHei", 1, 14)); // NOI18N
@@ -435,17 +430,7 @@ public class CreateDoctorJPanel extends javax.swing.JPanel {
                 qualificationImageLblActionPerformed(evt);
             }
         });
-        add(qualificationImageLbl, new org.netbeans.lib.awtextra.AbsoluteConstraints(1150, 690, -1, -1));
-
-        profileImageLbl.setFont(new java.awt.Font("Microsoft JhengHei", 1, 14)); // NOI18N
-        profileImageLbl.setForeground(new java.awt.Color(0, 153, 204));
-        profileImageLbl.setText("Upload Image");
-        profileImageLbl.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                profileImageLblActionPerformed(evt);
-            }
-        });
-        add(profileImageLbl, new org.netbeans.lib.awtextra.AbsoluteConstraints(1160, 320, -1, -1));
+        add(qualificationImageLbl, new org.netbeans.lib.awtextra.AbsoluteConstraints(1140, 310, -1, -1));
         add(lblErrorDoctorWorkID, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 540, 170, 20));
 
         txtDOB.setBackground(new java.awt.Color(204, 204, 204));
@@ -484,14 +469,14 @@ public class CreateDoctorJPanel extends javax.swing.JPanel {
 
     private void btnSubmitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSubmitActionPerformed
         // TODO add your handling code here:
-        if (ecoSystem.getUserAccountDirectory().checkIfUsernameIsUnique(Passwordtxt.getText())
+        if (ecoSystem.getUserAccountDirectory().checkIfUsernameIsUnique(PasswordTxt.getText())
                 && (lblErrorAddress.getText() == null || lblErrorAddress.getText().equals(""))
                 && (ErrorEmailLbl.getText() == null || ErrorEmailLbl.getText().equals(""))
                 && (ErrorPasswordLbl.getText() == null || ErrorPasswordLbl.getText().equals(""))
                 && (ErrorPhoneLbl.getText() == null || ErrorPhoneLbl.getText().equals(""))
                 && (ErrorUserNameLbl.getText() == null || ErrorUserNameLbl.getText().equals(""))     
                 ) {
-            Doctor doctor = new Doctor(Passwordtxt.getText());
+            Doctor doctor = new Doctor(PasswordTxt.getText());
             doctor.setdFirstName(FirstNameTxt.getText());
             doctor.setdLastName(LastNameTxt.getText());
             doctor.setdAge((CalculateAge(txtDOB.getDate(), java.util.Calendar.getInstance().getTime())));
@@ -503,9 +488,9 @@ public class CreateDoctorJPanel extends javax.swing.JPanel {
             doctor.setdEmail(EmailTxt.getText());
             doctor.setdSpecialization(SpecialistTxt.getText());
             doctor.setdExperience(ExperienceTxt.getText());
-            doctor.setdUserName(Passwordtxt.getText());
+            doctor.setdUserName(PasswordTxt.getText());
             photoDoctor = doctor;
-            ecoSystem.getUserAccountDirectory().createUser(Passwordtxt.getText(), PasswordTxt.getText(), null, new Doctor_role());
+            ecoSystem.getUserAccountDirectory().createUser(PasswordTxt.getText(), UsernameTxt.getText(), null, new Doctor_role());
             ecoSystem.getDoctorDirectory().createDoctor(doctor);
             JOptionPane.showMessageDialog(null, "Doctor added.");
             
@@ -532,18 +517,18 @@ public class CreateDoctorJPanel extends javax.swing.JPanel {
         return age;
     }
 
-    private void PasswordtxtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_PasswordtxtActionPerformed
+    private void PasswordTxtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_PasswordTxtActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_PasswordtxtActionPerformed
+    }//GEN-LAST:event_PasswordTxtActionPerformed
 
     private void FirstNameTxtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_FirstNameTxtActionPerformed
         // TODO add your handling code here:
         
     }//GEN-LAST:event_FirstNameTxtActionPerformed
 
-    private void PasswordTxtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_PasswordTxtActionPerformed
+    private void UsernameTxtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_UsernameTxtActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_PasswordTxtActionPerformed
+    }//GEN-LAST:event_UsernameTxtActionPerformed
 
     private void GComboBoxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_GComboBoxActionPerformed
         // TODO add your handling code here:
@@ -673,29 +658,29 @@ public class CreateDoctorJPanel extends javax.swing.JPanel {
         }
     }//GEN-LAST:event_ExperienceTxtKeyReleased
 
-    private void PasswordTxtKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_PasswordTxtKeyReleased
+    private void UsernameTxtKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_UsernameTxtKeyReleased
         // TODO add your handling code here:
         String PATTERN = "^[a-zA-Z0-9 '/:]+$";
         Pattern pattern = Pattern.compile(PATTERN);
-        Matcher match = pattern.matcher(PasswordTxt.getText());
+        Matcher match = pattern.matcher(UsernameTxt.getText());
         if (!match.matches()) {
             ErrorPasswordLbl.setText("Wrong Input");
         } else {
             ErrorPasswordLbl.setText(null);
         }
-    }//GEN-LAST:event_PasswordTxtKeyReleased
+    }//GEN-LAST:event_UsernameTxtKeyReleased
 
-    private void PasswordtxtKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_PasswordtxtKeyReleased
+    private void PasswordTxtKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_PasswordTxtKeyReleased
         // TODO add your handling code here:
         String PATTERN = "^[a-zA-Z '/:]+$";
         Pattern pattern = Pattern.compile(PATTERN);
-        Matcher match = pattern.matcher(Passwordtxt.getText());
+        Matcher match = pattern.matcher(PasswordTxt.getText());
         if (!match.matches()) {
             ErrorUserNameLbl.setText("Wrong Input");
         } else {
             ErrorUserNameLbl.setText(null);
         }
-    }//GEN-LAST:event_PasswordtxtKeyReleased
+    }//GEN-LAST:event_PasswordTxtKeyReleased
 
     private void qualificationImageLblActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_qualificationImageLblActionPerformed
         // TODO add your handling code here:
@@ -720,10 +705,6 @@ public class CreateDoctorJPanel extends javax.swing.JPanel {
         }
     }//GEN-LAST:event_qualificationImageLblActionPerformed
 
-    private void profileImageLblActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_profileImageLblActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_profileImageLblActionPerformed
-
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel AddressLbl;
@@ -744,13 +725,12 @@ public class CreateDoctorJPanel extends javax.swing.JPanel {
     private javax.swing.JTextField LastNameTxt;
     private javax.swing.JLabel PasswordLbl;
     private javax.swing.JTextField PasswordTxt;
-    private javax.swing.JTextField Passwordtxt;
     private javax.swing.JLabel PhoneNoLbl;
     private javax.swing.JTextField PhoneNumberTxt;
     private javax.swing.JTextField SpecialistTxt;
     private javax.swing.JLabel UserNameLbl;
+    private javax.swing.JTextField UsernameTxt;
     private javax.swing.JButton btnSubmit;
-    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JSeparator jSeparator5;
@@ -763,7 +743,6 @@ public class CreateDoctorJPanel extends javax.swing.JPanel {
     private javax.swing.JLabel lblPhotoImage;
     private javax.swing.JLabel lblRestaurantInfo;
     private javax.swing.JLabel lblSpeciality;
-    private javax.swing.JButton profileImageLbl;
     private javax.swing.JButton qualificationImageLbl;
     private com.toedter.calendar.JDateChooser txtDOB;
     private javax.swing.JTextField txtDoctorID;
