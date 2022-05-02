@@ -47,7 +47,7 @@ public class DoctorAdminWorkArea extends javax.swing.JPanel {
             row[0] = Doctor.getdFirstName();
             row[1] = Doctor.getdLastName();
             row[2] = Doctor.getdWorkID();
-            row[3] = Doctor.getdAddress();
+            row[3] = Doctor.getdExperience();
             row[4] = Doctor.getdAge();
             row[5] = Doctor.getdGender();
             row[6] = Doctor.getdEmail();
