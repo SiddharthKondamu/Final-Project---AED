@@ -16,7 +16,7 @@ public class DoctorDirectory {
     private ArrayList<Doctor> doctors;
     
     public DoctorDirectory() {
-        doctors = new ArrayList<>();
+        doctors = new ArrayList<Doctor>();
     }
     
     public Doctor createDoctor(Doctor doc) {
@@ -30,6 +30,7 @@ public class DoctorDirectory {
     }
 
     public Doctor AddPatient(Doctor doctor, Patient patient) {
+        System.out.println("doc existing patients--"+doctor.getTreatedPatientList());
         doctor.getTreatedPatientList().add(patient);
         return doctor;
     }

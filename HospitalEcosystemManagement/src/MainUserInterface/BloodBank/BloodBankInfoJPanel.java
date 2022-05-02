@@ -31,9 +31,7 @@ public class BloodBankInfoJPanel extends javax.swing.JPanel {
         txtAddress.setEnabled(false);
         txtPhoneNumber.setEnabled(false);
         txtEmail.setEnabled(false);
-        btnSubmit.setEnabled(false);
-        btnUpdate.setEnabled(true);
-
+  
         setTextFields();
     }
 
@@ -64,11 +62,9 @@ public class BloodBankInfoJPanel extends javax.swing.JPanel {
         lblPhoneNumber = new javax.swing.JLabel();
         txtPhoneNumber = new javax.swing.JTextField();
         txtEmail = new javax.swing.JTextField();
-        btnSubmit = new javax.swing.JButton();
         jSeparator1 = new javax.swing.JSeparator();
         btnBack = new javax.swing.JButton();
         jLabel3 = new javax.swing.JLabel();
-        btnUpdate = new javax.swing.JButton();
 
         setBackground(new java.awt.Color(0, 153, 204));
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -85,6 +81,7 @@ public class BloodBankInfoJPanel extends javax.swing.JPanel {
         lblName.setText("Name");
         add(lblName, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 570, -1, 30));
 
+        txtName.setText("HUSKY BLOOD BANK");
         txtName.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtNameActionPerformed(evt);
@@ -92,6 +89,7 @@ public class BloodBankInfoJPanel extends javax.swing.JPanel {
         });
         add(txtName, new org.netbeans.lib.awtextra.AbsoluteConstraints(630, 570, 144, 30));
 
+        txtAddress.setText("North Eastern University");
         txtAddress.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtAddressActionPerformed(evt);
@@ -118,6 +116,7 @@ public class BloodBankInfoJPanel extends javax.swing.JPanel {
         lblPhoneNumber.setText("Phone Number");
         add(lblPhoneNumber, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 650, -1, 30));
 
+        txtPhoneNumber.setText("8579087561");
         txtPhoneNumber.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtPhoneNumberActionPerformed(evt);
@@ -125,23 +124,13 @@ public class BloodBankInfoJPanel extends javax.swing.JPanel {
         });
         add(txtPhoneNumber, new org.netbeans.lib.awtextra.AbsoluteConstraints(630, 650, 144, 30));
 
+        txtEmail.setText("neu.bloodBank@gmail.com");
         txtEmail.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtEmailActionPerformed(evt);
             }
         });
         add(txtEmail, new org.netbeans.lib.awtextra.AbsoluteConstraints(630, 690, 144, 30));
-
-        btnSubmit.setBackground(new java.awt.Color(255, 255, 255));
-        btnSubmit.setFont(new java.awt.Font("Trebuchet MS", 1, 18)); // NOI18N
-        btnSubmit.setForeground(new java.awt.Color(0, 153, 204));
-        btnSubmit.setText("Submit");
-        btnSubmit.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnSubmitActionPerformed(evt);
-            }
-        });
-        add(btnSubmit, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 750, 148, 40));
         add(jSeparator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 100, 1432, 10));
 
         btnBack.setBackground(new java.awt.Color(255, 255, 255));
@@ -158,17 +147,6 @@ public class BloodBankInfoJPanel extends javax.swing.JPanel {
         jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/MainUserInterface/Images/Blood bank.gif"))); // NOI18N
         jLabel3.setMaximumSize(new java.awt.Dimension(1000, 500));
         add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 110, 980, 430));
-
-        btnUpdate.setBackground(new java.awt.Color(255, 255, 255));
-        btnUpdate.setFont(new java.awt.Font("Trebuchet MS", 1, 18)); // NOI18N
-        btnUpdate.setForeground(new java.awt.Color(0, 153, 204));
-        btnUpdate.setText("Update");
-        btnUpdate.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnUpdateActionPerformed(evt);
-            }
-        });
-        add(btnUpdate, new org.netbeans.lib.awtextra.AbsoluteConstraints(630, 750, 148, 40));
     }// </editor-fold>//GEN-END:initComponents
 
     private void txtAddressActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtAddressActionPerformed
@@ -179,26 +157,6 @@ public class BloodBankInfoJPanel extends javax.swing.JPanel {
         // TODO add your handling code here:
     }//GEN-LAST:event_txtEmailActionPerformed
 
-    private void btnSubmitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSubmitActionPerformed
-
-        String name = txtName.getText();
-        String address = txtAddress.getText();
-        String number = txtPhoneNumber.getText();
-        String email = txtEmail.getText();
-
-        ecoSystem.getBloodBank().setBloodBankName(name);
-        ecoSystem.getBloodBank().setBloodBankAddress(address);
-        ecoSystem.getBloodBank().setBloodBankPhone(number);
-        ecoSystem.getBloodBank().setBloodBankEmailAddress(email);
-
-        txtName.setEnabled(false);
-        txtAddress.setEnabled(false);
-        txtPhoneNumber.setEnabled(false);
-        txtEmail.setEnabled(false);
-        btnSubmit.setEnabled(false);
-        btnUpdate.setEnabled(true);
-    }//GEN-LAST:event_btnSubmitActionPerformed
-
     private void btnBackActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBackActionPerformed
         // TODO add your handling code here:
         BloodBankWorkAreaJPanel bloodBankWorkAreaJPanel = new BloodBankWorkAreaJPanel(userProcessContainer, userAccount, ecoSystem);
@@ -206,10 +164,6 @@ public class BloodBankInfoJPanel extends javax.swing.JPanel {
         CardLayout layout = (CardLayout) userProcessContainer.getLayout();
         layout.next(userProcessContainer);
     }//GEN-LAST:event_btnBackActionPerformed
-
-    private void btnUpdateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnUpdateActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_btnUpdateActionPerformed
 
     private void txtPhoneNumberActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtPhoneNumberActionPerformed
         // TODO add your handling code here:
@@ -222,8 +176,6 @@ public class BloodBankInfoJPanel extends javax.swing.JPanel {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnBack;
-    private javax.swing.JButton btnSubmit;
-    private javax.swing.JButton btnUpdate;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JSeparator jSeparator1;

@@ -273,6 +273,19 @@ public class DoctorAdminWorkArea extends javax.swing.JPanel {
 
     private void btnAssignDoctor1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAssignDoctor1ActionPerformed
         // TODO add your handling code here:
+        int selectedRowIndex = PatientTable.getSelectedRow();
+        if (selectedRowIndex < 0) 
+        {
+            JOptionPane.showMessageDialog(null, "Please select a row from the table to view details", "Warning", JOptionPane.WARNING_MESSAGE);
+        } 
+        else 
+        {
+            Patient patient = (Patient) PatientTable.getValueAt(selectedRowIndex, 0);
+            DisplayPatientInfoJPanel displayPatientInfoJPanel = new DisplayPatientInfoJPanel(userProcessContainer, userAccount, ecoSystem, patient);
+            userProcessContainer.add("Display Patient", displayPatientInfoJPanel);
+            CardLayout layout = (CardLayout) userProcessContainer.getLayout();
+            layout.next(userProcessContainer);
+        }
     }//GEN-LAST:event_btnAssignDoctor1ActionPerformed
 
 

@@ -131,7 +131,8 @@ public class MainJFrame extends javax.swing.JFrame {
             signOutBtn.setEnabled(true);
         }
         catch(Exception e){
-            System.out.println("exception ---"+e.getStackTrace());
+            System.out.println("exception ---");
+            e.printStackTrace();
             System.out.println("exception due to ---"+e.getMessage());
             JOptionPane.showMessageDialog(null,"Username/Password is wrong!","Warning",JOptionPane.WARNING_MESSAGE);
         }

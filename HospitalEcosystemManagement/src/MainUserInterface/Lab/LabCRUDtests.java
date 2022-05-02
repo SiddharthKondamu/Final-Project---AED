@@ -84,7 +84,6 @@ public class LabCRUDtests extends javax.swing.JPanel {
         conBtn = new javax.swing.JButton();
         jLabel2 = new javax.swing.JLabel();
         jButton2 = new javax.swing.JButton();
-        jLabel5 = new javax.swing.JLabel();
 
         setBackground(new java.awt.Color(0, 153, 204));
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -210,9 +209,6 @@ public class LabCRUDtests extends javax.swing.JPanel {
             }
         });
         add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(1020, 20, 110, 40));
-
-        jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/MainFrame/Final Image.jpg"))); // NOI18N
-        add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 70, 1420, 1240));
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnSubmitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSubmitActionPerformed
@@ -318,7 +314,6 @@ public class LabCRUDtests extends javax.swing.JPanel {
     private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel5;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JLabel lblName;
