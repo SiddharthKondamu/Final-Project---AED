@@ -94,7 +94,7 @@ public class DisplayAmbulancePatientJPanel extends javax.swing.JPanel {
                 btnCurrentPatientActionPerformed(evt);
             }
         });
-        add(btnCurrentPatient, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 510, 200, 40));
+        add(btnCurrentPatient, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 500, 200, 40));
 
         jLabel1.setBackground(new java.awt.Color(255, 255, 255));
         jLabel1.setFont(new java.awt.Font("Microsoft JhengHei", 1, 36)); // NOI18N

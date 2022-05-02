@@ -21,6 +21,11 @@ public class Ambulance {
     private int driverAge;
     private String accidentLocation;
     private ArrayList<Patient> ambulancePatientsList;
+    
+    public Ambulance()
+    {
+         this.ambulancePatientsList = new ArrayList<Patient>();
+    }
 
     public String getDriverFirstName() {
         return driverFirstName;
