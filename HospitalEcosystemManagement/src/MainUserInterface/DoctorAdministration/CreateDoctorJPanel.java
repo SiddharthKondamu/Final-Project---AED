@@ -107,7 +107,6 @@ public class CreateDoctorJPanel extends javax.swing.JPanel {
         jLabel4 = new javax.swing.JLabel();
         jSeparator5 = new javax.swing.JSeparator();
         GComboBox = new javax.swing.JComboBox<>();
-        DOBTxt = new org.netbeans.modules.form.InvalidComponent();
         ErrorPhoneLbl = new javax.swing.JLabel();
         ErrorEmailLbl = new javax.swing.JLabel();
         lblErrorAddress = new javax.swing.JLabel();
@@ -119,6 +118,7 @@ public class CreateDoctorJPanel extends javax.swing.JPanel {
         qualificationImageLbl = new javax.swing.JButton();
         profileImageLbl = new javax.swing.JButton();
         lblErrorDoctorWorkID = new javax.swing.JLabel();
+        txtDOB = new com.toedter.calendar.JDateChooser();
 
         setBackground(new java.awt.Color(0, 153, 204));
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -360,8 +360,6 @@ public class CreateDoctorJPanel extends javax.swing.JPanel {
         });
         add(GComboBox, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 220, 170, 30));
 
-        add(DOBTxt, new org.netbeans.lib.awtextra.AbsoluteConstraints(810, 220, 170, 30));
-
         ErrorPhoneLbl.setFont(new java.awt.Font("Lucida Grande", 3, 14)); // NOI18N
         ErrorPhoneLbl.setForeground(new java.awt.Color(255, 51, 51));
         ErrorPhoneLbl.addKeyListener(new java.awt.event.KeyAdapter() {
@@ -449,6 +447,11 @@ public class CreateDoctorJPanel extends javax.swing.JPanel {
         });
         add(profileImageLbl, new org.netbeans.lib.awtextra.AbsoluteConstraints(1160, 320, -1, -1));
         add(lblErrorDoctorWorkID, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 540, 170, 20));
+
+        txtDOB.setBackground(new java.awt.Color(204, 204, 204));
+        txtDOB.setDateFormatString("MM-dd-yyyy");
+        txtDOB.setMaxSelectableDate(new Date());
+        add(txtDOB, new org.netbeans.lib.awtextra.AbsoluteConstraints(810, 210, 180, 40));
     }// </editor-fold>//GEN-END:initComponents
 
     private void LastNameTxtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_LastNameTxtActionPerformed
@@ -491,7 +494,7 @@ public class CreateDoctorJPanel extends javax.swing.JPanel {
             Doctor doctor = new Doctor(Passwordtxt.getText());
             doctor.setdFirstName(FirstNameTxt.getText());
             doctor.setdLastName(LastNameTxt.getText());
-            doctor.setdAge((CalculateAge(DOBTxt.getDate(), java.util.Calendar.getInstance().getTime())));
+            doctor.setdAge((CalculateAge(txtDOB.getDate(), java.util.Calendar.getInstance().getTime())));
             doctor.setdGender((String) GComboBox.getSelectedItem());
             doctor.setdWorkID(txtDoctorID.getText());
             doctor.setdAddress(AddressTxt.getText());
@@ -725,7 +728,6 @@ public class CreateDoctorJPanel extends javax.swing.JPanel {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel AddressLbl;
     private javax.swing.JTextField AddressTxt;
-    private org.netbeans.modules.form.InvalidComponent DOBTxt;
     private javax.swing.JLabel DateOfBirthLbl;
     private javax.swing.JLabel DoctorWorkIDLbl;
     private javax.swing.JLabel EmailLbl;
@@ -763,6 +765,7 @@ public class CreateDoctorJPanel extends javax.swing.JPanel {
     private javax.swing.JLabel lblSpeciality;
     private javax.swing.JButton profileImageLbl;
     private javax.swing.JButton qualificationImageLbl;
+    private com.toedter.calendar.JDateChooser txtDOB;
     private javax.swing.JTextField txtDoctorID;
     // End of variables declaration//GEN-END:variables
 }

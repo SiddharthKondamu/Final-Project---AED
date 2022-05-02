@@ -27,12 +27,12 @@ public class BloodBankInfoJPanel extends javax.swing.JPanel {
         this.userProcessContainer = userProcessContainer;
         this.ecoSystem = system;
         this.userAccount = account;
-        txtName.setEnabled(false);
-        txtAddress.setEnabled(false);
-        txtPhoneNumber.setEnabled(false);
-        txtEmail.setEnabled(false);
+        txtName.setEnabled(true);
+        txtAddress.setEnabled(true);
+        txtPhoneNumber.setEnabled(true);
+        txtEmail.setEnabled(true);
   
-        setTextFields();
+        //setTextFields();
     }
 
     public void setTextFields() {

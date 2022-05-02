@@ -43,15 +43,15 @@ public class PharmacyWorkAreaJPanel extends javax.swing.JPanel {
 
         for (Patient patient : ecosystem.getPharmacy().getPharmaRecordList()) {
 
-            Object[] row = new Object[7];
-            
-            row[0] = patient;
+            Object[] row = new Object[8];
+            row[0] = patient.getpFirstName();
             row[1] = patient.getpLastName();
             row[2] = patient.getpPharmaStatus();
             row[3] = patient.getpHealthInsuranceID();
             row[4] = patient.getpAge();
             row[5] = patient.getpAddress();
             row[6] = patient.getpEmailAddress();
+            row[7] = patient;
            if(patient.getpPharmaStatus().equals("Requested")){
             model.addRow(row);
            }
@@ -64,15 +64,15 @@ public class PharmacyWorkAreaJPanel extends javax.swing.JPanel {
 
         for (Patient patient : ecosystem.getPharmacy().getPharmaRecordList()) {
 
-            Object[] row = new Object[7];
-            
-            row[0] = patient;
+            Object[] row = new Object[8];
+            row[0] = patient.getpFirstName();
             row[1] = patient.getpLastName();
             row[2] = patient.getpPharmaStatus();
             row[3] = patient.getpHealthInsuranceID();
             row[4] = patient.getpAge();
             row[5] = patient.getpAddress();
             row[6] = patient.getpEmailAddress();
+            row[7] = patient;
            if(patient.getpPharmaStatus().equals("Delivered")){
             model.addRow(row);
            }
@@ -132,20 +132,20 @@ public class PharmacyWorkAreaJPanel extends javax.swing.JPanel {
         managePatientTable.setFont(new java.awt.Font("Trebuchet MS", 1, 12)); // NOI18N
         managePatientTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null}
+                {null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null}
             },
             new String [] {
-                "First", "Last", "PharmaStatus", "HealthId", "Age", "Address", "Email"
+                "First", "Last", "PharmaStatus", "HealthId", "Age", "Address", "Email", "obj"
             }
         ) {
             Class[] types = new Class [] {
-                java.lang.Object.class, java.lang.Object.class, java.lang.String.class, java.lang.String.class, java.lang.Object.class, java.lang.Object.class, java.lang.Object.class
+                java.lang.Object.class, java.lang.Object.class, java.lang.String.class, java.lang.String.class, java.lang.Object.class, java.lang.Object.class, java.lang.Object.class, java.lang.Object.class
             };
             boolean[] canEdit = new boolean [] {
-                false, false, false, false, false, true, true
+                false, false, false, false, false, true, true, false
             };
 
             public Class getColumnClass(int columnIndex) {
@@ -157,26 +157,31 @@ public class PharmacyWorkAreaJPanel extends javax.swing.JPanel {
             }
         });
         jScrollPane4.setViewportView(managePatientTable);
+        if (managePatientTable.getColumnModel().getColumnCount() > 0) {
+            managePatientTable.getColumnModel().getColumn(7).setMinWidth(0);
+            managePatientTable.getColumnModel().getColumn(7).setPreferredWidth(0);
+            managePatientTable.getColumnModel().getColumn(7).setMaxWidth(0);
+        }
 
         add(jScrollPane4, new org.netbeans.lib.awtextra.AbsoluteConstraints(123, 132, 931, 195));
 
         managePatientTable1.setFont(new java.awt.Font("Trebuchet MS", 1, 12)); // NOI18N
         managePatientTable1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null}
+                {null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null}
             },
             new String [] {
-                "First", "Last", "PharmaStatus", "HealthId", "Age", "Address", "Email"
+                "First", "Last", "PharmaStatus", "HealthId", "Age", "Address", "Email", "obj"
             }
         ) {
             Class[] types = new Class [] {
-                java.lang.Object.class, java.lang.Object.class, java.lang.String.class, java.lang.String.class, java.lang.Object.class, java.lang.Object.class, java.lang.Object.class
+                java.lang.Object.class, java.lang.Object.class, java.lang.String.class, java.lang.String.class, java.lang.Object.class, java.lang.Object.class, java.lang.Object.class, java.lang.Object.class
             };
             boolean[] canEdit = new boolean [] {
-                false, false, false, false, false, true, true
+                false, false, false, false, false, true, true, false
             };
 
             public Class getColumnClass(int columnIndex) {
@@ -188,6 +193,11 @@ public class PharmacyWorkAreaJPanel extends javax.swing.JPanel {
             }
         });
         jScrollPane5.setViewportView(managePatientTable1);
+        if (managePatientTable1.getColumnModel().getColumnCount() > 0) {
+            managePatientTable1.getColumnModel().getColumn(7).setMinWidth(0);
+            managePatientTable1.getColumnModel().getColumn(7).setPreferredWidth(0);
+            managePatientTable1.getColumnModel().getColumn(7).setMaxWidth(0);
+        }
 
         add(jScrollPane5, new org.netbeans.lib.awtextra.AbsoluteConstraints(123, 441, 942, 191));
 
@@ -212,7 +222,7 @@ public class PharmacyWorkAreaJPanel extends javax.swing.JPanel {
         } 
         else 
         {
-            Patient patient = (Patient) managePatientTable.getValueAt(selectedRowIndex, 0);
+            Patient patient = (Patient) managePatientTable.getValueAt(selectedRowIndex, 7);
             PharmacyRequestedTests doctorRequestLabTestJPanel = new PharmacyRequestedTests(userProcessContainer, userAccount,patient,ecosystem);
             userProcessContainer.add("Request Lab Tests", doctorRequestLabTestJPanel);
             CardLayout layout = (CardLayout) userProcessContainer.getLayout();
@@ -238,7 +248,7 @@ public class PharmacyWorkAreaJPanel extends javax.swing.JPanel {
         } 
         else 
         {
-            Patient patient = (Patient) managePatientTable1.getValueAt(selectedRowIndex, 0);
+            Patient patient = (Patient) managePatientTable1.getValueAt(selectedRowIndex, 7);
             PharmacyPastRequest doctorRequestLabTestJPanel = new PharmacyPastRequest(userProcessContainer, userAccount,patient,ecosystem);
             userProcessContainer.add("Past Tests", doctorRequestLabTestJPanel);
             CardLayout layout = (CardLayout) userProcessContainer.getLayout();

@@ -43,13 +43,14 @@ public class InsuranceWorkAreaJPanel extends javax.swing.JPanel {
         for (Patient patient : ecoSystem.getInsuranceDirectory().getInsuranceRecord()) {
 
             Object[] row = new Object[7];
-            row[0] = patient;
+            row[0] = patient.getpFirstName();
             row[1] = patient.getpLastName();
             row[2] = Float.toString(ecoSystem.getPatientDirectory().billTotal(patient));
             row[3] = patient.getpHealthInsuranceID();
             row[6] = patient.getpInsuranceStatus();
             row[5] = patient.getpPoliceStatus();
             row[4] = patient.getpEmailAddress();
+            row[5] = patient;
             if(patient.getpInsuranceStatus().equals("Verifying Insurance")){
             model.addRow(row);
             }
@@ -99,20 +100,20 @@ public class InsuranceWorkAreaJPanel extends javax.swing.JPanel {
         PatientTbl.setFont(new java.awt.Font("Trebuchet MS", 1, 12));
         PatientTbl.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null}
+                {null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null}
             },
             new String [] {
-                "Name", "Last", "Bill Total", "HealthId", "Email", "Police Verification", "Insurance Status"
+                "Name", "Last", "Bill Total", "HealthId", "Email", "Police Verification", "Insurance Status", "obj"
             }
         ) {
             Class[] types = new Class [] {
-                java.lang.String.class, java.lang.String.class, java.lang.Object.class, java.lang.Object.class, java.lang.Object.class, java.lang.Object.class, java.lang.Object.class
+                java.lang.String.class, java.lang.String.class, java.lang.Object.class, java.lang.Object.class, java.lang.Object.class, java.lang.Object.class, java.lang.Object.class, java.lang.Object.class
             };
             boolean[] canEdit = new boolean [] {
-                false, false, false, false, true, true, false
+                false, false, false, false, true, true, false, false
             };
 
             public Class getColumnClass(int columnIndex) {
@@ -124,6 +125,11 @@ public class InsuranceWorkAreaJPanel extends javax.swing.JPanel {
             }
         });
         jScrollPane4.setViewportView(PatientTbl);
+        if (PatientTbl.getColumnModel().getColumnCount() > 0) {
+            PatientTbl.getColumnModel().getColumn(7).setMinWidth(0);
+            PatientTbl.getColumnModel().getColumn(7).setPreferredWidth(0);
+            PatientTbl.getColumnModel().getColumn(7).setMaxWidth(0);
+        }
 
         add(jScrollPane4, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 160, 980, 260));
 
@@ -147,7 +153,7 @@ public class InsuranceWorkAreaJPanel extends javax.swing.JPanel {
         }
         else{
             
-            Patient d = (Patient) PatientTbl.getValueAt(selectedRow, 0);
+            Patient d = (Patient) PatientTbl.getValueAt(selectedRow, 5);
             //d.get
             CustomerInfo bill = new CustomerInfo(userProcessContainer,ecoSystem, d, userAccount);
             userProcessContainer.add("Customer Bill", bill);

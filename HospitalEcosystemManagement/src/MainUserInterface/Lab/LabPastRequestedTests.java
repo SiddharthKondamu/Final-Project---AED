@@ -43,12 +43,13 @@ public class LabPastRequestedTests extends javax.swing.JPanel {
 
         for (PatientBills b : p.getpBills()) {
 
-            Object[] row = new Object[5];
-            row[0] = b;
+            Object[] row = new Object[6];
+            row[0] = b.getName();
             row[1] = b.getOrgType();
             row[2] = b.getAmount();
             row[3] = b.getStatus();
             row[4] = b.getResult();
+            row[5] = b;
             if(row[1].equals("Lab")){
             model.addRow(row);
             }
@@ -69,9 +70,7 @@ public class LabPastRequestedTests extends javax.swing.JPanel {
         jScrollPane1 = new javax.swing.JScrollPane();
         BillTable = new javax.swing.JTable();
         jButton2 = new javax.swing.JButton();
-        jLabel3 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
-        jLabel5 = new javax.swing.JLabel();
 
         setBackground(new java.awt.Color(0, 153, 204));
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -87,20 +86,20 @@ public class LabPastRequestedTests extends javax.swing.JPanel {
         BillTable.getTableHeader().setFont(new java.awt.Font("Trebuchet MS", 1, 16));
         BillTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null}
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null}
             },
             new String [] {
-                "Item Name", "Organization", "Amount", "Status", "Result"
+                "Item Name", "Organization", "Amount", "Status", "Result", "obj"
             }
         ) {
             Class[] types = new Class [] {
-                java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.Object.class, java.lang.Object.class
+                java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.Object.class, java.lang.Object.class, java.lang.Object.class
             };
             boolean[] canEdit = new boolean [] {
-                false, false, false, true, true
+                false, false, false, true, true, false
             };
 
             public Class getColumnClass(int columnIndex) {
@@ -112,6 +111,11 @@ public class LabPastRequestedTests extends javax.swing.JPanel {
             }
         });
         jScrollPane1.setViewportView(BillTable);
+        if (BillTable.getColumnModel().getColumnCount() > 0) {
+            BillTable.getColumnModel().getColumn(5).setMinWidth(0);
+            BillTable.getColumnModel().getColumn(5).setPreferredWidth(0);
+            BillTable.getColumnModel().getColumn(5).setMaxWidth(0);
+        }
 
         add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 180, 1035, 280));
 
@@ -126,14 +130,8 @@ public class LabPastRequestedTests extends javax.swing.JPanel {
         });
         add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(900, 20, 140, 40));
 
-        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/MainFrame/Photos/office.png"))); // NOI18N
-        add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(630, 110, 70, 100));
-
         jLabel2.setFont(new java.awt.Font("Georgia", 1, 16)); // NOI18N
-        add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 150, 380, 60));
-
-        jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/MainFrame/Final Image.jpg"))); // NOI18N
-        add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1420, 1240));
+        add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 110, 380, 60));
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
@@ -151,8 +149,6 @@ public class LabPastRequestedTests extends javax.swing.JPanel {
     private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel5;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JSeparator jSeparator1;
     // End of variables declaration//GEN-END:variables

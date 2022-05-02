@@ -44,14 +44,14 @@ public class DoctorAdminWorkArea extends javax.swing.JPanel {
         for (Doctor Doctor : ecoSystem.getDoctorDirectory().getDoctors()) {
 
             Object[] row = new Object[9];
-            row[0] = Doctor;
+            row[0] = Doctor.getdFirstName();
             row[1] = Doctor.getdLastName();
             row[2] = Doctor.getdWorkID();
             row[3] = Doctor.getdAddress();
             row[4] = Doctor.getdAge();
             row[5] = Doctor.getdGender();
             row[6] = Doctor.getdEmail();
-
+            row[7] = Doctor;
             model.addRow(row);
 
         }
@@ -64,15 +64,15 @@ public class DoctorAdminWorkArea extends javax.swing.JPanel {
 
         for (Patient patient : ecoSystem.getPatientDirectory().getPatientList()) {
 
-            Object[] row = new Object[7];
-            row[0] = patient;
+            Object[] row = new Object[8];
+            row[0] = patient.getpFirstName();
             row[1] = patient.getpLastName();
             row[2] = patient.getpInjuryType();
             row[3] = patient.getpBloodType();
             row[4] = patient.getpAge();
             row[5] = patient.getpGender();
             row[6] = patient.getpEmailAddress();
-
+            row[7] = patient;
             model.addRow(row);
 
         }
@@ -114,20 +114,20 @@ public class DoctorAdminWorkArea extends javax.swing.JPanel {
         DoctorTable.setFont(new java.awt.Font("Trebuchet MS", 1, 14)); // NOI18N
         DoctorTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null}
+                {null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null}
             },
             new String [] {
-                "First Name", "Last Name", "Health ID", "Experience", "Age", "Gender", "Email"
+                "First Name", "Last Name", "Health ID", "Experience", "Age", "Gender", "Email", "obj"
             }
         ) {
             Class[] types = new Class [] {
-                java.lang.String.class, java.lang.String.class, java.lang.Object.class, java.lang.Object.class, java.lang.Object.class, java.lang.Object.class, java.lang.Object.class
+                java.lang.String.class, java.lang.String.class, java.lang.Object.class, java.lang.Object.class, java.lang.Object.class, java.lang.Object.class, java.lang.Object.class, java.lang.Object.class
             };
             boolean[] canEdit = new boolean [] {
-                false, false, false, false, false, true, true
+                false, false, false, false, false, true, true, false
             };
 
             public Class getColumnClass(int columnIndex) {
@@ -139,6 +139,11 @@ public class DoctorAdminWorkArea extends javax.swing.JPanel {
             }
         });
         jScrollPane1.setViewportView(DoctorTable);
+        if (DoctorTable.getColumnModel().getColumnCount() > 0) {
+            DoctorTable.getColumnModel().getColumn(7).setMinWidth(0);
+            DoctorTable.getColumnModel().getColumn(7).setPreferredWidth(0);
+            DoctorTable.getColumnModel().getColumn(7).setMaxWidth(0);
+        }
 
         add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 490, 850, 191));
 
@@ -179,20 +184,20 @@ public class DoctorAdminWorkArea extends javax.swing.JPanel {
         PatientTable.getTableHeader().setFont(new java.awt.Font("Trebuchet MS", 1, 16));
         PatientTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null}
+                {null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null}
             },
             new String [] {
-                "First Name", "Last Name", "Injury", "Blood Type", "Age", "Gender", "Email"
+                "First Name", "Last Name", "Injury", "Blood Type", "Age", "Gender", "Email", "obj"
             }
         ) {
             Class[] types = new Class [] {
-                java.lang.String.class, java.lang.String.class, java.lang.Object.class, java.lang.Object.class, java.lang.Object.class, java.lang.Object.class, java.lang.Object.class
+                java.lang.String.class, java.lang.String.class, java.lang.Object.class, java.lang.Object.class, java.lang.Object.class, java.lang.Object.class, java.lang.Object.class, java.lang.Object.class
             };
             boolean[] canEdit = new boolean [] {
-                false, false, false, false, false, false, false
+                false, false, false, false, false, false, false, false
             };
 
             public Class getColumnClass(int columnIndex) {
@@ -204,6 +209,11 @@ public class DoctorAdminWorkArea extends javax.swing.JPanel {
             }
         });
         jScrollPane2.setViewportView(PatientTable);
+        if (PatientTable.getColumnModel().getColumnCount() > 0) {
+            PatientTable.getColumnModel().getColumn(7).setMinWidth(0);
+            PatientTable.getColumnModel().getColumn(7).setPreferredWidth(0);
+            PatientTable.getColumnModel().getColumn(7).setMaxWidth(0);
+        }
 
         add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 200, 850, 193));
 
@@ -244,7 +254,7 @@ public class DoctorAdminWorkArea extends javax.swing.JPanel {
         if (selectedRow < 0) {
             JOptionPane.showMessageDialog(null, "Please select a row from the table", "Warning", JOptionPane.WARNING_MESSAGE);
         } else {
-            Doctor d = (Doctor) DoctorTable.getValueAt(selectedRow, 0);
+            Doctor d = (Doctor) DoctorTable.getValueAt(selectedRow, 7);
             UpdateDoctorJPanel updateDoc = new UpdateDoctorJPanel(userProcessContainer, userAccount, ecoSystem, d);
             userProcessContainer.add("Update Doctor", updateDoc);
             CardLayout layout = (CardLayout) userProcessContainer.getLayout();
@@ -258,10 +268,10 @@ public class DoctorAdminWorkArea extends javax.swing.JPanel {
         int selectedRow = DoctorTable.getSelectedRow();
         if (selectedRow >= 0) {
             int selectionButton = JOptionPane.YES_NO_OPTION;
-            int selectionResult = JOptionPane.showConfirmDialog(null, "Delete Doctor: " + DoctorTable.getValueAt(selectedRow, 0) + " ??", "Warning", selectionButton);
+            int selectionResult = JOptionPane.showConfirmDialog(null, "Delete Doctor: " + DoctorTable.getValueAt(selectedRow, 7) + " ??", "Warning", selectionButton);
             if (selectionResult == JOptionPane.YES_OPTION) {
 
-                Doctor p = (Doctor) DoctorTable.getValueAt(selectedRow, 0);
+                Doctor p = (Doctor) DoctorTable.getValueAt(selectedRow, 7);
 
                 ecoSystem.getDoctorDirectory().deleteDoc(p);
                 populateNetworkTable();
@@ -280,7 +290,7 @@ public class DoctorAdminWorkArea extends javax.swing.JPanel {
         } 
         else 
         {
-            Patient patient = (Patient) PatientTable.getValueAt(selectedRowIndex, 0);
+            Patient patient = (Patient) PatientTable.getValueAt(selectedRowIndex, 7);
             DisplayPatientInfoJPanel displayPatientInfoJPanel = new DisplayPatientInfoJPanel(userProcessContainer, userAccount, ecoSystem, patient);
             userProcessContainer.add("Display Patient", displayPatientInfoJPanel);
             CardLayout layout = (CardLayout) userProcessContainer.getLayout();
