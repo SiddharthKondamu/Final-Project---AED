@@ -239,7 +239,7 @@ public class DisplayPatientInfoJPanel extends javax.swing.JPanel {
                 btnAssignDoctorActionPerformed(evt);
             }
         });
-        add(btnAssignDoctor, new org.netbeans.lib.awtextra.AbsoluteConstraints(620, 810, -1, 48));
+        add(btnAssignDoctor, new org.netbeans.lib.awtextra.AbsoluteConstraints(940, 520, -1, 48));
 
         lblPatientStatus.setBackground(new java.awt.Color(255, 255, 255));
         lblPatientStatus.setFont(new java.awt.Font("Microsoft JhengHei", 1, 18)); // NOI18N
@@ -305,9 +305,7 @@ public class DisplayPatientInfoJPanel extends javax.swing.JPanel {
         });
         jScrollPane1.setViewportView(DoctorTable);
 
-        add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 600, 1400, 170));
-
-        lblPhotoImage.setText("Patient Image");
+        add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 600, 1140, 170));
         add(lblPhotoImage, new org.netbeans.lib.awtextra.AbsoluteConstraints(1080, 160, 200, 200));
 
         btnBack.setBackground(new java.awt.Color(255, 255, 255));
@@ -366,8 +364,11 @@ public class DisplayPatientInfoJPanel extends javax.swing.JPanel {
         } 
         else 
         {
+            
             Doctor doctor = (Doctor) DoctorTable.getValueAt(selectedRowIndex, 0);
-            ecoSystem.getDoctorDirectory().AddPatient(doctor, patient);
+            System.out.println("doctor details ---"+doctor);
+            System.out.println("patient details ---"+this.patient);
+            ecoSystem.getDoctorDirectory().AddPatient(doctor, this.patient);
             JOptionPane.showMessageDialog(null, "Doctor Assigned", "Information", JOptionPane.INFORMATION_MESSAGE);
         }
         

@@ -36,6 +36,7 @@ public class Doctor {
      
     public Doctor(String dUserName) {
         this.dUserName = dUserName;
+        this.treatedPatientList = new ArrayList<Patient>();
     }
     public ArrayList<Patient> getTreatedPatientList() {
         return treatedPatientList;
