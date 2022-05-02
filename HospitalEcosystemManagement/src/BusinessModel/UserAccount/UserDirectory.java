@@ -38,6 +38,10 @@ public class UserDirectory {
     }
 
     public User createUser(String username, String password, Employee employee, Role role) {
+        System.out.println("----user details----");
+        System.out.println("----user name----"+username);
+        System.out.println("----user password----"+password);
+        System.out.println("----user role----"+role);
         User user = new User();
         user.setUsername(username);
         user.setPassword(password);

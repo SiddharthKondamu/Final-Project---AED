@@ -51,12 +51,13 @@ public class ReceptionWorkAreaJPanel extends javax.swing.JPanel {
         model.setRowCount(0);
         for (Patient patient : ecoSystem.getPatientDirectory().getPatientList()) {
             Object[] row = new Object[11];
-            row[0] = patient;
+            row[0] = patient.getpFirstName();
             row[1] = patient.getpLastName();
             row[2] = patient.getpHealthInsuranceID();
             row[3] = patient.getpAge(); 
             row[4] = patient.getpEmailAddress();
             row[5] = patient.getpStatus();
+            row[6] = patient;
             if(!patient.getpStatus().equals("Discharged")){
             model.addRow(row);}
         }
@@ -113,20 +114,20 @@ public class ReceptionWorkAreaJPanel extends javax.swing.JPanel {
         patientTable.setForeground(new java.awt.Color(255, 255, 255));
         patientTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null}
+                {null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null}
             },
             new String [] {
-                "First name", "Last name", "Insurance Id", "Age", "Email Id", "Status"
+                "First name", "Last name", "Insurance Id", "Age", "Email Id", "Status", "Ob"
             }
         ) {
             Class[] types = new Class [] {
-                java.lang.String.class, java.lang.Object.class, java.lang.String.class, java.lang.Object.class, java.lang.Object.class, java.lang.Object.class
+                java.lang.String.class, java.lang.Object.class, java.lang.String.class, java.lang.Object.class, java.lang.Object.class, java.lang.Object.class, java.lang.Object.class
             };
             boolean[] canEdit = new boolean [] {
-                false, false, false, false, false, false
+                false, false, false, false, false, false, false
             };
 
             public Class getColumnClass(int columnIndex) {
@@ -138,6 +139,11 @@ public class ReceptionWorkAreaJPanel extends javax.swing.JPanel {
             }
         });
         jScrollPane1.setViewportView(patientTable);
+        if (patientTable.getColumnModel().getColumnCount() > 0) {
+            patientTable.getColumnModel().getColumn(6).setMinWidth(0);
+            patientTable.getColumnModel().getColumn(6).setPreferredWidth(0);
+            patientTable.getColumnModel().getColumn(6).setMaxWidth(0);
+        }
 
         add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 180, 920, 640));
 
@@ -198,7 +204,7 @@ public class ReceptionWorkAreaJPanel extends javax.swing.JPanel {
 
         jLabel3.setFont(new java.awt.Font("Microsoft Sans Serif", 1, 24)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel3.setText("Current Patient List");
+        jLabel3.setText("Current Patients List");
         add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 120, -1, 50));
 
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
@@ -262,7 +268,7 @@ public class ReceptionWorkAreaJPanel extends javax.swing.JPanel {
         int selectedRow = patientTable.getSelectedRow();
         if (selectedRow >= 0) {
 
-            Patient patient = (Patient) patientTable.getValueAt(selectedRow, 0);
+            Patient patient = (Patient) patientTable.getValueAt(selectedRow, 6);
             BillJPanel patientBillJPanel = new BillJPanel(userProcessContainer, patient,userAccount,ecoSystem);
             userProcessContainer.add("Patient Bill", patientBillJPanel);
             CardLayout layout = (CardLayout) userProcessContainer.getLayout();
@@ -283,7 +289,7 @@ public class ReceptionWorkAreaJPanel extends javax.swing.JPanel {
             int selectionResult = JOptionPane.showConfirmDialog(null, "Delete User: " + "??", "Warning", selectionButton);
             if (selectionResult == JOptionPane.YES_OPTION) {
                 
-                Patient p = (Patient) patientTable.getValueAt(selectedRow, 0);
+                Patient p = (Patient) patientTable.getValueAt(selectedRow, 6);
                 //System.out.print(p.getGender());
                 ecoSystem.getUserAccountDirectory().deleteUser(p.getpUserName());
                 //UserAccount user = (UserAccount) networkJTable.getValueAt(selectedRow, 0); 
@@ -316,7 +322,7 @@ public class ReceptionWorkAreaJPanel extends javax.swing.JPanel {
         int selectedRow = patientTable.getSelectedRow();
         if (selectedRow >= 0) {
 
-            Patient patient = (Patient) patientTable.getValueAt(selectedRow, 0);
+            Patient patient = (Patient) patientTable.getValueAt(selectedRow, 6);
             UpdatePatientJPanel ambulanceWorkAreaJPanel = new UpdatePatientJPanel(userProcessContainer, ecoSystem, userAccount, patient);
             userProcessContainer.add("Discharge", ambulanceWorkAreaJPanel);
             CardLayout layout = (CardLayout) userProcessContainer.getLayout();

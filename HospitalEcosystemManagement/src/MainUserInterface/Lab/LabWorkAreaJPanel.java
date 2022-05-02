@@ -28,7 +28,9 @@ public class LabWorkAreaJPanel extends javax.swing.JPanel {
     private Tests t;
     
     public LabWorkAreaJPanel(JPanel userProcessContainer, User account, Ecosystem business) {
+        
         initComponents();
+        System.out.println("with in LabWorkAreaJPanel");
         this.userProcessContainer = userProcessContainer;
         this.ecosystem = business;
         this.userAccount = account;
@@ -39,13 +41,9 @@ public class LabWorkAreaJPanel extends javax.swing.JPanel {
     
         private void populatePatientTable1() {
         DefaultTableModel model = (DefaultTableModel) managePatientTable1.getModel();
-
         model.setRowCount(0);
-
-        for (Patient patient : ecosystem.getLab().getLabRecordsList()) {
-
+        for (Patient patient : this.ecosystem.getLab().getLabRecordsList()) {
             Object[] row = new Object[7];
-            
             row[0] = patient;
             row[1] = patient.getpLastName();
             row[2] = patient.getpHealthInsuranceID();
@@ -59,26 +57,20 @@ public class LabWorkAreaJPanel extends javax.swing.JPanel {
 
         }
     }
-            private void populatePatientTable() {
-        DefaultTableModel model = (DefaultTableModel) managePatientTable2.getModel();
-
-        model.setRowCount(0);
-
-        for (Patient patient : ecosystem.getLab().getLabRecordsList()) {
-
-            Object[] row = new Object[7];
-            
-            row[0] = patient;
-            row[1] = patient.getpLastName();
-            row[2] = patient.getpHealthInsuranceID();
-            
-            row[3] = patient.getpAge();
-            row[4] = patient.getpEmailAddress();
-            row[5] = patient.getpLabStatus();
-            if(patient.getpLabStatus().equals("Delivered")){
-            model.addRow(row);}
-
-        }
+    private void populatePatientTable() {
+            DefaultTableModel model = (DefaultTableModel) managePatientTable2.getModel();
+            model.setRowCount(0);
+            for (Patient patient : this.ecosystem.getLab().getLabRecordsList()) {
+                Object[] row = new Object[7];
+                row[0] = patient;
+                row[1] = patient.getpLastName();
+                row[2] = patient.getpHealthInsuranceID();
+                row[3] = patient.getpAge();
+                row[4] = patient.getpEmailAddress();
+                row[5] = patient.getpLabStatus();
+                if(patient.getpLabStatus().equals("Delivered")){
+                model.addRow(row);}
+            }
     }
     /**
      * This method is called from within the constructor to initialize the form.
@@ -100,7 +92,6 @@ public class LabWorkAreaJPanel extends javax.swing.JPanel {
         jButton3 = new javax.swing.JButton();
         jScrollPane6 = new javax.swing.JScrollPane();
         managePatientTable2 = new javax.swing.JTable();
-        jLabel5 = new javax.swing.JLabel();
 
         setBackground(new java.awt.Color(0, 153, 204));
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -219,10 +210,6 @@ public class LabWorkAreaJPanel extends javax.swing.JPanel {
         jScrollPane6.setViewportView(managePatientTable2);
 
         add(jScrollPane6, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 550, 1053, 137));
-
-        jLabel5.setBackground(new java.awt.Color(0, 153, 204));
-        jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/MainFrame/Final Image.jpg"))); // NOI18N
-        add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1420, 1240));
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
@@ -277,7 +264,6 @@ public class LabWorkAreaJPanel extends javax.swing.JPanel {
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel5;
     private javax.swing.JScrollPane jScrollPane4;
     private javax.swing.JScrollPane jScrollPane6;
     private javax.swing.JSeparator jSeparator1;

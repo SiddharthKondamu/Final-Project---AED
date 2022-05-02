@@ -47,12 +47,9 @@ public class DisplayAmbulancePatientJPanel extends javax.swing.JPanel {
 
         jScrollPane1 = new javax.swing.JScrollPane();
         AmbulanceTable = new javax.swing.JTable();
-        btnPastPatients = new javax.swing.JButton();
         btnCurrentPatient = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
         jSeparator1 = new javax.swing.JSeparator();
-        jLabel3 = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
 
         setBackground(new java.awt.Color(0, 153, 204));
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -88,17 +85,6 @@ public class DisplayAmbulancePatientJPanel extends javax.swing.JPanel {
 
         add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 260, 1390, 191));
 
-        btnPastPatients.setBackground(new java.awt.Color(255, 255, 255));
-        btnPastPatients.setFont(new java.awt.Font("Microsoft JhengHei", 1, 18)); // NOI18N
-        btnPastPatients.setForeground(new java.awt.Color(0, 153, 204));
-        btnPastPatients.setText("Past Patients");
-        btnPastPatients.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnPastPatientsActionPerformed(evt);
-            }
-        });
-        add(btnPastPatients, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 510, 200, 40));
-
         btnCurrentPatient.setBackground(new java.awt.Color(255, 255, 255));
         btnCurrentPatient.setFont(new java.awt.Font("Microsoft JhengHei", 1, 18)); // NOI18N
         btnCurrentPatient.setForeground(new java.awt.Color(0, 153, 204));
@@ -108,7 +94,7 @@ public class DisplayAmbulancePatientJPanel extends javax.swing.JPanel {
                 btnCurrentPatientActionPerformed(evt);
             }
         });
-        add(btnCurrentPatient, new org.netbeans.lib.awtextra.AbsoluteConstraints(750, 510, 200, 40));
+        add(btnCurrentPatient, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 510, 200, 40));
 
         jLabel1.setBackground(new java.awt.Color(255, 255, 255));
         jLabel1.setFont(new java.awt.Font("Microsoft JhengHei", 1, 36)); // NOI18N
@@ -117,12 +103,6 @@ public class DisplayAmbulancePatientJPanel extends javax.swing.JPanel {
         jLabel1.setText("AMBULANCES DETAILS");
         add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 6, 1409, 80));
         add(jSeparator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 100, 1432, 10));
-
-        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/MainFrame/Photos/team.png"))); // NOI18N
-        add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(680, 120, 80, 120));
-
-        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/MainFrame/Final Image.jpg"))); // NOI18N
-        add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1440, 1000));
     }// </editor-fold>//GEN-END:initComponents
 
     private void PopulateAmbulanceTable() {
@@ -142,23 +122,7 @@ public class DisplayAmbulancePatientJPanel extends javax.swing.JPanel {
 
         }
     }
-
-    private void btnPastPatientsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPastPatientsActionPerformed
-        // TODO add your handling code here:
-
-        int selectedRowIndex = AmbulanceTable.getSelectedRow();
-        if (selectedRowIndex < 0) {
-            JOptionPane.showMessageDialog(null, "Please select a row from the table to view details", "Warning", JOptionPane.WARNING_MESSAGE);
-        } else {
-            Ambulance ambulance = (Ambulance) AmbulanceTable.getValueAt(selectedRowIndex, 0);
-            AmbulancePatientDetailsFormJPanel ambulancePatientDetailsFormJPanel = new AmbulancePatientDetailsFormJPanel(userProcessContainer, userAccount, ecoSystem, ambulance);
-            userProcessContainer.add("Display Patient Details", ambulancePatientDetailsFormJPanel);
-            CardLayout layout = (CardLayout) userProcessContainer.getLayout();
-            layout.next(userProcessContainer);
-        }
-
-    }//GEN-LAST:event_btnPastPatientsActionPerformed
-
+/**/
     private void btnCurrentPatientActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCurrentPatientActionPerformed
         // TODO add your handling code here:
 
@@ -184,10 +148,7 @@ public class DisplayAmbulancePatientJPanel extends javax.swing.JPanel {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTable AmbulanceTable;
     private javax.swing.JButton btnCurrentPatient;
-    private javax.swing.JButton btnPastPatients;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JSeparator jSeparator1;
     // End of variables declaration//GEN-END:variables
