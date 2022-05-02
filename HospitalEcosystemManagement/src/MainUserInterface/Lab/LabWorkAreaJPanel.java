@@ -44,14 +44,13 @@ public class LabWorkAreaJPanel extends javax.swing.JPanel {
         model.setRowCount(0);
         for (Patient patient : this.ecosystem.getLab().getLabRecordsList()) {
             Object[] row = new Object[7];
-            row[0] = patient;
+            row[0] = patient.getpFirstName();
             row[1] = patient.getpLastName();
             row[2] = patient.getpHealthInsuranceID();
-            
             row[3] = patient.getpAge();
             row[4] = patient.getpEmailAddress();
             row[5] = patient.getpLabStatus();
-            
+            row[6] = patient;
             if(!patient.getpLabStatus().equals("Delivered")){
             model.addRow(row);}
 
@@ -62,12 +61,13 @@ public class LabWorkAreaJPanel extends javax.swing.JPanel {
             model.setRowCount(0);
             for (Patient patient : this.ecosystem.getLab().getLabRecordsList()) {
                 Object[] row = new Object[7];
-                row[0] = patient;
+                row[0] = patient.getpFirstName();
                 row[1] = patient.getpLastName();
                 row[2] = patient.getpHealthInsuranceID();
                 row[3] = patient.getpAge();
                 row[4] = patient.getpEmailAddress();
                 row[5] = patient.getpLabStatus();
+                row[6] = patient;
                 if(patient.getpLabStatus().equals("Delivered")){
                 model.addRow(row);}
             }
@@ -119,20 +119,20 @@ public class LabWorkAreaJPanel extends javax.swing.JPanel {
         managePatientTable1.getTableHeader().setFont(new java.awt.Font("Trebuchet MS", 1, 16));
         managePatientTable1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null}
+                {null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null}
             },
             new String [] {
-                "First Name", "Last Name", "HealthId", "Age", "Email", "LabStatus"
+                "First Name", "Last Name", "HealthId", "Age", "Email", "LabStatus", "obj"
             }
         ) {
             Class[] types = new Class [] {
-                java.lang.Object.class, java.lang.Object.class, java.lang.String.class, java.lang.Object.class, java.lang.Object.class, java.lang.String.class
+                java.lang.Object.class, java.lang.Object.class, java.lang.String.class, java.lang.Object.class, java.lang.Object.class, java.lang.String.class, java.lang.Object.class
             };
             boolean[] canEdit = new boolean [] {
-                false, false, false, false, true, false
+                false, false, false, false, true, false, false
             };
 
             public Class getColumnClass(int columnIndex) {
@@ -144,6 +144,11 @@ public class LabWorkAreaJPanel extends javax.swing.JPanel {
             }
         });
         jScrollPane4.setViewportView(managePatientTable1);
+        if (managePatientTable1.getColumnModel().getColumnCount() > 0) {
+            managePatientTable1.getColumnModel().getColumn(6).setMinWidth(0);
+            managePatientTable1.getColumnModel().getColumn(6).setPreferredWidth(0);
+            managePatientTable1.getColumnModel().getColumn(6).setMaxWidth(0);
+        }
 
         add(jScrollPane4, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 230, 1053, 188));
 
@@ -183,20 +188,20 @@ public class LabWorkAreaJPanel extends javax.swing.JPanel {
         managePatientTable2.getTableHeader().setFont(new java.awt.Font("Trebuchet MS", 1, 16));
         managePatientTable2.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null}
+                {null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null}
             },
             new String [] {
-                "First Name", "Last Name", "HealthId", "Age", "Email", "LabStatus"
+                "First Name", "Last Name", "HealthId", "Age", "Email", "LabStatus", "Obj"
             }
         ) {
             Class[] types = new Class [] {
-                java.lang.Object.class, java.lang.Object.class, java.lang.String.class, java.lang.Object.class, java.lang.Object.class, java.lang.String.class
+                java.lang.Object.class, java.lang.Object.class, java.lang.String.class, java.lang.Object.class, java.lang.Object.class, java.lang.String.class, java.lang.Object.class
             };
             boolean[] canEdit = new boolean [] {
-                false, false, false, false, true, false
+                false, false, false, false, true, false, false
             };
 
             public Class getColumnClass(int columnIndex) {
@@ -208,6 +213,11 @@ public class LabWorkAreaJPanel extends javax.swing.JPanel {
             }
         });
         jScrollPane6.setViewportView(managePatientTable2);
+        if (managePatientTable2.getColumnModel().getColumnCount() > 0) {
+            managePatientTable2.getColumnModel().getColumn(6).setMinWidth(0);
+            managePatientTable2.getColumnModel().getColumn(6).setPreferredWidth(0);
+            managePatientTable2.getColumnModel().getColumn(6).setMaxWidth(0);
+        }
 
         add(jScrollPane6, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 550, 1053, 137));
     }// </editor-fold>//GEN-END:initComponents
@@ -229,7 +239,7 @@ public class LabWorkAreaJPanel extends javax.swing.JPanel {
         } 
         else 
         {
-            Patient patient = (Patient) managePatientTable1.getValueAt(selectedRowIndex, 0);
+            Patient patient = (Patient) managePatientTable1.getValueAt(selectedRowIndex, 6);
             LabRequestedTests doctorRequestLabTestJPanel = new LabRequestedTests(userProcessContainer, userAccount,patient,ecosystem);
             userProcessContainer.add("Request Lab Tests", doctorRequestLabTestJPanel);
             CardLayout layout = (CardLayout) userProcessContainer.getLayout();
@@ -248,7 +258,7 @@ public class LabWorkAreaJPanel extends javax.swing.JPanel {
         } 
         else 
         {
-            Patient patient = (Patient) managePatientTable2.getValueAt(selectedRowIndex, 0);
+            Patient patient = (Patient) managePatientTable2.getValueAt(selectedRowIndex, 6);
             LabPastRequestedTests doctorRequestLabTestJPanel = new LabPastRequestedTests(userProcessContainer, userAccount,patient,ecosystem);
             userProcessContainer.add("Past Lab Tests", doctorRequestLabTestJPanel);
             CardLayout layout = (CardLayout) userProcessContainer.getLayout();

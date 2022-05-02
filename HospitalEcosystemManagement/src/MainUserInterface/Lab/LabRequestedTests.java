@@ -43,12 +43,13 @@ public class LabRequestedTests extends javax.swing.JPanel {
 
         for (PatientBills b : p.getpBills()) {
 
-            Object[] row = new Object[5];
-            row[0] = b;
+            Object[] row = new Object[6];
+            row[0] = b.getName();
             row[1] = b.getOrgType();
             row[2] = b.getAmount();
             row[3] = b.getStatus();
             row[4] = b.getResult();
+            row[5] = b;
             if(row[1].equals("Lab")&&row[3].equals("Requested")){
             model.addRow(row);
             }
@@ -72,7 +73,6 @@ public class LabRequestedTests extends javax.swing.JPanel {
         txtResult = new javax.swing.JTextField();
         jButton2 = new javax.swing.JButton();
         jLabel3 = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
 
         setBackground(new java.awt.Color(0, 153, 204));
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -90,20 +90,20 @@ public class LabRequestedTests extends javax.swing.JPanel {
         BillTable.getTableHeader().setFont(new java.awt.Font("Trebuchet MS", 1, 16));
         BillTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null}
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null}
             },
             new String [] {
-                "Item Name", "Organization", "Amount", "Status", "Result"
+                "Item Name", "Organization", "Amount", "Status", "Result", "Object"
             }
         ) {
             Class[] types = new Class [] {
-                java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.Object.class, java.lang.Object.class
+                java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.Object.class, java.lang.Object.class, java.lang.Object.class
             };
             boolean[] canEdit = new boolean [] {
-                false, false, false, true, true
+                false, false, false, true, true, false
             };
 
             public Class getColumnClass(int columnIndex) {
@@ -115,6 +115,11 @@ public class LabRequestedTests extends javax.swing.JPanel {
             }
         });
         jScrollPane1.setViewportView(BillTable);
+        if (BillTable.getColumnModel().getColumnCount() > 0) {
+            BillTable.getColumnModel().getColumn(5).setMinWidth(0);
+            BillTable.getColumnModel().getColumn(5).setPreferredWidth(0);
+            BillTable.getColumnModel().getColumn(5).setMaxWidth(0);
+        }
 
         add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(151, 141, 1000, 171));
 
@@ -143,10 +148,6 @@ public class LabRequestedTests extends javax.swing.JPanel {
 
         jLabel3.setFont(new java.awt.Font("Georgia", 1, 16)); // NOI18N
         add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(151, 94, 380, 36));
-
-        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/MainFrame/Photos/Blood_Being_Processed.gif"))); // NOI18N
-        jLabel2.setToolTipText("");
-        add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(325, 354, 392, 379));
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
@@ -161,7 +162,7 @@ public class LabRequestedTests extends javax.swing.JPanel {
             } 
             else {
                 for(PatientBills b: p.getpBills()){
-                    if(b==((PatientBills) BillTable.getValueAt(selectedRowIndex, 0))){
+                    if(b==((PatientBills) BillTable.getValueAt(selectedRowIndex, 5))){
                         
                         b.setStatus("Delivered");
                         b.setResult(txtResult.getText());
@@ -201,7 +202,6 @@ public class LabRequestedTests extends javax.swing.JPanel {
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JSeparator jSeparator1;

@@ -39,16 +39,15 @@ public class PoliceWorkAreaJPanel extends javax.swing.JPanel {
 
         for (Patient patient : ecoSystem.getPoliceRecords().getPoliceRecordsList()) {
 
-            Object[] row = new Object[7];
-            row[0] = patient;
-            row[1] = patient.getpLastName();
-            
+            Object[] row = new Object[8];
+            row[0] = patient.getpFirstName();
+            row[1] = patient.getpLastName();           
             row[2] = patient.getpHealthInsuranceID();
             row[3] = patient.getpAge();
             row[4] = patient.getpAddress();
             row[5] = patient.getpEmailAddress();
             row[6] = patient.getpPoliceStatus();
-            
+            row[7] = patient;
             if(patient.getpPoliceStatus().equals("Verifying")){
             model.addRow(row);}
 
@@ -61,15 +60,15 @@ public class PoliceWorkAreaJPanel extends javax.swing.JPanel {
 
         for (Patient patient : ecoSystem.getPoliceRecords().getPoliceRecordsList()) {
 
-            Object[] row = new Object[7];
-            row[0] = patient;
+            Object[] row = new Object[8];
+            row[0] = patient.getpFirstName();
             row[1] = patient.getpLastName();
-            
             row[2] = patient.getpHealthInsuranceID();
             row[3] = patient.getpAge();
             row[4] = patient.getpAddress();
             row[5] = patient.getpEmailAddress();
             row[6] = patient.getpPoliceStatus();
+            row[7] = patient;
             if(!patient.getpPoliceStatus().equals("Verifying")){
             model.addRow(row);}
 
@@ -112,20 +111,20 @@ public class PoliceWorkAreaJPanel extends javax.swing.JPanel {
         managePatientTable.setFont(new java.awt.Font("Trebuchet MS", 1, 14)); // NOI18N
         managePatientTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null}
+                {null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null}
             },
             new String [] {
-                "Name", "Last", "HealthId", "Age", "Address", "Email", "Police Verification"
+                "Name", "Last", "HealthId", "Age", "Address", "Email", "Police Verification", "obj"
             }
         ) {
             Class[] types = new Class [] {
-                java.lang.String.class, java.lang.String.class, java.lang.Object.class, java.lang.Object.class, java.lang.Object.class, java.lang.Object.class, java.lang.Object.class
+                java.lang.String.class, java.lang.String.class, java.lang.Object.class, java.lang.Object.class, java.lang.Object.class, java.lang.Object.class, java.lang.Object.class, java.lang.Object.class
             };
             boolean[] canEdit = new boolean [] {
-                false, false, false, false, false, false, false
+                false, false, false, false, false, false, false, false
             };
 
             public Class getColumnClass(int columnIndex) {
@@ -137,6 +136,11 @@ public class PoliceWorkAreaJPanel extends javax.swing.JPanel {
             }
         });
         jScrollPane3.setViewportView(managePatientTable);
+        if (managePatientTable.getColumnModel().getColumnCount() > 0) {
+            managePatientTable.getColumnModel().getColumn(7).setMinWidth(0);
+            managePatientTable.getColumnModel().getColumn(7).setPreferredWidth(0);
+            managePatientTable.getColumnModel().getColumn(7).setMaxWidth(0);
+        }
 
         add(jScrollPane3, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 250, 1260, 140));
 
@@ -153,20 +157,20 @@ public class PoliceWorkAreaJPanel extends javax.swing.JPanel {
         managePatientTable1.setFont(new java.awt.Font("Trebuchet MS", 1, 14)); // NOI18N
         managePatientTable1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null}
+                {null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null}
             },
             new String [] {
-                "Name", "Last", "HealthId", "Age", "Address", "Email", "Police Verification"
+                "Name", "Last", "HealthId", "Age", "Address", "Email", "Police Verification", "obj"
             }
         ) {
             Class[] types = new Class [] {
-                java.lang.String.class, java.lang.String.class, java.lang.Object.class, java.lang.Object.class, java.lang.Object.class, java.lang.Object.class, java.lang.Object.class
+                java.lang.String.class, java.lang.String.class, java.lang.Object.class, java.lang.Object.class, java.lang.Object.class, java.lang.Object.class, java.lang.Object.class, java.lang.Object.class
             };
             boolean[] canEdit = new boolean [] {
-                false, false, false, false, true, true, false
+                false, false, false, false, true, true, false, false
             };
 
             public Class getColumnClass(int columnIndex) {
@@ -178,6 +182,11 @@ public class PoliceWorkAreaJPanel extends javax.swing.JPanel {
             }
         });
         jScrollPane4.setViewportView(managePatientTable1);
+        if (managePatientTable1.getColumnModel().getColumnCount() > 0) {
+            managePatientTable1.getColumnModel().getColumn(7).setMinWidth(0);
+            managePatientTable1.getColumnModel().getColumn(7).setPreferredWidth(0);
+            managePatientTable1.getColumnModel().getColumn(7).setMaxWidth(0);
+        }
 
         add(jScrollPane4, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 510, 1260, 191));
 
@@ -212,8 +221,7 @@ public class PoliceWorkAreaJPanel extends javax.swing.JPanel {
         }
         else{
             
-            Patient d = (Patient) managePatientTable.getValueAt(selectedRow, 0);
-            //d.get
+            Patient d = (Patient) managePatientTable.getValueAt(selectedRow, 7);
             PersonInfo bill = new PersonInfo(userProcessContainer,ecoSystem, d,account);
             userProcessContainer.add("Police Person Info", bill);
             CardLayout layout = (CardLayout) userProcessContainer.getLayout();
@@ -231,7 +239,7 @@ public class PoliceWorkAreaJPanel extends javax.swing.JPanel {
         }
         else{
             
-            Patient d = (Patient) managePatientTable1.getValueAt(selectedRow, 0);
+            Patient d = (Patient) managePatientTable1.getValueAt(selectedRow, 7);
             //d.get
             PastInfo bill = new PastInfo(userProcessContainer,ecoSystem, d,account);
             userProcessContainer.add("Past Info", bill);

@@ -369,6 +369,7 @@ public class DisplayPatientInfoJPanel extends javax.swing.JPanel {
             System.out.println("doctor details ---"+doctor);
             System.out.println("patient details ---"+this.patient);
             ecoSystem.getDoctorDirectory().AddPatient(doctor, this.patient);
+            
             JOptionPane.showMessageDialog(null, "Doctor Assigned", "Information", JOptionPane.INFORMATION_MESSAGE);
         }
         

@@ -48,10 +48,11 @@ public class BloodBankWorkAreaJPanel extends javax.swing.JPanel {
 
         for (PatientBills b : billPatient.getpBills()) {
             
-                Object[] row = new Object[3];
+                Object[] row = new Object[4];
                 row[0] = b.getName();
                 row[1] = b.getOrgType();
                 row[2] = b.getAmount();
+                row[3] = b;
                 if(b.getOrgType().toLowerCase().equals("blood bank"))
                 {
                     model.addRow(row);
@@ -66,8 +67,8 @@ public class BloodBankWorkAreaJPanel extends javax.swing.JPanel {
 
         for (Patient patient : ecoSystem.getPatientDirectory().getPatientList()) {
             if (patient.getpBloodBankStatus().equals("Requested") || patient.getpBloodBankStatus().equals("Unavailable")) {
-                Object[] row = new Object[9];
-                row[0] = patient;
+                Object[] row = new Object[10];
+                row[0] = patient.getpFirstName();
                 row[1] = patient.getpHealthInsuranceID();
                 row[2] = patient.getpUserName();
                 row[3] = patient.getpLastName();
@@ -76,6 +77,7 @@ public class BloodBankWorkAreaJPanel extends javax.swing.JPanel {
                 row[6] = patient.getpEmailAddress();
                 row[7] = patient.getpBloodBankStatus();
                 row[8] = patient.getpBloodBagQuantity();
+                row[9] = patient;
                 model.addRow(row);
             }
         }
@@ -116,20 +118,20 @@ public class BloodBankWorkAreaJPanel extends javax.swing.JPanel {
         ManagePatientTable.setFont(new java.awt.Font("Trebuchet MS", 1, 14)); // NOI18N
         ManagePatientTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null}
+                {null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null}
             },
             new String [] {
-                "User Name", "HealthId", "First", "Last", "Age", "Address", "Email", "Request Status", "Blood Quantity"
+                "User Name", "HealthId", "First", "Last", "Age", "Address", "Email", "Request Status", "Blood Quantity", "obj"
             }
         ) {
             Class[] types = new Class [] {
-                java.lang.String.class, java.lang.String.class, java.lang.Object.class, java.lang.Object.class, java.lang.Object.class, java.lang.Object.class, java.lang.Object.class, java.lang.Object.class, java.lang.Object.class
+                java.lang.String.class, java.lang.String.class, java.lang.Object.class, java.lang.Object.class, java.lang.Object.class, java.lang.Object.class, java.lang.Object.class, java.lang.Object.class, java.lang.Object.class, java.lang.Object.class
             };
             boolean[] canEdit = new boolean [] {
-                false, false, false, false, false, false, false, false, false
+                false, false, false, false, false, false, false, false, false, false
             };
 
             public Class getColumnClass(int columnIndex) {
@@ -141,6 +143,11 @@ public class BloodBankWorkAreaJPanel extends javax.swing.JPanel {
             }
         });
         jScrollPane3.setViewportView(ManagePatientTable);
+        if (ManagePatientTable.getColumnModel().getColumnCount() > 0) {
+            ManagePatientTable.getColumnModel().getColumn(9).setMinWidth(0);
+            ManagePatientTable.getColumnModel().getColumn(9).setPreferredWidth(0);
+            ManagePatientTable.getColumnModel().getColumn(9).setMaxWidth(0);
+        }
 
         add(jScrollPane3, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 140, 860, 191));
 
@@ -158,20 +165,20 @@ public class BloodBankWorkAreaJPanel extends javax.swing.JPanel {
         BillTable.setFont(new java.awt.Font("Trebuchet MS", 1, 14)); // NOI18N
         BillTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null},
-                {null, null, null},
-                {null, null, null},
-                {null, null, null}
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null}
             },
             new String [] {
-                "Item Name", "Organization", "Amount"
+                "Item Name", "Organization", "Amount", "obj"
             }
         ) {
             Class[] types = new Class [] {
-                java.lang.String.class, java.lang.String.class, java.lang.String.class
+                java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.Object.class
             };
             boolean[] canEdit = new boolean [] {
-                false, false, false
+                false, false, false, false
             };
 
             public Class getColumnClass(int columnIndex) {
@@ -183,6 +190,11 @@ public class BloodBankWorkAreaJPanel extends javax.swing.JPanel {
             }
         });
         jScrollPane2.setViewportView(BillTable);
+        if (BillTable.getColumnModel().getColumnCount() > 0) {
+            BillTable.getColumnModel().getColumn(3).setMinWidth(0);
+            BillTable.getColumnModel().getColumn(3).setPreferredWidth(0);
+            BillTable.getColumnModel().getColumn(3).setMaxWidth(0);
+        }
 
         add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 456, 1270, 191));
 
@@ -252,7 +264,7 @@ public class BloodBankWorkAreaJPanel extends javax.swing.JPanel {
             JOptionPane.showMessageDialog(null, "Pls select a row!!", "Warning", JOptionPane.WARNING_MESSAGE);
         } else {
 
-            Patient patient = (Patient) ManagePatientTable.getValueAt(selectedRowIndex, 0);
+            Patient patient = (Patient) ManagePatientTable.getValueAt(selectedRowIndex, 9);
 
             for (Patient p : ecoSystem.getPatientDirectory().getPatientList()) {
                 if (patient.getpUserName().equals(p.getpUserName())) {

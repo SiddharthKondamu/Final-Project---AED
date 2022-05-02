@@ -77,7 +77,7 @@
               <Font name="Trebuchet MS" size="14" style="1"/>
             </Property>
             <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.editors2.TableModelEditor">
-              <Table columnCount="7" rowCount="4">
+              <Table columnCount="8" rowCount="4">
                 <Column editable="false" title="Name" type="java.lang.String"/>
                 <Column editable="false" title="Last" type="java.lang.String"/>
                 <Column editable="false" title="HealthId" type="java.lang.Object"/>
@@ -85,6 +85,7 @@
                 <Column editable="false" title="Address" type="java.lang.Object"/>
                 <Column editable="false" title="Email" type="java.lang.Object"/>
                 <Column editable="false" title="Police Verification" type="java.lang.Object"/>
+                <Column editable="false" title="obj" type="java.lang.Object"/>
               </Table>
             </Property>
             <Property name="columnModel" type="javax.swing.table.TableColumnModel" editor="org.netbeans.modules.form.editors2.TableColumnModelEditor">
@@ -120,6 +121,11 @@
                   <Renderer/>
                 </Column>
                 <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="true">
+                  <Title/>
+                  <Editor/>
+                  <Renderer/>
+                </Column>
+                <Column maxWidth="0" minWidth="0" prefWidth="0" resizable="true">
                   <Title/>
                   <Editor/>
                   <Renderer/>
@@ -183,7 +189,7 @@
               <Font name="Trebuchet MS" size="14" style="1"/>
             </Property>
             <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.editors2.TableModelEditor">
-              <Table columnCount="7" rowCount="4">
+              <Table columnCount="8" rowCount="4">
                 <Column editable="false" title="Name" type="java.lang.String"/>
                 <Column editable="false" title="Last" type="java.lang.String"/>
                 <Column editable="false" title="HealthId" type="java.lang.Object"/>
@@ -191,6 +197,7 @@
                 <Column editable="true" title="Address" type="java.lang.Object"/>
                 <Column editable="true" title="Email" type="java.lang.Object"/>
                 <Column editable="false" title="Police Verification" type="java.lang.Object"/>
+                <Column editable="false" title="obj" type="java.lang.Object"/>
               </Table>
             </Property>
             <Property name="columnModel" type="javax.swing.table.TableColumnModel" editor="org.netbeans.modules.form.editors2.TableColumnModelEditor">
@@ -226,6 +233,11 @@
                   <Renderer/>
                 </Column>
                 <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="true">
+                  <Title/>
+                  <Editor/>
+                  <Renderer/>
+                </Column>
+                <Column maxWidth="0" minWidth="0" prefWidth="0" resizable="true">
                   <Title/>
                   <Editor/>
                   <Renderer/>
