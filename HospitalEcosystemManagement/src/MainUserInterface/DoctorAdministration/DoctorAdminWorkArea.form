@@ -60,11 +60,7 @@
       <SubComponents>
         <Component class="javax.swing.JTable" name="DoctorTable">
           <Properties>
-            <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor" postCode="DoctorTable.getTableHeader().setFont(new java.awt.Font(&quot;Trebuchet MS&quot;, 1, 16));">
-              <Border info="org.netbeans.modules.form.compat2.border.LineBorderInfo">
-                <LineBorder thickness="2"/>
-              </Border>
-            </Property>
+            <Property name="border" postCode="DoctorTable.getTableHeader().setFont(new java.awt.Font(&quot;Trebuchet MS&quot;, 1, 16));"/>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Trebuchet MS" size="14" style="1"/>
             </Property>
