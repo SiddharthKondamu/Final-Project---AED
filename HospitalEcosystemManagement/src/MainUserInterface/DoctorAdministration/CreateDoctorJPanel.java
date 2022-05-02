@@ -107,7 +107,7 @@ public class CreateDoctorJPanel extends javax.swing.JPanel {
         jLabel4 = new javax.swing.JLabel();
         jSeparator5 = new javax.swing.JSeparator();
         GComboBox = new javax.swing.JComboBox<>();
-        DOBTxt = new com.toedter.calendar.JDateChooser();
+        DOBTxt = new org.netbeans.modules.form.InvalidComponent();
         ErrorPhoneLbl = new javax.swing.JLabel();
         ErrorEmailLbl = new javax.swing.JLabel();
         lblErrorAddress = new javax.swing.JLabel();
@@ -360,8 +360,6 @@ public class CreateDoctorJPanel extends javax.swing.JPanel {
         });
         add(GComboBox, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 220, 170, 30));
 
-        DOBTxt.setBackground(new java.awt.Color(204, 204, 204));
-        DOBTxt.setDateFormatString("MM-dd-yyyy");
         add(DOBTxt, new org.netbeans.lib.awtextra.AbsoluteConstraints(810, 220, 170, 30));
 
         ErrorPhoneLbl.setFont(new java.awt.Font("Lucida Grande", 3, 14)); // NOI18N
@@ -515,7 +513,7 @@ public class CreateDoctorJPanel extends javax.swing.JPanel {
             
         } else 
         {
-            JOptionPane.showMessageDialog(null, "Username is not Unique And Please Fill Correct Details");
+            JOptionPane.showMessageDialog(null, "Please Fill Correct Details");
         }
         
         
@@ -727,7 +725,7 @@ public class CreateDoctorJPanel extends javax.swing.JPanel {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel AddressLbl;
     private javax.swing.JTextField AddressTxt;
-    private com.toedter.calendar.JDateChooser DOBTxt;
+    private org.netbeans.modules.form.InvalidComponent DOBTxt;
     private javax.swing.JLabel DateOfBirthLbl;
     private javax.swing.JLabel DoctorWorkIDLbl;
     private javax.swing.JLabel EmailLbl;

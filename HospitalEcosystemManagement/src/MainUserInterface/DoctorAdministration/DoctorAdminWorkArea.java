@@ -110,7 +110,6 @@ public class DoctorAdminWorkArea extends javax.swing.JPanel {
         lblManageCustomers.setText("Assign Patients to Doctors");
         add(lblManageCustomers, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 40, 720, -1));
 
-        DoctorTable.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 2));
         DoctorTable.getTableHeader().setFont(new java.awt.Font("Trebuchet MS", 1, 16));
         DoctorTable.setFont(new java.awt.Font("Trebuchet MS", 1, 14)); // NOI18N
         DoctorTable.setModel(new javax.swing.table.DefaultTableModel(
