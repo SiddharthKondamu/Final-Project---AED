@@ -54,7 +54,7 @@ public class MainJFrame extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        leftContainer.setBackground(new java.awt.Color(255, 255, 255));
+        leftContainer.setBackground(new java.awt.Color(0, 153, 204));
         leftContainer.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         signInBtn.setBackground(new java.awt.Color(255, 255, 255));
@@ -78,13 +78,13 @@ public class MainJFrame extends javax.swing.JFrame {
         leftContainer.add(passwordInputField, new org.netbeans.lib.awtextra.AbsoluteConstraints(18, 368, 118, 35));
 
         jLabel1.setFont(new java.awt.Font("Microsoft JhengHei", 1, 18)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(0, 153, 204));
+        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setText("Username");
         leftContainer.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 240, -1, -1));
 
         jLabel2.setBackground(new java.awt.Color(255, 255, 255));
         jLabel2.setFont(new java.awt.Font("Microsoft JhengHei", 1, 18)); // NOI18N
-        jLabel2.setForeground(new java.awt.Color(0, 153, 204));
+        jLabel2.setForeground(new java.awt.Color(255, 255, 255));
         jLabel2.setText("Password");
         leftContainer.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 330, 108, -1));
         leftContainer.add(loginJLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(128, 231, -1, -1));
@@ -109,8 +109,9 @@ public class MainJFrame extends javax.swing.JFrame {
         mainContainer.setBackground(new java.awt.Color(255, 255, 255));
         mainContainer.setLayout(new java.awt.CardLayout());
 
+        homeDisplay.setBackground(new java.awt.Color(0, 153, 204));
         homeDisplay.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        homeDisplay.setIcon(new javax.swing.ImageIcon(getClass().getResource("/MainUserInterface/Images/hospital.jpg"))); // NOI18N
+        homeDisplay.setIcon(new javax.swing.ImageIcon(getClass().getResource("/MainUserInterface/Images/Hospital.gif"))); // NOI18N
         mainContainer.add(homeDisplay, "card2");
 
         jSplitPane1.setRightComponent(mainContainer);
